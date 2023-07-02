@@ -15,6 +15,7 @@ func TestLoad(t *testing.T) {
 		{titleSlug: "minimum-score-triangulation-of-polygon"},
 		{titleSlug: "find-words-that-can-be-formed-by-characters"},
 		{titleSlug: "moving-stones-until-consecutive-ii"},
+		{titleSlug: "simplify-path"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.titleSlug, func(t *testing.T) {
