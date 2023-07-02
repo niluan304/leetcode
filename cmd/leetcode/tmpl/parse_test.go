@@ -6,18 +6,22 @@ import (
 	"testing"
 )
 
-func Test_LoadQuestion(t *testing.T) {
+func Test_Parser(t *testing.T) {
 	var args = []struct {
 		input  string
 		output string
 	}{
 		{
-			input:  "./data/two-sum.json",
+			input:  "D:/__Project/leetcode/questionData/two-sum.json",
 			output: "./data/1_two-sum",
 		},
 		{
-			input:  "./data/flip_chess.json",
-			output: "./data/LCP41_flip-chess",
+			input:  "D:/__Project/leetcode/questionData/3Etpl5.json",
+			output: "./data/offer_LCOF2",
+		},
+		{
+			input:  "D:/__Project/leetcode/questionData/container-with-most-water.json",
+			output: "./data/container-with-most-water",
 		},
 	}
 
@@ -30,42 +34,29 @@ func Test_LoadQuestion(t *testing.T) {
 			return
 		}
 
-		// 新建各语言solution文件
-		s, err := NewSolution(question)
-		if err != nil {
-			t.Error(err)
-			return
-		}
-
 		output := filepath.Join("./data", question.Dir())
 		if output != arg.output {
 			t.Logf("output error: %s != %s", output, arg.output)
 		}
-
 		_ = os.MkdirAll(output, os.ModePerm)
-		err = s.Save(output)
-		if err != nil {
-			t.Error(err)
-			return
-		}
 
-		// 解析题目描述模板
+		// 解析模板
 		t.Run(input, func(t *testing.T) {
-			list := []struct {
-				name   string
-				parser Parser
-			}{
-				{name: "en", parser: NewEN(question)},
-				{name: "zh", parser: NewZN(question)},
+			list := []Parser{
+				NewParserEN(question),
+				NewParserZN(question),
+				NewParserCase(question),
+				NewParserSolution(question),
+				NewParserUnitCase(question),
 			}
 
 			for _, elem := range list {
-				t.Run(elem.name, func(t *testing.T) {
-					l := Lang{
-						Parser: elem.parser,
+				t.Run(elem.Filename(), func(t *testing.T) {
+					p := Parse{
+						Parser: elem,
 					}
 
-					err = l.Save(output)
+					err = p.Save(output)
 					if err != nil {
 						t.Errorf("save error: %v", err)
 					}

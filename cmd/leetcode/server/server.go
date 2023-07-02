@@ -70,28 +70,18 @@ func (s *Server) do(titleSlug string) (err error) {
 		return nil
 	}
 
-	// 新建各语言solution文件
-	solution, err := tmpl.NewSolution(question)
-	if err != nil {
-		return err
-	}
-	err = solution.Save(path)
-	if err != nil {
-		return err
-	}
-
-	// 解析题目描述模板
-	list := []struct {
-		name   string
-		parser tmpl.Parser
-	}{
-		{name: "en", parser: tmpl.NewEN(question)},
-		{name: "zh", parser: tmpl.NewZN(question)},
+	// 解析模板
+	list := []tmpl.Parser{
+		tmpl.NewParserEN(question),
+		tmpl.NewParserZN(question),
+		tmpl.NewParserCase(question),
+		tmpl.NewParserSolution(question),
+		tmpl.NewParserUnitCase(question),
 	}
 	for _, elem := range list {
-		l := tmpl.Lang{Parser: elem.parser}
+		p := &tmpl.Parse{Parser: elem}
 
-		err = l.Save(path)
+		err = p.Save(path)
 		if err != nil {
 			return err
 		}

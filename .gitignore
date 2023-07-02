@@ -7,3 +7,4 @@ config
 config.*
 data
 questionData
+/plugin/

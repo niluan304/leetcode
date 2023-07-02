@@ -11,8 +11,10 @@ type ListNode = structs.ListNode
 
 type Input struct{ L1, L2 *ListNode }
 
-var cases = func() []tests.Case[Input, []int] {
-	return []tests.Case[Input, []int]{
+type Output []int
+
+var cases = func() []tests.Case[Input, Output] {
+	return []tests.Case[Input, Output]{
 		{
 			Input: Input{
 				L1: structs.NewListNode([]int{2, 4, 3}),
@@ -41,8 +43,8 @@ type Func func(l1 *ListNode, l2 *ListNode) *ListNode
 
 var funcs = tests.NewFuncWithAdaptor(adaptor)
 
-func adaptor(f Func) func(in Input) (out []int) {
-	return func(in Input) (out []int) {
+func adaptor(f Func) func(in Input) (out Output) {
+	return func(in Input) (out Output) {
 		root := f(in.L1, in.L2)
 		if !checkResult {
 			return nil
@@ -51,9 +53,9 @@ func adaptor(f Func) func(in Input) (out []int) {
 	}
 }
 
-func AddCases(c func() []tests.Case[Input, []int]) {
+func AddCases(c func() []tests.Case[Input, Output]) {
 	_cases := cases()
-	cases = func() []tests.Case[Input, []int] {
+	cases = func() []tests.Case[Input, Output] {
 		return append(_cases, c()...)
 	}
 }

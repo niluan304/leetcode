@@ -136,7 +136,7 @@ func (c *Client) QuestionData(ctx context.Context, titleSlug string) (res *Quest
 }
 
 func (c *Client) save(path string, titleSlug string, res any) (err error) {
-	data, err := json.Marshal(res)
+	data, err := json.MarshalIndent(res, "", "  ")
 	if err != nil {
 		return err
 	}

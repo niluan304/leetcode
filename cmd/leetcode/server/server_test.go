@@ -2,7 +2,7 @@ package server
 
 import "testing"
 
-func TestLoad(t *testing.T) {
+func Test_server_do(t *testing.T) {
 	tests := []struct {
 		titleSlug string
 	}{

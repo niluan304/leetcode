@@ -16,19 +16,19 @@ type Parser interface {
 	Filename() string
 }
 
-type Lang struct {
+type Parse struct {
 	Parser
 }
 
-func (l *Lang) Save(root string) (err error) {
-	name := l.Filename()
+func (p *Parse) Save(root string) (err error) {
+	name := p.Filename()
 	file, err := os.Create(filepath.Join(root, name))
 	if err != nil {
 		return errors.Wrap(err, "fail create file")
 	}
 	defer file.Close()
 
-	err = l.Parse(file)
+	err = p.Parse(file)
 	if err != nil {
 		return errors.Wrap(err, "fail parse"+name)
 	}

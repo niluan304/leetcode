@@ -123,6 +123,26 @@ type (
 		Return struct { // 返回值
 			Type string `json:"type"` // 返回值类型
 		} `json:"return"`
+
+		Classname   string `json:"classname"`
+		Constructor struct {
+			Params []struct {
+				Name string `json:"name"` // 参数名
+				Type string `json:"type"` // 参数类型
+			} `json:"params"`
+		} `json:"constructor"`
+		Methods []struct {
+			Params []struct {
+				Type string `json:"type"`
+				Name string `json:"name"`
+			} `json:"params"`
+			Return struct {
+				Type string `json:"type"`
+			} `json:"return"`
+			Name string `json:"name"`
+		} `json:"methods"`
+
+		Systemdesign bool `json:"systemdesign"`
 	}
 	LangToValidPlayground map[string]bool
 
@@ -252,7 +272,6 @@ func (q QuestionData) Dir() string {
 	titleSlug := q.TitleSlug
 	if !isStringNumeric(frontendId) {
 		titleSlug = camel2Case(q.MetaData.Name, "-")
-	} else {
 		frontendId = strings.ReplaceAll(frontendId, "剑指Offer", "offer")
 		frontendId = strings.ReplaceAll(frontendId, "面试题", "interview")
 	}

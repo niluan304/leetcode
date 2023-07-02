@@ -10,19 +10,19 @@ import (
 )
 
 type en struct {
-	q    *graphql.QuestionData
+	data *graphql.QuestionData
 	tmpl *template.Template
 }
 
-func NewEN(q *graphql.QuestionData) (l Parser) {
+func NewParserEN(q *graphql.QuestionData) (p Parser) {
 	return &en{
-		q:    q,
+		data: q,
 		tmpl: tmplEN,
 	}
 }
 
-func (l *en) Parse(wr io.Writer) (err error) {
-	err = l.tmpl.Execute(wr, l.q)
+func (p *en) Parse(wr io.Writer) (err error) {
+	err = p.tmpl.Execute(wr, p.data)
 	if err != nil {
 		return errors.Wrap(err, "fail execute template")
 	}
@@ -30,6 +30,6 @@ func (l *en) Parse(wr io.Writer) (err error) {
 	return nil
 }
 
-func (l *en) Filename() string {
+func (p *en) Filename() string {
 	return "README_EN.md"
 }

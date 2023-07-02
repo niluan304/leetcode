@@ -1,8 +1,9 @@
 package tests
 
 import (
-	"encoding/json"
 	"fmt"
+	"io"
+	"os"
 	"testing"
 )
 
@@ -43,10 +44,10 @@ const (
 	flagUnderline   = 4
 )
 
-func Sign[T any, U any](show bool, f func(in T) (out U), cases ...Case[T, U]) (err error) {
+func Sign[T any, U any](w io.Writer, f func(in T) (out U), cases ...Case[T, U]) (err error) {
 	var errs []error
 	for _, e := range cases {
-		err = sign(show, f, e)
+		err = sign(w, f, e)
 		if err != nil {
 			errs = append(errs, err)
 		}
@@ -59,16 +60,11 @@ func Sign[T any, U any](show bool, f func(in T) (out U), cases ...Case[T, U]) (e
 	return nil
 }
 
-func sign[T any, U any](show bool, f func(in T) (out U), c Case[T, U]) (err error) {
+func sign[T any, U any](w io.Writer, f func(in T) (out U), c Case[T, U]) (err error) {
 	output := f(c.Input)
-	out, err := json.Marshal(output)
-	if err != nil {
-		return err
-	}
-	except, err := json.Marshal(c.Except)
-	if err != nil {
-		return err
-	}
+
+	out := fmt.Sprintf("%+v", output)
+	except := fmt.Sprintf("%+v", c.Except)
 
 	var (
 		colors = textBlack
@@ -76,32 +72,40 @@ func sign[T any, U any](show bool, f func(in T) (out U), c Case[T, U]) (err erro
 		flag   = flagDefault
 	)
 
-	equal := string(out) == string(except)
-	if !equal {
+	defer func() {
+		list := []struct {
+			name  string
+			value any
+		}{
+			{name: "case  ", value: c.Input},
+			{name: "except", value: except},
+			{name: "output", value: out},
+		}
+		for _, item := range list {
+			fmt.Fprintf(w, "\033[%d;%d;%dm%+v: %+v\033[0m\n", flag, bg, colors, item.name, item.value)
+		}
+
+		// TODO 无法定位到 solution_test.go
+		//debug.PrintStack()
+
+		fmt.Println()
+	}()
+
+	if out != except {
 		colors = textRed
 		flag = flagUnderline
-		show = true
-
-		err = fmt.Errorf("\ncase  : %s\nexcept: %s\noutput: %s", c, except, out)
+		return fmt.Errorf("\ncase  : %+v\nexcept: %s\noutput: %s", c, except, out)
 	}
 
-	ret := Result[T, U]{
-		Case:   c,
-		Output: output,
-	}
-	if show {
-		fmt.Printf("\033[%d;%d;%dm%+v\033[0m\n", flag, bg, colors, ret)
-	}
-
-	return err
+	return nil
 }
 
-func Once[T any, U any](f func(in T) (out U), cases ...Case[T, U]) (err error) {
-	return Sign(true, f, cases...)
+func Print[T any, U any](f func(in T) (out U), cases ...Case[T, U]) (err error) {
+	return Sign(os.Stdout, f, cases...)
 }
 
-func Show[T any, U any](f func(in T) (out U), cases ...Case[T, U]) (err error) {
-	return Sign(false, f, cases...)
+func Discard[T any, U any](f func(in T) (out U), cases ...Case[T, U]) (err error) {
+	return Sign(io.Discard, f, cases...)
 }
 
 func Run[T any, U any](f func(in T) (out U), cases ...Case[T, U]) {
@@ -113,9 +117,10 @@ func Run[T any, U any](f func(in T) (out U), cases ...Case[T, U]) {
 func Unit[T any, U any](t *testing.T, cases func() []Case[T, U], fs ...function[T, U]) {
 	for _, f := range fs {
 		t.Run(f.Name(), func(t *testing.T) {
-			err := Once(f.Func(), cases()...)
+			err := Print(f.Func(), cases()...)
 			if err != nil {
-				t.Errorf("%+v", err)
+				//t.Errorf("%+v", err)
+				t.Fail()
 			}
 		})
 		fmt.Println()
@@ -125,7 +130,7 @@ func Unit[T any, U any](t *testing.T, cases func() []Case[T, U], fs ...function[
 func Bench[T any, U any](b *testing.B, cases func() []Case[T, U], fs ...function[T, U]) {
 
 	for _, f := range fs {
-		err := Show(f.Func(), cases()...)
+		err := Discard(f.Func(), cases()...)
 		if err != nil {
 			b.Errorf("%+v", err)
 		}

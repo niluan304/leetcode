@@ -10,19 +10,19 @@ import (
 )
 
 type zh struct {
-	q    *graphql.QuestionData
+	data *graphql.QuestionData
 	tmpl *template.Template
 }
 
-func NewZN(q *graphql.QuestionData) (l Parser) {
+func NewParserZN(q *graphql.QuestionData) (p Parser) {
 	return &zh{
-		q:    q,
+		data: q,
 		tmpl: tmplZH,
 	}
 }
 
-func (l *zh) Parse(wr io.Writer) (err error) {
-	err = l.tmpl.Execute(wr, l.q)
+func (p *zh) Parse(wr io.Writer) (err error) {
+	err = p.tmpl.Execute(wr, p.data)
 	if err != nil {
 		return errors.Wrap(err, "fail execute template")
 	}
@@ -30,6 +30,6 @@ func (l *zh) Parse(wr io.Writer) (err error) {
 	return nil
 }
 
-func (l *zh) Filename() string {
+func (p *zh) Filename() string {
 	return "README.md"
 }

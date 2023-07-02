@@ -2,6 +2,7 @@ package tmpl
 
 import (
 	"fmt"
+	"io"
 	"os"
 	"path/filepath"
 
@@ -25,7 +26,7 @@ func NewSolution(q *graphql.QuestionData) (*Solution, error) {
 	}, nil
 }
 
-func (s Solution) Save(root string) (err error) {
+func (s *Solution) Save(root string) (err error) {
 	_ = os.MkdirAll(root, os.ModePerm)
 
 	for _, item := range s.CodeSnippets {
@@ -75,4 +76,32 @@ func extname(langSlug string) string {
 		// eg: c, cpp, dart, java, javascript, kotlin, scala, swift
 		return langSlug
 	}
+}
+
+func NewParserSolution(q *graphql.QuestionData) Parser {
+	pkg := q.Pkg()
+
+	return &Solution{
+		CodeSnippets: q.CodeSnippets,
+		PkgName:      pkg,
+	}
+}
+
+func (s *Solution) Parse(wr io.Writer) (err error) {
+	for _, item := range s.CodeSnippets {
+		ext := extname(item.LangSlug)
+		if ext != "go" {
+			continue
+		}
+
+		_, err = wr.Write([]byte(fmt.Sprintf("package %s\n\n%s", s.PkgName, item.Code)))
+		if err != nil {
+			return errors.Wrap(err, "fail write solution")
+		}
+	}
+	return nil
+}
+
+func (s *Solution) Filename() string {
+	return "solution.go"
 }
