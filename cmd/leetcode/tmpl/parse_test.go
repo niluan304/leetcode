@@ -48,6 +48,7 @@ func Test_Parser(t *testing.T) {
 				NewParserCase(question),
 				NewParserSolution(question),
 				NewParserUnitCase(question),
+				NewParserLeetcode(question.Pkg()),
 			}
 
 			for _, elem := range list {

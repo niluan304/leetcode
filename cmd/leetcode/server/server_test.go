@@ -16,12 +16,13 @@ func Test_server_do(t *testing.T) {
 		{titleSlug: "find-words-that-can-be-formed-by-characters"},
 		{titleSlug: "moving-stones-until-consecutive-ii"},
 		{titleSlug: "simplify-path"},
+		{titleSlug: "h-index"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.titleSlug, func(t *testing.T) {
 			s := New("")
-			if err := s.do(tt.titleSlug); err != nil {
-				t.Logf("do() error = %v", err)
+			if err := s.Do(tt.titleSlug); err != nil {
+				t.Logf("Do() error = %v", err)
 			}
 		})
 

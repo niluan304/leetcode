@@ -16,21 +16,29 @@ type _case struct {
 
 type caseData struct {
 	PkgName string
-	Params  []struct {
-		Name string `json:"name"`
-		Type string `json:"type"`
-	}
-	Return string
+	Params  []Param
+	Return  string
+}
+
+type Param struct {
+	Name string
+	Type string
 }
 
 func NewParserCase(q *graphql.QuestionData) (p Parser) {
+	var params []Param
+
+	for _, param := range q.MetaData.Params {
+		params = append(params, Param{
+			Name: param.Name,
+			Type: GoType(param.Type),
+		})
+	}
 	data := caseData{
 		PkgName: q.Pkg(),
-		Params:  q.MetaData.Params,
-		Return:  q.MetaData.Return.Type,
+		Params:  params,
+		Return:  GoType(q.MetaData.Return.Type),
 	}
-
-	// TODO 再映射返回值类型
 
 	return &_case{
 		data: data,
@@ -49,4 +57,31 @@ func (p *_case) Parse(wr io.Writer) (err error) {
 
 func (p *_case) Filename() string {
 	return "case.go"
+}
+
+func GoType(t string) string {
+	m := map[string]string{
+		"integer":   "int",
+		"integer[]": "[]int",
+		"string":    "string",
+		"string[]":  "[]string",
+		"boolean":   "bool",
+		"boolean[]": "[]bool",
+		"double":    "float64",
+		"double[]":  "[]float64",
+
+		// array
+		"list<list<integer>>": "[][]int",
+		"list<integer>":       "[]int",
+		"list<string>":        "[]string",
+
+		// tree or listNode
+		"TreeNode": "*structs.TreeNode",
+		"ListNode": "*structs.ListNode",
+	}
+
+	if v, ok := m[t]; ok {
+		return v
+	}
+	return t
 }

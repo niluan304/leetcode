@@ -76,7 +76,7 @@ type Output {{.Return}}
 
 var cases = func() []tests.Case[Input, Output] {
 	return []tests.Case[Input, Output]{
-		// add self case
+		// TODO add question case
 	}
 }
 

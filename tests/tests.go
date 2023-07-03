@@ -84,11 +84,10 @@ func sign[T any, U any](w io.Writer, f func(in T) (out U), c Case[T, U]) (err er
 		for _, item := range list {
 			fmt.Fprintf(w, "\033[%d;%d;%dm%+v: %+v\033[0m\n", flag, bg, colors, item.name, item.value)
 		}
+		fmt.Fprintln(w)
 
 		// TODO 无法定位到 solution_test.go
 		//debug.PrintStack()
-
-		fmt.Println()
 	}()
 
 	if out != except {

@@ -39,7 +39,7 @@ func (s *Server) Run() {
 
 	list := v.Records
 	for _, record := range list {
-		err := s.do(record.TitleSlug)
+		err := s.Do(record.TitleSlug)
 		if err != nil {
 			panic(err)
 		}
@@ -48,7 +48,7 @@ func (s *Server) Run() {
 	}
 }
 
-func (s *Server) do(titleSlug string) (err error) {
+func (s *Server) Do(titleSlug string) (err error) {
 	var ctx = context.Background()
 	client := graphql.New(graphql.EndpointZh)
 
@@ -62,7 +62,7 @@ func (s *Server) do(titleSlug string) (err error) {
 	}
 
 	dir := question.Dir()
-	path := filepath.Join("./data", dir)
+	path := filepath.Join("./problem", dir)
 	_ = os.MkdirAll(path, os.ModePerm)
 
 	if question.IsPaidOnly {
@@ -77,6 +77,7 @@ func (s *Server) do(titleSlug string) (err error) {
 		tmpl.NewParserCase(question),
 		tmpl.NewParserSolution(question),
 		tmpl.NewParserUnitCase(question),
+		tmpl.NewParserLeetcode(question.Pkg()),
 	}
 	for _, elem := range list {
 		p := &tmpl.Parse{Parser: elem}
