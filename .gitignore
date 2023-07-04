@@ -2,7 +2,6 @@
 
 /problem/.git
 /problem/*/solution*
-/problem/git_add_solution.bat
 config
 config.*
 data
