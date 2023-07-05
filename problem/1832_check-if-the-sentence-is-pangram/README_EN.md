@@ -6,7 +6,7 @@ Difficulty:Easy, Likes: 76
 
 ## Description
 
-# <p>A <strong>pangram</strong> is a sentence where every letter of the English alphabet appears at least once.</p>
+<p>A <strong>pangram</strong> is a sentence where every letter of the English alphabet appears at least once.</p>
 
 <p>Given a string <code>sentence</code> containing only lowercase English letters, return<em> </em><code>true</code><em> if </em><code>sentence</code><em> is a <strong>pangram</strong>, or </em><code>false</code><em> otherwise.</em></p>
 

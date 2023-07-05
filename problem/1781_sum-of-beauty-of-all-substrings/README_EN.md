@@ -6,7 +6,7 @@ Difficulty:Medium, Likes: 85
 
 ## Description
 
-# <p>The <strong>beauty</strong> of a string is the difference in frequencies between the most frequent and least frequent characters.</p>
+<p>The <strong>beauty</strong> of a string is the difference in frequencies between the most frequent and least frequent characters.</p>
 
 <ul>
 	<li>For example, the beauty of <code>&quot;abaacc&quot;</code> is <code>3 - 1 = 2</code>.</li>

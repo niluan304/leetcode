@@ -1,6 +1,7 @@
 package tmpl
 
 import (
+	"bytes"
 	"encoding/json"
 	"io"
 	"os"
@@ -21,6 +22,14 @@ type Parse struct {
 }
 
 func (p *Parse) Save(root string) (err error) {
+	var buf = new(bytes.Buffer)
+	err = p.Parse(buf)
+	if err != nil {
+		return errors.Wrap(err, "fail parse")
+	}
+
+	data := bytes.ReplaceAll(buf.Bytes(), []byte("\r\n"), []byte("\n"))
+
 	name := p.Filename()
 	file, err := os.Create(filepath.Join(root, name))
 	if err != nil {
@@ -28,9 +37,9 @@ func (p *Parse) Save(root string) (err error) {
 	}
 	defer file.Close()
 
-	err = p.Parse(file)
+	_, err = file.Write(data)
 	if err != nil {
-		return errors.Wrap(err, "fail parse"+name)
+		return errors.Wrap(err, "fail write file")
 	}
 
 	return nil

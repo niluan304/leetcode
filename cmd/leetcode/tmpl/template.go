@@ -10,8 +10,8 @@ var (
 )
 
 var (
-	tmplCase = template.Must(template.New("en").Parse(TemplateCase))
-	tmplTest = template.Must(template.New("en").Parse(TemplateTest))
+	tmplCase = template.Must(template.New("case").Parse(TemplateCase))
+	tmplTest = template.Must(template.New("test").Parse(TemplateTest))
 )
 
 // TemplateEN 题目描述 README 英文模板
@@ -23,7 +23,7 @@ Difficulty:{{.Difficulty}}, Likes: {{.Likes}}
 
 ## Description
 
-# {{.Content}}
+{{.Content}}
 
 ## Related Topics
 {{range .TopicTags }}

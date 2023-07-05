@@ -6,7 +6,7 @@ Difficulty:Medium, Likes: 1146
 
 ## Description
 
-# <p>Given a list of non-negative integers <code>nums</code>, arrange them such that they form the largest number and return it.</p>
+<p>Given a list of non-negative integers <code>nums</code>, arrange them such that they form the largest number and return it.</p>
 
 <p>Since the result may be very large, so you need to return a string instead of an integer.</p>
 

@@ -6,7 +6,7 @@ Difficulty:Medium, Likes: 231
 
 ## Description
 
-# <p>You are given an integer array <code>nums</code> where the <code>i<sup>th</sup></code> bag contains <code>nums[i]</code> balls. You are also given an integer <code>maxOperations</code>.</p>
+<p>You are given an integer array <code>nums</code> where the <code>i<sup>th</sup></code> bag contains <code>nums[i]</code> balls. You are also given an integer <code>maxOperations</code>.</p>
 
 <p>You can perform the following operation at most <code>maxOperations</code> times:</p>
 

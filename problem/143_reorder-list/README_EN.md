@@ -6,7 +6,7 @@ Difficulty:Medium, Likes: 1225
 
 ## Description
 
-# <p>You are given the head of a singly linked-list. The list can be represented as:</p>
+<p>You are given the head of a singly linked-list. The list can be represented as:</p>
 
 <pre>
 L<sub>0</sub> &rarr; L<sub>1</sub> &rarr; &hellip; &rarr; L<sub>n - 1</sub> &rarr; L<sub>n</sub>

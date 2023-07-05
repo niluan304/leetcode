@@ -6,7 +6,7 @@ Difficulty:Medium, Likes: 548
 
 ## Description
 
-# <p>A conveyor belt has packages that must be shipped from one port to another within <code>days</code> days.</p>
+<p>A conveyor belt has packages that must be shipped from one port to another within <code>days</code> days.</p>
 
 <p>The <code>i<sup>th</sup></code> package on the conveyor belt has a weight of <code>weights[i]</code>. Each day, we load the ship with packages on the conveyor belt (in the order given by <code>weights</code>). We may not load more weight than the maximum weight capacity of the ship.</p>
 

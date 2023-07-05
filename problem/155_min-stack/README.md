@@ -1,25 +1,30 @@
 
 | [English](README_EN.md) | 简体中文 |
 
-# [155. 最小栈](https://leetcode-cn.com/problems/min-stack/)
+# [155. 最小栈](https://leetcode.cn/problems/min-stack/)
+Difficulty:Medium, Likes: 1603
 
 ## 题目描述
 
 <p>设计一个支持 <code>push</code> ，<code>pop</code> ，<code>top</code> 操作，并能在常数时间内检索到最小元素的栈。</p>
 
+<p>实现 <code>MinStack</code> 类:</p>
+
 <ul>
-	<li><code>push(x)</code> &mdash;&mdash; 将元素 x 推入栈中。</li>
-	<li><code>pop()</code>&nbsp;&mdash;&mdash; 删除栈顶的元素。</li>
-	<li><code>top()</code>&nbsp;&mdash;&mdash; 获取栈顶元素。</li>
-	<li><code>getMin()</code> &mdash;&mdash; 检索栈中的最小元素。</li>
+	<li><code>MinStack()</code> 初始化堆栈对象。</li>
+	<li><code>void push(int val)</code> 将元素val推入堆栈。</li>
+	<li><code>void pop()</code> 删除堆栈顶部的元素。</li>
+	<li><code>int top()</code> 获取堆栈顶部的元素。</li>
+	<li><code>int getMin()</code> 获取堆栈中的最小元素。</li>
 </ul>
 
 <p>&nbsp;</p>
 
-<p><strong>示例:</strong></p>
+<p><strong>示例 1:</strong></p>
 
-<pre><strong>输入：</strong>
-[&quot;MinStack&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;getMin&quot;,&quot;pop&quot;,&quot;top&quot;,&quot;getMin&quot;]
+<pre>
+<strong>输入：</strong>
+["MinStack","push","push","push","getMin","pop","top","getMin"]
 [[],[-2],[0],[-3],[],[],[],[]]
 
 <strong>输出：</strong>
@@ -41,16 +46,18 @@ minStack.getMin();   --&gt; 返回 -2.
 <p><strong>提示：</strong></p>
 
 <ul>
-	<li><code>pop</code>、<code>top</code> 和 <code>getMin</code> 操作总是在 <strong>非空栈</strong> 上调用。</li>
+	<li><code>-2<sup>31</sup>&nbsp;&lt;= val &lt;= 2<sup>31</sup>&nbsp;- 1</code></li>
+	<li><code>pop</code>、<code>top</code> 和 <code>getMin</code> 操作总是在 <strong>非空栈</strong> 上调用</li>
+	<li><code>push</code>,&nbsp;<code>pop</code>,&nbsp;<code>top</code>, and&nbsp;<code>getMin</code>最多被调用&nbsp;<code>3 * 10<sup>4</sup></code>&nbsp;次</li>
 </ul>
 
 
 ## 相关话题
 
-- [栈](https://leetcode-cn.com/tag/stack)
-- [设计](https://leetcode-cn.com/tag/design)
+- [栈](https://leetcode-cn.com/tag/stack/)
+- [设计](https://leetcode-cn.com/tag/design/)
 
 ## 相似题目
 
-- [滑动窗口最大值](../sliding-window-maximum/README.md)
-- [最大栈](../max-stack/README.md)
+- [滑动窗口最大值](../sliding-window-maximum/README.md) Hard 
+- [最大栈](../max-stack/README.md) Hard 🔒

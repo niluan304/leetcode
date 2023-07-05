@@ -1,12 +1,12 @@
 package main
 
 import (
-	"bufio"
 	"encoding/json"
 	"flag"
 	"fmt"
 	"os"
 	"strings"
+	"sync"
 
 	"github.com/pkg/errors"
 
@@ -17,88 +17,84 @@ var (
 	id     = flag.String("i", "", "leetcode problem id")
 	slug   = flag.String("s", "", "leetcode problem slug")
 	output = flag.String("o", "", "output file path")
+	_      = flag.String("e", "", "os.Exit(0)")
+	once   = new(sync.Once)
 )
 
 func init() {
 	// 自定义使用信息
 	flag.Usage = func() {
-		fmt.Fprintln(os.Stderr, "Options:")
+		_, err := fmt.Fprintln(os.Stderr, "Options:")
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Fprintln: %v\n", err)
+		}
 		flag.PrintDefaults()
 	}
 
 	// 解析命令行参数
 	flag.Parse()
-
-	// 打印用法
-	flag.Usage()
 }
 
 func main() {
-	var err error
-	defer func() {
+	for {
+		if *id != "" {
+			err := GetQuestionId(*id)
+			if err != nil {
+				fmt.Println(err)
+
+			}
+		}
+
+		if *slug != "" {
+			err := GetTitleSlug(*slug)
+			if err != nil {
+				fmt.Println(err)
+			}
+		}
+
+		// reset
+		*id = ""
+		*slug = ""
+
+		once.Do(flag.Usage)
+		fmt.Print("请输入命令参数：")
+
+		// 读取用户输入
+		err := Scan()
 		if err != nil {
 			fmt.Println(err)
 		}
-	}()
+	}
+}
 
-	if *id != "" {
-		err = GetQuestionId(*id)
-		return
+func Scan() (err error) {
+	// 读取用户输入
+	var input = ""
+	_, err = fmt.Scan(&input)
+	if err != nil {
+		return errors.Wrap(err, "fail scan input")
 	}
 
-	if *slug != "" {
-		err = GetTitleSlug(*slug)
-		return
-	}
+	input = strings.TrimLeft(input, "-")
 
-	reader := bufio.NewReader(os.Stdin)
-	for {
-		// 读取用户输入
-		fmt.Print("请输入命令参数：")
-		flag.Usage()
-		input, err := reader.ReadString('\n')
+	// 处理用户输入
+	switch input {
+	case "exit":
+		os.Exit(0)
+	case "i":
+		fmt.Print("请输入leetcode problem id：")
+		_, err = fmt.Scan(id)
 		if err != nil {
-			fmt.Println("读取输入出错：", err)
-			continue
+			return errors.Wrap(err, "fail scan problem id ")
 		}
-
-		// 去除输入中的换行符
-		input = strings.TrimSpace(input)
-		input = strings.TrimLeft(input, "-")
-
-		// 处理用户输入
-		if input == "exit" {
-			fmt.Println("程序退出")
-			os.Exit(0)
-		}
-
-		switch input {
-		case "i":
-			fmt.Print("请输入leetcode problem id：")
-			id, err := reader.ReadString('\n')
-			if err != nil {
-				fmt.Println("读取输入出错：", err)
-				continue
-			}
-			err = GetQuestionId(strings.TrimSpace(id))
-			if err != nil {
-				fmt.Println("获取题目出错：", err)
-				continue
-			}
-		case "s":
-			fmt.Print("请输入leetcode problem slug：")
-			slug, err := reader.ReadString('\n')
-			if err != nil {
-				fmt.Println("读取输入出错：", err)
-				continue
-			}
-			err = GetTitleSlug(strings.TrimSpace(slug))
-			if err != nil {
-				fmt.Println("获取题目出错：", err)
-				continue
-			}
+	case "s":
+		fmt.Print("请输入leetcode problem slug：")
+		_, err = fmt.Scan(slug)
+		if err != nil {
+			return errors.Wrap(err, "fail scan problem slug")
 		}
 	}
+	return nil
 }
 
 type Problem struct {
@@ -107,10 +103,15 @@ type Problem struct {
 }
 
 func GetQuestionId(id string) (err error) {
+	if id == "" {
+		return nil
+	}
+
 	var v struct {
 		Records []Problem `json:"RECORDS"`
 	}
 
+	// TODO 通过api获取
 	file, err := os.Open("D:/Users/Feng/Desktop/problem.json")
 	if err != nil {
 		panic(err)
@@ -119,7 +120,7 @@ func GetQuestionId(id string) (err error) {
 
 	err = json.NewDecoder(file).Decode(&v)
 	if err != nil {
-		panic(err)
+		return errors.Wrap(err, "fail decode problem.json")
 	}
 
 	list := v.Records
@@ -133,6 +134,10 @@ func GetQuestionId(id string) (err error) {
 }
 
 func GetTitleSlug(slug string) (err error) {
+	if slug == "" {
+		return nil
+	}
+
 	s := server.New("")
 	return s.Do(slug)
 }

@@ -9,6 +9,8 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/pkg/errors"
+
 	"leetcode/cmd/leetcode/graphql"
 	"leetcode/cmd/leetcode/tmpl"
 )
@@ -67,7 +69,7 @@ func (s *Server) Do(titleSlug string) (err error) {
 
 	if question.IsPaidOnly {
 		log.Println("IsPaidOnly", path)
-		return nil
+		return errors.New("会员题目, 无法查看")
 	}
 
 	// 解析模板

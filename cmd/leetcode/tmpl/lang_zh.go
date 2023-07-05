@@ -21,8 +21,8 @@ func NewParserZN(q *graphql.QuestionData) (p Parser) {
 	}
 }
 
-func (p *zh) Parse(wr io.Writer) (err error) {
-	err = p.tmpl.Execute(wr, p.data)
+func (p *zh) Parse(w io.Writer) (err error) {
+	err = p.tmpl.Execute(w, p.data)
 	if err != nil {
 		return errors.Wrap(err, "fail execute template")
 	}
