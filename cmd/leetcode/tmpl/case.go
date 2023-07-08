@@ -1,62 +1,36 @@
 package tmpl
 
 import (
-	"io"
-	"text/template"
-
-	"github.com/pkg/errors"
-
 	"leetcode/cmd/leetcode/graphql"
 )
 
-type _case struct {
-	data caseData
-	tmpl *template.Template
-}
-
-type caseData struct {
-	PkgName string
-	Params  []Param
-	Return  string
-}
-
-type Param struct {
-	Name string
-	Type string
-}
-
 func NewParserCase(q *graphql.QuestionData) (p Parser) {
-	var params []Param
+	type Param struct {
+		Name string
+		Type string
+	}
 
+	type Data struct {
+		PkgName string
+		Params  []Param
+		Return  string
+	}
+
+	var params []Param
 	for _, param := range q.MetaData.Params {
 		params = append(params, Param{
 			Name: param.Name,
 			Type: GoType(param.Type),
 		})
 	}
-	data := caseData{
+
+	data := Data{
 		PkgName: q.Pkg(),
 		Params:  params,
 		Return:  GoType(q.MetaData.Return.Type),
 	}
 
-	return &_case{
-		data: data,
-		tmpl: tmplCase,
-	}
-}
-
-func (p *_case) Parse(wr io.Writer) (err error) {
-	err = p.tmpl.Execute(wr, p.data)
-	if err != nil {
-		return errors.Wrap(err, "fail execute template")
-	}
-
-	return nil
-}
-
-func (p *_case) Filename() string {
-	return "case.go"
+	return NewParser("case.go", tmplCase, data)
 }
 
 func GoType(t string) string {
@@ -84,4 +58,12 @@ func GoType(t string) string {
 		return v
 	}
 	return t
+}
+
+func NewParserZH(q *graphql.QuestionData) (p Parser) {
+	return NewParser("README.md", tmplZH, q)
+}
+
+func NewParserEN(q *graphql.QuestionData) (p Parser) {
+	return NewParser("README_EN.md", tmplEN, q)
 }

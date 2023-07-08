@@ -87,14 +87,14 @@ func NewParserSolution(q *graphql.QuestionData) Parser {
 	}
 }
 
-func (s *Solution) Parse(wr io.Writer) (err error) {
+func (s *Solution) Parse(w io.Writer) (err error) {
 	for _, item := range s.CodeSnippets {
 		ext := extname(item.LangSlug)
 		if ext != "go" {
 			continue
 		}
 
-		_, err = wr.Write([]byte(fmt.Sprintf("package %s\n\n%s", s.PkgName, item.Code)))
+		_, err = w.Write([]byte(fmt.Sprintf("package %s\n\n%s", s.PkgName, item.Code)))
 		if err != nil {
 			return errors.Wrap(err, "fail write solution")
 		}
@@ -104,4 +104,41 @@ func (s *Solution) Parse(wr io.Writer) (err error) {
 
 func (s *Solution) Filename() string {
 	return "solution.go"
+}
+
+type leetcode struct {
+	PkgName string
+}
+
+func NewParserLeetcode(pkgName string) (p Parser) {
+	return &leetcode{
+		PkgName: pkgName,
+	}
+}
+
+func (p leetcode) Parse(w io.Writer) (err error) {
+	_, err = w.Write([]byte(fmt.Sprintf("package %s\n", p.PkgName)))
+	if err != nil {
+		return errors.Wrap(err, "fail write solution_leetcode")
+	}
+
+	return nil
+}
+
+func (p leetcode) Filename() string {
+	return "solution_leetcode.go"
+}
+
+func NewParserUnitCase(q *graphql.QuestionData) (p Parser) {
+	type Data struct {
+		PkgName string
+		Name    string
+	}
+
+	data := &Data{
+		PkgName: q.Pkg(),
+		Name:    q.MetaData.Name,
+	}
+
+	return NewParser("solution_test.go", tmplTest, data)
 }

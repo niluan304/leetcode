@@ -75,7 +75,7 @@ func (s *Server) Do(titleSlug string) (err error) {
 	// 解析模板
 	list := []tmpl.Parser{
 		tmpl.NewParserEN(question),
-		tmpl.NewParserZN(question),
+		tmpl.NewParserZH(question),
 		tmpl.NewParserCase(question),
 		tmpl.NewParserSolution(question),
 		tmpl.NewParserUnitCase(question),

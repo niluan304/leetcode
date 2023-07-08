@@ -6,6 +6,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"text/template"
 
 	"github.com/pkg/errors"
 
@@ -13,8 +14,39 @@ import (
 )
 
 type Parser interface {
-	Parse(wr io.Writer) (err error)
+	Parse(w io.Writer) (err error)
 	Filename() string
+}
+
+type tmpl struct {
+	filename string
+	data     any
+	tmpl     *template.Template
+}
+
+func NewParserWithPath(filename string, path string, data any) Parser {
+	return NewParser(filename, template.Must(template.ParseFiles(path)), data)
+}
+
+func NewParser(filename string, t *template.Template, data any) Parser {
+	return &tmpl{
+		filename: filename,
+		data:     data,
+		tmpl:     t,
+	}
+}
+
+func (t *tmpl) Parse(w io.Writer) (err error) {
+	err = t.tmpl.Execute(w, t.data)
+	if err != nil {
+		return errors.Wrap(err, "fail execute template")
+	}
+
+	return nil
+}
+
+func (t *tmpl) Filename() string {
+	return t.filename
 }
 
 type Parse struct {

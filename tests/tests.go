@@ -1,66 +1,71 @@
 package tests
 
 import (
+	"bytes"
 	"fmt"
 	"io"
-	"os"
 	"testing"
 )
 
-// 前景 背景 颜色
-// ---------------------------------------
-// 30  40  黑色
-// 31  41  红色
-// 32  42  绿色
-// 33  43  黄色
-// 34  44  蓝色
-// 35  45  紫红色
-// 36  46  青蓝色
-// 37  47  白色
+// 前景 颜色
 //
-// 代码 意义
-// -------------------------
-//  0  终端默认设置
-//  1  高亮显示
-//  4  使用下划线
-//  5  闪烁
-//  7  反白显示
-//  8  不可见
-
+//	30 黑色
+//	31 红色
+//	32 绿色
+//	33 黄色
+//	34 蓝色
+//	35 紫红色
+//	36 青蓝色
+//	37 白色
 const (
 	textBlack = 30
 	textRed   = 31
 )
 
+// 背景 颜色
+//
+//	40 黑色
+//	41 红色
+//	42 绿色
+//	43 黄色
+//	44 蓝色
+//	45 紫红色
+//	46 青蓝色
+//	47 白色
 const (
 	bgDefault = 30
 	bgGreen   = 42
 	bgWhite   = 47
 )
 
+// 代码 意义
+//
+//	0  终端默认设置
+//	1  高亮显示
+//	4  使用下划线
+//	5  闪烁
+//	7  反白显示
+//	8  不可见
 const (
 	flagDefault     = 0
 	flagHeightLight = 1
 	flagUnderline   = 4
 )
 
-func Sign[T any, U any](w io.Writer, f func(in T) (out U), cases ...Case[T, U]) (err error) {
-	var errs []error
+func Sign[T any, U any](w io.Writer, f func(in T) (out U), cases ...Case[T, U]) (fail bool) {
 	for _, e := range cases {
-		err = sign(w, f, e)
-		if err != nil {
-			errs = append(errs, err)
+		w.Write([]byte{'\n'})
+
+		equal := sign(w, f, e)
+		if !equal {
+			fail = true
 		}
 	}
 
-	if len(errs) > 0 {
-		return JoinError(errs...)
-	}
-
-	return nil
+	return fail
 }
 
-func sign[T any, U any](w io.Writer, f func(in T) (out U), c Case[T, U]) (err error) {
+func sign[T any, U any](w io.Writer, f func(in T) (out U), c Case[T, U]) (equal bool) {
 	output := f(c.Input)
 
 	out := fmt.Sprintf("%+v", output)
@@ -72,73 +77,68 @@ func sign[T any, U any](w io.Writer, f func(in T) (out U), c Case[T, U]) (err er
 		flag   = flagDefault
 	)
 
-	defer func() {
-		list := []struct {
-			name  string
-			value any
-		}{
-			{name: "case  ", value: c.Input},
-			{name: "except", value: except},
-			{name: "output", value: out},
-		}
-		for _, item := range list {
-			fmt.Fprintf(w, "\033[%d;%d;%dm%+v: %+v\033[0m\n", flag, bg, colors, item.name, item.value)
-		}
-		fmt.Fprintln(w)
-
-		// TODO 无法定位到 solution_test.go
-		//debug.PrintStack()
-	}()
-
-	if out != except {
+	equal = out == except
+	if !equal {
 		colors = textRed
 		flag = flagUnderline
-		return fmt.Errorf("\ncase  : %+v\nexcept: %s\noutput: %s", c, except, out)
 	}
 
-	return nil
-}
-
-func Print[T any, U any](f func(in T) (out U), cases ...Case[T, U]) (err error) {
-	return Sign(os.Stdout, f, cases...)
-}
-
-func Discard[T any, U any](f func(in T) (out U), cases ...Case[T, U]) (err error) {
-	return Sign(io.Discard, f, cases...)
-}
-
-func Run[T any, U any](f func(in T) (out U), cases ...Case[T, U]) {
-	for _, c := range cases {
-		f(c.Input)
+	list := []struct {
+		name  string
+		value any
+	}{
+		{name: "case  ", value: c.Input},
+		{name: "except", value: except},
+		{name: "output", value: out},
 	}
+
+	for _, item := range list {
+		_, err := fmt.Fprintf(w, "\033[%d;%d;%dm%+v: %+v\033[0m\n", flag, bg, colors, item.name, item.value)
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	return equal
+}
+
+func Msg[T any, U any](f func(in T) (out U), cases []Case[T, U]) (r io.Reader, fail bool) {
+	buf := new(bytes.Buffer)
+	fail = Sign(buf, f, cases...)
+
+	return buf, fail
 }
 
 func Unit[T any, U any](t *testing.T, cases func() []Case[T, U], fs ...function[T, U]) {
 	for _, f := range fs {
 		t.Run(f.Name(), func(t *testing.T) {
-			err := Print(f.Func(), cases()...)
-			if err != nil {
-				//t.Errorf("%+v", err)
-				t.Fail()
+			msg, fail := Msg(f.Func(), cases())
+
+			show := t.Log
+			if fail {
+				show = t.Error
 			}
+
+			show(msg)
 		})
 		fmt.Println()
 	}
 }
 
 func Bench[T any, U any](b *testing.B, cases func() []Case[T, U], fs ...function[T, U]) {
-
 	for _, f := range fs {
-		err := Discard(f.Func(), cases()...)
-		if err != nil {
-			b.Errorf("%+v", err)
-		}
-
 		// cache
 		cache := cases()
 		b.Run(f.Name(), func(b *testing.B) {
 			for i := 0; i < b.N; i++ {
-				Run(f.Func(), cache...)
+				for _, c := range cache {
+					_ = f.Func()(c.Input)
+				}
+			}
+
+			msg, fail := Msg(f.Func(), cases())
+			if fail {
+				b.Error(msg)
 			}
 		})
 		fmt.Println()

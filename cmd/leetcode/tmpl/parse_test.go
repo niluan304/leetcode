@@ -44,7 +44,7 @@ func Test_Parser(t *testing.T) {
 		t.Run(input, func(t *testing.T) {
 			list := []Parser{
 				NewParserEN(question),
-				NewParserZN(question),
+				NewParserZH(question),
 				NewParserCase(question),
 				NewParserSolution(question),
 				NewParserUnitCase(question),
