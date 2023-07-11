@@ -80,13 +80,20 @@ func AddFunc(f ...Func) {
 }
 
 func Unit(t *testing.T) {
-	// TODO replace to tests.Unit(t, funcs, nil, cases)
-	tests.Unit(t, cases, funcs...)
+	tests.Unit(t, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  nil,
+	})
 }
 
 var checkResult = true
 
 func Bench(b *testing.B) {
 	checkResult = false
-	tests.Bench(b, cases, funcs...)
+	tests.Bench(b, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  nil,
+	})
 }

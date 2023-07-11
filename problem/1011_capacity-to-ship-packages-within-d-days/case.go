@@ -7,33 +7,59 @@ import (
 )
 
 type Input struct {
-	Weights []int
-	Days    int
+	weights []int
+	days    int
 }
 
-var cases = func() []tests.Case[Input, int] {
-	return []tests.Case[Input, int]{
-		{Input: Input{Weights: []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, Days: 5}, Except: 15},
-		{Input: Input{Weights: []int{3, 2, 2, 4, 1, 4}, Days: 3}, Except: 6},
-		{Input: Input{Weights: []int{1, 2, 3, 1, 1}, Days: 4}, Except: 3},
+type Output int
+
+var cases = func() []tests.Case[Input, Output] {
+	return []tests.Case[Input, Output]{
+		{Input: Input{weights: []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, days: 5}, Except: 15},
+		{Input: Input{weights: []int{3, 2, 2, 4, 1, 4}, days: 3}, Except: 6},
+		{Input: Input{weights: []int{1, 2, 3, 1, 1}, days: 4}, Except: 3},
 	}
 }
 
 type Func func(weights []int, days int) int
 
-var funcs = tests.NewFuncWithAdaptor(func(f Func) func(in Input) (out int) {
-	return func(in Input) (out int) {
-		return f(in.Weights, in.Days)
-	}
-})
+var funcs = tests.NewFuncWithAdaptor(adaptor)
 
-func Test(t *testing.T) {
-	tests.Unit(t, cases, funcs...)
+func adaptor(f Func) func(in Input) Output {
+	return func(in Input) Output {
+		return Output(f(
+			in.weights,
+			in.days,
+		))
+	}
+}
+
+func AddCases(c func() []tests.Case[Input, Output]) {
+	_cases := cases()
+	cases = func() []tests.Case[Input, Output] {
+		return append(_cases, c()...)
+	}
+}
+
+func AddFunc(f ...Func) {
+	funcs = append(funcs, tests.NewFuncWithAdaptor(adaptor, f...)...)
+}
+
+func Unit(t *testing.T) {
+	tests.Unit(t, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  nil,
+	})
 }
 
 var checkResult = true
 
 func Bench(b *testing.B) {
 	checkResult = false
-	tests.Bench(b, cases, funcs...)
+	tests.Bench(b, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  nil,
+	})
 }

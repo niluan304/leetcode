@@ -43,11 +43,19 @@ func AddFunc(f ...Func) {
 }
 
 func Unit(t *testing.T) {
-	tests.Unit(t, cases, funcs...)
+	tests.Unit(t, tests.Test[*ListNode, []int]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  nil,
+	})
 }
 
 var checkResult = true
 
 func Bench(b *testing.B) {
-	tests.Bench(b, cases, funcs...)
+	tests.Bench(b, tests.Test[*ListNode, []int]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  nil,
+	})
 }

@@ -35,9 +35,17 @@ func AddFunc(f ...func(string) bool) {
 }
 
 func Unit(t *testing.T) {
-	tests.Unit(t, cases, funcs...)
+	tests.Unit(t, tests.Test[string, bool]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  nil,
+	})
 }
 
 func Bench(b *testing.B) {
-	tests.Bench(b, cases, funcs...)
+	tests.Bench(b, tests.Test[string, bool]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  nil,
+	})
 }

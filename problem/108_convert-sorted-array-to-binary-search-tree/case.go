@@ -9,6 +9,11 @@ import (
 
 type TreeNode = structs.TreeNode
 
+type (
+	Input  = []int
+	Output = *TreeNode
+)
+
 // todo 补全测试用例
 var cases = func() []tests.Case[[]int, *TreeNode] {
 	return []tests.Case[[]int, *TreeNode]{
@@ -36,12 +41,20 @@ func AddFunc(f ...Func) {
 }
 
 func Unit(t *testing.T) {
-	tests.Unit(t, cases, funcs...)
+	tests.Unit(t, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  nil,
+	})
 }
 
 var checkResult = true
 
 func Bench(b *testing.B) {
 	checkResult = false
-	tests.Bench(b, cases, funcs...)
+	tests.Bench(b, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  nil,
+	})
 }

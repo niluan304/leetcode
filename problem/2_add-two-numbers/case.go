@@ -11,7 +11,7 @@ type ListNode = structs.ListNode
 
 type Input struct{ L1, L2 *ListNode }
 
-type Output []int
+type Output *ListNode
 
 var cases = func() []tests.Case[Input, Output] {
 	return []tests.Case[Input, Output]{
@@ -20,21 +20,21 @@ var cases = func() []tests.Case[Input, Output] {
 				L1: structs.NewListNode([]int{2, 4, 3}),
 				L2: structs.NewListNode([]int{5, 6, 4}),
 			},
-			Except: []int{7, 0, 8},
+			Except: structs.NewListNode([]int{7, 0, 8}),
 		},
 		{
 			Input: Input{
 				L1: structs.NewListNode([]int{0}),
 				L2: structs.NewListNode([]int{0}),
 			},
-			Except: []int{0},
+			Except: structs.NewListNode([]int{0}),
 		},
 		{
 			Input: Input{
 				L1: structs.NewListNode([]int{9, 9, 9, 9, 9, 9, 9}),
 				L2: structs.NewListNode([]int{9, 9, 9, 9}),
 			},
-			Except: []int{8, 9, 9, 9, 0, 0, 0, 1},
+			Except: structs.NewListNode([]int{8, 9, 9, 9, 0, 0, 0, 1}),
 		},
 	}
 }
@@ -45,12 +45,17 @@ var funcs = tests.NewFuncWithAdaptor(adaptor)
 
 func adaptor(f Func) func(in Input) (out Output) {
 	return func(in Input) (out Output) {
-		root := f(in.L1, in.L2)
-		if !checkResult {
-			return nil
-		}
-		return root.ToSlice()
+		return f(in.L1, in.L2)
 	}
+}
+
+func Equal(l1, l2 Output) bool {
+	var (
+		n1 *ListNode = l1
+		n2 *ListNode = l2
+	)
+
+	return tests.Equal(n1.ToSlice(), n2.ToSlice())
 }
 
 func AddCases(c func() []tests.Case[Input, Output]) {
@@ -65,12 +70,17 @@ func AddFunc(f ...Func) {
 }
 
 func Unit(t *testing.T) {
-	tests.Unit(t, cases, funcs...)
+	tests.Unit(t, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  Equal,
+	})
 }
 
-var checkResult = true
-
 func Bench(b *testing.B) {
-	checkResult = false
-	tests.Bench(b, cases, funcs...)
+	tests.Bench(b, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  Equal,
+	})
 }

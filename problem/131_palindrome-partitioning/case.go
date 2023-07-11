@@ -21,21 +21,6 @@ var funcs = tests.NewFuncWithAdaptor(adaptor)
 func adaptor(f Func) func(in string) (out [][]string) {
 	return func(in string) (out [][]string) {
 		out = f(in)
-		if checkResult {
-			sort.Slice(out, func(i, j int) bool {
-				var idx = len(out[i])
-				if len(out[i]) > len(out[j]) {
-					idx = len(out[i])
-				}
-
-				for k := 0; k < idx; k++ {
-					if out[i][k] != out[j][k] {
-						return out[i][k] < out[j][k]
-					}
-				}
-				return true
-			})
-		}
 		return
 	}
 }
@@ -47,17 +32,48 @@ func AddCases(c func() []tests.Case[string, [][]string]) {
 	}
 }
 
+func Equal(x, y [][]string) bool {
+	sortFunc := func(output [][]string) {
+		sort.Slice(output, func(i, j int) bool {
+			a, b := output[i], output[j]
+			if len(a) != len(b) {
+				return len(a) < len(b)
+			}
+
+			for k := 0; k < len(a); k++ {
+				if a[k] != b[k] {
+					return a[k] < b[k]
+				}
+			}
+			return i < j
+		})
+	}
+
+	sortFunc(x)
+	sortFunc(y)
+
+	return tests.Equal(x, y)
+}
+
 func AddFunc(f ...Func) {
 	funcs = append(funcs, tests.NewFuncWithAdaptor(adaptor, f...)...)
 }
 
 func Unit(t *testing.T) {
-	tests.Unit(t, cases, funcs...)
+	tests.Unit(t, tests.Test[string, [][]string]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  Equal,
+	})
 }
 
 var checkResult = true
 
 func Bench(b *testing.B) {
 	checkResult = false
-	tests.Bench(b, cases, funcs...)
+	tests.Bench(b, tests.Test[string, [][]string]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  Equal,
+	})
 }

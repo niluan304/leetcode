@@ -105,15 +105,25 @@ func AddFunc(f ...Func) {
 	funcs = append(funcs, tests.NewFuncWithAdaptor(adaptor, f...)...)
 }
 
-func Unit(t *testing.T) {
-	tests.Unit(t, cases, funcs...)
+func Equal(x, y Output) bool {
+
+	return reflect.DeepEqual(x, y)
 }
 
-var checkResult = true
+func Unit(t *testing.T) {
+	tests.Unit(t, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  Equal,
+	})
+}
 
 func Bench(b *testing.B) {
-	checkResult = false
-	tests.Bench(b, cases, funcs...)
+	tests.Bench(b, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  Equal,
+	})
 }
 `
 

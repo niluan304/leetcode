@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1011.Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
-Difficulty:Medium, Likes: 548
+Difficulty:Medium, Likes: 551
 
 ## Description
 

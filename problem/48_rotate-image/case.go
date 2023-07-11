@@ -53,9 +53,33 @@ var cases = func() []tests.Case[[][]int, [][]int] {
 
 func adaptor(f func([][]int)) func(in [][]int) (out [][]int) {
 	return func(in [][]int) (out [][]int) {
-		f(in)
-		return in
+		// 会影响 bench 基准测试
+		out = make([][]int, len(in))
+		for i, v := range in {
+			out[i] = make([]int, len(v))
+			copy(out[i], v)
+		}
+
+		f(out)
+		return out
 	}
+}
+
+func Equal(x, y [][]int) bool {
+	if len(x) != len(y) {
+		return false
+	}
+	for i, v := range x {
+		if len(v) != len(y[i]) {
+			return false
+		}
+		for j, vv := range v {
+			if vv != y[i][j] {
+				return false
+			}
+		}
+	}
+	return true
 }
 
 var funcs = tests.NewFuncWithAdaptor(adaptor)
@@ -72,9 +96,17 @@ func AddFunc(f ...func([][]int)) {
 }
 
 func Unit(t *testing.T) {
-	tests.Unit(t, cases, funcs...)
+	tests.Unit(t, tests.Test[[][]int, [][]int]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  Equal,
+	})
 }
 
 func Bench(b *testing.B) {
-	tests.Bench(b, cases, funcs...)
+	tests.Bench(b, tests.Test[[][]int, [][]int]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  Equal,
+	})
 }

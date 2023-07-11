@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1011. 在 D 天内送达包裹的能力](https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/)
-Difficulty:Medium, Likes: 548
+Difficulty:Medium, Likes: 551
 
 ## 题目描述
 

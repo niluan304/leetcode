@@ -1,6 +1,7 @@
 package combination_sum_iii
 
 import (
+	"sort"
 	"testing"
 
 	"leetcode/tests"
@@ -45,13 +46,57 @@ func AddFunc(f ...Func) {
 	funcs = append(funcs, tests.NewFuncWithAdaptor(adaptor, f...)...)
 }
 
+func Equal(a, b Output) bool {
+	if len(a) != len(b) {
+		return false
+	}
+
+	sortFunc := func(list Output) {
+		sort.Slice(list, func(i, j int) bool {
+			for k := 0; k < len(list[i]); k++ {
+				if list[i][k] != list[j][k] {
+					return list[i][k] < list[j][k]
+				}
+			}
+
+			return true
+		})
+	}
+
+	sortFunc(a)
+	sortFunc(b)
+
+	for i, v := range a {
+		if len(v) != len(b[i]) {
+			return false
+		}
+
+		for j, vv := range v {
+			if vv != b[i][j] {
+				return false
+			}
+		}
+	}
+
+	return true
+}
+
 func Unit(t *testing.T) {
-	tests.Unit(t, cases, funcs...)
+	tests.Unit(t, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  Equal,
+	})
 }
 
 var checkResult = true
 
 func Bench(b *testing.B) {
 	checkResult = false
-	tests.Bench(b, cases, funcs...)
+	tests.Bench(b, tests.Test[Input, Output]{
+		Solution: funcs,
+		Cases:    cases,
+		IsEqual:  Equal,
+	})
+
 }

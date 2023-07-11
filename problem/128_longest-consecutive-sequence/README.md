@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [128. 最长连续序列](https://leetcode.cn/problems/longest-consecutive-sequence/)
-Difficulty:Medium, Likes: 1691
+Difficulty:Medium, Likes: 1697
 
 ## 题目描述
 

@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"reflect"
 	"testing"
 )
 
@@ -52,95 +53,115 @@ const (
 	flagUnderline   = 4
 )
 
-func Sign[T any, U any](w io.Writer, f func(in T) (out U), cases ...Case[T, U]) (fail bool) {
-	for _, e := range cases {
-		w.Write([]byte{'\n'})
+type (
+	Funcs[T, U any] struct {
+		solution func(in T) (out U)
+		Cases    func() []Case[T, U]
+		IsEqual  func(a, b U) bool
+	}
 
-		equal := sign(w, f, e)
+	Test[T, U any] struct {
+		Solution []function[T, U]
+		Cases    func() []Case[T, U]
+		IsEqual  func(a, b U) bool
+	}
+)
+
+func IsFail[T, U any](w io.Writer, s Funcs[T, U]) (fail bool) {
+	for _, _case := range s.Cases() {
+		var (
+			except = _case.Except
+			input  = _case.Input
+			output = s.solution(input)
+		)
+
+		isEqual := s.IsEqual
+		if isEqual == nil {
+			isEqual = Equal[U]
+		}
+
+		equal := isEqual(except, output)
+
+		var (
+			colors = textBlack
+			bg     = bgDefault
+			flag   = flagDefault
+		)
 		if !equal {
+			colors = textRed
+			flag = flagUnderline
 			fail = true
+		}
+
+		list := []struct {
+			name  string
+			value any
+		}{
+			{name: "case  ", value: input},
+			{name: "except", value: except},
+			{name: "output", value: output},
+		}
+
+		w.Write([]byte{'\n'})
+		for _, item := range list {
+			_, err := fmt.Fprintf(w, "\033[%d;%d;%dm%+v: %+v\033[0m\n", flag, bg, colors, item.name, item.value)
+			if err != nil {
+				panic(err)
+			}
 		}
 	}
 
 	return fail
 }
 
-func sign[T any, U any](w io.Writer, f func(in T) (out U), c Case[T, U]) (equal bool) {
-	output := f(c.Input)
-
-	out := fmt.Sprintf("%+v", output)
-	except := fmt.Sprintf("%+v", c.Except)
-
-	var (
-		colors = textBlack
-		bg     = bgDefault
-		flag   = flagDefault
-	)
-
-	equal = out == except
-	if !equal {
-		colors = textRed
-		flag = flagUnderline
-	}
-
-	list := []struct {
-		name  string
-		value any
-	}{
-		{name: "case  ", value: c.Input},
-		{name: "except", value: except},
-		{name: "output", value: out},
-	}
-
-	for _, item := range list {
-		_, err := fmt.Fprintf(w, "\033[%d;%d;%dm%+v: %+v\033[0m\n", flag, bg, colors, item.name, item.value)
-		if err != nil {
-			panic(err)
-		}
-	}
-
-	return equal
-}
-
-func Msg[T any, U any](f func(in T) (out U), cases []Case[T, U]) (r io.Reader, fail bool) {
-	buf := new(bytes.Buffer)
-	fail = Sign(buf, f, cases...)
-
-	return buf, fail
-}
-
-func Unit[T any, U any](t *testing.T, cases func() []Case[T, U], fs ...function[T, U]) {
-	for _, f := range fs {
+func Unit[T any, U any](t *testing.T, s Test[T, U]) {
+	for _, f := range s.Solution {
 		t.Run(f.Name(), func(t *testing.T) {
-			msg, fail := Msg(f.Func(), cases())
+			buf := new(bytes.Buffer)
+			fail := IsFail(buf, Funcs[T, U]{
+				solution: f.Func(),
+				Cases:    s.Cases,
+				IsEqual:  s.IsEqual,
+			})
 
 			show := t.Log
 			if fail {
 				show = t.Error
 			}
 
-			show(msg)
+			// TODO 打印函数真实位置
+			show(buf)
 		})
 		fmt.Println()
 	}
 }
 
-func Bench[T any, U any](b *testing.B, cases func() []Case[T, U], fs ...function[T, U]) {
-	for _, f := range fs {
+func Bench[T any, U any](b *testing.B, s Test[T, U]) {
+	for _, f := range s.Solution {
+		var unit func()
+
 		// cache
-		cache := cases()
+		cache := s.Cases()
 		b.Run(f.Name(), func(b *testing.B) {
 			for i := 0; i < b.N; i++ {
 				for _, c := range cache {
 					_ = f.Func()(c.Input)
 				}
 			}
-
-			msg, fail := Msg(f.Func(), cases())
-			if fail {
-				b.Error(msg)
+			unit = func() {
+				buf := new(bytes.Buffer)
+				fail := IsFail(buf, Funcs[T, U]{
+					solution: f.Func(),
+					Cases:    s.Cases,
+					IsEqual:  s.IsEqual,
+				})
+				if fail {
+					b.Error(buf)
+				}
 			}
 		})
+
+		unit()
 		fmt.Println()
 	}
 }
@@ -155,7 +176,16 @@ func NewFunc[T, U any](fs ...func(in T) (out U)) (functions []function[T, U]) {
 func NewFuncWithAdaptor[T, U, F any](adaptor func(F) func(in T) (out U),
 	fs ...F) (functions []function[T, U]) {
 	for _, f := range fs {
-		functions = append(functions, newFunc(adaptor(f)))
+		functions = append(functions, function[T, U]{
+			function: adaptor(f),
+			name:     FuncName(f),
+		})
 	}
 	return functions
+}
+
+func Equal[T any](except, output T) bool {
+	return fmt.Sprintf("%+v", except) == fmt.Sprintf("%+v", output)
+
+	return reflect.DeepEqual(except, output)
 }
