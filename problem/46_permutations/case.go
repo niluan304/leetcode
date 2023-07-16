@@ -1,35 +1,45 @@
-package capacity_to_ship_packages_within_d_days
+package permutations
 
 import (
+	"reflect"
+	"sort"
 	"testing"
 
 	"leetcode/tests"
 )
 
 type Input struct {
-	weights []int
-	days    int
+	nums []int
 }
 
-type Output int
+type Output [][]int
 
 var cases = func() []tests.Case[Input, Output] {
 	return []tests.Case[Input, Output]{
-		{Input: Input{weights: []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, days: 5}, Except: 15},
-		{Input: Input{weights: []int{3, 2, 2, 4, 1, 4}, days: 3}, Except: 6},
-		{Input: Input{weights: []int{1, 2, 3, 1, 1}, days: 4}, Except: 3},
+		// TODO add question case
+		{
+			Input:  Input{nums: []int{1, 2, 3}},
+			Except: [][]int{{1, 2, 3}, {1, 3, 2}, {2, 1, 3}, {2, 3, 1}, {3, 1, 2}, {3, 2, 1}},
+		},
+		{
+			Input:  Input{nums: []int{0, 1}},
+			Except: [][]int{{0, 1}, {1, 0}},
+		},
+		{
+			Input:  Input{nums: []int{1}},
+			Except: [][]int{{1}},
+		},
 	}
 }
 
-type Func func(weights []int, days int) int
+type Func func(nums []int) [][]int
 
 var funcs = tests.NewFuncWithAdaptor(adaptor)
 
 func adaptor(f Func) func(in Input) Output {
 	return func(in Input) Output {
 		return Output(f(
-			in.weights,
-			in.days,
+			in.nums,
 		))
 	}
 }
@@ -45,8 +55,28 @@ func AddFunc(f ...Func) {
 	funcs = append(funcs, tests.NewFuncWithAdaptor(adaptor, f...)...)
 }
 
+func Sort(x Output) {
+	sort.Slice(x, func(i, j int) bool {
+		xi, xj := x[i], x[j]
+		for k, v := range xi {
+			if v != xj[k] {
+				return v < xj[k]
+			}
+		}
+
+		return i < j
+	})
+}
+
 func Equal(x, y Output) bool {
-	return x == y
+	if len(x) != len(y) {
+		return false
+	}
+
+	Sort(x)
+	Sort(y)
+
+	return reflect.DeepEqual(x, y)
 }
 
 func Unit(t *testing.T) {
