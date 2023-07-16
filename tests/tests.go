@@ -176,10 +176,11 @@ func NewFunc[T, U any](fs ...func(in T) (out U)) (functions []function[T, U]) {
 func NewFuncWithAdaptor[T, U, F any](adaptor func(F) func(in T) (out U),
 	fs ...F) (functions []function[T, U]) {
 	for _, f := range fs {
-		functions = append(functions, function[T, U]{
-			function: adaptor(f),
-			name:     FuncName(f),
-		})
+		functions = append(functions,
+			newFunc(adaptor(f),
+				WithName[T, U](FuncName(f)),
+			),
+		)
 	}
 	return functions
 }

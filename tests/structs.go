@@ -16,10 +16,24 @@ type Result[T any, U any] struct {
 	Output U
 }
 
-func newFunc[T any, U any](f func(in T) (out U)) function[T, U] {
-	return function[T, U]{
+func newFunc[T any, U any](f func(in T) (out U), opts ...Opt[T, U]) function[T, U] {
+	v := &function[T, U]{
 		function: f,
 		name:     FuncName(f),
+	}
+
+	for _, opt := range opts {
+		opt(v)
+	}
+
+	return *v
+}
+
+type Opt[T, U any] func(f *function[T, U])
+
+func WithName[T, U any](name string) Opt[T, U] {
+	return func(f *function[T, U]) {
+		f.name = name
 	}
 }
 
