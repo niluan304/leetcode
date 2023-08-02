@@ -1,14 +1,19 @@
 
 | English | [简体中文](README.md) |
 
-# [16. 3Sum Closest](https://leetcode-cn.com/problems/3sum-closest/)
+# [16.3Sum Closest](https://leetcode.com/problems/3sum-closest/)
+Difficulty:Medium, Likes: 1482
 
 ## Description
 
-<p>Given an array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, find three integers in <code>nums</code>&nbsp;such that the sum is closest to&nbsp;<code>target</code>. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
+<p>Given an integer array <code>nums</code> of length <code>n</code> and an integer <code>target</code>, find three integers in <code>nums</code> such that the sum is closest to <code>target</code>.</p>
+
+<p>Return <em>the sum of the three integers</em>.</p>
+
+<p>You may assume that each input would have exactly one solution.</p>
 
 <p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
+<p><strong class="example">Example 1:</strong></p>
 
 <pre>
 <strong>Input:</strong> nums = [-1,2,1,-4], target = 1
@@ -16,22 +21,31 @@
 <strong>Explanation:</strong> The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 </pre>
 
+<p><strong class="example">Example 2:</strong></p>
+
+<pre>
+<strong>Input:</strong> nums = [0,0,0], target = 1
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> The sum that is closest to the target is 0. (0 + 0 + 0 = 0).
+</pre>
+
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>3 &lt;= nums.length &lt;= 10^3</code></li>
-	<li><code>-10^3&nbsp;&lt;= nums[i]&nbsp;&lt;= 10^3</code></li>
-	<li><code>-10^4&nbsp;&lt;= target&nbsp;&lt;= 10^4</code></li>
+	<li><code>3 &lt;= nums.length &lt;= 500</code></li>
+	<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
+	<li><code>-10<sup>4</sup> &lt;= target &lt;= 10<sup>4</sup></code></li>
 </ul>
 
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers)
+- [Array](https://leetcode-cn.com/tag/array/)
+- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
+- [Sorting](https://leetcode-cn.com/tag/sorting/)
 
 ## Similar Questions
 
-- [3Sum](../3sum/README_EN.md)
-- [3Sum Smaller](../3sum-smaller/README_EN.md)
+- [3Sum](../3sum/README.md) Medium 
+- [3Sum Smaller](../3sum-smaller/README.md) Medium 🔒

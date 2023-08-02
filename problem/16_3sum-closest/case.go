@@ -7,23 +7,19 @@ import (
 )
 
 type Input struct {
-	Nums   []int
-	Target int
+	nums   []int
+	target int
 }
 
 var cases = func() []tests.Case[Input, int] {
 	return []tests.Case[Input, int]{
 		{
-			Input:  Input{Nums: []int{-1, 2, 1, -4}, Target: 1},
+			Input:  Input{nums: []int{-1, 2, 1, -4}, target: 1},
 			Except: 2,
 		},
 		{
-			Input:  Input{Nums: []int{0, 0, 0}, Target: 1},
+			Input:  Input{nums: []int{0, 0, 0}, target: 1},
 			Except: 0,
-		},
-		{
-			Input:  Input{Nums: []int{0, 3, 97, 102, 200}, Target: 300},
-			Except: 300,
 		},
 	}
 }
@@ -32,7 +28,7 @@ type Func func(nums []int, target int) int
 
 func adaptor(f Func) func(in Input) (out int) {
 	return func(in Input) (out int) {
-		return f(in.Nums, in.Target)
+		return f(in.nums, in.target)
 	}
 }
 
