@@ -1,6 +1,7 @@
 package container_with_most_water
 
 import (
+	"reflect"
 	"testing"
 
 	"leetcode/tests"
@@ -14,7 +15,7 @@ type Output int
 
 var cases = func() []tests.Case[Input, Output] {
 	return []tests.Case[Input, Output]{
-		// add self case
+		// TODO add question case
 	}
 }
 
@@ -41,21 +42,23 @@ func AddFunc(f ...Func) {
 	funcs = append(funcs, tests.NewFuncWithAdaptor(adaptor, f...)...)
 }
 
+func Equal(x, y Output) bool {
+
+	return reflect.DeepEqual(x, y)
+}
+
 func Unit(t *testing.T) {
 	tests.Unit(t, tests.Test[Input, Output]{
 		Solution: funcs,
 		Cases:    cases,
-		IsEqual:  nil,
+		IsEqual:  Equal,
 	})
 }
 
-var checkResult = true
-
 func Bench(b *testing.B) {
-	checkResult = false
 	tests.Bench(b, tests.Test[Input, Output]{
 		Solution: funcs,
 		Cases:    cases,
-		IsEqual:  nil,
+		IsEqual:  Equal,
 	})
 }
