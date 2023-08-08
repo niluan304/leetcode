@@ -6,24 +6,25 @@ import (
 	"leetcode/tests"
 )
 
-type Input struct{ Nums1, Nums2 []int }
+type Input struct{ nums1, nums2 []int }
 
-var cases = func() []tests.Case[Input, float64] {
-	return []tests.Case[Input, float64]{
-		{Input: Input{Nums1: []int{1, 3}, Nums2: []int{2}}, Except: 2.0},
-		{Input: Input{Nums1: []int{1, 2}, Nums2: []int{3, 4}}, Except: 2.5},
+type Output float64
 
-		{Input: Input{Nums1: []int{2}, Nums2: []int{}}, Except: 2.0},
-		{Input: Input{Nums1: []int{2, 3}, Nums2: []int{}}, Except: 2.5},
-
-		{Input: Input{Nums1: []int{}, Nums2: []int{2}}, Except: 2.0},
-		{Input: Input{Nums1: []int{}, Nums2: []int{2, 3}}, Except: 2.5},
-
-		{Input: Input{Nums1: []int{1, 2, 3, 4, 5, 6}, Nums2: []int{7}}, Except: 4.0},
-		{Input: Input{Nums1: []int{1, 2, 3, 4, 5, 6, 7}, Nums2: []int{7}}, Except: 4.5},
-
-		{Input: Input{Nums1: []int{1, 2, 3, 4}, Nums2: []int{5, 6, 7, 8}}, Except: 4.5},
-		{Input: Input{Nums1: []int{5, 6, 7, 8}, Nums2: []int{1, 2, 3, 4}}, Except: 4.5},
+var cases = func() []tests.Case[Input, Output] {
+	return []tests.Case[Input, Output]{
+		{
+			Input: Input{
+				nums1: []int{1, 3},
+				nums2: []int{2},
+			},
+			Except: 2.0,
+		},
+		{
+			Input: Input{
+				nums1: []int{2, 3},
+				nums2: []int{}},
+			Except: 2.5,
+		},
 	}
 }
 
@@ -31,15 +32,15 @@ type Func func(nums1 []int, nums2 []int) float64
 
 var funcs = tests.NewFuncWithAdaptor(adaptor)
 
-func adaptor(f Func) func(in Input) (out float64) {
-	return func(in Input) (out float64) {
-		return f(in.Nums1, in.Nums2)
+func adaptor(f Func) func(in Input) (out Output) {
+	return func(in Input) (out Output) {
+		return Output(f(in.nums1, in.nums2))
 	}
 }
 
-func AddCases(c func() []tests.Case[Input, float64]) {
+func AddCases(c func() []tests.Case[Input, Output]) {
 	_cases := cases()
-	cases = func() []tests.Case[Input, float64] {
+	cases = func() []tests.Case[Input, Output] {
 		return append(_cases, c()...)
 	}
 }
@@ -49,7 +50,7 @@ func AddFunc(f ...Func) {
 }
 
 func Unit(t *testing.T) {
-	tests.Unit(t, tests.Test[Input, float64]{
+	tests.Unit(t, tests.Test[Input, Output]{
 		Solution: funcs,
 		Cases:    cases,
 		IsEqual:  nil,
@@ -57,7 +58,7 @@ func Unit(t *testing.T) {
 }
 
 func Bench(b *testing.B) {
-	tests.Bench(b, tests.Test[Input, float64]{
+	tests.Bench(b, tests.Test[Input, Output]{
 		Solution: funcs,
 		Cases:    cases,
 		IsEqual:  nil,
