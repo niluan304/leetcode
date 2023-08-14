@@ -1,4 +1,4 @@
-package reverse_linked_list
+package reverse_linked_list_ii
 
 import (
 	"reflect"
@@ -8,10 +8,10 @@ import (
 	"leetcode/tests"
 )
 
-type ListNode = structs.ListNode
-
 type Input struct {
-	head *ListNode
+	head  []int
+	left  int
+	right int
 }
 
 type Output *ListNode
@@ -20,43 +20,36 @@ var cases = func() []tests.Case[Input, Output] {
 	return []tests.Case[Input, Output]{
 		{
 			Input: Input{
-				head: structs.NewListNode([]int{1, 2, 3, 4, 5}),
+				head:  []int{1, 2, 3, 4, 5},
+				left:  2,
+				right: 4,
 			},
-			Except: structs.NewListNode([]int{5, 4, 3, 2, 1}),
+			Except: structs.NewListNode([]int{1, 4, 3, 2, 5}),
 		},
 		{
 			Input: Input{
-				head: structs.NewListNode([]int{1, 2}),
+				head:  []int{5},
+				left:  1,
+				right: 1,
 			},
-			Except: structs.NewListNode([]int{2, 1}),
-		},
-		{
-			Input: Input{
-				head: structs.NewListNode([]int{12}),
-			},
-			Except: structs.NewListNode([]int{12}),
-		},
-		{
-			Input: Input{
-				head: structs.NewListNode([]int{}),
-			},
-			Except: structs.NewListNode([]int{}),
+			Except: structs.NewListNode([]int{5}),
 		},
 	}
 }
 
-type Func func(head *ListNode) *ListNode
-
-func adaptor(f Func) func(in Input) (out Output) {
-	return func(in Input) (out Output) {
-		root := f(
-			in.head,
-		)
-		return root
-	}
-}
+type Func func(head *ListNode, left int, right int) *ListNode
 
 var funcs = tests.NewFuncWithAdaptor(adaptor)
+
+func adaptor(f Func) func(in Input) Output {
+	return func(in Input) Output {
+		return Output(f(
+			structs.NewListNode(in.head),
+			in.left,
+			in.right,
+		))
+	}
+}
 
 func AddCases(c func() []tests.Case[Input, Output]) {
 	_cases := cases()
