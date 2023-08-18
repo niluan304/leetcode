@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2. 两数相加](https://leetcode.cn/problems/add-two-numbers/)
-Difficulty:Medium, Likes: 9726
+Difficulty:Medium, Likes: 9894
 
 ## 题目描述
 

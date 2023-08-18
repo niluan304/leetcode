@@ -1,6 +1,7 @@
-package add_two_numbers
+package add_two_numbers_ii
 
 import (
+	"reflect"
 	"testing"
 
 	"leetcode/structs"
@@ -9,18 +10,28 @@ import (
 
 type ListNode = structs.ListNode
 
-type Input struct{ l1, l2 *ListNode }
+type Input struct {
+	l1 *ListNode
+	l2 *ListNode
+}
 
-type Output *ListNode
+type Output *structs.ListNode
 
 var cases = func() []tests.Case[Input, Output] {
 	return []tests.Case[Input, Output]{
 		{
 			Input: Input{
-				l1: structs.NewListNode([]int{2, 4, 3}),
+				l1: structs.NewListNode([]int{7, 2, 4, 3}),
 				l2: structs.NewListNode([]int{5, 6, 4}),
 			},
-			Except: structs.NewListNode([]int{7, 0, 8}),
+			Except: structs.NewListNode([]int{7, 8, 0, 7}),
+		},
+		{
+			Input: Input{
+				l1: structs.NewListNode([]int{2, 4, 4}),
+				l2: structs.NewListNode([]int{5, 6, 3}),
+			},
+			Except: structs.NewListNode([]int{8, 0, 7}),
 		},
 		{
 			Input: Input{
@@ -29,36 +40,20 @@ var cases = func() []tests.Case[Input, Output] {
 			},
 			Except: structs.NewListNode([]int{0}),
 		},
-		{
-			Input: Input{
-				l1: structs.NewListNode([]int{9, 9, 9, 9, 9, 9, 9}),
-				l2: structs.NewListNode([]int{9, 9, 9, 9}),
-			},
-			Except: structs.NewListNode([]int{8, 9, 9, 9, 0, 0, 0, 1}),
-		},
 	}
 }
 
-type Func func(l1 *ListNode, l2 *ListNode) *ListNode
+type Func func(l1 *structs.ListNode, l2 *structs.ListNode) *structs.ListNode
 
 var funcs = tests.NewFuncWithAdaptor(adaptor)
 
-func adaptor(f Func) func(in Input) (out Output) {
-	return func(in Input) (out Output) {
+func adaptor(f Func) func(in Input) Output {
+	return func(in Input) Output {
 		return Output(f(
 			in.l1,
 			in.l2,
 		))
 	}
-}
-
-func Equal(l1, l2 Output) bool {
-	var (
-		n1 *ListNode = l1
-		n2 *ListNode = l2
-	)
-
-	return tests.Equal(n1.ToSlice(), n2.ToSlice())
 }
 
 func AddCases(c func() []tests.Case[Input, Output]) {
@@ -70,6 +65,11 @@ func AddCases(c func() []tests.Case[Input, Output]) {
 
 func AddFunc(f ...Func) {
 	funcs = append(funcs, tests.NewFuncWithAdaptor(adaptor, f...)...)
+}
+
+func Equal(x, y Output) bool {
+
+	return reflect.DeepEqual(x, y)
 }
 
 func Unit(t *testing.T) {
