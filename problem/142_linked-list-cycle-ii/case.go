@@ -1,4 +1,4 @@
-package linked_list_cycle
+package linked_list_cycle_ii
 
 import (
 	"testing"
@@ -9,12 +9,12 @@ import (
 
 type ListNode = structs.ListNode
 
-type Input = struct {
-	head *ListNode
+type Input struct {
+	head *structs.ListNode
 	pos  int
 }
 
-type Output bool
+type Output *structs.ListNode
 
 func NewCase(nums []int, pos int) tests.Case[Input, Output] {
 	var head, cycle = structs.NewCycleListNode(nums, pos)
@@ -23,7 +23,7 @@ func NewCase(nums []int, pos int) tests.Case[Input, Output] {
 			head: head,
 			pos:  pos,
 		},
-		Except: cycle != nil,
+		Except: cycle,
 	}
 }
 
@@ -35,7 +35,7 @@ var cases = func() []tests.Case[Input, Output] {
 	}
 }
 
-type Func func(head *ListNode) bool
+type Func func(head *structs.ListNode) *structs.ListNode
 
 var funcs = tests.NewFuncWithAdaptor(adaptor)
 
