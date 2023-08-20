@@ -41,20 +41,18 @@ func (h *ListNode) ToSlice() []int {
 // 时间复杂度：O(n)
 // 空间复杂度：O(1)
 func (h *ListNode) HasCycle() bool {
-	var slow, fast = h, h
-
-	for fast != nil && fast.Next != nil {
-		// 兔子追上乌龟（套圈），说明有环
-		if fast == slow || fast.Next == slow {
-			return true
-		}
-
-		slow = slow.Next      // 乌龟走一步
-		fast = fast.Next.Next // 兔子走两步
+	if h == nil || h.Next == nil {
+		return false
 	}
-
-	// 访问到了链表末尾，无环
-	return false
+	slow, fast := h, h.Next
+	for fast != slow {
+		if fast == nil || fast.Next == nil {
+			return false
+		}
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	return true
 }
 
 // Reverse 反转链表

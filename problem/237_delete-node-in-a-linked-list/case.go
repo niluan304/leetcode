@@ -1,4 +1,4 @@
-package reorder_list
+package delete_node_in_a_linked_list
 
 import (
 	"reflect"
@@ -11,7 +11,8 @@ import (
 type ListNode = structs.ListNode
 
 type Input struct {
-	head *structs.ListNode
+	head []int
+	node int
 }
 
 type Output *structs.ListNode
@@ -20,15 +21,17 @@ var cases = func() []tests.Case[Input, Output] {
 	return []tests.Case[Input, Output]{
 		{
 			Input: Input{
-				head: structs.NewListNode([]int{1, 2, 3, 4}),
+				head: []int{4, 5, 1, 9},
+				node: 5,
 			},
-			Except: structs.NewListNode([]int{1, 4, 2, 3}),
+			Except: structs.NewListNode([]int{4, 1, 9}),
 		},
 		{
 			Input: Input{
-				head: structs.NewListNode([]int{1, 2, 3, 4, 5}),
+				head: []int{4, 5, 1, 9},
+				node: 1,
 			},
-			Except: structs.NewListNode([]int{1, 5, 2, 4, 3}),
+			Except: structs.NewListNode([]int{4, 5, 9}),
 		},
 	}
 }
@@ -39,10 +42,15 @@ var funcs = tests.NewFuncWithAdaptor(adaptor)
 
 func adaptor(f Func) func(in Input) Output {
 	return func(in Input) Output {
-		f(
-			in.head,
-		)
-		return in.head
+		head := structs.NewListNode(in.head)
+		cur := head
+		for {
+			if cur.Val == in.node {
+				f(cur)
+				return head
+			}
+			cur = cur.Next
+		}
 	}
 }
 
@@ -58,6 +66,7 @@ func AddFunc(f ...Func) {
 }
 
 func Equal(x, y Output) bool {
+
 	return reflect.DeepEqual(x, y)
 }
 
