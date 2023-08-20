@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [143.Reorder List](https://leetcode.com/problems/reorder-list/)
-Difficulty:Medium, Likes: 1225
+Difficulty:Medium, Likes: 1351
 
 ## Description
 

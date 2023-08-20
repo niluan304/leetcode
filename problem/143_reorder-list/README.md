@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [143. 重排链表](https://leetcode.cn/problems/reorder-list/)
-Difficulty:Medium, Likes: 1225
+Difficulty:Medium, Likes: 1351
 
 ## 题目描述
 
