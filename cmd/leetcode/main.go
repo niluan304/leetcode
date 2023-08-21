@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
 	"fmt"
 	"os"
@@ -36,9 +35,11 @@ func init() {
 }
 
 func main() {
+	s := server.New("")
+
 	for {
 		if *id != "" {
-			err := GetQuestionId(*id)
+			err := s.BuildById(*id)
 			if err != nil {
 				fmt.Println(err)
 
@@ -46,7 +47,7 @@ func main() {
 		}
 
 		if *slug != "" {
-			err := GetTitleSlug(*slug)
+			err := s.Build(*slug)
 			if err != nil {
 				fmt.Println(err)
 			}
@@ -95,49 +96,4 @@ func Scan() (err error) {
 		}
 	}
 	return nil
-}
-
-type Problem struct {
-	FrontendId string `json:"frontend_id"`
-	TitleSlug  string `json:"title_slug"`
-}
-
-func GetQuestionId(id string) (err error) {
-	if id == "" {
-		return nil
-	}
-
-	var v struct {
-		Records []Problem `json:"RECORDS"`
-	}
-
-	// TODO 通过api获取
-	file, err := os.Open("D:/Users/Feng/Desktop/problem.json")
-	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
-
-	err = json.NewDecoder(file).Decode(&v)
-	if err != nil {
-		return errors.Wrap(err, "fail decode problem.json")
-	}
-
-	list := v.Records
-	for _, record := range list {
-		if record.FrontendId == id {
-			return GetTitleSlug(record.TitleSlug)
-		}
-	}
-
-	return errors.New("not found: " + id)
-}
-
-func GetTitleSlug(slug string) (err error) {
-	if slug == "" {
-		return nil
-	}
-
-	s := server.New("")
-	return s.Do(slug)
 }

@@ -3,6 +3,7 @@ package graphql
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -32,7 +33,8 @@ query consolePanelConfig($titleSlug: String!) {
 	req.Var("titleSlug", titleSlug)
 	req.Var("operationName", "consolePanelConfig")
 
-	err = c.request(ctx, req, titleSlug, &res)
+	path := fmt.Sprintf("/problems/%s/", titleSlug)
+	err = c.request(ctx, req, path, &res)
 	if err != nil {
 		return nil, err
 	}
@@ -120,7 +122,8 @@ func (c *Client) QuestionData(ctx context.Context, titleSlug string) (res *Quest
 	req.Var("titleSlug", titleSlug)
 	req.Var("operationName", "questionData")
 
-	err = c.request(ctx, req, titleSlug, &res)
+	path := fmt.Sprintf("/problems/%s/", titleSlug)
+	err = c.request(ctx, req, path, &res)
 	if err != nil {
 		return nil, err
 	}
@@ -147,4 +150,66 @@ func (c *Client) save(path string, titleSlug string, res any) (err error) {
 	}
 
 	return nil
+}
+
+func (c *Client) ProblemsetQuestionList(ctx context.Context, in ProblemQuestionReq) (res *ProblemQuestionRes, err error) {
+	req := graphql.NewRequest(`query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $filters: QuestionListFilterInput) {
+  problemsetQuestionList(
+    categorySlug: $categorySlug
+    limit: $limit
+    skip: $skip
+    filters: $filters
+  ) {
+    hasMore
+    total
+    questions {
+      acRate
+      difficulty
+      freqBar
+      frontendQuestionId
+      isFavor
+      paidOnly
+      solutionNum
+      status
+      title
+      titleCn
+      titleSlug
+      topicTags {
+        name
+        nameTranslated
+        id
+        slug
+      }
+      extra {
+        hasVideoSolution
+        topCompanyTags {
+          imgUrl
+          slug
+          numSubscribed
+        }
+      }
+    }
+  }
+}
+`)
+
+	var values = map[string]any{
+		"categorySlug":  in.CategorySlug,
+		"skip":          in.Skip,
+		"limit":         in.Limit,
+		"filters":       in.Filters,
+		"operationName": "problemsetQuestionList",
+	}
+	for key, value := range values {
+		req.Var(key, value)
+	}
+
+	referer := fmt.Sprintf("/problemset/all/?page=1&search=%s", in.Filters.SearchKeywords)
+	referer = ""
+	err = c.request(ctx, req, referer, &res)
+	if err != nil {
+		return nil, err
+	}
+
+	return res, nil
 }

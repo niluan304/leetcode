@@ -2,7 +2,6 @@ package server
 
 import (
 	"context"
-	"encoding/json"
 	"log"
 	"math/rand"
 	"os"
@@ -15,42 +14,61 @@ import (
 	"leetcode/cmd/leetcode/tmpl"
 )
 
-type Server struct{}
-
-func New(configPath string) *Server {
-	return &Server{}
+type Server interface {
+	BuildById(id string) (err error)
+	Build(titleSlug string) (err error)
 }
 
-func (s *Server) Run() {
-	var v struct {
-		Records []struct {
-			TitleSlug string `json:"title_slug"`
-		} `json:"RECORDS"`
-	}
+type server struct{}
 
-	file, err := os.Open("D:/Users/Feng/Desktop/problem.json")
+func New(configPath string) Server {
+	return &server{}
+}
+
+func (s *server) TitleSlug(id string) (titleSlug string, err error) {
+	var ctx = context.Background()
+	client := graphql.New(graphql.EndpointZh)
+
+	res, err := client.ProblemsetQuestionList(ctx, graphql.ProblemQuestionReq{
+		CategorySlug: "",
+		Skip:         0,
+		Limit:        50,
+		Filters: graphql.ProblemQuestionFilters{
+			Difficulty:     "",
+			Status:         "",
+			SearchKeywords: id,
+			Tags:           nil,
+			ListId:         "",
+		},
+	})
 	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
-
-	err = json.NewDecoder(file).Decode(&v)
-	if err != nil {
-		panic(err)
+		return "", err
 	}
 
-	list := v.Records
-	for _, record := range list {
-		err := s.Do(record.TitleSlug)
-		if err != nil {
-			panic(err)
+	list := res.ProblemsetQuestionList.Questions
+	if len(list) == 0 {
+		return "", errors.New("未找到题目")
+	}
+
+	for _, item := range list {
+		if item.FrontendQuestionId == id {
+			return item.TitleSlug, nil
 		}
-
-		sleep(2, 5)
 	}
+
+	return "", errors.New("未找到题目")
 }
 
-func (s *Server) Do(titleSlug string) (err error) {
+func (s *server) BuildById(id string) (err error) {
+	titleSlug, err := s.TitleSlug(id)
+	if err != nil {
+		return err
+	}
+
+	return s.Build(titleSlug)
+}
+
+func (s *server) Build(titleSlug string) (err error) {
 	var ctx = context.Background()
 	client := graphql.New(graphql.EndpointZh)
 

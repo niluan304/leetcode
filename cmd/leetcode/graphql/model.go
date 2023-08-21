@@ -3,6 +3,8 @@ package graphql
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
+	"reflect"
 	"strings"
 	"unicode"
 
@@ -148,6 +150,8 @@ type (
 
 	EnvInfo map[string][]string
 
+	ExampleTestcase any
+
 	QuestionData struct {
 		QuestionId            string                    `json:"questionId"`            //
 		QuestionFrontendId    string                    `json:"questionFrontendId"`    //
@@ -187,7 +191,7 @@ type (
 		EditorType            string                    `json:"editorType"`            //
 		UgcQuestionId         interface{}               `json:"ugcQuestionId"`         //
 		Style                 string                    `json:"style"`                 //
-		ExampleTestcases      string                    `json:"exampleTestcases"`      //
+		ExampleTestcases      []ExampleTestcase         `json:"exampleTestcases"`      //
 		JsonExampleTestcases  string                    `json:"jsonExampleTestcases"`  //
 		Typename              string                    `json:"__typename"`            //
 
@@ -201,9 +205,13 @@ func (q QuestionDataQuestion) ReUnmarshal() (*QuestionData, error) {
 		validPlayground  LangToValidPlayground
 		envInfo          EnvInfo
 		stats            Stats
+		exampleTestcases []ExampleTestcase
 
 		err error
 	)
+
+	// 有 \n 的, 可能是 class
+	exampleTestCaseData := fmt.Sprintf("[%s]", strings.ReplaceAll(q.ExampleTestcases, "\n", ","))
 
 	var list = []struct {
 		Data  string
@@ -213,10 +221,20 @@ func (q QuestionDataQuestion) ReUnmarshal() (*QuestionData, error) {
 		{Data: q.MetaData, Point: &meta},
 		{Data: q.LangToValidPlayground, Point: &validPlayground},
 		{Data: q.EnvInfo, Point: &envInfo},
+		{Data: exampleTestCaseData, Point: &exampleTestcases},
 	}
 
 	for _, item := range list {
-		err = json.Unmarshal([]byte(item.Data), item.Point)
+		var (
+			data    = item.Data
+			pointer = item.Point
+		)
+		if data == "" {
+			fmt.Println("data is empty", reflect.ValueOf(pointer).String())
+			continue
+		}
+
+		err = json.Unmarshal([]byte(data), pointer)
 		if err != nil {
 			return nil, errors.Wrap(err, "fail unmarshal")
 		}
@@ -261,7 +279,7 @@ func (q QuestionDataQuestion) ReUnmarshal() (*QuestionData, error) {
 		EditorType:            q.EditorType,
 		UgcQuestionId:         q.UgcQuestionId,
 		Style:                 q.Style,
-		ExampleTestcases:      q.ExampleTestcases,
+		ExampleTestcases:      exampleTestcases,
 		JsonExampleTestcases:  q.JsonExampleTestcases,
 		Typename:              q.Typename,
 	}, nil
@@ -272,8 +290,7 @@ func (q QuestionData) Dir() string {
 	titleSlug := q.TitleSlug
 	if !isStringNumeric(frontendId) {
 		titleSlug = camel2Case(q.MetaData.Name, "-")
-		frontendId = strings.ReplaceAll(frontendId, "剑指Offer", "offer")
-		frontendId = strings.ReplaceAll(frontendId, "面试题", "interview")
+		frontendId = q.CategoryTitle
 	}
 
 	return frontendId + "_" + titleSlug
@@ -314,3 +331,65 @@ func isStringNumeric(str string) bool {
 
 	return true
 }
+
+type (
+	ProblemQuestionReq struct {
+		CategorySlug string                 `json:"categorySlug"`
+		Skip         int                    `json:"skip"`
+		Limit        int                    `json:"limit"`
+		Filters      ProblemQuestionFilters `json:"filters"`
+	}
+
+	ProblemQuestionFilters struct {
+		Difficulty     string   `json:"difficulty,omitempty"`     //
+		Status         string   `json:"status,omitempty"`         //
+		SearchKeywords string   `json:"searchKeywords,omitempty"` //
+		Tags           []string `json:"tags,omitempty"`           //
+		ListId         string   `json:"listId,omitempty"`         //
+	}
+
+	ProblemQuestionRes struct {
+		ProblemsetQuestionList struct {
+			Typename  string               `json:"__typename"`
+			Questions []ProblemsetQuestion `json:"questions"`
+			HasMore   bool                 `json:"hasMore"`
+			Total     int                  `json:"total"`
+		} `json:"problemsetQuestionList"`
+	}
+
+	ProblemsetQuestion struct {
+		Typename           string               `json:"__typename"`
+		AcRate             float64              `json:"acRate"`
+		Difficulty         string               `json:"difficulty"`
+		FreqBar            int                  `json:"freqBar"`
+		PaidOnly           bool                 `json:"paidOnly"`
+		Status             string               `json:"status"`
+		FrontendQuestionId string               `json:"frontendQuestionId"`
+		IsFavor            bool                 `json:"isFavor"`
+		SolutionNum        int                  `json:"solutionNum"`
+		Title              string               `json:"title"`
+		TitleCn            string               `json:"titleCn"`
+		TitleSlug          string               `json:"titleSlug"`
+		TopicTags          []ProblemsetTopicTag `json:"topicTags"`
+		Extra              ProblemsetExtra      `json:"extra"`
+	}
+
+	ProblemsetTopicTag struct {
+		Id             string `json:"id"`
+		Name           string `json:"name"`
+		Slug           string `json:"slug"`
+		NameTranslated string `json:"nameTranslated"`
+		Typename       string `json:"__typename"`
+	}
+
+	ProblemsetExtra struct {
+		CompanyTagNum    int  `json:"companyTagNum"`
+		HasVideoSolution bool `json:"hasVideoSolution"`
+		TopCompanyTags   []struct {
+			ImgUrl   string `json:"imgUrl"`
+			Slug     string `json:"slug"`
+			Typename string `json:"__typename"`
+		} `json:"topCompanyTags"`
+		Typename string `json:"__typename"`
+	}
+)

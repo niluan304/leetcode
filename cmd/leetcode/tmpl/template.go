@@ -61,6 +61,7 @@ Difficulty:{{.Difficulty}}, Likes: {{.Likes}}
 const TemplateCase = `package {{.PkgName}}
 
 import (
+	"reflect"
 	"testing"
 
 	"leetcode/tests"

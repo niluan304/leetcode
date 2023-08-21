@@ -40,7 +40,7 @@ func New(endpoint string, opts ...Opt) (client *Client) {
 	return client
 }
 
-func (c *Client) request(ctx context.Context, req *graphql.Request, slug string, point any) (err error) {
+func (c *Client) request(ctx context.Context, req *graphql.Request, path string, point any) (err error) {
 
 	cookie := ""
 	for name, value := range c.cookie {
@@ -55,7 +55,7 @@ func (c *Client) request(ctx context.Context, req *graphql.Request, slug string,
 	header := map[string]string{
 		"Cookie":           cookie,
 		"Origin":           c.endpoint,
-		"Referer":          fmt.Sprintf("%s/problems/%s/", c.endpoint, slug),
+		"Referer":          c.endpoint + path,
 		"Sec-Fetch-Dest":   "empty",
 		"Sec-Fetch-Mode":   "cors",
 		"Sec-Fetch-Site":   "same-site",
