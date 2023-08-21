@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [83.Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
-Difficulty:Easy, Likes: 1009
+Difficulty:Easy, Likes: 1031
 
 ## Description
 

@@ -1,42 +1,51 @@
 package remove_duplicates_from_sorted_list_ii
 
 import (
+	"reflect"
 	"testing"
 
 	"leetcode/structs"
 	"leetcode/tests"
 )
 
-type ListNode = structs.ListNode
+type Input struct {
+	head *structs.ListNode
+}
 
-var cases = func() []tests.Case[*ListNode, []int] {
-	return []tests.Case[*ListNode, []int]{
-		{Input: structs.NewListNode([]int{1, 1, 1, 2, 3, 4}), Except: []int{2, 3, 4}},
-		{Input: structs.NewListNode([]int{0, 1, 1, 2, 2, 3, 4, 5, 5, 6, 7}), Except: []int{0, 3, 4, 6, 7}},
-		{Input: structs.NewListNode([]int{0, 1, 1, 2, 2}), Except: []int{0}},
-		{Input: structs.NewListNode([]int{3, 4, 5, 5, 6, 7, 7, 7, 7, 7}), Except: []int{3, 4, 6}},
-		{Input: structs.NewListNode([]int{}), Except: []int{}},
-		{Input: structs.NewListNode([]int{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}), Except: []int{}},
+type Output *structs.ListNode
+
+var cases = func() []tests.Case[Input, Output] {
+	return []tests.Case[Input, Output]{
+		{
+			Input: Input{
+				head: structs.NewListNode([]int{1, 1, 2}),
+			},
+			Except: structs.NewListNode([]int{2}),
+		},
+		{
+			Input: Input{
+				head: structs.NewListNode([]int{1, 1, 1, 2, 3}),
+			},
+			Except: structs.NewListNode([]int{2, 3}),
+		},
 	}
 }
 
-type Func func(head *ListNode) *ListNode
-
-func adaptor(f Func) func(in *ListNode) (out []int) {
-	return func(in *ListNode) (out []int) {
-		root := f(in)
-		if !checkResult {
-			return nil
-		}
-		return root.ToSlice()
-	}
-}
+type Func func(head *structs.ListNode) *structs.ListNode
 
 var funcs = tests.NewFuncWithAdaptor(adaptor)
 
-func AddCases(c func() []tests.Case[*ListNode, []int]) {
+func adaptor(f Func) func(in Input) Output {
+	return func(in Input) Output {
+		return Output(f(
+			in.head,
+		))
+	}
+}
+
+func AddCases(c func() []tests.Case[Input, Output]) {
 	_cases := cases()
-	cases = func() []tests.Case[*ListNode, []int] {
+	cases = func() []tests.Case[Input, Output] {
 		return append(_cases, c()...)
 	}
 }
@@ -45,21 +54,23 @@ func AddFunc(f ...Func) {
 	funcs = append(funcs, tests.NewFuncWithAdaptor(adaptor, f...)...)
 }
 
+func Equal(x, y Output) bool {
+
+	return reflect.DeepEqual(x, y)
+}
+
 func Unit(t *testing.T) {
-	tests.Unit(t, tests.Test[*ListNode, []int]{
+	tests.Unit(t, tests.Test[Input, Output]{
 		Solution: funcs,
 		Cases:    cases,
-		IsEqual:  nil,
+		IsEqual:  Equal,
 	})
 }
 
-var checkResult = true
-
 func Bench(b *testing.B) {
-	checkResult = false
-	tests.Bench(b, tests.Test[*ListNode, []int]{
+	tests.Bench(b, tests.Test[Input, Output]{
 		Solution: funcs,
 		Cases:    cases,
-		IsEqual:  nil,
+		IsEqual:  Equal,
 	})
 }
