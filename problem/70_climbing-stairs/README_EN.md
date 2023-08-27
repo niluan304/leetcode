@@ -1,28 +1,30 @@
 
 | English | [简体中文](README.md) |
 
-# [70. Climbing Stairs](https://leetcode-cn.com/problems/climbing-stairs/)
+# [70.Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+Difficulty:Easy, Likes: 3200
 
 ## Description
 
-<p>You are climbing a stair case. It takes <em>n</em> steps to reach to the top.</p>
+<p>You are climbing a staircase. It takes <code>n</code> steps to reach the top.</p>
 
-<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+<p>Each time you can either climb <code>1</code> or <code>2</code> steps. In how many distinct ways can you climb to the top?</p>
 
-<p><strong>Example 1:</strong></p>
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
 <pre>
-<strong>Input:</strong> 2
+<strong>Input:</strong> n = 2
 <strong>Output:</strong> 2
 <strong>Explanation:</strong> There are two ways to climb to the top.
 1. 1 step + 1 step
 2. 2 steps
 </pre>
 
-<p><strong>Example 2:</strong></p>
+<p><strong class="example">Example 2:</strong></p>
 
 <pre>
-<strong>Input:</strong> 3
+<strong>Input:</strong> n = 3
 <strong>Output:</strong> 3
 <strong>Explanation:</strong> There are three ways to climb to the top.
 1. 1 step + 1 step + 1 step
@@ -40,10 +42,12 @@
 
 ## Related Topics
 
-- [Dynamic Programming](https://leetcode-cn.com/tag/dynamic-programming)
+- [Memoization](https://leetcode.com/tag/memoization/)
+- [Math](https://leetcode.com/tag/math/)
+- [Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
 
 ## Similar Questions
 
-- [Min Cost Climbing Stairs](../min-cost-climbing-stairs/README_EN.md)
-- [Fibonacci Number](../fibonacci-number/README_EN.md)
-- [N-th Tribonacci Number](../n-th-tribonacci-number/README_EN.md)
+- [Min Cost Climbing Stairs](../min-cost-climbing-stairs/README_EN.md) Easy 
+- [Fibonacci Number](../fibonacci-number/README_EN.md) Easy 
+- [N-th Tribonacci Number](../n-th-tribonacci-number/README_EN.md) Easy 

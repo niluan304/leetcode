@@ -1,4 +1,4 @@
-package climbing_stairs
+package fibonacci_number
 
 import (
 	"reflect"
@@ -19,11 +19,17 @@ var cases = func() []tests.Case[Input, Output] {
 			Input: Input{
 				n: 2,
 			},
-			Except: 2,
+			Except: 1,
 		},
 		{
 			Input: Input{
 				n: 3,
+			},
+			Except: 2,
+		},
+		{
+			Input: Input{
+				n: 4,
 			},
 			Except: 3,
 		},
