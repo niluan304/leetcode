@@ -27,12 +27,12 @@ Difficulty:{{.Difficulty}}, Likes: {{.Likes}}
 
 ## Related Topics
 {{range .TopicTags }}
-- [{{.Name}}](https://leetcode-cn.com/tag/{{.Slug}}/)
+- [{{.Name}}](https://leetcode.com/tag/{{.Slug}}/)
 {{- end }}
 
 ## Similar Questions
 {{range .SimilarQuestions}}
-- [{{.Title}}](../{{.TitleSlug}}/README.md) {{.Difficulty}} {{if.IsPaidOnly}}🔒{{end}}{{/* 是否付费 */}}
+- [{{.Title}}](../{{.TitleSlug}}/README_EN.md) {{.Difficulty}} {{if.IsPaidOnly}}🔒{{end}}{{/* 是否付费 */}}
 {{- end }}
 `
 
@@ -49,7 +49,7 @@ Difficulty:{{.Difficulty}}, Likes: {{.Likes}}
 
 ## 相关话题
 {{range .TopicTags}}
-- [{{.TranslatedName}}](https://leetcode-cn.com/tag/{{.Slug}}/)
+- [{{.TranslatedName}}](https://leetcode.cn/tag/{{.Slug}}/)
 {{- end}}
 
 ## 相似题目
