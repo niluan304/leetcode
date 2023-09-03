@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [139.Word Break](https://leetcode.com/problems/word-break/)
-Difficulty:Medium, Likes: 2176
+Difficulty:Medium, Likes: 2269
 
 ## Description
 
@@ -49,13 +49,13 @@ Note that you are allowed to reuse a dictionary word.
 
 ## Related Topics
 
-- [Trie](https://leetcode-cn.com/tag/trie/)
-- [Memoization](https://leetcode-cn.com/tag/memoization/)
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Dynamic Programming](https://leetcode-cn.com/tag/dynamic-programming/)
+- [Trie](https://leetcode.com/tag/trie/)
+- [Memoization](https://leetcode.com/tag/memoization/)
+- [Array](https://leetcode.com/tag/array/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
+- [Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
 
 ## Similar Questions
 
-- [Word Break II](../word-break-ii/README.md) Hard 
+- [Word Break II](../word-break-ii/README_EN.md) Hard 

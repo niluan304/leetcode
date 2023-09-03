@@ -1,21 +1,42 @@
 package word_break
 
 import (
+	"reflect"
 	"testing"
 
 	"leetcode/tests"
 )
 
 type Input struct {
-	S        string
-	WordDict []string
+	s        string
+	wordDict []string
 }
 
-var cases = func() []tests.Case[Input, bool] {
-	return []tests.Case[Input, bool]{
-		{Input: Input{S: "leetcode", WordDict: []string{"leet", "code"}}, Except: true},
-		{Input: Input{S: "applepenapple", WordDict: []string{"apple", "pen"}}, Except: true},
-		{Input: Input{S: "catsandog", WordDict: []string{"cats", "dog", "sand", "and", "cat"}}, Except: false},
+type Output bool
+
+var cases = func() []tests.Case[Input, Output] {
+	return []tests.Case[Input, Output]{
+		{
+			Input: Input{
+				s:        "leetcode",
+				wordDict: []string{"leet", "code"},
+			},
+			Except: true,
+		},
+		{
+			Input: Input{
+				s:        "applepenapple",
+				wordDict: []string{"apple", "pen"},
+			},
+			Except: true,
+		},
+		{
+			Input: Input{
+				s:        "catsandog",
+				wordDict: []string{"cats", "dog", "sand", "and", "cat"},
+			},
+			Except: false,
+		},
 	}
 }
 
@@ -23,15 +44,18 @@ type Func func(s string, wordDict []string) bool
 
 var funcs = tests.NewFuncWithAdaptor(adaptor)
 
-func adaptor(f Func) func(in Input) (out bool) {
-	return func(in Input) (out bool) {
-		return f(in.S, in.WordDict)
+func adaptor(f Func) func(in Input) Output {
+	return func(in Input) Output {
+		return Output(f(
+			in.s,
+			in.wordDict,
+		))
 	}
 }
 
-func AddCases(c func() []tests.Case[Input, bool]) {
+func AddCases(c func() []tests.Case[Input, Output]) {
 	_cases := cases()
-	cases = func() []tests.Case[Input, bool] {
+	cases = func() []tests.Case[Input, Output] {
 		return append(_cases, c()...)
 	}
 }
@@ -40,21 +64,23 @@ func AddFunc(f ...Func) {
 	funcs = append(funcs, tests.NewFuncWithAdaptor(adaptor, f...)...)
 }
 
+func Equal(x, y Output) bool {
+
+	return reflect.DeepEqual(x, y)
+}
+
 func Unit(t *testing.T) {
-	tests.Unit(t, tests.Test[Input, bool]{
+	tests.Unit(t, tests.Test[Input, Output]{
 		Solution: funcs,
 		Cases:    cases,
-		IsEqual:  nil,
+		IsEqual:  Equal,
 	})
 }
 
-var checkResult = true
-
 func Bench(b *testing.B) {
-	checkResult = false
-	tests.Bench(b, tests.Test[Input, bool]{
+	tests.Bench(b, tests.Test[Input, Output]{
 		Solution: funcs,
 		Cases:    cases,
-		IsEqual:  nil,
+		IsEqual:  Equal,
 	})
 }

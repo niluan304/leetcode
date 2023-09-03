@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [139. 单词拆分](https://leetcode.cn/problems/word-break/)
-Difficulty:Medium, Likes: 2176
+Difficulty:Medium, Likes: 2269
 
 ## 题目描述
 
@@ -44,19 +44,19 @@ Difficulty:Medium, Likes: 2176
 	<li><code>1 &lt;= s.length &lt;= 300</code></li>
 	<li><code>1 &lt;= wordDict.length &lt;= 1000</code></li>
 	<li><code>1 &lt;= wordDict[i].length &lt;= 20</code></li>
-	<li><code>s</code> 和 <code>wordDict[i]</code> 仅有小写英文字母组成</li>
+	<li><code>s</code> 和 <code>wordDict[i]</code> 仅由小写英文字母组成</li>
 	<li><code>wordDict</code> 中的所有字符串 <strong>互不相同</strong></li>
 </ul>
 
 
 ## 相关话题
 
-- [字典树](https://leetcode-cn.com/tag/trie/)
-- [记忆化搜索](https://leetcode-cn.com/tag/memoization/)
-- [数组](https://leetcode-cn.com/tag/array/)
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [动态规划](https://leetcode-cn.com/tag/dynamic-programming/)
+- [字典树](https://leetcode.cn/tag/trie/)
+- [记忆化搜索](https://leetcode.cn/tag/memoization/)
+- [数组](https://leetcode.cn/tag/array/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
 
 ## 相似题目
 
