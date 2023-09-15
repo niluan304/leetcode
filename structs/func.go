@@ -1,7 +1,5 @@
 package structs
 
-import "math"
-
 func Sum(list []int) int {
 	var sum = 0
 	for _, n := range list {
@@ -11,24 +9,16 @@ func Sum(list []int) int {
 	return sum
 }
 
-func Max(list ...int) int {
-	var ans = math.MinInt
-	for _, n := range list {
-		if ans < n {
-			ans = n
-		}
+func Max(x, y int) int {
+	if x > y {
+		return x
 	}
-
-	return ans
+	return y
 }
 
-func Min(list ...int) int {
-	var ans = math.MaxInt
-	for _, n := range list {
-		if ans > n {
-			ans = n
-		}
+func Min(x, y int) int {
+	if x < y {
+		return x
 	}
-
-	return ans
+	return y
 }
