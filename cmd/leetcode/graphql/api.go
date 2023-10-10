@@ -213,3 +213,50 @@ func (c *Client) ProblemsetQuestionList(ctx context.Context, in ProblemQuestionR
 
 	return res, nil
 }
+
+func (c *Client) QuestionOfToday(ctx context.Context) (res *QuestionOfTodayRes, err error) {
+	req := graphql.NewRequest(`
+    query questionOfToday {
+  todayRecord {
+    date
+    userStatus
+    question {
+      questionId
+      frontendQuestionId: questionFrontendId
+      difficulty
+      title
+      titleCn: translatedTitle
+      titleSlug
+      paidOnly: isPaidOnly
+      freqBar
+      isFavor
+      acRate
+      status
+      solutionNum
+      hasVideoSolution
+      topicTags {
+        name
+        nameTranslated: translatedName
+        id
+      }
+      extra {
+        topCompanyTags {
+          imgUrl
+          slug
+          numSubscribed
+        }
+      }
+    }
+    lastSubmission {
+      id
+    }
+  }
+}
+    `)
+	err = c.request(ctx, req, "https://leetcode.cn/problems/stock-price-fluctuation/description", &res)
+	if err != nil {
+		return nil, err
+	}
+
+	return res, nil
+}

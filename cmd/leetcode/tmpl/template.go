@@ -10,8 +10,9 @@ var (
 )
 
 var (
-	tmplCase = template.Must(template.New("case").Parse(TemplateCase))
-	tmplTest = template.Must(template.New("test").Parse(TemplateTest))
+	tmplCase    = template.Must(template.New("case").Parse(TemplateCase))
+	tmplTest    = template.Must(template.New("test").Parse(TemplateTest))
+	endlessTest = template.Must(template.New("test").Parse(EndlessTest))
 )
 
 // TemplateEN 题目描述 README 英文模板
@@ -157,4 +158,35 @@ func Benchmark_{{.Name}}(b *testing.B) {
 	Bench(b)
 }
 
+`
+
+const EndlessTest = `package {{.PkgName}}
+
+import (
+	"reflect"
+	"runtime"
+	"testing"
+
+	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+)
+
+func Test_{{.PkgName}}(t *testing.T) {
+	targetCaseNum := 0 // -1
+
+	fs := []interface{}{
+		{{.Name}},
+	}
+
+	for _, f := range fs{
+		name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
+		i := strings.LastIndex(name, ".")
+
+		t.Run(name[i+1:], func(t *testing.T) {
+			err := testutil.{{.RunFuncName}}(t, f, "sample.txt", targetCaseNum) 
+			if err != nil {
+				t.Error(err)
+			}
+		})
+	}
+}
 `

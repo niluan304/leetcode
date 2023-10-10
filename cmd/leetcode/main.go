@@ -16,6 +16,7 @@ var (
 	id     = flag.String("i", "", "leetcode problem id")
 	slug   = flag.String("s", "", "leetcode problem slug")
 	output = flag.String("o", "", "output file path")
+	today  = flag.String("t", "", "today of problem")
 	_      = flag.String("e", "", "os.Exit(0)")
 	once   = new(sync.Once)
 )
@@ -37,35 +38,44 @@ func init() {
 func main() {
 	s := server.New("")
 
-	for {
-		if *id != "" {
-			err := s.BuildById(*id)
-			if err != nil {
-				fmt.Println(err)
-
-			}
-		}
-
-		if *slug != "" {
-			err := s.Build(*slug)
-			if err != nil {
-				fmt.Println(err)
-			}
-		}
-
-		// reset
-		*id = ""
-		*slug = ""
-
-		once.Do(flag.Usage)
-		fmt.Print("请输入命令参数：")
-
-		// 读取用户输入
-		err := Scan()
+	if strings.ToUpper(*today) == "YES" {
+		err := s.Today()
 		if err != nil {
 			fmt.Println(err)
 		}
+		return
 	}
+
+	if *id != "" {
+		err := s.Id(*id)
+		if err != nil {
+			fmt.Println(err)
+		}
+		return
+	}
+
+	if *slug != "" {
+		err := s.TitleSlug(*slug)
+		if err != nil {
+			fmt.Println(err)
+		}
+		return
+	}
+
+	// reset
+	*id = ""
+	*slug = ""
+
+	once.Do(flag.Usage)
+	fmt.Print("请输入命令参数：")
+
+	// 读取用户输入
+	err := Scan()
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	main()
 }
 
 func Scan() (err error) {

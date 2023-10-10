@@ -14,18 +14,13 @@ import (
 	"leetcode/cmd/leetcode/tmpl"
 )
 
-type Server interface {
-	BuildById(id string) (err error)
-	Build(titleSlug string) (err error)
+type Server struct{}
+
+func New(configPath string) *Server {
+	return &Server{}
 }
 
-type server struct{}
-
-func New(configPath string) Server {
-	return &server{}
-}
-
-func (s *server) TitleSlug(id string) (titleSlug string, err error) {
+func (s *Server) idToSlug(id string) (titleSlug string, err error) {
 	var ctx = context.Background()
 	client := graphql.New(graphql.EndpointZh)
 
@@ -59,16 +54,16 @@ func (s *server) TitleSlug(id string) (titleSlug string, err error) {
 	return "", errors.New("未找到题目")
 }
 
-func (s *server) BuildById(id string) (err error) {
-	titleSlug, err := s.TitleSlug(id)
+func (s *Server) Id(id string) (err error) {
+	titleSlug, err := s.idToSlug(id)
 	if err != nil {
 		return err
 	}
 
-	return s.Build(titleSlug)
+	return s.TitleSlug(titleSlug)
 }
 
-func (s *server) Build(titleSlug string) (err error) {
+func (s *Server) TitleSlug(titleSlug string) (err error) {
 	var ctx = context.Background()
 	client := graphql.New(graphql.EndpointZh)
 
@@ -94,9 +89,9 @@ func (s *server) Build(titleSlug string) (err error) {
 	list := []tmpl.Parser{
 		tmpl.NewParserEN(question),
 		tmpl.NewParserZH(question),
-		tmpl.NewParserCase(question),
+		tmpl.NewParserSamples(question),
+		tmpl.NewParserEndlessTest(question),
 		tmpl.NewParserSolution(question),
-		tmpl.NewParserUnitCase(question),
 		tmpl.NewParserLeetcode(question.Pkg()),
 	}
 	for _, elem := range list {
@@ -115,4 +110,22 @@ func sleep(min int, max int) {
 	d := min + rand.Intn(max-min)
 
 	time.Sleep(time.Millisecond * time.Duration(d*100))
+}
+
+func (s *Server) Today() (err error) {
+	var ctx = context.Background()
+	client := graphql.New(graphql.EndpointZh)
+	res, err := client.QuestionOfToday(ctx)
+	if err != nil {
+		return err
+	}
+
+	for _, record := range res.TodayRecord {
+		err = s.TitleSlug(record.Question.TitleSlug)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
 }

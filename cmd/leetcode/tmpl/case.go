@@ -49,9 +49,9 @@ func GoType(t string) string {
 		"list<integer>":       "[]int",
 		"list<string>":        "[]string",
 
-		// tree or listNode
-		"TreeNode": "*structs.TreeNode",
-		"ListNode": "*structs.ListNode",
+		//// tree or listNode
+		//"TreeNode": "*structs.TreeNode",
+		//"ListNode": "*structs.ListNode",
 	}
 
 	if v, ok := m[t]; ok {

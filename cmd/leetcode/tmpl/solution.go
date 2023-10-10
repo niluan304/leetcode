@@ -142,3 +142,22 @@ func NewParserUnitCase(q *graphql.QuestionData) (p Parser) {
 
 	return NewParser("solution_test.go", tmplTest, data)
 }
+
+func NewParserEndlessTest(q *graphql.QuestionData) (p Parser) {
+	type Data struct {
+		PkgName     string
+		Name        string
+		RunFuncName string
+	}
+
+	data := &Data{
+		PkgName:     q.Pkg(),
+		Name:        q.MetaData.Name,
+		RunFuncName: "RunLeetCodeFuncWithFile",
+	}
+	if q.MetaData.Systemdesign {
+		data.RunFuncName = "RunLeetCodeClassWithFile"
+	}
+
+	return NewParser("solution_test.go", endlessTest, data)
+}

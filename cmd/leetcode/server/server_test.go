@@ -20,9 +20,9 @@ func Test_server_do(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.titleSlug, func(t *testing.T) {
-			s := server{}
-			if err := s.Build(tt.titleSlug); err != nil {
-				t.Logf("Build() error = %v", err)
+			s := Server{}
+			if err := s.TitleSlug(tt.titleSlug); err != nil {
+				t.Logf("TitleSlug() error = %v", err)
 			}
 		})
 
@@ -47,9 +47,9 @@ func TestServer_BuildById(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			s := server{}
-			if err := s.BuildById(tt.args.id); (err != nil) != tt.wantErr {
-				t.Errorf("BuildById() error = %v, wantErr %v", err, tt.wantErr)
+			s := Server{}
+			if err := s.Id(tt.args.id); (err != nil) != tt.wantErr {
+				t.Errorf("Id() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
 	}
@@ -73,8 +73,8 @@ func TestServer_TitleSlug(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			s := server{}
-			gotTitleSlug, err := s.TitleSlug(tt.args.id)
+			s := Server{}
+			gotTitleSlug, err := s.idToSlug(tt.args.id)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("TitleSlug() error = %v, wantErr %v", err, tt.wantErr)
 				return

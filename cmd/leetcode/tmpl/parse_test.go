@@ -46,6 +46,7 @@ func Test_Parser(t *testing.T) {
 				NewParserEN(question),
 				NewParserZH(question),
 				NewParserCase(question),
+				NewParserSamples(question),
 				NewParserSolution(question),
 				NewParserUnitCase(question),
 				NewParserLeetcode(question.Pkg()),
