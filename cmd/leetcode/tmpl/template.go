@@ -165,6 +165,7 @@ const EndlessTest = `package {{.PkgName}}
 import (
 	"reflect"
 	"runtime"
+	"strings"
 	"testing"
 
 	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"

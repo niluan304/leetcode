@@ -5,6 +5,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/pkg/errors"
 
@@ -14,6 +15,7 @@ import (
 type Solution struct {
 	CodeSnippets []graphql.QuestionDataCodeSnippet //
 
+	NeedMod bool   //
 	PkgName string //
 }
 
@@ -23,6 +25,9 @@ func NewSolution(q *graphql.QuestionData) (*Solution, error) {
 	return &Solution{
 		CodeSnippets: q.CodeSnippets,
 		PkgName:      pkg,
+		NeedMod: strings.Contains(q.TranslatedContent, "取余") ||
+			strings.Contains(q.TranslatedContent, "取模") ||
+			strings.Contains(q.TranslatedContent, "答案可能很大"),
 	}, nil
 }
 
@@ -94,7 +99,41 @@ func (s *Solution) Parse(w io.Writer) (err error) {
 			continue
 		}
 
-		_, err = w.Write([]byte(fmt.Sprintf("package %s\n\n%s", s.PkgName, item.Code)))
+		data := fmt.Sprintf("package %s\n\n", s.PkgName)
+		if strings.Contains(item.Code, "Definition for") {
+			data += `import . "github.com/EndlessCheng/codeforces-go/leetcode/testutil"` + "\n\n"
+		}
+		if s.NeedMod {
+			data += `const Mod int = 1e9 + 7` + "\n\n"
+		}
+
+		data += item.Code
+
+		data += `
+
+func Max(x, y int) int {
+	if x > y {
+		return x
+	}
+	return y
+}
+
+func Min(x, y int) int {
+	if x < y {
+		return x
+	}
+	return y
+}
+
+func Abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+`
+
+		_, err = w.Write([]byte(data))
 		if err != nil {
 			return errors.Wrap(err, "fail write solution")
 		}
@@ -157,6 +196,7 @@ func NewParserEndlessTest(q *graphql.QuestionData) (p Parser) {
 	}
 	if q.MetaData.Systemdesign {
 		data.RunFuncName = "RunLeetCodeClassWithFile"
+		data.Name = "Constructor"
 	}
 
 	return NewParser("solution_test.go", endlessTest, data)

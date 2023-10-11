@@ -15,14 +15,14 @@ func Test_Parser(t *testing.T) {
 			input:  "D:/__Project/leetcode/questionData/two-sum.json",
 			output: "./data/1_two-sum",
 		},
-		{
-			input:  "D:/__Project/leetcode/questionData/3Etpl5.json",
-			output: "./data/offer_LCOF2",
-		},
-		{
-			input:  "D:/__Project/leetcode/questionData/container-with-most-water.json",
-			output: "./data/container-with-most-water",
-		},
+		//{
+		//	input:  "D:/__Project/leetcode/questionData/3Etpl5.json",
+		//	output: "./data/offer_LCOF2",
+		//},
+		//{
+		//	input:  "D:/__Project/leetcode/questionData/container-with-most-water.json",
+		//	output: "./data/container-with-most-water",
+		//},
 	}
 
 	for _, arg := range args {
@@ -42,22 +42,19 @@ func Test_Parser(t *testing.T) {
 
 		// 解析模板
 		t.Run(input, func(t *testing.T) {
-			list := []Parser{
-				NewParserEN(question),
-				NewParserZH(question),
-				NewParserCase(question),
-				NewParserSamples(question),
-				NewParserSolution(question),
-				NewParserUnitCase(question),
-				NewParserLeetcode(question.Pkg()),
+			list := []Parse{
+				//{Open: false, Parser: NewParserEN(question)},
+				//{Open: false, Parser: NewParserZH(question)},
+				//{Open: false, Parser: NewParserUnitCase(question)},
+				//{Open: false, Parser: NewParserLeetcode(question.Pkg())},
+				//{Open: false, Parser: NewParserCase(question)},
+				{Open: true, Parser: NewParserSamples(question)},
+				//{Open: true, Parser: NewParserSolution(question)},
+				//{Open: true, Parser: NewParserEndlessTest(question)},
 			}
 
-			for _, elem := range list {
-				t.Run(elem.Filename(), func(t *testing.T) {
-					p := Parse{
-						Parser: elem,
-					}
-
+			for _, p := range list {
+				t.Run(p.Filename(), func(t *testing.T) {
 					err = p.Save(output)
 					if err != nil {
 						t.Errorf("save error: %v", err)

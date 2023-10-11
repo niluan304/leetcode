@@ -9,6 +9,7 @@ import (
 	"text/template"
 
 	"github.com/pkg/errors"
+	"github.com/skratchdot/open-golang/open"
 
 	"leetcode/cmd/leetcode/graphql"
 )
@@ -50,6 +51,7 @@ func (t *tmpl) Filename() string {
 }
 
 type Parse struct {
+	Open bool
 	Parser
 }
 
@@ -63,11 +65,17 @@ func (p *Parse) Save(root string) (err error) {
 	data := bytes.ReplaceAll(buf.Bytes(), []byte("\r\n"), []byte("\n"))
 
 	name := p.Filename()
-	file, err := os.Create(filepath.Join(root, name))
+	path := filepath.Join(root, name)
+	file, err := os.Create(path)
 	if err != nil {
 		return errors.Wrap(err, "fail create file")
 	}
 	defer file.Close()
+
+	if p.Open {
+		absPath, _ := filepath.Abs(path)
+		defer open.Run(absPath)
+	}
 
 	_, err = file.Write(data)
 	if err != nil {

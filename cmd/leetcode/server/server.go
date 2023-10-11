@@ -2,6 +2,7 @@ package server
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"math/rand"
 	"os"
@@ -9,6 +10,7 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
+	"github.com/skratchdot/open-golang/open"
 
 	"leetcode/cmd/leetcode/graphql"
 	"leetcode/cmd/leetcode/tmpl"
@@ -86,21 +88,23 @@ func (s *Server) TitleSlug(titleSlug string) (err error) {
 	}
 
 	// 解析模板
-	list := []tmpl.Parser{
-		tmpl.NewParserEN(question),
-		tmpl.NewParserZH(question),
-		tmpl.NewParserSamples(question),
-		tmpl.NewParserEndlessTest(question),
-		tmpl.NewParserSolution(question),
-		tmpl.NewParserLeetcode(question.Pkg()),
+	list := []tmpl.Parse{
+		{Open: false, Parser: tmpl.NewParserEN(question)},
+		{Open: false, Parser: tmpl.NewParserZH(question)},
+		{Open: false, Parser: tmpl.NewParserLeetcode(question.Pkg())},
+		{Open: false, Parser: tmpl.NewParserSamples(question)},
+		{Open: true, Parser: tmpl.NewParserEndlessTest(question)},
+		{Open: true, Parser: tmpl.NewParserSolution(question)},
 	}
-	for _, elem := range list {
-		p := &tmpl.Parse{Parser: elem}
-
+	for _, p := range list {
 		err = p.Save(path)
 		if err != nil {
 			return err
 		}
+	}
+	err = open.Run(fmt.Sprintf("https://leetcode.cn/problems/%s/description/", titleSlug))
+	if err != nil {
+		return err
 	}
 
 	return nil
