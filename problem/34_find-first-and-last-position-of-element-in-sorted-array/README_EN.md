@@ -36,9 +36,9 @@ Difficulty:Medium, Likes: 2412
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
+- [Array](https://leetcode.com/tag/array/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
 
 ## Similar Questions
 
-- [First Bad Version](../first-bad-version/README.md) Easy 
+- [First Bad Version](../first-bad-version/README_EN.md) Easy 
