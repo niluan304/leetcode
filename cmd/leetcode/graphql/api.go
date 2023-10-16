@@ -260,3 +260,102 @@ func (c *Client) QuestionOfToday(ctx context.Context) (res *QuestionOfTodayRes, 
 
 	return res, nil
 }
+
+func (c *Client) SolutionArticle(ctx context.Context, in SolutionArticleReq) (res *SolutionArticleRes, err error) {
+	req := graphql.NewRequest(`
+    query discussTopic($slug: String) {
+  solutionArticle(slug: $slug, orderBy: DEFAULT) {
+    ...solutionArticle
+    content
+    next {
+      slug
+      title
+    }
+    prev {
+      slug
+      title
+    }
+  }
+}
+    
+    fragment solutionArticle on SolutionArticleNode {
+  ipRegion
+  rewardEnabled
+  canEditReward
+  uuid
+  title
+  slug
+  sunk
+  chargeType
+  status
+  identifier
+  canEdit
+  canSee
+  reactionType
+  reactionsV2 {
+    count
+    reactionType
+  }
+  tags {
+    name
+    nameTranslated
+    slug
+    tagType
+  }
+  createdAt
+  thumbnail
+  author {
+    username
+    isDiscussAdmin
+    isDiscussStaff
+    profile {
+      userAvatar
+      userSlug
+      realName
+      reputation
+    }
+  }
+  summary
+  topic {
+    id
+    subscribed
+    commentCount
+    viewCount
+    post {
+      id
+      status
+      voteStatus
+      isOwnPost
+    }
+  }
+  byLeetcode
+  isMyFavorite
+  isMostPopular
+  favoriteCount
+  isEditorsPick
+  hitCount
+  videosInfo {
+    videoId
+    coverUrl
+    duration
+  }
+}
+    `)
+
+	var values = map[string]any{
+		"slug":          in.Slug,
+		"operationName": "discussTopic",
+	}
+	for key, value := range values {
+		req.Var(key, value)
+	}
+
+	referer := fmt.Sprintf("/problemset/all")
+	referer = ""
+	err = c.request(ctx, req, referer, &res)
+	if err != nil {
+		return nil, err
+	}
+
+	return res, nil
+}

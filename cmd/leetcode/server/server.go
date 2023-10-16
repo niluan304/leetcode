@@ -93,8 +93,8 @@ func (s *Server) TitleSlug(titleSlug string) (err error) {
 		{Open: false, Parser: tmpl.NewParserZH(question)},
 		{Open: false, Parser: tmpl.NewParserLeetcode(question.Pkg())},
 		{Open: false, Parser: tmpl.NewParserSamples(question)},
-		{Open: true, Parser: tmpl.NewParserEndlessTest(question)},
 		{Open: true, Parser: tmpl.NewParserSolution(question)},
+		{Open: true, Parser: tmpl.NewParserEndlessTest(question)},
 	}
 	for _, p := range list {
 		err = p.Save(path)

@@ -32,6 +32,28 @@
 
 
 
+## 二分答案
+
+#### 最小化最大值（二分最大值 mx，如果满足要求，例如所有元素最后都 <= mx 则返回 true，否则返回 false，也就是满足要求就让 right 变小，不满足要求就让 left 变大）
+
+- [2064. 分配给商店的最多商品的最小值](https://leetcode.cn/problems/minimized-maximum-of-products-distributed-to-any-store/) 1886
+- [1760. 袋子里最少数目的球](https://leetcode.cn/problems/minimum-limit-of-balls-in-a-bag/) 1940
+- [2439. 最小化数组中的最大值](https://leetcode.cn/problems/minimize-maximum-of-array/) 1965
+- [2560. 打家劫舍 IV](https://leetcode.cn/problems/house-robber-iv/) 2081
+- [778. 水位上升的泳池中游泳](https://leetcode.cn/problems/swim-in-rising-water/) 2097 *相当于最小化路径最大值
+- [2616. 最小化数对的最大差值](https://leetcode.cn/problems/minimize-the-maximum-difference-of-pairs/) 2155
+- [2513. 最小化两个数组中的最大值](https://leetcode.cn/problems/minimize-the-maximum-of-two-arrays/) 2302
+https://www.lanqiao.cn/problems/5129/learning/?contest_id=144
+
+#### 最大化最小值（二分最小值 mn+1，如果满足要求，例如所有元素最后都 >= mn+1 则返回 false，否则返回 true，为什么要这样返回请看下面的【sort.Search 的使用技巧·其一】）
+- [1552. 两球之间的磁力](https://leetcode.cn/problems/magnetic-force-between-two-balls/) 1920
+- [2861. 最大合金数](https://leetcode.cn/problems/maximum-number-of-alloys/) 1981
+- [2517. 礼盒的最大甜蜜度](https://leetcode.cn/problems/maximum-tastiness-of-candy-basket/) 2021
+- [2528. 最大化城市的最小供电站数目](https://leetcode.cn/problems/maximize-the-minimum-powered-city/) 2236
+http://codeforces.com/problemset/problem/460/C
+
+
+
 ## 链表
 
 
@@ -106,6 +128,7 @@
 | [最长公共子序列 LCS](https://www.bilibili.com/video/BV1TM4y1o7ug/) | [1143. 最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/) | [代码](https://leetcode.cn/problems/longest-common-subsequence/solutions/2133188/jiao-ni-yi-bu-bu-si-kao-dong-tai-gui-hua-lbz5/) | 包含空间优化               |          |
 |                                                              | [72. 编辑距离](https://leetcode.cn/problems/edit-distance/)  | [代码](https://leetcode.cn/problems/edit-distance/solutions/2133222/jiao-ni-yi-bu-bu-si-kao-dong-tai-gui-hua-uo5q/) | 包含空间优化               |          |
 | [最长递增子序列 LIS](https://www.bilibili.com/video/BV1ub411Q7sB/) | [300. 最长递增子序列](https://leetcode.cn/problems/longest-increasing-subsequence/) | [代码](https://leetcode.cn/problems/longest-increasing-subsequence/solution/jiao-ni-yi-bu-bu-si-kao-dpfu-o1-kong-jia-4zma/) | 包括贪心二分 + $O(1)$ 空间 |          |
+|                                                              | [673. 最长递增子序列的个数 ](https://leetcode.cn/problems/number-of-longest-increasing-subsequence/) |                                                              | *课后作业                  |          |
 |                                                              | [1626. 无矛盾的最佳球队](https://leetcode.cn/problems/best-team-with-no-conflicts/) | [代码](https://leetcode.cn/problems/best-team-with-no-conflicts/solution/zui-chang-di-zeng-zi-xu-lie-cong-on2-dao-ojqu/) | *课后作业                  |          |
 | [状态机 DP](https://www.bilibili.com/video/BV1ho4y1W7QK/)    | [122. 买卖股票的最佳时机 II](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/) | [代码](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/solution/shi-pin-jiao-ni-yi-bu-bu-si-kao-dong-tai-o3y4/) |                            |          |
 |                                                              | [309. 买卖股票的最佳时机含冷冻期](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | [代码](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/shi-pin-jiao-ni-yi-bu-bu-si-kao-dong-tai-0k0l/) |                            |          |
@@ -131,68 +154,54 @@
 ## 单调栈
 
 
-| 视频精讲                                                  | 题目                                                         | 代码                                                         | 备注      | 个人感想 |
-| --------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | -------- |
-| ## [单调栈](https://www.bilibili.com/video/BV1VN411J7S7/) | [739. 每日温度](https://leetcode.cn/problems/daily-temperatures/) | [代码](https://leetcode.cn/problems/daily-temperatures/solution/shi-pin-jiang-qing-chu-wei-shi-yao-yao-y-k0ks/) | 两种写法  |          |
-|                                                           | [42. 接雨水](https://leetcode.cn/problems/trapping-rain-water/) | [代码](https://leetcode.cn/problems/trapping-rain-water/solution/zuo-liao-nbian-huan-bu-hui-yi-ge-shi-pin-ukwm/) |           |          |
-|                                                           | [901. 股票价格跨度](https://leetcode.cn/problems/online-stock-span/) | [代码](https://leetcode.cn/problems/online-stock-span/solution/shi-pin-yi-ge-shi-pin-jiang-tou-dan-diao-cuk7/) | *课后作业 |          |
-|                                                           | [1019. 链表中的下一个更大节点](https://leetcode.cn/problems/next-greater-node-in-linked-list/) | [代码](https://leetcode.cn/problems/next-greater-node-in-linked-list/solution/tu-jie-dan-diao-zhan-liang-chong-fang-fa-v9ab/) | *课后作业 |          |
+| 视频精讲                                               | 题目                                                         | 代码                                                         | 备注      | 个人感想 |
+| ------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | -------- |
+| [单调栈](https://www.bilibili.com/video/BV1VN411J7S7/) | [739. 每日温度](https://leetcode.cn/problems/daily-temperatures/) | [代码](https://leetcode.cn/problems/daily-temperatures/solution/shi-pin-jiang-qing-chu-wei-shi-yao-yao-y-k0ks/) | 两种写法  |          |
+|                                                        | [42. 接雨水](https://leetcode.cn/problems/trapping-rain-water/) | [代码](https://leetcode.cn/problems/trapping-rain-water/solution/zuo-liao-nbian-huan-bu-hui-yi-ge-shi-pin-ukwm/) |           |          |
+|                                                        | [901. 股票价格跨度](https://leetcode.cn/problems/online-stock-span/) | [代码](https://leetcode.cn/problems/online-stock-span/solution/shi-pin-yi-ge-shi-pin-jiang-tou-dan-diao-cuk7/) | *课后作业 |          |
+|                                                        | [1019. 链表中的下一个更大节点](https://leetcode.cn/problems/next-greater-node-in-linked-list/) | [代码](https://leetcode.cn/problems/next-greater-node-in-linked-list/solution/tu-jie-dan-diao-zhan-liang-chong-fang-fa-v9ab/) | *课后作业 |          |
 
 
 
-### 滑动窗口
+## *差分数组
 
-- [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
-### 回溯算法
-- [842. 将数组拆分成斐波那契序列](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/)
-- [79. 单词搜索](problem/79_word-search/problem.md)
-- [78. 子集](problem/78_subsets/problem.md)
-
-### 贪心算法
-- [649. Dota2 参议院](https://leetcode-cn.com/problems/dota2-senate/)
-- [861. 翻转矩阵后的得分](https://leetcode-cn.com/problems/score-after-flipping-matrix/solution/)
-- [12. 整数转罗马数字](problem/12_integer-to-roman/problem.md)
-- [409. 最长回文串](problem/409_longest-palindrome/problem.md)
-- [179. 最大数](problem/179_largest-number/problem.md)
-
-### 蓄水池
-- [382. 链表随机节点](problem/382_linked-list-random-node/problem.md)
-
-### 埃氏筛
-- [204. 计数质数](problem/204_count-primes/problem.md)
-
-### 二分查找
-- [写对二分查找不能靠模板，需要理解加练习 - 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/)
-- [1011. 在 D 天内送达包裹的能力](problem/1011_capacity-to-ship-packages-within-d-days/problem.md)
-- [1760. 袋子里最少数目的球](problem/1760_minimum-limit-of-balls-in-a-bag/problem.md)
-- [4. 寻找两个正序数组的中位数](problem/4_median-of-two-sorted-arrays/problem.md)
-
-### 双指针
-- [11. 盛最多水的容器](problem/11_contain-water/problem.md)
-- [27. 移除元素](problem/27_remove-element/problem.md)
-- [88. 合并两个有序数组](problem/88_merge-sorted-array/problem.md)
-- [141. 环形链表](problem/141_linked-list-cycle/problem.md)
-
-### 数组
-- [48. 旋转图像](problem/48_rotate-image/problem.md)
-- [169. 多数元素](problem/169_majority-element/problem.md)
-- [73. 矩阵置零](problem/73_set-matrix-zeroes/problem.md)
-
-### 栈
-- [20. 有效的括号](problem/20_valid-parentheses/problem.md)
-- [155. 最小栈](problem/155_min-stack/problem.md)
-
-### 链表
-- [19. 删除链表的倒数第 N 个结点](problem/19_remove-nth-node-from-end-of-list/problem.md)
-- [82. 删除排序链表中的重复元素 II](problem/82_remove-duplicates-from-sorted-list-ii/problem.md)
-- [83. 删除排序链表中的重复元素](problem/83_remove-duplicates-from-sorted-list/problem.md)
-- [382. 链表随机节点](problem/382_linked-list-random-node/problem.md)
-- [143. 重排链表](problem/143_reorder-list/problem.md)
-- [148. 排序链表](problem/148_sort-list/problem.md)
-- [206. 反转链表](problem/206_reverse-linked-list/problem.md)
+| 视频精讲                                                     | 题目                                                         | 代码 | 备注          | 个人感想 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---- | ------------- | -------- |
+| [【算法小课堂】差分数组](https://leetcode.cn/circle/discuss/FfMCgb/) | [2848. 与车相交的点](https://leetcode.cn/problems/points-that-intersect-with-cars/description/) |      |               |          |
+|                                                              | [1094. 拼车](https://leetcode.cn/problems/car-pooling/description/) |      |               |          |
+|                                                              | [1109. 航班预订统计](https://leetcode.cn/problems/corporate-flight-bookings/description/) |      |               |          |
+|                                                              | [2381. 字母移位 II](https://leetcode.cn/problems/shifting-letters-ii/description/) |      |               |          |
+|                                                              | [2406. 将区间分为最少组数](https://leetcode.cn/problems/divide-intervals-into-minimum-number-of-groups/description/) |      | 可贪心+最小堆 |          |
+|                                                              | [2772. 使数组中的所有元素都等于零](https://leetcode.cn/problems/apply-operations-to-make-all-array-elements-equal-to-zero/description/) |      |               |          |
+|                                                              | [2251. 花期内花的数目](https://leetcode.cn/problems/number-of-flowers-in-full-bloom/description/) |      | 可二分查找    |          |
 
 
 
+## *前缀和
+
+| 视频精讲 | 题目                                                         | 代码 | 备注 | 个人感想 |
+| -------- | ------------------------------------------------------------ | ---- | ---- | -------- |
+|          | [1031. 两个非重叠子数组的最大和](https://leetcode.cn/problems/maximum-sum-of-two-non-overlapping-subarrays/description/) |      |      |          |
+|          | [1177. 构建回文串检测](https://leetcode.cn/problems/can-make-palindrome-from-substring/description/) |      |      |          |
+|          |                                                              |      |      |          |
 
 
+
+## *拓扑排序
+
+| 视频精讲 | 题目 | 代码 | 备注 | 个人感想 |
+| -------- | ---- | ---- | ---- | -------- |
+|          |      |      |      |          |
+|          |      |      |      |          |
+|          |      |      |      |          |
+
+
+
+## *优先队列/堆
+
+| 视频精讲 | 题目 | 代码 | 备注 | 个人感想 |
+| -------- | ---- | ---- | ---- | -------- |
+|          |      |      |      |          |
+|          |      |      |      |          |
+|          |      |      |      |          |

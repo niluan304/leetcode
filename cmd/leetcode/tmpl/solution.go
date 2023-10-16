@@ -111,21 +111,21 @@ func (s *Solution) Parse(w io.Writer) (err error) {
 
 		data += `
 
-func Max(x, y int) int {
+func _max(x, y int) int {
 	if x > y {
 		return x
 	}
 	return y
 }
 
-func Min(x, y int) int {
+func _min(x, y int) int {
 	if x < y {
 		return x
 	}
 	return y
 }
 
-func Abs(x int) int {
+func _abs(x int) int {
 	if x < 0 {
 		return -x
 	}
