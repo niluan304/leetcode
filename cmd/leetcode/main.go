@@ -13,12 +13,13 @@ import (
 )
 
 var (
-	id     = flag.String("i", "", "leetcode problem id")
-	slug   = flag.String("s", "", "leetcode problem slug")
-	output = flag.String("o", "", "output file path")
-	today  = flag.String("t", "", "today of problem")
-	_      = flag.String("e", "", "os.Exit(0)")
-	once   = new(sync.Once)
+	id      = flag.String("i", "", "leetcode problem id")
+	slug    = flag.String("s", "", "leetcode problem slug")
+	output  = flag.String("o", "", "output file path")
+	today   = flag.String("t", "", "today of problem")
+	article = flag.String("a", "", "solution article")
+	_       = flag.String("e", "", "os.Exit(0)")
+	once    = new(sync.Once)
 )
 
 func init() {
@@ -56,6 +57,14 @@ func main() {
 
 	if *slug != "" {
 		err := s.TitleSlug(*slug)
+		if err != nil {
+			fmt.Println(err)
+		}
+		return
+	}
+
+	if *article != "" {
+		err := s.Article(*article)
 		if err != nil {
 			fmt.Println(err)
 		}

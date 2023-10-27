@@ -44,6 +44,7 @@ func TestServer_BuildById(t *testing.T) {
 		{name: "3", args: args{id: "3"}, wantErr: false},
 		{name: "4", args: args{id: "4"}, wantErr: false},
 		{name: "5", args: args{id: "5"}, wantErr: false},
+		{name: "1465", args: args{id: "1465"}, wantErr: false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

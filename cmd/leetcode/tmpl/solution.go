@@ -89,6 +89,9 @@ func NewParserSolution(q *graphql.QuestionData) Parser {
 	return &Solution{
 		CodeSnippets: q.CodeSnippets,
 		PkgName:      pkg,
+		NeedMod: strings.Contains(q.TranslatedContent, "取余") ||
+			strings.Contains(q.TranslatedContent, "取模") ||
+			strings.Contains(q.TranslatedContent, "答案可能很大"),
 	}
 }
 
@@ -103,15 +106,8 @@ func (s *Solution) Parse(w io.Writer) (err error) {
 		if strings.Contains(item.Code, "Definition for") {
 			data += `import . "github.com/EndlessCheng/codeforces-go/leetcode/testutil"` + "\n\n"
 		}
-		if s.NeedMod {
-			data += `const Mod int = 1e9 + 7` + "\n\n"
-		}
 
-		data += item.Code
-
-		data += `
-
-func _max(x, y int) int {
+		data += `func _max(x, y int) int {
 	if x > y {
 		return x
 	}
@@ -131,7 +127,14 @@ func _abs(x int) int {
 	}
 	return x
 }
+
 `
+
+		if s.NeedMod {
+			data += `const mod = 1e9 + 7` + "\n\n"
+		}
+
+		data += item.Code
 
 		_, err = w.Write([]byte(data))
 		if err != nil {

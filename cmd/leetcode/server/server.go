@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"os"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/pkg/errors"
@@ -131,5 +132,31 @@ func (s *Server) Today() (err error) {
 		}
 	}
 
+	return nil
+}
+
+func (s *Server) Article(article string) (err error) {
+	var ctx = context.Background()
+	client := graphql.New(graphql.EndpointZh)
+	res, err := client.SolutionArticle(ctx, graphql.SolutionArticleReq{
+		Slug: article,
+	})
+	if err != nil {
+		return err
+	}
+	const Flag = "```"
+	content := res.SolutionArticle.Content
+	for idx := strings.Index(content, Flag); idx >= 0; {
+		idx2 := strings.Index(content[idx+len(Flag):], Flag+"\n")
+		if idx2 == -1 {
+			break
+		}
+
+		prefix := content[:idx-1]
+		suffix := content[idx+9+idx2:]
+		content = prefix + suffix
+	}
+
+	fmt.Println(content)
 	return nil
 }
