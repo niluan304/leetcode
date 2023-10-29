@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [274.H-Index](https://leetcode.com/problems/h-index/)
-Difficulty:Medium, Likes: 330
+Difficulty:Medium, Likes: 380
 
 ## Description
 
@@ -39,10 +39,10 @@ Since the researcher has 3 papers with at least 3 citations each and the remaini
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Counting Sort](https://leetcode-cn.com/tag/counting-sort/)
-- [Sorting](https://leetcode-cn.com/tag/sorting/)
+- [Array](https://leetcode.com/tag/array/)
+- [Counting Sort](https://leetcode.com/tag/counting-sort/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 
-- [H-Index II](../h-index-ii/README.md) Medium 
+- [H-Index II](../h-index-ii/README_EN.md) Medium 

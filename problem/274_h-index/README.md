@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [274. H 指数](https://leetcode.cn/problems/h-index/)
-Difficulty:Medium, Likes: 330
+Difficulty:Medium, Likes: 380
 
 ## 题目描述
 
@@ -40,9 +40,9 @@ Difficulty:Medium, Likes: 330
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [计数排序](https://leetcode-cn.com/tag/counting-sort/)
-- [排序](https://leetcode-cn.com/tag/sorting/)
+- [数组](https://leetcode.cn/tag/array/)
+- [计数排序](https://leetcode.cn/tag/counting-sort/)
+- [排序](https://leetcode.cn/tag/sorting/)
 
 ## 相似题目
 
