@@ -1,0 +1,9 @@
+["abcw","baz","foo","bar","xtfn","abcdef"]
+16
+
+["a","ab","abc","d","cd","bcd","abcd"]
+4
+
+["a","aa","aaa","aaaa"]
+0
+
