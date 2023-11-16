@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [421. 数组中两个数的最大异或值](https://leetcode.cn/problems/maximum-xor-of-two-numbers-in-an-array/)
-Difficulty:Medium, Likes: 627
+Difficulty:Medium, Likes: 666
 
 ## 题目描述
 

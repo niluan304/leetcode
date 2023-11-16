@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [337.House Robber III](https://leetcode.com/problems/house-robber-iii/)
-Difficulty:Medium, Likes: 1900
+Difficulty:Medium, Likes: 1901
 
 ## Description
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2466.Count Ways To Build Good Strings](https://leetcode.com/problems/count-ways-to-build-good-strings/)
-Difficulty:Medium, Likes: 33
+Difficulty:Medium, Likes: 40
 
 ## Description
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [322. 零钱兑换](https://leetcode.cn/problems/coin-change/)
-Difficulty:Medium, Likes: 2563
+Difficulty:Medium, Likes: 2626
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1781.Sum of Beauty of All Substrings](https://leetcode.com/problems/sum-of-beauty-of-all-substrings/)
-Difficulty:Medium, Likes: 85
+Difficulty:Medium, Likes: 88
 
 ## Description
 
@@ -40,9 +40,9 @@ Difficulty:Medium, Likes: 85
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Counting](https://leetcode-cn.com/tag/counting/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
+- [Counting](https://leetcode.com/tag/counting/)
 
 ## Similar Questions
 

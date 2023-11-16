@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [215. 数组中的第K个最大元素](https://leetcode.cn/problems/kth-largest-element-in-an-array/)
-Difficulty:Medium, Likes: 2321
+Difficulty:Medium, Likes: 2349
 
 ## 题目描述
 

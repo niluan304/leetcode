@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [415. 字符串相加](https://leetcode.cn/problems/add-strings/)
-Difficulty:Easy, Likes: 725
+Difficulty:Easy, Likes: 803
 
 ## 题目描述
 
@@ -48,9 +48,9 @@ Difficulty:Easy, Likes: 725
 
 ## 相关话题
 
-- [数学](https://leetcode-cn.com/tag/math/)
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [模拟](https://leetcode-cn.com/tag/simulation/)
+- [数学](https://leetcode.cn/tag/math/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [模拟](https://leetcode.cn/tag/simulation/)
 
 ## 相似题目
 

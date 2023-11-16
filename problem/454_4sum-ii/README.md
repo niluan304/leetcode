@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [454. 四数相加 II](https://leetcode.cn/problems/4sum-ii/)
-Difficulty:Medium, Likes: 857
+Difficulty:Medium, Likes: 924
 
 ## 题目描述
 
@@ -49,8 +49,8 @@ Difficulty:Medium, Likes: 857
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
+- [数组](https://leetcode.cn/tag/array/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
 
 ## 相似题目
 

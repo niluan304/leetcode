@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2246.Longest Path With Different Adjacent Characters](https://leetcode.com/problems/longest-path-with-different-adjacent-characters/)
-Difficulty:Hard, Likes: 69
+Difficulty:Hard, Likes: 71
 
 ## Description
 

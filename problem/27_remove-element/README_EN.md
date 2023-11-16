@@ -1,62 +1,78 @@
 
 | English | [简体中文](README.md) |
 
-# [27. Remove Element](https://leetcode-cn.com/problems/remove-element/)
+# [27.Remove Element](https://leetcode.com/problems/remove-element/)
+Difficulty:Easy, Likes: 2064
 
 ## Description
 
-<p>Given an array <em>nums</em> and a value <em>val</em>, remove all instances of that value <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> and return the new length.</p>
+<p>Given an integer array <code>nums</code> and an integer <code>val</code>, remove all occurrences of <code>val</code> in <code>nums</code> <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a>. The order of the elements may be changed. Then return <em>the number of elements in </em><code>nums</code><em> which are not equal to </em><code>val</code>.</p>
 
-<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> with O(1) extra memory.</p>
+<p>Consider the number of elements in <code>nums</code> which are not equal to <code>val</code> be <code>k</code>, to get accepted, you need to do the following things:</p>
 
-<p>The order of elements can be changed. It doesn&#39;t matter what you leave beyond the new length.</p>
+<ul>
+	<li>Change the array <code>nums</code> such that the first <code>k</code> elements of <code>nums</code> contain the elements which are not equal to <code>val</code>. The remaining elements of <code>nums</code> are not important as well as the size of <code>nums</code>.</li>
+	<li>Return <code>k</code>.</li>
+</ul>
 
-<p><strong>Example 1:</strong></p>
+<p><strong>Custom Judge:</strong></p>
+
+<p>The judge will test your solution with the following code:</p>
 
 <pre>
-Given <em>nums</em> = <strong>[3,2,2,3]</strong>, <em>val</em> = <strong>3</strong>,
+int[] nums = [...]; // Input array
+int val = ...; // Value to remove
+int[] expectedNums = [...]; // The expected answer with correct length.
+                            // It is sorted with no values equaling val.
 
-Your function should return length = <strong>2</strong>, with the first two elements of <em>nums</em> being <strong>2</strong>.
+int k = removeElement(nums, val); // Calls your implementation
 
-It doesn&#39;t matter what you leave beyond the returned length.
+assert k == expectedNums.length;
+sort(nums, 0, k); // Sort the first k elements of nums
+for (int i = 0; i &lt; actualLength; i++) {
+    assert nums[i] == expectedNums[i];
+}
 </pre>
 
-<p><strong>Example 2:</strong></p>
+<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
 <pre>
-Given <em>nums</em> = <strong>[0,1,2,2,3,0,4,2]</strong>, <em>val</em> = <strong>2</strong>,
+<strong>Input:</strong> nums = [3,2,2,3], val = 3
+<strong>Output:</strong> 2, nums = [2,2,_,_]
+<strong>Explanation:</strong> Your function should return k = 2, with the first two elements of nums being 2.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+</pre>
 
-Your function should return length = <strong><code>5</code></strong>, with the first five elements of <em><code>nums</code></em> containing&nbsp;<strong><code>0</code></strong>, <strong><code>1</code></strong>, <strong><code>3</code></strong>, <strong><code>0</code></strong>, and&nbsp;<strong>4</strong>.
-
-Note that the order of those five elements can be arbitrary.
-
-It doesn&#39;t matter what values are set beyond&nbsp;the returned length.</pre>
-
-<p><strong>Clarification:</strong></p>
-
-<p>Confused why the returned value is an integer but your answer is an array?</p>
-
-<p>Note that the input array is passed in by <strong>reference</strong>, which means modification to the input array will be known to the caller as well.</p>
-
-<p>Internally you can think of this:</p>
+<p><strong class="example">Example 2:</strong></p>
 
 <pre>
-// <strong>nums</strong> is passed in by reference. (i.e., without making a copy)
-int len = removeElement(nums, val);
+<strong>Input:</strong> nums = [0,1,2,2,3,0,4,2], val = 2
+<strong>Output:</strong> 5, nums = [0,1,4,0,3,_,_,_]
+<strong>Explanation:</strong> Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
+Note that the five elements can be returned in any order.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+</pre>
 
-// any modification to <strong>nums</strong> in your function would be known by the caller.
-// using the length returned by your function, it prints the first <strong>len</strong> elements.
-for (int i = 0; i &lt; len; i++) {
-&nbsp; &nbsp; print(nums[i]);
-}</pre>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>0 &lt;= nums.length &lt;= 100</code></li>
+	<li><code>0 &lt;= nums[i] &lt;= 50</code></li>
+	<li><code>0 &lt;= val &lt;= 100</code></li>
+</ul>
+
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers)
+- [Array](https://leetcode.com/tag/array/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
 
 ## Similar Questions
 
-- [Remove Duplicates from Sorted Array](../remove-duplicates-from-sorted-array/README_EN.md)
-- [Remove Linked List Elements](../remove-linked-list-elements/README_EN.md)
-- [Move Zeroes](../move-zeroes/README_EN.md)
+- [Remove Duplicates from Sorted Array](../remove-duplicates-from-sorted-array/README_EN.md) Easy 
+- [Remove Linked List Elements](../remove-linked-list-elements/README_EN.md) Easy 
+- [Move Zeroes](../move-zeroes/README_EN.md) Easy 

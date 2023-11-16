@@ -3,10 +3,12 @@ package tmpl
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io"
 	"os"
 	"path/filepath"
 	"text/template"
+	"time"
 
 	"github.com/pkg/errors"
 	"github.com/skratchdot/open-golang/open"
@@ -23,10 +25,6 @@ type tmpl struct {
 	filename string
 	data     any
 	tmpl     *template.Template
-}
-
-func NewParserWithPath(filename string, path string, data any) Parser {
-	return NewParser(filename, template.Must(template.ParseFiles(path)), data)
 }
 
 func NewParser(filename string, t *template.Template, data any) Parser {
@@ -52,6 +50,7 @@ func (t *tmpl) Filename() string {
 
 type Parse struct {
 	Open bool
+	App  string
 	Parser
 }
 
@@ -72,10 +71,7 @@ func (p *Parse) Save(root string) (err error) {
 	}
 	defer file.Close()
 
-	if p.Open {
-		absPath, _ := filepath.Abs(path)
-		defer open.Run(absPath)
-	}
+	p.open(path)
 
 	_, err = file.Write(data)
 	if err != nil {
@@ -83,6 +79,26 @@ func (p *Parse) Save(root string) (err error) {
 	}
 
 	return nil
+}
+
+func (p *Parse) open(path string) {
+	if !p.Open {
+		return
+	}
+
+	run := open.RunWith
+	if p.App == "" {
+		run = func(path string, appName string) error {
+			return open.Run(path)
+		}
+	}
+
+	absPath, _ := filepath.Abs(path)
+	err := run(absPath, p.App)
+	if err != nil {
+		fmt.Println("error: open.RunWith(input, appName)", absPath, p.App)
+	}
+	time.Sleep(time.Second)
 }
 
 func LoadQuestion(responseFile string) (q *graphql.QuestionData, err error) {

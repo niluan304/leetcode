@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2530.Maximal Score After Applying K Operations](https://leetcode.com/problems/maximal-score-after-applying-k-operations/)
-Difficulty:Medium, Likes: 24
+Difficulty:Medium, Likes: 83
 
 ## Description
 

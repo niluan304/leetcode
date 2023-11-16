@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1493.Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)
-Difficulty:Medium, Likes: 93
+Difficulty:Medium, Likes: 114
 
 ## Description
 
@@ -46,9 +46,9 @@ Difficulty:Medium, Likes: 93
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Dynamic Programming](https://leetcode-cn.com/tag/dynamic-programming/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Array](https://leetcode.com/tag/array/)
+- [Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 

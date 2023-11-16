@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [122.Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
-Difficulty:Medium, Likes: 2282
+Difficulty:Medium, Likes: 2354
 
 ## Description
 

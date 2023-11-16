@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [238. 除自身以外数组的乘积](https://leetcode.cn/problems/product-of-array-except-self/)
-Difficulty:Medium, Likes: 1606
+Difficulty:Medium, Likes: 1637
 
 ## 题目描述
 

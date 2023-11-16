@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [367.Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)
-Difficulty:Easy, Likes: 521
+Difficulty:Easy, Likes: 550
 
 ## Description
 
@@ -39,10 +39,10 @@ Difficulty:Easy, Likes: 521
 
 ## Related Topics
 
-- [Math](https://leetcode-cn.com/tag/math/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
+- [Math](https://leetcode.com/tag/math/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
 
 ## Similar Questions
 
-- [Sqrt(x)](../sqrtx/README.md) Easy 
-- [Sum of Square Numbers](../sum-of-square-numbers/README.md) Medium 
+- [Sqrt(x)](../sqrtx/README_EN.md) Easy 
+- [Sum of Square Numbers](../sum-of-square-numbers/README_EN.md) Medium 

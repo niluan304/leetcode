@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1493. 删掉一个元素以后全为 1 的最长子数组](https://leetcode.cn/problems/longest-subarray-of-1s-after-deleting-one-element/)
-Difficulty:Medium, Likes: 93
+Difficulty:Medium, Likes: 114
 
 ## 题目描述
 
@@ -47,9 +47,9 @@ Difficulty:Medium, Likes: 93
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [动态规划](https://leetcode-cn.com/tag/dynamic-programming/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [数组](https://leetcode.cn/tag/array/)
+- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

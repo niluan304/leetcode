@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [416.Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
-Difficulty:Medium, Likes: 1865
+Difficulty:Medium, Likes: 1929
 
 ## Description
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)
-Difficulty:Medium, Likes: 2133
+Difficulty:Medium, Likes: 2215
 
 ## 题目描述
 
@@ -45,10 +45,10 @@ Difficulty:Medium, Likes: 2133
 
 ## 相关话题
 
-- [树](https://leetcode-cn.com/tag/tree/)
-- [深度优先搜索](https://leetcode-cn.com/tag/depth-first-search/)
-- [二叉搜索树](https://leetcode-cn.com/tag/binary-search-tree/)
-- [二叉树](https://leetcode-cn.com/tag/binary-tree/)
+- [树](https://leetcode.cn/tag/tree/)
+- [深度优先搜索](https://leetcode.cn/tag/depth-first-search/)
+- [二叉搜索树](https://leetcode.cn/tag/binary-search-tree/)
+- [二叉树](https://leetcode.cn/tag/binary-tree/)
 
 ## 相似题目
 

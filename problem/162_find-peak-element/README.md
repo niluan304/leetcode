@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [162. 寻找峰值](https://leetcode.cn/problems/find-peak-element/)
-Difficulty:Medium, Likes: 1084
+Difficulty:Medium, Likes: 1167
 
 ## 题目描述
 
@@ -45,8 +45,8 @@ Difficulty:Medium, Likes: 1084
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [二分查找](https://leetcode-cn.com/tag/binary-search/)
+- [数组](https://leetcode.cn/tag/array/)
+- [二分查找](https://leetcode.cn/tag/binary-search/)
 
 ## 相似题目
 

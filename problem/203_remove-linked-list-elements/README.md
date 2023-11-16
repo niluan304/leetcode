@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [203. 移除链表元素](https://leetcode.cn/problems/remove-linked-list-elements/)
-Difficulty:Easy, Likes: 1310
+Difficulty:Easy, Likes: 1355
 
 ## 题目描述
 
@@ -43,8 +43,8 @@ Difficulty:Easy, Likes: 1310
 
 ## 相关话题
 
-- [递归](https://leetcode-cn.com/tag/recursion/)
-- [链表](https://leetcode-cn.com/tag/linked-list/)
+- [递归](https://leetcode.cn/tag/recursion/)
+- [链表](https://leetcode.cn/tag/linked-list/)
 
 ## 相似题目
 

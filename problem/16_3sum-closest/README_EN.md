@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [16.3Sum Closest](https://leetcode.com/problems/3sum-closest/)
-Difficulty:Medium, Likes: 1482
+Difficulty:Medium, Likes: 1552
 
 ## Description
 
@@ -41,11 +41,11 @@ Difficulty:Medium, Likes: 1482
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
-- [Sorting](https://leetcode-cn.com/tag/sorting/)
+- [Array](https://leetcode.com/tag/array/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 
-- [3Sum](../3sum/README.md) Medium 
-- [3Sum Smaller](../3sum-smaller/README.md) Medium 🔒
+- [3Sum](../3sum/README_EN.md) Medium 
+- [3Sum Smaller](../3sum-smaller/README_EN.md) Medium 🔒

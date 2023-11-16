@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1026.Maximum Difference Between Node and Ancestor](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/)
-Difficulty:Medium, Likes: 214
+Difficulty:Medium, Likes: 220
 
 ## Description
 
@@ -41,9 +41,9 @@ Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 
 
 ## Related Topics
 
-- [Tree](https://leetcode-cn.com/tag/tree/)
-- [Depth-First Search](https://leetcode-cn.com/tag/depth-first-search/)
-- [Binary Tree](https://leetcode-cn.com/tag/binary-tree/)
+- [Tree](https://leetcode.com/tag/tree/)
+- [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
+- [Binary Tree](https://leetcode.com/tag/binary-tree/)
 
 ## Similar Questions
 

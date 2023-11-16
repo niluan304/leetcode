@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [39. 组合总和](https://leetcode.cn/problems/combination-sum/)
-Difficulty:Medium, Likes: 2535
+Difficulty:Medium, Likes: 2669
 
 ## 题目描述
 
@@ -51,8 +51,8 @@ Difficulty:Medium, Likes: 2535
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
+- [数组](https://leetcode.cn/tag/array/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 

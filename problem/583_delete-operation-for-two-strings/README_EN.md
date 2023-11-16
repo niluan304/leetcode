@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [583.Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings/)
-Difficulty:Medium, Likes: 626
+Difficulty:Medium, Likes: 635
 
 ## Description
 
@@ -42,5 +42,5 @@ Difficulty:Medium, Likes: 626
 
 ## Similar Questions
 
-- [Edit Distance](../edit-distance/README_EN.md) Hard 
+- [Edit Distance](../edit-distance/README_EN.md) Medium 
 - [Minimum ASCII Delete Sum for Two Strings](../minimum-ascii-delete-sum-for-two-strings/README_EN.md) Medium 

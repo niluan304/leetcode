@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [148. 排序链表](https://leetcode.cn/problems/sort-list/)
-Difficulty:Medium, Likes: 2038
+Difficulty:Medium, Likes: 2156
 
 ## 题目描述
 
@@ -50,11 +50,11 @@ Difficulty:Medium, Likes: 2038
 
 ## 相关话题
 
-- [链表](https://leetcode-cn.com/tag/linked-list/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
-- [分治](https://leetcode-cn.com/tag/divide-and-conquer/)
-- [排序](https://leetcode-cn.com/tag/sorting/)
-- [归并排序](https://leetcode-cn.com/tag/merge-sort/)
+- [链表](https://leetcode.cn/tag/linked-list/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
+- [分治](https://leetcode.cn/tag/divide-and-conquer/)
+- [排序](https://leetcode.cn/tag/sorting/)
+- [归并排序](https://leetcode.cn/tag/merge-sort/)
 
 ## 相似题目
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)
-Difficulty:Easy, Likes: 1673
+Difficulty:Easy, Likes: 1741
 
 ## 题目描述
 
@@ -42,10 +42,10 @@ Difficulty:Easy, Likes: 1673
 
 ## 相关话题
 
-- [树](https://leetcode-cn.com/tag/tree/)
-- [深度优先搜索](https://leetcode-cn.com/tag/depth-first-search/)
-- [广度优先搜索](https://leetcode-cn.com/tag/breadth-first-search/)
-- [二叉树](https://leetcode-cn.com/tag/binary-tree/)
+- [树](https://leetcode.cn/tag/tree/)
+- [深度优先搜索](https://leetcode.cn/tag/depth-first-search/)
+- [广度优先搜索](https://leetcode.cn/tag/breadth-first-search/)
+- [二叉树](https://leetcode.cn/tag/binary-tree/)
 
 ## 相似题目
 

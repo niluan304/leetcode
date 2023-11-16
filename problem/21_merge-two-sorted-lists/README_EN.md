@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [21.Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
-Difficulty:Easy, Likes: 3221
+Difficulty:Easy, Likes: 3353
 
 ## Description
 
@@ -46,12 +46,12 @@ Difficulty:Easy, Likes: 3221
 
 ## Related Topics
 
-- [Recursion](https://leetcode-cn.com/tag/recursion/)
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
+- [Recursion](https://leetcode.com/tag/recursion/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
 
 ## Similar Questions
 
-- [Merge k Sorted Lists](../merge-k-sorted-lists/README.md) Hard 
-- [Merge Sorted Array](../merge-sorted-array/README.md) Easy 
-- [Sort List](../sort-list/README.md) Medium 
-- [Shortest Word Distance II](../shortest-word-distance-ii/README.md) Medium 🔒
+- [Merge k Sorted Lists](../merge-k-sorted-lists/README_EN.md) Hard 
+- [Merge Sorted Array](../merge-sorted-array/README_EN.md) Easy 
+- [Sort List](../sort-list/README_EN.md) Medium 
+- [Shortest Word Distance II](../shortest-word-distance-ii/README_EN.md) Medium 🔒

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [143.Reorder List](https://leetcode.com/problems/reorder-list/)
-Difficulty:Medium, Likes: 1351
+Difficulty:Medium, Likes: 1404
 
 ## Description
 
@@ -46,10 +46,10 @@ L<sub>0</sub> &rarr; L<sub>n</sub> &rarr; L<sub>1</sub> &rarr; L<sub>n - 1</sub>
 
 ## Related Topics
 
-- [Stack](https://leetcode-cn.com/tag/stack/)
-- [Recursion](https://leetcode-cn.com/tag/recursion/)
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
+- [Stack](https://leetcode.com/tag/stack/)
+- [Recursion](https://leetcode.com/tag/recursion/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
 
 ## Similar Questions
 

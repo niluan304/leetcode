@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1465. 切割后面积最大的蛋糕](https://leetcode.cn/problems/maximum-area-of-a-piece-of-cake-after-horizontal-and-vertical-cuts/)
-Difficulty:Medium, Likes: 64
+Difficulty:Medium, Likes: 104
 
 ## 题目描述
 

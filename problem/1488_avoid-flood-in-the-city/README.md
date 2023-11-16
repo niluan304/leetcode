@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1488. 避免洪水泛滥](https://leetcode.cn/problems/avoid-flood-in-the-city/)
-Difficulty:Medium, Likes: 193
+Difficulty:Medium, Likes: 227
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [343.Integer Break](https://leetcode.com/problems/integer-break/)
-Difficulty:Medium, Likes: 1255
+Difficulty:Medium, Likes: 1310
 
 ## Description
 

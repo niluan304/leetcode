@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [125.Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
-Difficulty:Easy, Likes: 647
+Difficulty:Easy, Likes: 709
 
 ## Description
 
@@ -47,10 +47,10 @@ Since an empty string reads the same forward and backward, it is a palindrome.
 
 ## Related Topics
 
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
-- [String](https://leetcode-cn.com/tag/string/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [String](https://leetcode.com/tag/string/)
 
 ## Similar Questions
 
-- [Palindrome Linked List](../palindrome-linked-list/README.md) Easy 
-- [Valid Palindrome II](../valid-palindrome-ii/README.md) Easy 
+- [Palindrome Linked List](../palindrome-linked-list/README_EN.md) Easy 
+- [Valid Palindrome II](../valid-palindrome-ii/README_EN.md) Easy 

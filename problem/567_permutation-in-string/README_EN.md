@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [567.Permutation in String](https://leetcode.com/problems/permutation-in-string/)
-Difficulty:Medium, Likes: 936
+Difficulty:Medium, Likes: 970
 
 ## Description
 
@@ -37,12 +37,12 @@ Difficulty:Medium, Likes: 936
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [String](https://leetcode.com/tag/string/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 
-- [Minimum Window Substring](../minimum-window-substring/README.md) Hard 
-- [Find All Anagrams in a String](../find-all-anagrams-in-a-string/README.md) Medium 
+- [Minimum Window Substring](../minimum-window-substring/README_EN.md) Hard 
+- [Find All Anagrams in a String](../find-all-anagrams-in-a-string/README_EN.md) Medium 

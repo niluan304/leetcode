@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [139.Word Break](https://leetcode.com/problems/word-break/)
-Difficulty:Medium, Likes: 2269
+Difficulty:Medium, Likes: 2343
 
 ## Description
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [611. 有效三角形的个数](https://leetcode.cn/problems/valid-triangle-number/)
-Difficulty:Medium, Likes: 509
+Difficulty:Medium, Likes: 531
 
 ## 题目描述
 
@@ -39,11 +39,11 @@ Difficulty:Medium, Likes: 509
 
 ## 相关话题
 
-- [贪心](https://leetcode-cn.com/tag/greedy/)
-- [数组](https://leetcode-cn.com/tag/array/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
-- [二分查找](https://leetcode-cn.com/tag/binary-search/)
-- [排序](https://leetcode-cn.com/tag/sorting/)
+- [贪心](https://leetcode.cn/tag/greedy/)
+- [数组](https://leetcode.cn/tag/array/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
+- [二分查找](https://leetcode.cn/tag/binary-search/)
+- [排序](https://leetcode.cn/tag/sorting/)
 
 ## 相似题目
 

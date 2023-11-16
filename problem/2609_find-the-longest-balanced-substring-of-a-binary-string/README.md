@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2609. 最长平衡子字符串](https://leetcode.cn/problems/find-the-longest-balanced-substring-of-a-binary-string/)
-Difficulty:Easy, Likes: 72
+Difficulty:Easy, Likes: 83
 
 ## 题目描述
 

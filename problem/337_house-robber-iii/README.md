@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [337. 打家劫舍 III](https://leetcode.cn/problems/house-robber-iii/)
-Difficulty:Medium, Likes: 1900
+Difficulty:Medium, Likes: 1901
 
 ## 题目描述
 

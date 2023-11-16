@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [438. 找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/)
-Difficulty:Medium, Likes: 1229
+Difficulty:Medium, Likes: 1327
 
 ## 题目描述
 
@@ -45,9 +45,9 @@ Difficulty:Medium, Likes: 1229
 
 ## 相关话题
 
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

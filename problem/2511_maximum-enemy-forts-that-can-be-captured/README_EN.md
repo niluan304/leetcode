@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2511.Maximum Enemy Forts That Can Be Captured](https://leetcode.com/problems/maximum-enemy-forts-that-can-be-captured/)
-Difficulty:Easy, Likes: 21
+Difficulty:Easy, Likes: 92
 
 ## Description
 

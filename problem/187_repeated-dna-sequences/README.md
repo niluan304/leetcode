@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [187. 重复的DNA序列](https://leetcode.cn/problems/repeated-dna-sequences/)
-Difficulty:Medium, Likes: 544
+Difficulty:Medium, Likes: 563
 
 ## 题目描述
 

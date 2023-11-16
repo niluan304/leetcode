@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2596.Check Knight Tour Configuration](https://leetcode.com/problems/check-knight-tour-configuration/)
-Difficulty:Medium, Likes: 34
+Difficulty:Medium, Likes: 65
 
 ## Description
 

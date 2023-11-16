@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [139. 单词拆分](https://leetcode.cn/problems/word-break/)
-Difficulty:Medium, Likes: 2269
+Difficulty:Medium, Likes: 2343
 
 ## 题目描述
 

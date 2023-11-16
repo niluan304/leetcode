@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [47.Permutations II](https://leetcode.com/problems/permutations-ii/)
-Difficulty:Medium, Likes: 1402
+Difficulty:Medium, Likes: 1496
 
 ## Description
 
@@ -37,12 +37,12 @@ Difficulty:Medium, Likes: 1402
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [Array](https://leetcode.com/tag/array/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [Next Permutation](../next-permutation/README.md) Medium 
-- [Permutations](../permutations/README.md) Medium 
-- [Palindrome Permutation II](../palindrome-permutation-ii/README.md) Medium 🔒
-- [Number of Squareful Arrays](../number-of-squareful-arrays/README.md) Hard 
+- [Next Permutation](../next-permutation/README_EN.md) Medium 
+- [Permutations](../permutations/README_EN.md) Medium 
+- [Palindrome Permutation II](../palindrome-permutation-ii/README_EN.md) Medium 🔒
+- [Number of Squareful Arrays](../number-of-squareful-arrays/README_EN.md) Hard 

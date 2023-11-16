@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [837. 新 21 点](https://leetcode.cn/problems/new-21-game/)
-Difficulty:Medium, Likes: 367
+Difficulty:Medium, Likes: 381
 
 ## 题目描述
 
@@ -52,10 +52,10 @@ Difficulty:Medium, Likes: 367
 
 ## 相关话题
 
-- [数学](https://leetcode-cn.com/tag/math/)
-- [动态规划](https://leetcode-cn.com/tag/dynamic-programming/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
-- [概率与统计](https://leetcode-cn.com/tag/probability-and-statistics/)
+- [数学](https://leetcode.cn/tag/math/)
+- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
+- [概率与统计](https://leetcode.cn/tag/probability-and-statistics/)
 
 ## 相似题目
 

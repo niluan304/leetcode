@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2406. 将区间分为最少组数](https://leetcode.cn/problems/divide-intervals-into-minimum-number-of-groups/)
-Difficulty:Medium, Likes: 53
+Difficulty:Medium, Likes: 54
 
 ## 题目描述
 

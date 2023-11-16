@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [199. 二叉树的右视图](https://leetcode.cn/problems/binary-tree-right-side-view/)
-Difficulty:Medium, Likes: 926
+Difficulty:Medium, Likes: 990
 
 ## 题目描述
 
@@ -45,10 +45,10 @@ Difficulty:Medium, Likes: 926
 
 ## 相关话题
 
-- [树](https://leetcode-cn.com/tag/tree/)
-- [深度优先搜索](https://leetcode-cn.com/tag/depth-first-search/)
-- [广度优先搜索](https://leetcode-cn.com/tag/breadth-first-search/)
-- [二叉树](https://leetcode-cn.com/tag/binary-tree/)
+- [树](https://leetcode.cn/tag/tree/)
+- [深度优先搜索](https://leetcode.cn/tag/depth-first-search/)
+- [广度优先搜索](https://leetcode.cn/tag/breadth-first-search/)
+- [二叉树](https://leetcode.cn/tag/binary-tree/)
 
 ## 相似题目
 

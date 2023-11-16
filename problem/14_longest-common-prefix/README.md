@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [14. 最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/)
-Difficulty:Easy, Likes: 2858
+Difficulty:Easy, Likes: 2994
 
 ## 题目描述
 
@@ -39,8 +39,8 @@ Difficulty:Easy, Likes: 2858
 
 ## 相关话题
 
-- [字典树](https://leetcode-cn.com/tag/trie/)
-- [字符串](https://leetcode-cn.com/tag/string/)
+- [字典树](https://leetcode.cn/tag/trie/)
+- [字符串](https://leetcode.cn/tag/string/)
 
 ## 相似题目
 

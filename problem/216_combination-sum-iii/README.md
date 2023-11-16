@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [216. 组合总和 III](https://leetcode.cn/problems/combination-sum-iii/)
-Difficulty:Medium, Likes: 700
+Difficulty:Medium, Likes: 781
 
 ## 题目描述
 
@@ -58,8 +58,8 @@ Difficulty:Medium, Likes: 700
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
+- [数组](https://leetcode.cn/tag/array/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 

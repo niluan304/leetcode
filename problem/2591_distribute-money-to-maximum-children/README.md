@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2591. 将钱分给最多的儿童](https://leetcode.cn/problems/distribute-money-to-maximum-children/)
-Difficulty:Easy, Likes: 28
+Difficulty:Easy, Likes: 115
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [17.Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
-Difficulty:Medium, Likes: 2517
+Difficulty:Medium, Likes: 2684
 
 ## Description
 
@@ -43,12 +43,12 @@ Difficulty:Medium, Likes: 2517
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [Generate Parentheses](../generate-parentheses/README.md) Medium 
-- [Combination Sum](../combination-sum/README.md) Medium 
-- [Binary Watch](../binary-watch/README.md) Easy 
+- [Generate Parentheses](../generate-parentheses/README_EN.md) Medium 
+- [Combination Sum](../combination-sum/README_EN.md) Medium 
+- [Binary Watch](../binary-watch/README_EN.md) Easy 

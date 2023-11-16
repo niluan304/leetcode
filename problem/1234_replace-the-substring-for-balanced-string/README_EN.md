@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1234.Replace the Substring for Balanced String](https://leetcode.com/problems/replace-the-substring-for-balanced-string/)
-Difficulty:Medium, Likes: 247
+Difficulty:Medium, Likes: 265
 
 ## Description
 
@@ -50,8 +50,8 @@ Difficulty:Medium, Likes: 247
 
 ## Related Topics
 
-- [String](https://leetcode-cn.com/tag/string/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [String](https://leetcode.com/tag/string/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 

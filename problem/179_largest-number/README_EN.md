@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [179.Largest Number](https://leetcode.com/problems/largest-number/)
-Difficulty:Medium, Likes: 1146
+Difficulty:Medium, Likes: 1217
 
 ## Description
 
@@ -36,10 +36,10 @@ Difficulty:Medium, Likes: 1146
 
 ## Related Topics
 
-- [Greedy](https://leetcode-cn.com/tag/greedy/)
-- [Array](https://leetcode-cn.com/tag/array/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Sorting](https://leetcode-cn.com/tag/sorting/)
+- [Greedy](https://leetcode.com/tag/greedy/)
+- [Array](https://leetcode.com/tag/array/)
+- [String](https://leetcode.com/tag/string/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [500.Keyboard Row](https://leetcode.com/problems/keyboard-row/)
-Difficulty:Easy, Likes: 241
+Difficulty:Easy, Likes: 252
 
 ## Description
 
@@ -50,9 +50,9 @@ Difficulty:Easy, Likes: 241
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
+- [Array](https://leetcode.com/tag/array/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
 
 ## Similar Questions
 

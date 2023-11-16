@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/)
-Difficulty:Medium, Likes: 2412
+Difficulty:Medium, Likes: 2539
 
 ## 题目描述
 

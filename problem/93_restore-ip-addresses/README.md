@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [93. 复原 IP 地址](https://leetcode.cn/problems/restore-ip-addresses/)
-Difficulty:Medium, Likes: 1251
+Difficulty:Medium, Likes: 1348
 
 ## 题目描述
 
@@ -49,8 +49,8 @@ Difficulty:Medium, Likes: 1251
 
 ## 相关话题
 
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 

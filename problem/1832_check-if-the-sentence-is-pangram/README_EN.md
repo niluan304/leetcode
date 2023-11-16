@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1832.Check if the Sentence Is Pangram](https://leetcode.com/problems/check-if-the-sentence-is-pangram/)
-Difficulty:Easy, Likes: 76
+Difficulty:Easy, Likes: 79
 
 ## Description
 
@@ -37,8 +37,8 @@ Difficulty:Easy, Likes: 76
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
 
 ## Similar Questions
 

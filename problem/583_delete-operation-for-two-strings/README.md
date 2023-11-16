@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [583. 两个字符串的删除操作](https://leetcode.cn/problems/delete-operation-for-two-strings/)
-Difficulty:Medium, Likes: 626
+Difficulty:Medium, Likes: 635
 
 ## 题目描述
 
@@ -45,5 +45,5 @@ Difficulty:Medium, Likes: 626
 
 ## 相似题目
 
-- [编辑距离](../edit-distance/README.md) Hard 
+- [编辑距离](../edit-distance/README.md) Medium 
 - [两个字符串的最小ASCII删除和](../minimum-ascii-delete-sum-for-two-strings/README.md) Medium 

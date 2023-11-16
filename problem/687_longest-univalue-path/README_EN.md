@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [687.Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/)
-Difficulty:Medium, Likes: 780
+Difficulty:Medium, Likes: 782
 
 ## Description
 

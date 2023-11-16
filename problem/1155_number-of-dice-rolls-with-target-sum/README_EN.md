@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1155.Number of Dice Rolls With Target Sum](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/)
-Difficulty:Medium, Likes: 196
+Difficulty:Medium, Likes: 267
 
 ## Description
 

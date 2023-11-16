@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [LCP 06.拿硬币](https://leetcode.com/problems/na-ying-bi/)
-Difficulty:Easy, Likes: 73
+Difficulty:Easy, Likes: 124
 
 ## Description
 

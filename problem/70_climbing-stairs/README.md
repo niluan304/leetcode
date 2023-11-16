@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [70. 爬楼梯](https://leetcode.cn/problems/climbing-stairs/)
-Difficulty:Easy, Likes: 3200
+Difficulty:Easy, Likes: 3326
 
 ## 题目描述
 
@@ -43,9 +43,9 @@ Difficulty:Easy, Likes: 3200
 
 ## 相关话题
 
-- [记忆化搜索](https://leetcode-cn.com/tag/memoization/)
-- [数学](https://leetcode-cn.com/tag/math/)
-- [动态规划](https://leetcode-cn.com/tag/dynamic-programming/)
+- [记忆化搜索](https://leetcode.cn/tag/memoization/)
+- [数学](https://leetcode.cn/tag/math/)
+- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
 
 ## 相似题目
 

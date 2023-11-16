@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [25.Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/)
-Difficulty:Hard, Likes: 2122
+Difficulty:Hard, Likes: 2222
 
 ## Description
 
@@ -42,9 +42,9 @@ Difficulty:Hard, Likes: 2122
 
 ## Related Topics
 
-- [Recursion](https://leetcode-cn.com/tag/recursion/)
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
+- [Recursion](https://leetcode.com/tag/recursion/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
 
 ## Similar Questions
 
-- [Swap Nodes in Pairs](../swap-nodes-in-pairs/README.md) Medium 
+- [Swap Nodes in Pairs](../swap-nodes-in-pairs/README_EN.md) Medium 

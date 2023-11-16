@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [279. 完全平方数](https://leetcode.cn/problems/perfect-squares/)
-Difficulty:Medium, Likes: 1809
+Difficulty:Medium, Likes: 1852
 
 ## 题目描述
 

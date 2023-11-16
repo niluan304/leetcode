@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [290.Word Pattern](https://leetcode.com/problems/word-pattern/)
-Difficulty:Easy, Likes: 577
+Difficulty:Easy, Likes: 619
 
 ## Description
 
@@ -47,10 +47,10 @@ Difficulty:Easy, Likes: 577
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
 
 ## Similar Questions
 
-- [Isomorphic Strings](../isomorphic-strings/README.md) Easy 
-- [Word Pattern II](../word-pattern-ii/README.md) Medium 🔒
+- [Isomorphic Strings](../isomorphic-strings/README_EN.md) Easy 
+- [Word Pattern II](../word-pattern-ii/README_EN.md) Medium 🔒

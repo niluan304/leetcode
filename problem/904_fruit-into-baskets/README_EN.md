@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [904.Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
-Difficulty:Medium, Likes: 524
+Difficulty:Medium, Likes: 581
 
 ## Description
 
@@ -56,9 +56,9 @@ If we had started at the first tree, we would only pick from trees [1,2].
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Array](https://leetcode.com/tag/array/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 

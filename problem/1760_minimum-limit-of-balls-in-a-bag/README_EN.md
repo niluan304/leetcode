@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1760.Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/)
-Difficulty:Medium, Likes: 231
+Difficulty:Medium, Likes: 242
 
 ## Description
 
@@ -59,8 +59,8 @@ The bag with the most number of balls has 2 balls, so your penalty is 2, and you
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
+- [Array](https://leetcode.com/tag/array/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
 
 ## Similar Questions
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [14.Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
-Difficulty:Easy, Likes: 2858
+Difficulty:Easy, Likes: 2994
 
 ## Description
 
@@ -38,8 +38,8 @@ Difficulty:Easy, Likes: 2858
 
 ## Related Topics
 
-- [Trie](https://leetcode-cn.com/tag/trie/)
-- [String](https://leetcode-cn.com/tag/string/)
+- [Trie](https://leetcode.com/tag/trie/)
+- [String](https://leetcode.com/tag/string/)
 
 ## Similar Questions
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2516. 每种字符至少取 K 个](https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/)
-Difficulty:Medium, Likes: 30
+Difficulty:Medium, Likes: 35
 
 ## 题目描述
 
@@ -45,9 +45,9 @@ Difficulty:Medium, Likes: 30
 
 ## 相关话题
 
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [25. K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/)
-Difficulty:Hard, Likes: 2122
+Difficulty:Hard, Likes: 2222
 
 ## 题目描述
 
@@ -49,8 +49,8 @@ Difficulty:Hard, Likes: 2122
 
 ## 相关话题
 
-- [递归](https://leetcode-cn.com/tag/recursion/)
-- [链表](https://leetcode-cn.com/tag/linked-list/)
+- [递归](https://leetcode.cn/tag/recursion/)
+- [链表](https://leetcode.cn/tag/linked-list/)
 
 ## 相似题目
 

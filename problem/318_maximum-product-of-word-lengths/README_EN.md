@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [318.Maximum Product of Word Lengths](https://leetcode.com/problems/maximum-product-of-word-lengths/)
-Difficulty:Medium, Likes: 433
+Difficulty:Medium, Likes: 507
 
 ## Description
 

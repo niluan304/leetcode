@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [394.Decode String](https://leetcode.com/problems/decode-string/)
-Difficulty:Medium, Likes: 1517
+Difficulty:Medium, Likes: 1632
 
 ## Description
 
@@ -49,12 +49,12 @@ Difficulty:Medium, Likes: 1517
 
 ## Related Topics
 
-- [Stack](https://leetcode-cn.com/tag/stack/)
-- [Recursion](https://leetcode-cn.com/tag/recursion/)
-- [String](https://leetcode-cn.com/tag/string/)
+- [Stack](https://leetcode.com/tag/stack/)
+- [Recursion](https://leetcode.com/tag/recursion/)
+- [String](https://leetcode.com/tag/string/)
 
 ## Similar Questions
 
-- [Encode String with Shortest Length](../encode-string-with-shortest-length/README.md) Hard 🔒
-- [Number of Atoms](../number-of-atoms/README.md) Hard 
-- [Brace Expansion](../brace-expansion/README.md) Medium 🔒
+- [Encode String with Shortest Length](../encode-string-with-shortest-length/README_EN.md) Hard 🔒
+- [Number of Atoms](../number-of-atoms/README_EN.md) Hard 
+- [Brace Expansion](../brace-expansion/README_EN.md) Medium 🔒

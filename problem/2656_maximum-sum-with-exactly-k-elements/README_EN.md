@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2656.Maximum Sum With Exactly K Elements ](https://leetcode.com/problems/maximum-sum-with-exactly-k-elements/)
-Difficulty:Easy, Likes: 31
+Difficulty:Easy, Likes: 49
 
 ## Description
 

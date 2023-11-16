@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/)
-Difficulty:Medium, Likes: 715
+Difficulty:Medium, Likes: 747
 
 ## 题目描述
 
@@ -37,8 +37,8 @@ Difficulty:Medium, Likes: 715
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [数组](https://leetcode.cn/tag/array/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

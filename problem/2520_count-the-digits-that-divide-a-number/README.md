@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2520. 统计能整除数字的位数](https://leetcode.cn/problems/count-the-digits-that-divide-a-number/)
-Difficulty:Easy, Likes: 17
+Difficulty:Easy, Likes: 46
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [3.Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-Difficulty:Medium, Likes: 9373
+Difficulty:Medium, Likes: 9791
 
 ## Description
 
@@ -45,12 +45,12 @@ Notice that the answer must be a substring, &quot;pwke&quot; is a subsequence an
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 
-- [Longest Substring with At Most Two Distinct Characters](../longest-substring-with-at-most-two-distinct-characters/README.md) Medium 🔒
-- [Longest Substring with At Most K Distinct Characters](../longest-substring-with-at-most-k-distinct-characters/README.md) Medium 🔒
-- [Subarrays with K Different Integers](../subarrays-with-k-different-integers/README.md) Hard 
+- [Longest Substring with At Most Two Distinct Characters](../longest-substring-with-at-most-two-distinct-characters/README_EN.md) Medium 🔒
+- [Longest Substring with At Most K Distinct Characters](../longest-substring-with-at-most-k-distinct-characters/README_EN.md) Medium 🔒
+- [Subarrays with K Different Integers](../subarrays-with-k-different-integers/README_EN.md) Hard 

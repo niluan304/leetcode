@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [51. N 皇后](https://leetcode.cn/problems/n-queens/)
-Difficulty:Hard, Likes: 1826
+Difficulty:Hard, Likes: 1967
 
 ## 题目描述
 
@@ -46,8 +46,8 @@ Difficulty:Hard, Likes: 1826
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
+- [数组](https://leetcode.cn/tag/array/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 

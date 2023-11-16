@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1143. 最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/)
-Difficulty:Medium, Likes: 1432
+Difficulty:Medium, Likes: 1459
 
 ## 题目描述
 

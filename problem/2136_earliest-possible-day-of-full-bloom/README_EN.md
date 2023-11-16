@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2136.Earliest Possible Day of Full Bloom](https://leetcode.com/problems/earliest-possible-day-of-full-bloom/)
-Difficulty:Hard, Likes: 104
+Difficulty:Hard, Likes: 115
 
 ## Description
 

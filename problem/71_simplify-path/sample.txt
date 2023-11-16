@@ -1,0 +1,9 @@
+"/home/"
+"/home"
+
+"/../"
+"/"
+
+"/home//foo/"
+"/home/foo"
+

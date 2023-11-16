@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2605.Form Smallest Number From Two Digit Arrays](https://leetcode.com/problems/form-smallest-number-from-two-digit-arrays/)
-Difficulty:Easy, Likes: 42
+Difficulty:Easy, Likes: 91
 
 ## Description
 

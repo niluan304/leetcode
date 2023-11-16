@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [82.Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
-Difficulty:Medium, Likes: 1170
+Difficulty:Medium, Likes: 1206
 
 ## Description
 
@@ -35,9 +35,9 @@ Difficulty:Medium, Likes: 1170
 
 ## Related Topics
 
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
 
 ## Similar Questions
 
-- [Remove Duplicates from Sorted List](../remove-duplicates-from-sorted-list/README.md) Easy 
+- [Remove Duplicates from Sorted List](../remove-duplicates-from-sorted-list/README_EN.md) Easy 

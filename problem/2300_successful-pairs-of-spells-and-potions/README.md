@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2300. 咒语和药水的成功对数](https://leetcode.cn/problems/successful-pairs-of-spells-and-potions/)
-Difficulty:Medium, Likes: 72
+Difficulty:Medium, Likes: 88
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1123. 最深叶节点的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-deepest-leaves/)
-Difficulty:Medium, Likes: 194
+Difficulty:Medium, Likes: 288
 
 ## 题目描述
 

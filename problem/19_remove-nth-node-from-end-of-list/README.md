@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)
-Difficulty:Medium, Likes: 2643
+Difficulty:Medium, Likes: 2732
 
 ## 题目描述
 
@@ -49,8 +49,8 @@ Difficulty:Medium, Likes: 2643
 
 ## 相关话题
 
-- [链表](https://leetcode-cn.com/tag/linked-list/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
+- [链表](https://leetcode.cn/tag/linked-list/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
 
 ## 相似题目
 

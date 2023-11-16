@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [15.3Sum](https://leetcode.com/problems/3sum/)
-Difficulty:Medium, Likes: 6191
+Difficulty:Medium, Likes: 6517
 
 ## Description
 
@@ -51,13 +51,13 @@ Notice that the order of the output and the order of the triplets does not matte
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
-- [Sorting](https://leetcode-cn.com/tag/sorting/)
+- [Array](https://leetcode.com/tag/array/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 
-- [Two Sum](../two-sum/README.md) Easy 
-- [3Sum Closest](../3sum-closest/README.md) Medium 
-- [4Sum](../4sum/README.md) Medium 
-- [3Sum Smaller](../3sum-smaller/README.md) Medium 🔒
+- [Two Sum](../two-sum/README_EN.md) Easy 
+- [3Sum Closest](../3sum-closest/README_EN.md) Medium 
+- [4Sum](../4sum/README_EN.md) Medium 
+- [3Sum Smaller](../3sum-smaller/README_EN.md) Medium 🔒

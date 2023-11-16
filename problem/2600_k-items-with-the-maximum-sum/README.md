@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2600. K 件物品的最大和](https://leetcode.cn/problems/k-items-with-the-maximum-sum/)
-Difficulty:Easy, Likes: 32
+Difficulty:Easy, Likes: 44
 
 ## 题目描述
 
@@ -14,7 +14,7 @@ Difficulty:Easy, Likes: 32
 
 <ul>
 	<li><code>numOnes</code> 件标记为 <code>1</code> 的物品。</li>
-	<li><code>numZeroes</code> 件标记为 <code>0</code> 的物品。</li>
+	<li><code>numZeros</code> 件标记为 <code>0</code> 的物品。</li>
 	<li><code>numNegOnes</code> 件标记为 <code>-1</code> 的物品。</li>
 </ul>
 
@@ -24,14 +24,16 @@ Difficulty:Easy, Likes: 32
 
 <p><strong>示例 1：</strong></p>
 
-<pre><strong>输入：</strong>numOnes = 3, numZeros = 2, numNegOnes = 0, k = 2
+<pre>
+<strong>输入：</strong>numOnes = 3, numZeros = 2, numNegOnes = 0, k = 2
 <strong>输出：</strong>2
 <strong>解释：</strong>袋子中的物品分别标记为 {1, 1, 1, 0, 0} 。取 2 件标记为 1 的物品，得到的数字之和为 2 。
 可以证明 2 是所有可行方案中的最大值。</pre>
 
 <p><strong>示例 2：</strong></p>
 
-<pre><strong>输入：</strong>numOnes = 3, numZeros = 2, numNegOnes = 0, k = 4
+<pre>
+<strong>输入：</strong>numOnes = 3, numZeros = 2, numNegOnes = 0, k = 4
 <strong>输出：</strong>3
 <strong>解释：</strong>袋子中的物品分别标记为 {1, 1, 1, 0, 0} 。取 3 件标记为 1 的物品，1 件标记为 0 的物品，得到的数字之和为 3 。
 可以证明 3 是所有可行方案中的最大值。
@@ -49,8 +51,8 @@ Difficulty:Easy, Likes: 32
 
 ## 相关话题
 
-- [贪心](https://leetcode-cn.com/tag/greedy/)
-- [数学](https://leetcode-cn.com/tag/math/)
+- [贪心](https://leetcode.cn/tag/greedy/)
+- [数学](https://leetcode.cn/tag/math/)
 
 ## 相似题目
 

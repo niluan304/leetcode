@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2528. 最大化城市的最小供电站数目](https://leetcode.cn/problems/maximize-the-minimum-powered-city/)
-Difficulty:Hard, Likes: 41
+Difficulty:Hard, Likes: 43
 
 ## 题目描述
 

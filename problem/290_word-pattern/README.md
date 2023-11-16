@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [290. 单词规律](https://leetcode.cn/problems/word-pattern/)
-Difficulty:Easy, Likes: 577
+Difficulty:Easy, Likes: 619
 
 ## 题目描述
 
@@ -46,8 +46,8 @@ Difficulty:Easy, Likes: 577
 
 ## 相关话题
 
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [字符串](https://leetcode-cn.com/tag/string/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [字符串](https://leetcode.cn/tag/string/)
 
 ## 相似题目
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1911. 最大子序列交替和](https://leetcode.cn/problems/maximum-alternating-subsequence-sum/)
-Difficulty:Medium, Likes: 175
+Difficulty:Medium, Likes: 179
 
 ## 题目描述
 

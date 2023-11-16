@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [124. 二叉树中的最大路径和](https://leetcode.cn/problems/binary-tree-maximum-path-sum/)
-Difficulty:Hard, Likes: 2087
+Difficulty:Hard, Likes: 2100
 
 ## 题目描述
 

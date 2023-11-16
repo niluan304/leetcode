@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [438.Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
-Difficulty:Medium, Likes: 1229
+Difficulty:Medium, Likes: 1327
 
 ## Description
 
@@ -43,11 +43,11 @@ The substring with start index = 2 is &quot;ab&quot;, which is an anagram of &qu
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 
-- [Valid Anagram](../valid-anagram/README.md) Easy 
-- [Permutation in String](../permutation-in-string/README.md) Medium 
+- [Valid Anagram](../valid-anagram/README_EN.md) Easy 
+- [Permutation in String](../permutation-in-string/README_EN.md) Medium 

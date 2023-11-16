@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2586.Count the Number of Vowel Strings in Range](https://leetcode.com/problems/count-the-number-of-vowel-strings-in-range/)
-Difficulty:Easy, Likes: 15
+Difficulty:Easy, Likes: 45
 
 ## Description
 

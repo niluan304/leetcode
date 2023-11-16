@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [70.Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
-Difficulty:Easy, Likes: 3200
+Difficulty:Easy, Likes: 3326
 
 ## Description
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2520.Count the Digits That Divide a Number](https://leetcode.com/problems/count-the-digits-that-divide-a-number/)
-Difficulty:Easy, Likes: 17
+Difficulty:Easy, Likes: 46
 
 ## Description
 

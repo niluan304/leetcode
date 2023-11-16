@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [124.Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
-Difficulty:Hard, Likes: 2087
+Difficulty:Hard, Likes: 2100
 
 ## Description
 

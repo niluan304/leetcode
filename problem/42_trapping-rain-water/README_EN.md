@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [42.Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
-Difficulty:Hard, Likes: 4586
+Difficulty:Hard, Likes: 4854
 
 ## Description
 
@@ -36,15 +36,15 @@ Difficulty:Hard, Likes: 4586
 
 ## Related Topics
 
-- [Stack](https://leetcode-cn.com/tag/stack/)
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
-- [Dynamic Programming](https://leetcode-cn.com/tag/dynamic-programming/)
-- [Monotonic Stack](https://leetcode-cn.com/tag/monotonic-stack/)
+- [Stack](https://leetcode.com/tag/stack/)
+- [Array](https://leetcode.com/tag/array/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
+- [Monotonic Stack](https://leetcode.com/tag/monotonic-stack/)
 
 ## Similar Questions
 
-- [Container With Most Water](../container-with-most-water/README.md) Medium 
-- [Product of Array Except Self](../product-of-array-except-self/README.md) Medium 
-- [Trapping Rain Water II](../trapping-rain-water-ii/README.md) Hard 
-- [Pour Water](../pour-water/README.md) Medium 🔒
+- [Container With Most Water](../container-with-most-water/README_EN.md) Medium 
+- [Product of Array Except Self](../product-of-array-except-self/README_EN.md) Medium 
+- [Trapping Rain Water II](../trapping-rain-water-ii/README_EN.md) Hard 
+- [Pour Water](../pour-water/README_EN.md) Medium 🔒

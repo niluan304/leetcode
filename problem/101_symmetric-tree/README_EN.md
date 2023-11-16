@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [101.Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)
-Difficulty:Easy, Likes: 2513
+Difficulty:Easy, Likes: 2590
 
 ## Description
 
@@ -36,10 +36,10 @@ Difficulty:Easy, Likes: 2513
 
 ## Related Topics
 
-- [Tree](https://leetcode-cn.com/tag/tree/)
-- [Depth-First Search](https://leetcode-cn.com/tag/depth-first-search/)
-- [Breadth-First Search](https://leetcode-cn.com/tag/breadth-first-search/)
-- [Binary Tree](https://leetcode-cn.com/tag/binary-tree/)
+- [Tree](https://leetcode.com/tag/tree/)
+- [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
+- [Breadth-First Search](https://leetcode.com/tag/breadth-first-search/)
+- [Binary Tree](https://leetcode.com/tag/binary-tree/)
 
 ## Similar Questions
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [376.Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/)
-Difficulty:Medium, Likes: 1037
+Difficulty:Medium, Likes: 1055
 
 ## Description
 

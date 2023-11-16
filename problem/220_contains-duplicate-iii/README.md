@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [220. 存在重复元素 III](https://leetcode.cn/problems/contains-duplicate-iii/)
-Difficulty:Hard, Likes: 704
+Difficulty:Hard, Likes: 717
 
 ## 题目描述
 
@@ -54,11 +54,11 @@ abs(nums[i] - nums[j]) &lt;= valueDiff --&gt; abs(1 - 1) &lt;= 0
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [桶排序](https://leetcode-cn.com/tag/bucket-sort/)
-- [有序集合](https://leetcode-cn.com/tag/ordered-set/)
-- [排序](https://leetcode-cn.com/tag/sorting/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [数组](https://leetcode.cn/tag/array/)
+- [桶排序](https://leetcode.cn/tag/bucket-sort/)
+- [有序集合](https://leetcode.cn/tag/ordered-set/)
+- [排序](https://leetcode.cn/tag/sorting/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

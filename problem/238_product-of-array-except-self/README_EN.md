@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [238.Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
-Difficulty:Medium, Likes: 1606
+Difficulty:Medium, Likes: 1637
 
 ## Description
 

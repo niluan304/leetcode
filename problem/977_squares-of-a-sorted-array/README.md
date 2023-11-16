@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [977. 有序数组的平方](https://leetcode.cn/problems/squares-of-a-sorted-array/)
-Difficulty:Easy, Likes: 823
+Difficulty:Easy, Likes: 924
 
 ## 题目描述
 
@@ -49,9 +49,9 @@ Difficulty:Easy, Likes: 823
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
-- [排序](https://leetcode-cn.com/tag/sorting/)
+- [数组](https://leetcode.cn/tag/array/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
+- [排序](https://leetcode.cn/tag/sorting/)
 
 ## 相似题目
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [673. 最长递增子序列的个数](https://leetcode.cn/problems/number-of-longest-increasing-subsequence/)
-Difficulty:Medium, Likes: 806
+Difficulty:Medium, Likes: 819
 
 ## 题目描述
 

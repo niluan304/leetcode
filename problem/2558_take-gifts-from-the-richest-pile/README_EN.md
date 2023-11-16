@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2558.Take Gifts From the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/)
-Difficulty:Easy, Likes: 21
+Difficulty:Easy, Likes: 52
 
 ## Description
 

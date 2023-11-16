@@ -25,7 +25,7 @@ func NewParserCase(q *graphql.QuestionData) (p Parser) {
 	}
 
 	data := Data{
-		PkgName: q.Pkg(),
+		PkgName: "main",
 		Params:  params,
 		Return:  GoType(q.MetaData.Return.Type),
 	}

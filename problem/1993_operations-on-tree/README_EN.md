@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1993.Operations on Tree](https://leetcode.com/problems/operations-on-tree/)
-Difficulty:Medium, Likes: 57
+Difficulty:Medium, Likes: 78
 
 ## Description
 
@@ -76,6 +76,7 @@ lockingTree.lock(0, 1);    // return false because node 0 is already locked.
 - [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
 - [Breadth-First Search](https://leetcode.com/tag/breadth-first-search/)
 - [Design](https://leetcode.com/tag/design/)
+- [Array](https://leetcode.com/tag/array/)
 - [Hash Table](https://leetcode.com/tag/hash-table/)
 
 ## Similar Questions

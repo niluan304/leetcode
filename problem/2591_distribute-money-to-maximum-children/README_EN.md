@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2591.Distribute Money to Maximum Children](https://leetcode.com/problems/distribute-money-to-maximum-children/)
-Difficulty:Easy, Likes: 28
+Difficulty:Easy, Likes: 115
 
 ## Description
 

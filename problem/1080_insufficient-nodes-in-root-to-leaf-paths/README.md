@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1080. 根到叶路径上的不足节点](https://leetcode.cn/problems/insufficient-nodes-in-root-to-leaf-paths/)
-Difficulty:Medium, Likes: 162
+Difficulty:Medium, Likes: 169
 
 ## 题目描述
 
@@ -50,9 +50,9 @@ Difficulty:Medium, Likes: 162
 
 ## 相关话题
 
-- [树](https://leetcode-cn.com/tag/tree/)
-- [深度优先搜索](https://leetcode-cn.com/tag/depth-first-search/)
-- [二叉树](https://leetcode-cn.com/tag/binary-tree/)
+- [树](https://leetcode.cn/tag/tree/)
+- [深度优先搜索](https://leetcode.cn/tag/depth-first-search/)
+- [二叉树](https://leetcode.cn/tag/binary-tree/)
 
 ## 相似题目
 

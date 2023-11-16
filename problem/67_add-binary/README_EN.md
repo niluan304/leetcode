@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [67.Add Binary](https://leetcode.com/problems/add-binary/)
-Difficulty:Easy, Likes: 1042
+Difficulty:Easy, Likes: 1124
 
 ## Description
 
@@ -28,14 +28,14 @@ Difficulty:Easy, Likes: 1042
 
 ## Related Topics
 
-- [Bit Manipulation](https://leetcode-cn.com/tag/bit-manipulation/)
-- [Math](https://leetcode-cn.com/tag/math/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Simulation](https://leetcode-cn.com/tag/simulation/)
+- [Bit Manipulation](https://leetcode.com/tag/bit-manipulation/)
+- [Math](https://leetcode.com/tag/math/)
+- [String](https://leetcode.com/tag/string/)
+- [Simulation](https://leetcode.com/tag/simulation/)
 
 ## Similar Questions
 
-- [Add Two Numbers](../add-two-numbers/README.md) Medium 
-- [Multiply Strings](../multiply-strings/README.md) Medium 
-- [Plus One](../plus-one/README.md) Easy 
-- [Add to Array-Form of Integer](../add-to-array-form-of-integer/README.md) Easy 
+- [Add Two Numbers](../add-two-numbers/README_EN.md) Medium 
+- [Multiply Strings](../multiply-strings/README_EN.md) Medium 
+- [Plus One](../plus-one/README_EN.md) Easy 
+- [Add to Array-Form of Integer](../add-to-array-form-of-integer/README_EN.md) Easy 

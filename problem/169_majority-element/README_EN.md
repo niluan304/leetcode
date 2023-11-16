@@ -1,35 +1,44 @@
 
 | English | [简体中文](README.md) |
 
-# [169. Majority Element](https://leetcode-cn.com/problems/majority-element/)
+# [169.Majority Element](https://leetcode.com/problems/majority-element/)
+Difficulty:Easy, Likes: 2031
 
 ## Description
 
-<p>Given an array of size <i>n</i>, find the majority element. The majority element is the element that appears <b>more than</b> <code>&lfloor; n/2 &rfloor;</code> times.</p>
+<p>Given an array <code>nums</code> of size <code>n</code>, return <em>the majority element</em>.</p>
 
-<p>You may assume that the array is non-empty and the majority element always exist in the array.</p>
+<p>The majority element is the element that appears more than <code>&lfloor;n / 2&rfloor;</code> times. You may assume that the majority element always exists in the array.</p>
 
-<p><strong>Example 1:</strong></p>
-
-<pre>
-<strong>Input:</strong> [3,2,3]
-<strong>Output:</strong> 3</pre>
-
-<p><strong>Example 2:</strong></p>
-
-<pre>
-<strong>Input:</strong> [2,2,1,1,1,2,2]
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [3,2,3]
+<strong>Output:</strong> 3
+</pre><p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [2,2,1,1,1,2,2]
 <strong>Output:</strong> 2
 </pre>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
+<ul>
+	<li><code>n == nums.length</code></li>
+	<li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>
+	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+
+<p>&nbsp;</p>
+<strong>Follow-up:</strong> Could you solve the problem in linear time and in <code>O(1)</code> space?
 
 ## Related Topics
 
-- [Bit Manipulation](https://leetcode-cn.com/tag/bit-manipulation)
-- [Array](https://leetcode-cn.com/tag/array)
-- [Divide and Conquer](https://leetcode-cn.com/tag/divide-and-conquer)
+- [Array](https://leetcode.com/tag/array/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [Divide and Conquer](https://leetcode.com/tag/divide-and-conquer/)
+- [Counting](https://leetcode.com/tag/counting/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 
-- [Majority Element II](../majority-element-ii/README_EN.md)
-- [Check If a Number Is Majority Element in a Sorted Array](../check-if-a-number-is-majority-element-in-a-sorted-array/README_EN.md)
+- [Majority Element II](../majority-element-ii/README_EN.md) Medium 
+- [Check If a Number Is Majority Element in a Sorted Array](../check-if-a-number-is-majority-element-in-a-sorted-array/README_EN.md) Easy 🔒

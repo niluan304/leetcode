@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [37. 解数独](https://leetcode.cn/problems/sudoku-solver/)
-Difficulty:Hard, Likes: 1678
+Difficulty:Hard, Likes: 1760
 
 ## 题目描述
 
@@ -50,10 +50,10 @@ Difficulty:Hard, Likes: 1678
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
-- [矩阵](https://leetcode-cn.com/tag/matrix/)
+- [数组](https://leetcode.cn/tag/array/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
+- [矩阵](https://leetcode.cn/tag/matrix/)
 
 ## 相似题目
 

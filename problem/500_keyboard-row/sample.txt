@@ -1,0 +1,9 @@
+["Hello","Alaska","Dad","Peace"]
+["Alaska","Dad"]
+
+["omk"]
+[]
+
+["adsdf","sfd"]
+["adsdf","sfd"]
+

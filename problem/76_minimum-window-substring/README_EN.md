@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [76.Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
-Difficulty:Hard, Likes: 2583
+Difficulty:Hard, Likes: 2745
 
 ## Description
 
@@ -52,14 +52,14 @@ Since the largest window of s only has one &#39;a&#39;, return empty string.
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 
-- [Substring with Concatenation of All Words](../substring-with-concatenation-of-all-words/README.md) Hard 
-- [Minimum Size Subarray Sum](../minimum-size-subarray-sum/README.md) Medium 
-- [Sliding Window Maximum](../sliding-window-maximum/README.md) Hard 
-- [Permutation in String](../permutation-in-string/README.md) Medium 
-- [Minimum Window Subsequence](../minimum-window-subsequence/README.md) Hard 🔒
+- [Substring with Concatenation of All Words](../substring-with-concatenation-of-all-words/README_EN.md) Hard 
+- [Minimum Size Subarray Sum](../minimum-size-subarray-sum/README_EN.md) Medium 
+- [Sliding Window Maximum](../sliding-window-maximum/README_EN.md) Hard 
+- [Permutation in String](../permutation-in-string/README_EN.md) Medium 
+- [Minimum Window Subsequence](../minimum-window-subsequence/README_EN.md) Hard 🔒

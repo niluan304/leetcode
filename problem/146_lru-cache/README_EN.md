@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [146.LRU Cache](https://leetcode.com/problems/lru-cache/)
-Difficulty:Medium, Likes: 2875
+Difficulty:Medium, Likes: 3008
 
 ## Description
 

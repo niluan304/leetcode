@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [213.House Robber II](https://leetcode.com/problems/house-robber-ii/)
-Difficulty:Medium, Likes: 1429
+Difficulty:Medium, Likes: 1526
 
 ## Description
 
@@ -46,14 +46,14 @@ Total amount you can rob = 1 + 3 = 4.
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Dynamic Programming](https://leetcode-cn.com/tag/dynamic-programming/)
+- [Array](https://leetcode.com/tag/array/)
+- [Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
 
 ## Similar Questions
 
-- [House Robber](../house-robber/README.md) Medium 
-- [Paint House](../paint-house/README.md) Medium 🔒
-- [Paint Fence](../paint-fence/README.md) Medium 🔒
-- [House Robber III](../house-robber-iii/README.md) Medium 
-- [Non-negative Integers without Consecutive Ones](../non-negative-integers-without-consecutive-ones/README.md) Hard 
-- [Coin Path](../coin-path/README.md) Hard 🔒
+- [House Robber](../house-robber/README_EN.md) Medium 
+- [Paint House](../paint-house/README_EN.md) Medium 🔒
+- [Paint Fence](../paint-fence/README_EN.md) Medium 🔒
+- [House Robber III](../house-robber-iii/README_EN.md) Medium 
+- [Non-negative Integers without Consecutive Ones](../non-negative-integers-without-consecutive-ones/README_EN.md) Hard 
+- [Coin Path](../coin-path/README_EN.md) Hard 🔒

@@ -1,35 +1,51 @@
 
 | [English](README_EN.md) | 简体中文 |
 
-# [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+# [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)
+Difficulty:Medium, Likes: 6930
 
 ## 题目描述
 
-<p>给定一个字符串 <code>s</code>，找到 <code>s</code> 中最长的回文子串。你可以假设&nbsp;<code>s</code> 的最大长度为 1000。</p>
+<p>给你一个字符串 <code>s</code>，找到 <code>s</code> 中最长的回文子串。</p>
+
+<p>如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。</p>
+
+<p>&nbsp;</p>
 
 <p><strong>示例 1：</strong></p>
 
-<pre><strong>输入:</strong> &quot;babad&quot;
-<strong>输出:</strong> &quot;bab&quot;
-<strong>注意:</strong> &quot;aba&quot; 也是一个有效答案。
+<pre>
+<strong>输入：</strong>s = "babad"
+<strong>输出：</strong>"bab"
+<strong>解释：</strong>"aba" 同样是符合题意的答案。
 </pre>
 
 <p><strong>示例 2：</strong></p>
 
-<pre><strong>输入:</strong> &quot;cbbd&quot;
-<strong>输出:</strong> &quot;bb&quot;
+<pre>
+<strong>输入：</strong>s = "cbbd"
+<strong>输出：</strong>"bb"
 </pre>
+
+<p>&nbsp;</p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+	<li><code>s</code> 仅由数字和英文字母组成</li>
+</ul>
 
 
 ## 相关话题
 
-- [字符串](https://leetcode-cn.com/tag/string)
-- [动态规划](https://leetcode-cn.com/tag/dynamic-programming)
+- [字符串](https://leetcode.cn/tag/string/)
+- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
 
 ## 相似题目
 
-- [最短回文串](../shortest-palindrome/README.md)
-- [回文排列](../palindrome-permutation/README.md)
-- [回文对](../palindrome-pairs/README.md)
-- [最长回文子序列](../longest-palindromic-subsequence/README.md)
-- [回文子串](../palindromic-substrings/README.md)
+- [最短回文串](../shortest-palindrome/README.md) Hard 
+- [回文排列](../palindrome-permutation/README.md) Easy 🔒
+- [回文对](../palindrome-pairs/README.md) Hard 
+- [最长回文子序列](../longest-palindromic-subsequence/README.md) Medium 
+- [回文子串](../palindromic-substrings/README.md) Medium 

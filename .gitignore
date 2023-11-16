@@ -1,7 +1,5 @@
 .idea
 
-/problem/.git
-/problem/*/solution*
 config
 config.*
 data

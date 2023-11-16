@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1312.Minimum Insertion Steps to Make a String Palindrome](https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/)
-Difficulty:Hard, Likes: 212
+Difficulty:Hard, Likes: 216
 
 ## Description
 

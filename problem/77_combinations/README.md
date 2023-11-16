@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [77. 组合](https://leetcode.cn/problems/combinations/)
-Difficulty:Medium, Likes: 1423
+Difficulty:Medium, Likes: 1537
 
 ## 题目描述
 
@@ -44,7 +44,7 @@ Difficulty:Medium, Likes: 1423
 
 ## 相关话题
 
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 

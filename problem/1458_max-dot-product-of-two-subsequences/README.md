@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1458. 两个子序列的最大点积](https://leetcode.cn/problems/max-dot-product-of-two-subsequences/)
-Difficulty:Hard, Likes: 83
+Difficulty:Hard, Likes: 86
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [42. 接雨水](https://leetcode.cn/problems/trapping-rain-water/)
-Difficulty:Hard, Likes: 4586
+Difficulty:Hard, Likes: 4854
 
 ## 题目描述
 
@@ -40,11 +40,11 @@ Difficulty:Hard, Likes: 4586
 
 ## 相关话题
 
-- [栈](https://leetcode-cn.com/tag/stack/)
-- [数组](https://leetcode-cn.com/tag/array/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
-- [动态规划](https://leetcode-cn.com/tag/dynamic-programming/)
-- [单调栈](https://leetcode-cn.com/tag/monotonic-stack/)
+- [栈](https://leetcode.cn/tag/stack/)
+- [数组](https://leetcode.cn/tag/array/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
+- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
+- [单调栈](https://leetcode.cn/tag/monotonic-stack/)
 
 ## 相似题目
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/)
-Difficulty:Medium, Likes: 1170
+Difficulty:Medium, Likes: 1206
 
 ## 题目描述
 
@@ -37,8 +37,8 @@ Difficulty:Medium, Likes: 1170
 
 ## 相关话题
 
-- [链表](https://leetcode-cn.com/tag/linked-list/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
+- [链表](https://leetcode.cn/tag/linked-list/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
 
 ## 相似题目
 

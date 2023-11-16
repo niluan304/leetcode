@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1004. 最大连续1的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/)
-Difficulty:Medium, Likes: 589
+Difficulty:Medium, Likes: 655
 
 ## 题目描述
 
@@ -39,10 +39,10 @@ Difficulty:Medium, Likes: 589
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [二分查找](https://leetcode-cn.com/tag/binary-search/)
-- [前缀和](https://leetcode-cn.com/tag/prefix-sum/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [数组](https://leetcode.cn/tag/array/)
+- [二分查找](https://leetcode.cn/tag/binary-search/)
+- [前缀和](https://leetcode.cn/tag/prefix-sum/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

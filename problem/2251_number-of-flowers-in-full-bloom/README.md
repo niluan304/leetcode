@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2251. 花期内花的数目](https://leetcode.cn/problems/number-of-flowers-in-full-bloom/)
-Difficulty:Hard, Likes: 83
+Difficulty:Hard, Likes: 147
 
 ## 题目描述
 

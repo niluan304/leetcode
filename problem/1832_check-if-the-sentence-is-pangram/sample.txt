@@ -1,0 +1,6 @@
+"thequickbrownfoxjumpsoverthelazydog"
+true
+
+"leetcode"
+false
+

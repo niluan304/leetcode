@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/)
-Difficulty:Medium, Likes: 2273
+Difficulty:Medium, Likes: 2392
 
 ## 题目描述
 
@@ -64,9 +64,9 @@ Difficulty:Medium, Likes: 2273
 
 ## 相关话题
 
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [链表](https://leetcode-cn.com/tag/linked-list/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [链表](https://leetcode.cn/tag/linked-list/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
 
 ## 相似题目
 

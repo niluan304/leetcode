@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [219.Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)
-Difficulty:Easy, Likes: 611
+Difficulty:Easy, Likes: 657
 
 ## Description
 
@@ -42,11 +42,11 @@ Difficulty:Easy, Likes: 611
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Array](https://leetcode.com/tag/array/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 
-- [Contains Duplicate](../contains-duplicate/README.md) Easy 
-- [Contains Duplicate III](../contains-duplicate-iii/README.md) Hard 
+- [Contains Duplicate](../contains-duplicate/README_EN.md) Easy 
+- [Contains Duplicate III](../contains-duplicate-iii/README_EN.md) Hard 

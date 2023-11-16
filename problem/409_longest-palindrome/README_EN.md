@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [409.Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)
-Difficulty:Easy, Likes: 540
+Difficulty:Easy, Likes: 567
 
 ## Description
 
@@ -38,10 +38,10 @@ Difficulty:Easy, Likes: 540
 
 ## Related Topics
 
-- [Greedy](https://leetcode-cn.com/tag/greedy/)
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
+- [Greedy](https://leetcode.com/tag/greedy/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
 
 ## Similar Questions
 
-- [Palindrome Permutation](../palindrome-permutation/README.md) Easy 🔒
+- [Palindrome Permutation](../palindrome-permutation/README_EN.md) Easy 🔒

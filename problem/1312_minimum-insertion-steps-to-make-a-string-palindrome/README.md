@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1312. 让字符串成为回文串的最少插入次数](https://leetcode.cn/problems/minimum-insertion-steps-to-make-a-string-palindrome/)
-Difficulty:Hard, Likes: 212
+Difficulty:Hard, Likes: 216
 
 ## 题目描述
 

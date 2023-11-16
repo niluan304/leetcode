@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [11. 盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/)
-Difficulty:Medium, Likes: 4463
+Difficulty:Medium, Likes: 4690
 
 ## 题目描述
 
@@ -45,9 +45,9 @@ Difficulty:Medium, Likes: 4463
 
 ## 相关话题
 
-- [贪心](https://leetcode-cn.com/tag/greedy/)
-- [数组](https://leetcode-cn.com/tag/array/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
+- [贪心](https://leetcode.cn/tag/greedy/)
+- [数组](https://leetcode.cn/tag/array/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
 
 ## 相似题目
 

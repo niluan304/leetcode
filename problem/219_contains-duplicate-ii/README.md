@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [219. 存在重复元素 II](https://leetcode.cn/problems/contains-duplicate-ii/)
-Difficulty:Easy, Likes: 611
+Difficulty:Easy, Likes: 657
 
 ## 题目描述
 
@@ -43,9 +43,9 @@ Difficulty:Easy, Likes: 611
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [数组](https://leetcode.cn/tag/array/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

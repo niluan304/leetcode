@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [435. 无重叠区间](https://leetcode.cn/problems/non-overlapping-intervals/)
-Difficulty:Medium, Likes: 995
+Difficulty:Medium, Likes: 1071
 
 ## 题目描述
 
@@ -47,10 +47,10 @@ Difficulty:Medium, Likes: 995
 
 ## 相关话题
 
-- [贪心](https://leetcode-cn.com/tag/greedy/)
-- [数组](https://leetcode-cn.com/tag/array/)
-- [动态规划](https://leetcode-cn.com/tag/dynamic-programming/)
-- [排序](https://leetcode-cn.com/tag/sorting/)
+- [贪心](https://leetcode.cn/tag/greedy/)
+- [数组](https://leetcode.cn/tag/array/)
+- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
+- [排序](https://leetcode.cn/tag/sorting/)
 
 ## 相似题目
 

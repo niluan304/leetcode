@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [72. 编辑距离](https://leetcode.cn/problems/edit-distance/)
-Difficulty:Hard, Likes: 3147
+Difficulty:Medium, Likes: 3205
 
 ## 题目描述
 

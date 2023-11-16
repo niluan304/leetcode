@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [454.4Sum II](https://leetcode.com/problems/4sum-ii/)
-Difficulty:Medium, Likes: 857
+Difficulty:Medium, Likes: 924
 
 ## Description
 
@@ -47,9 +47,9 @@ The two tuples are:
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
+- [Array](https://leetcode.com/tag/array/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
 
 ## Similar Questions
 
-- [4Sum](../4sum/README.md) Medium 
+- [4Sum](../4sum/README_EN.md) Medium 

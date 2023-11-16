@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2003.Smallest Missing Genetic Value in Each Subtree](https://leetcode.com/problems/smallest-missing-genetic-value-in-each-subtree/)
-Difficulty:Hard, Likes: 106
+Difficulty:Hard, Likes: 168
 
 ## Description
 

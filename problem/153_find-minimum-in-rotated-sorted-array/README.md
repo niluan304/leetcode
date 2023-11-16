@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [153. 寻找旋转排序数组中的最小值](https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/)
-Difficulty:Medium, Likes: 1003
+Difficulty:Medium, Likes: 1047
 
 ## 题目描述
 
@@ -59,8 +59,8 @@ Difficulty:Medium, Likes: 1003
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [二分查找](https://leetcode-cn.com/tag/binary-search/)
+- [数组](https://leetcode.cn/tag/array/)
+- [二分查找](https://leetcode.cn/tag/binary-search/)
 
 ## 相似题目
 

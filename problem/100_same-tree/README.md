@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [100. 相同的树](https://leetcode.cn/problems/same-tree/)
-Difficulty:Easy, Likes: 1063
+Difficulty:Easy, Likes: 1097
 
 ## 题目描述
 
@@ -45,10 +45,10 @@ Difficulty:Easy, Likes: 1063
 
 ## 相关话题
 
-- [树](https://leetcode-cn.com/tag/tree/)
-- [深度优先搜索](https://leetcode-cn.com/tag/depth-first-search/)
-- [广度优先搜索](https://leetcode-cn.com/tag/breadth-first-search/)
-- [二叉树](https://leetcode-cn.com/tag/binary-tree/)
+- [树](https://leetcode.cn/tag/tree/)
+- [深度优先搜索](https://leetcode.cn/tag/depth-first-search/)
+- [广度优先搜索](https://leetcode.cn/tag/breadth-first-search/)
+- [二叉树](https://leetcode.cn/tag/binary-tree/)
 
 ## 相似题目
 

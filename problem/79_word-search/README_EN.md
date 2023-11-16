@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [79.Word Search](https://leetcode.com/problems/word-search/)
-Difficulty:Medium, Likes: 1620
+Difficulty:Medium, Likes: 1716
 
 ## Description
 
@@ -49,10 +49,10 @@ Difficulty:Medium, Likes: 1620
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
-- [Matrix](https://leetcode-cn.com/tag/matrix/)
+- [Array](https://leetcode.com/tag/array/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
+- [Matrix](https://leetcode.com/tag/matrix/)
 
 ## Similar Questions
 
-- [Word Search II](../word-search-ii/README.md) Hard 
+- [Word Search II](../word-search-ii/README_EN.md) Hard 

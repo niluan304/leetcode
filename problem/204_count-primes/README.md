@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [204. 计数质数](https://leetcode.cn/problems/count-primes/)
-Difficulty:Medium, Likes: 1071
+Difficulty:Medium, Likes: 1111
 
 ## 题目描述
 
@@ -43,10 +43,10 @@ Difficulty:Medium, Likes: 1071
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [数学](https://leetcode-cn.com/tag/math/)
-- [枚举](https://leetcode-cn.com/tag/enumeration/)
-- [数论](https://leetcode-cn.com/tag/number-theory/)
+- [数组](https://leetcode.cn/tag/array/)
+- [数学](https://leetcode.cn/tag/math/)
+- [枚举](https://leetcode.cn/tag/enumeration/)
+- [数论](https://leetcode.cn/tag/number-theory/)
 
 ## 相似题目
 

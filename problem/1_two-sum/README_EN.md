@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1.Two Sum](https://leetcode.com/problems/two-sum/)
-Difficulty:Easy, Likes: 17292
+Difficulty:Easy, Likes: 17962
 
 ## Description
 
@@ -46,19 +46,19 @@ Difficulty:Easy, Likes: 17292
 </ul>
 
 <p>&nbsp;</p>
-<strong>Follow-up:&nbsp;</strong>Can you come up with an algorithm that is less than&nbsp;<code>O(n<sup>2</sup>)&nbsp;</code>time complexity?
+<strong>Follow-up:&nbsp;</strong>Can you come up with an algorithm that is less than <code>O(n<sup>2</sup>)</code><font face="monospace">&nbsp;</font>time complexity?
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
+- [Array](https://leetcode.com/tag/array/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
 
 ## Similar Questions
 
-- [3Sum](../3sum/README.md) Medium 
-- [4Sum](../4sum/README.md) Medium 
-- [Two Sum II - Input Array Is Sorted](../two-sum-ii-input-array-is-sorted/README.md) Medium 
-- [Two Sum III - Data structure design](../two-sum-iii-data-structure-design/README.md) Easy 🔒
-- [Subarray Sum Equals K](../subarray-sum-equals-k/README.md) Medium 
-- [Two Sum IV - Input is a BST](../two-sum-iv-input-is-a-bst/README.md) Easy 
-- [Two Sum Less Than K](../two-sum-less-than-k/README.md) Easy 🔒
+- [3Sum](../3sum/README_EN.md) Medium 
+- [4Sum](../4sum/README_EN.md) Medium 
+- [Two Sum II - Input Array Is Sorted](../two-sum-ii-input-array-is-sorted/README_EN.md) Medium 
+- [Two Sum III - Data structure design](../two-sum-iii-data-structure-design/README_EN.md) Easy 🔒
+- [Subarray Sum Equals K](../subarray-sum-equals-k/README_EN.md) Medium 
+- [Two Sum IV - Input is a BST](../two-sum-iv-input-is-a-bst/README_EN.md) Easy 
+- [Two Sum Less Than K](../two-sum-less-than-k/README_EN.md) Easy 🔒

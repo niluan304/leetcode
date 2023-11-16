@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [209.Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)
-Difficulty:Medium, Likes: 1766
+Difficulty:Medium, Likes: 1961
 
 ## Description
 
@@ -45,13 +45,13 @@ Difficulty:Medium, Likes: 1766
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
-- [Prefix Sum](https://leetcode-cn.com/tag/prefix-sum/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Array](https://leetcode.com/tag/array/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
+- [Prefix Sum](https://leetcode.com/tag/prefix-sum/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 
-- [Minimum Window Substring](../minimum-window-substring/README.md) Hard 
-- [Maximum Size Subarray Sum Equals k](../maximum-size-subarray-sum-equals-k/README.md) Medium 🔒
-- [Maximum Length of Repeated Subarray](../maximum-length-of-repeated-subarray/README.md) Medium 
+- [Minimum Window Substring](../minimum-window-substring/README_EN.md) Hard 
+- [Maximum Size Subarray Sum Equals k](../maximum-size-subarray-sum-equals-k/README_EN.md) Medium 🔒
+- [Maximum Length of Repeated Subarray](../maximum-length-of-repeated-subarray/README_EN.md) Medium 

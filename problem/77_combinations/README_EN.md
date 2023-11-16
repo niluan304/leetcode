@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [77.Combinations](https://leetcode.com/problems/combinations/)
-Difficulty:Medium, Likes: 1423
+Difficulty:Medium, Likes: 1537
 
 ## Description
 
@@ -39,9 +39,9 @@ Note that combinations are unordered, i.e., [1,2] and [2,1] are considered to be
 
 ## Related Topics
 
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [Combination Sum](../combination-sum/README.md) Medium 
-- [Permutations](../permutations/README.md) Medium 
+- [Combination Sum](../combination-sum/README_EN.md) Medium 
+- [Permutations](../permutations/README_EN.md) Medium 

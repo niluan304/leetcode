@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2103. 环和杆](https://leetcode.cn/problems/rings-and-rods/)
-Difficulty:Easy, Likes: 54
+Difficulty:Easy, Likes: 68
 
 ## 题目描述
 

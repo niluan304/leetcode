@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1760. 袋子里最少数目的球](https://leetcode.cn/problems/minimum-limit-of-balls-in-a-bag/)
-Difficulty:Medium, Likes: 231
+Difficulty:Medium, Likes: 242
 
 ## 题目描述
 
@@ -68,8 +68,8 @@ Difficulty:Medium, Likes: 231
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [二分查找](https://leetcode-cn.com/tag/binary-search/)
+- [数组](https://leetcode.cn/tag/array/)
+- [二分查找](https://leetcode.cn/tag/binary-search/)
 
 ## 相似题目
 

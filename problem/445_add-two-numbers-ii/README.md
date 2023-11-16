@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [445. 两数相加 II](https://leetcode.cn/problems/add-two-numbers-ii/)
-Difficulty:Medium, Likes: 683
+Difficulty:Medium, Likes: 691
 
 ## 题目描述
 
@@ -52,9 +52,9 @@ Difficulty:Medium, Likes: 683
 
 ## 相关话题
 
-- [栈](https://leetcode-cn.com/tag/stack/)
-- [链表](https://leetcode-cn.com/tag/linked-list/)
-- [数学](https://leetcode-cn.com/tag/math/)
+- [栈](https://leetcode.cn/tag/stack/)
+- [链表](https://leetcode.cn/tag/linked-list/)
+- [数学](https://leetcode.cn/tag/math/)
 
 ## 相似题目
 

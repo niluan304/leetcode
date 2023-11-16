@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [876. 链表的中间结点](https://leetcode.cn/problems/middle-of-the-linked-list/)
-Difficulty:Easy, Likes: 929
+Difficulty:Easy, Likes: 957
 
 ## 题目描述
 
@@ -40,8 +40,8 @@ Difficulty:Easy, Likes: 929
 
 ## 相关话题
 
-- [链表](https://leetcode-cn.com/tag/linked-list/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
+- [链表](https://leetcode.cn/tag/linked-list/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
 
 ## 相似题目
 

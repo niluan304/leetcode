@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [37.Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)
-Difficulty:Hard, Likes: 1678
+Difficulty:Hard, Likes: 1760
 
 ## Description
 
@@ -42,12 +42,12 @@ Difficulty:Hard, Likes: 1678
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
-- [Matrix](https://leetcode-cn.com/tag/matrix/)
+- [Array](https://leetcode.com/tag/array/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
+- [Matrix](https://leetcode.com/tag/matrix/)
 
 ## Similar Questions
 
-- [Valid Sudoku](../valid-sudoku/README.md) Medium 
-- [Unique Paths III](../unique-paths-iii/README.md) Hard 
+- [Valid Sudoku](../valid-sudoku/README_EN.md) Medium 
+- [Unique Paths III](../unique-paths-iii/README_EN.md) Hard 

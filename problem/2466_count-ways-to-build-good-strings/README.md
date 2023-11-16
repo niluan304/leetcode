@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2466. 统计构造好字符串的方案数](https://leetcode.cn/problems/count-ways-to-build-good-strings/)
-Difficulty:Medium, Likes: 33
+Difficulty:Medium, Likes: 40
 
 ## 题目描述
 

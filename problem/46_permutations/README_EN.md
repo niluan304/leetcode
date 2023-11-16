@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [46.Permutations](https://leetcode.com/problems/permutations/)
-Difficulty:Medium, Likes: 2604
+Difficulty:Medium, Likes: 2747
 
 ## Description
 
@@ -31,12 +31,12 @@ Difficulty:Medium, Likes: 2604
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [Array](https://leetcode.com/tag/array/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [Next Permutation](../next-permutation/README.md) Medium 
-- [Permutations II](../permutations-ii/README.md) Medium 
-- [Permutation Sequence](../permutation-sequence/README.md) Hard 
-- [Combinations](../combinations/README.md) Medium 
+- [Next Permutation](../next-permutation/README_EN.md) Medium 
+- [Permutations II](../permutations-ii/README_EN.md) Medium 
+- [Permutation Sequence](../permutation-sequence/README_EN.md) Hard 
+- [Combinations](../combinations/README_EN.md) Medium 

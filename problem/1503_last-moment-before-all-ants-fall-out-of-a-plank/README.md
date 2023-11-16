@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1503. 所有蚂蚁掉下来前的最后一刻](https://leetcode.cn/problems/last-moment-before-all-ants-fall-out-of-a-plank/)
-Difficulty:Medium, Likes: 62
+Difficulty:Medium, Likes: 65
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [332. 重新安排行程](https://leetcode.cn/problems/reconstruct-itinerary/)
-Difficulty:Hard, Likes: 808
+Difficulty:Hard, Likes: 861
 
 ## 题目描述
 
@@ -49,9 +49,9 @@ Difficulty:Hard, Likes: 808
 
 ## 相关话题
 
-- [深度优先搜索](https://leetcode-cn.com/tag/depth-first-search/)
-- [图](https://leetcode-cn.com/tag/graph/)
-- [欧拉回路](https://leetcode-cn.com/tag/eulerian-circuit/)
+- [深度优先搜索](https://leetcode.cn/tag/depth-first-search/)
+- [图](https://leetcode.cn/tag/graph/)
+- [欧拉回路](https://leetcode.cn/tag/eulerian-circuit/)
 
 ## 相似题目
 

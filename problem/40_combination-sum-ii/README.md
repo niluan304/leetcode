@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [40. 组合总和 II](https://leetcode.cn/problems/combination-sum-ii/)
-Difficulty:Medium, Likes: 1381
+Difficulty:Medium, Likes: 1476
 
 ## 题目描述
 
@@ -49,8 +49,8 @@ Difficulty:Medium, Likes: 1381
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
+- [数组](https://leetcode.cn/tag/array/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 

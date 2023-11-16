@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [409. 最长回文串](https://leetcode.cn/problems/longest-palindrome/)
-Difficulty:Easy, Likes: 540
+Difficulty:Easy, Likes: 567
 
 ## 题目描述
 
@@ -46,9 +46,9 @@ Difficulty:Easy, Likes: 540
 
 ## 相关话题
 
-- [贪心](https://leetcode-cn.com/tag/greedy/)
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [字符串](https://leetcode-cn.com/tag/string/)
+- [贪心](https://leetcode.cn/tag/greedy/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [字符串](https://leetcode.cn/tag/string/)
 
 ## 相似题目
 

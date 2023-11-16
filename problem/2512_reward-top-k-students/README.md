@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2512. 奖励最顶尖的 K 名学生](https://leetcode.cn/problems/reward-top-k-students/)
-Difficulty:Medium, Likes: 17
+Difficulty:Medium, Likes: 63
 
 ## 题目描述
 

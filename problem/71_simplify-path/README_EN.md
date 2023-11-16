@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [71.Simplify Path](https://leetcode.com/problems/simplify-path/)
-Difficulty:Medium, Likes: 609
+Difficulty:Medium, Likes: 660
 
 ## Description
 
@@ -58,8 +58,8 @@ Difficulty:Medium, Likes: 609
 
 ## Related Topics
 
-- [Stack](https://leetcode-cn.com/tag/stack/)
-- [String](https://leetcode-cn.com/tag/string/)
+- [Stack](https://leetcode.com/tag/stack/)
+- [String](https://leetcode.com/tag/string/)
 
 ## Similar Questions
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1208.Get Equal Substrings Within Budget](https://leetcode.com/problems/get-equal-substrings-within-budget/)
-Difficulty:Medium, Likes: 198
+Difficulty:Medium, Likes: 206
 
 ## Description
 
@@ -51,10 +51,10 @@ That costs 3, so the maximum length is 3.
 
 ## Related Topics
 
-- [String](https://leetcode-cn.com/tag/string/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
-- [Prefix Sum](https://leetcode-cn.com/tag/prefix-sum/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [String](https://leetcode.com/tag/string/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
+- [Prefix Sum](https://leetcode.com/tag/prefix-sum/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 

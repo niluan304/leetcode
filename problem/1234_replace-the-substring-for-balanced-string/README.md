@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1234. 替换子串得到平衡字符串](https://leetcode.cn/problems/replace-the-substring-for-balanced-string/)
-Difficulty:Medium, Likes: 247
+Difficulty:Medium, Likes: 265
 
 ## 题目描述
 
@@ -66,8 +66,8 @@ Difficulty:Medium, Likes: 247
 
 ## 相关话题
 
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

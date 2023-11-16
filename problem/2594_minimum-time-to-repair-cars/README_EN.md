@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2594.Minimum Time to Repair Cars](https://leetcode.com/problems/minimum-time-to-repair-cars/)
-Difficulty:Medium, Likes: 87
+Difficulty:Medium, Likes: 210
 
 ## Description
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [199.Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)
-Difficulty:Medium, Likes: 926
+Difficulty:Medium, Likes: 990
 
 ## Description
 
@@ -41,12 +41,12 @@ Difficulty:Medium, Likes: 926
 
 ## Related Topics
 
-- [Tree](https://leetcode-cn.com/tag/tree/)
-- [Depth-First Search](https://leetcode-cn.com/tag/depth-first-search/)
-- [Breadth-First Search](https://leetcode-cn.com/tag/breadth-first-search/)
-- [Binary Tree](https://leetcode-cn.com/tag/binary-tree/)
+- [Tree](https://leetcode.com/tag/tree/)
+- [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
+- [Breadth-First Search](https://leetcode.com/tag/breadth-first-search/)
+- [Binary Tree](https://leetcode.com/tag/binary-tree/)
 
 ## Similar Questions
 
-- [Populating Next Right Pointers in Each Node](../populating-next-right-pointers-in-each-node/README.md) Medium 
-- [Boundary of Binary Tree](../boundary-of-binary-tree/README.md) Medium 🔒
+- [Populating Next Right Pointers in Each Node](../populating-next-right-pointers-in-each-node/README_EN.md) Medium 
+- [Boundary of Binary Tree](../boundary-of-binary-tree/README_EN.md) Medium 🔒

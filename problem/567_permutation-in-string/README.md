@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [567. 字符串的排列](https://leetcode.cn/problems/permutation-in-string/)
-Difficulty:Medium, Likes: 936
+Difficulty:Medium, Likes: 970
 
 ## 题目描述
 
@@ -39,10 +39,10 @@ Difficulty:Medium, Likes: 936
 
 ## 相关话题
 
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

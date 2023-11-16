@@ -1,0 +1,9 @@
+"ababa"
+3
+
+"aaabaaa"
+6
+
+"aaaaa"
+5
+

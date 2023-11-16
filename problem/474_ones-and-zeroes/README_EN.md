@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [474.Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes/)
-Difficulty:Medium, Likes: 1044
+Difficulty:Medium, Likes: 1073
 
 ## Description
 

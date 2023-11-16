@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [131. 分割回文串](https://leetcode.cn/problems/palindrome-partitioning/)
-Difficulty:Medium, Likes: 1543
+Difficulty:Medium, Likes: 1679
 
 ## 题目描述
 
@@ -38,9 +38,9 @@ Difficulty:Medium, Likes: 1543
 
 ## 相关话题
 
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [动态规划](https://leetcode-cn.com/tag/dynamic-programming/)
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1503.Last Moment Before All Ants Fall Out of a Plank](https://leetcode.com/problems/last-moment-before-all-ants-fall-out-of-a-plank/)
-Difficulty:Medium, Likes: 62
+Difficulty:Medium, Likes: 65
 
 ## Description
 

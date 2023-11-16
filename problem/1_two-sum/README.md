@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1. 两数之和](https://leetcode.cn/problems/two-sum/)
-Difficulty:Easy, Likes: 17292
+Difficulty:Easy, Likes: 17962
 
 ## 题目描述
 
@@ -54,8 +54,8 @@ Difficulty:Easy, Likes: 17292
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
+- [数组](https://leetcode.cn/tag/array/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
 
 ## 相似题目
 

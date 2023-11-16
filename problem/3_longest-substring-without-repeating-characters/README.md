@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
-Difficulty:Medium, Likes: 9373
+Difficulty:Medium, Likes: 9791
 
 ## 题目描述
 
@@ -15,7 +15,7 @@ Difficulty:Medium, Likes: 9373
 <pre>
 <strong>输入: </strong>s = "abcabcbb"
 <strong>输出: </strong>3 
-<strong>解释:</strong> 因为无重复字符的最长子串是 <code>"abc"，所以其</code>长度为 3。
+<strong>解释:</strong> 因为无重复字符的最长子串是 <code>"abc"</code>，所以其长度为 3。
 </pre>
 
 <p><strong>示例 2:</strong></p>
@@ -47,9 +47,9 @@ Difficulty:Medium, Likes: 9373
 
 ## 相关话题
 
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

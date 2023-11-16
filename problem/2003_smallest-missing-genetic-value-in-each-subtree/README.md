@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2003. 每棵子树内缺失的最小基因值](https://leetcode.cn/problems/smallest-missing-genetic-value-in-each-subtree/)
-Difficulty:Hard, Likes: 106
+Difficulty:Hard, Likes: 168
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2034. 股票价格波动](https://leetcode.cn/problems/stock-price-fluctuation/)
-Difficulty:Medium, Likes: 167
+Difficulty:Medium, Likes: 192
 
 ## 题目描述
 

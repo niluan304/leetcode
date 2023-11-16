@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [206.Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
-Difficulty:Easy, Likes: 3282
+Difficulty:Easy, Likes: 3418
 
 ## Description
 
@@ -44,11 +44,11 @@ Difficulty:Easy, Likes: 3282
 
 ## Related Topics
 
-- [Recursion](https://leetcode-cn.com/tag/recursion/)
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
+- [Recursion](https://leetcode.com/tag/recursion/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
 
 ## Similar Questions
 
-- [Reverse Linked List II](../reverse-linked-list-ii/README.md) Medium 
-- [Binary Tree Upside Down](../binary-tree-upside-down/README.md) Medium 🔒
-- [Palindrome Linked List](../palindrome-linked-list/README.md) Easy 
+- [Reverse Linked List II](../reverse-linked-list-ii/README_EN.md) Medium 
+- [Binary Tree Upside Down](../binary-tree-upside-down/README_EN.md) Medium 🔒
+- [Palindrome Linked List](../palindrome-linked-list/README_EN.md) Easy 

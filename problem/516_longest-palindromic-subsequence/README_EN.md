@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [516.Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/)
-Difficulty:Medium, Likes: 1121
+Difficulty:Medium, Likes: 1131
 
 ## Description
 

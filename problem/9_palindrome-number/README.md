@@ -1,41 +1,61 @@
 
 | [English](README_EN.md) | 简体中文 |
 
-# [9. 回文数](https://leetcode-cn.com/problems/palindrome-number/)
+# [9. 回文数](https://leetcode.cn/problems/palindrome-number/)
+Difficulty:Easy, Likes: 2731
 
 ## 题目描述
 
-<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p>
+<p>给你一个整数 <code>x</code> ，如果 <code>x</code> 是一个回文整数，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
 
-<p><strong>示例 1:</strong></p>
+<p>回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p>
 
-<pre><strong>输入:</strong> 121
-<strong>输出:</strong> true
+<ul>
+	<li>例如，<code>121</code> 是回文，而 <code>123</code> 不是。</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><strong>示例 1：</strong></p>
+
+<pre>
+<strong>输入：</strong>x = 121
+<strong>输出：</strong>true
 </pre>
 
-<p><strong>示例&nbsp;2:</strong></p>
+<p><strong>示例&nbsp;2：</strong></p>
 
-<pre><strong>输入:</strong> -121
-<strong>输出:</strong> false
-<strong>解释:</strong> 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+<pre>
+<strong>输入：</strong>x = -121
+<strong>输出：</strong>false
+<strong>解释：</strong>从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
 </pre>
 
-<p><strong>示例 3:</strong></p>
+<p><strong>示例 3：</strong></p>
 
-<pre><strong>输入:</strong> 10
-<strong>输出:</strong> false
-<strong>解释:</strong> 从右向左读, 为 01 。因此它不是一个回文数。
+<pre>
+<strong>输入：</strong>x = 10
+<strong>输出：</strong>false
+<strong>解释：</strong>从右向左读, 为 01 。因此它不是一个回文数。
 </pre>
 
-<p><strong>进阶:</strong></p>
+<p>&nbsp;</p>
 
-<p>你能不将整数转为字符串来解决这个问题吗？</p>
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li><code>-2<sup>31</sup>&nbsp;&lt;= x &lt;= 2<sup>31</sup>&nbsp;- 1</code></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><strong>进阶：</strong>你能不将整数转为字符串来解决这个问题吗？</p>
 
 
 ## 相关话题
 
-- [数学](https://leetcode-cn.com/tag/math)
+- [数学](https://leetcode.cn/tag/math/)
 
 ## 相似题目
 
-- [回文链表](../palindrome-linked-list/README.md)
+- [回文链表](../palindrome-linked-list/README.md) Easy 

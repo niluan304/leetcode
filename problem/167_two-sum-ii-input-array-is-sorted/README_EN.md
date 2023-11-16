@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [167.Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
-Difficulty:Medium, Likes: 1101
+Difficulty:Medium, Likes: 1148
 
 ## Description
 
@@ -53,12 +53,12 @@ Difficulty:Medium, Likes: 1101
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
+- [Array](https://leetcode.com/tag/array/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
 
 ## Similar Questions
 
-- [Two Sum](../two-sum/README.md) Easy 
-- [Two Sum IV - Input is a BST](../two-sum-iv-input-is-a-bst/README.md) Easy 
-- [Two Sum Less Than K](../two-sum-less-than-k/README.md) Easy 🔒
+- [Two Sum](../two-sum/README_EN.md) Easy 
+- [Two Sum IV - Input is a BST](../two-sum-iv-input-is-a-bst/README_EN.md) Easy 
+- [Two Sum Less Than K](../two-sum-less-than-k/README_EN.md) Easy 🔒

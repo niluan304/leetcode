@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [235.Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
-Difficulty:Medium, Likes: 1125
+Difficulty:Medium, Likes: 1172
 
 ## Description
 
@@ -48,12 +48,12 @@ Difficulty:Medium, Likes: 1125
 
 ## Related Topics
 
-- [Tree](https://leetcode-cn.com/tag/tree/)
-- [Depth-First Search](https://leetcode-cn.com/tag/depth-first-search/)
-- [Binary Search Tree](https://leetcode-cn.com/tag/binary-search-tree/)
-- [Binary Tree](https://leetcode-cn.com/tag/binary-tree/)
+- [Tree](https://leetcode.com/tag/tree/)
+- [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
+- [Binary Search Tree](https://leetcode.com/tag/binary-search-tree/)
+- [Binary Tree](https://leetcode.com/tag/binary-tree/)
 
 ## Similar Questions
 
-- [Lowest Common Ancestor of a Binary Tree](../lowest-common-ancestor-of-a-binary-tree/README.md) Medium 
-- [Smallest Common Region](../smallest-common-region/README.md) Medium 🔒
+- [Lowest Common Ancestor of a Binary Tree](../lowest-common-ancestor-of-a-binary-tree/README_EN.md) Medium 
+- [Smallest Common Region](../smallest-common-region/README_EN.md) Medium 🔒

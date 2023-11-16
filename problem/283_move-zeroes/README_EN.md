@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [283.Move Zeroes](https://leetcode.com/problems/move-zeroes/)
-Difficulty:Easy, Likes: 2056
+Difficulty:Easy, Likes: 2229
 
 ## Description
 
@@ -31,9 +31,9 @@ Difficulty:Easy, Likes: 2056
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
+- [Array](https://leetcode.com/tag/array/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
 
 ## Similar Questions
 
-- [Remove Element](../remove-element/README.md) Easy 
+- [Remove Element](../remove-element/README_EN.md) Easy 

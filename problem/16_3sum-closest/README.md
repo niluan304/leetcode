@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [16. 最接近的三数之和](https://leetcode.cn/problems/3sum-closest/)
-Difficulty:Medium, Likes: 1482
+Difficulty:Medium, Likes: 1552
 
 ## 题目描述
 
@@ -42,9 +42,9 @@ Difficulty:Medium, Likes: 1482
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
-- [排序](https://leetcode-cn.com/tag/sorting/)
+- [数组](https://leetcode.cn/tag/array/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
+- [排序](https://leetcode.cn/tag/sorting/)
 
 ## 相似题目
 

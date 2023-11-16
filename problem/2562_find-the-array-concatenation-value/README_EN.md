@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2562.Find the Array Concatenation Value](https://leetcode.com/problems/find-the-array-concatenation-value/)
-Difficulty:Easy, Likes: 25
+Difficulty:Easy, Likes: 54
 
 ## Description
 

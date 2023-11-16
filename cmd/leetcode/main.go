@@ -37,7 +37,7 @@ func init() {
 }
 
 func main() {
-	s := server.New("")
+	s := server.New("config.yml")
 
 	if strings.ToUpper(*today) == "YES" {
 		err := s.Today()
@@ -112,6 +112,12 @@ func Scan() (err error) {
 		_, err = fmt.Scan(slug)
 		if err != nil {
 			return errors.Wrap(err, "fail scan problem slug")
+		}
+	case "t":
+		fmt.Print("请确认是否获取每日一题 YES/NO：")
+		_, err = fmt.Scan(today)
+		if err != nil {
+			return errors.Wrap(err, "fail scan today")
 		}
 	}
 	return nil

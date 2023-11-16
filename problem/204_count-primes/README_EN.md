@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [204.Count Primes](https://leetcode.com/problems/count-primes/)
-Difficulty:Medium, Likes: 1071
+Difficulty:Medium, Likes: 1111
 
 ## Description
 
@@ -41,13 +41,13 @@ Difficulty:Medium, Likes: 1071
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Math](https://leetcode-cn.com/tag/math/)
-- [Enumeration](https://leetcode-cn.com/tag/enumeration/)
-- [Number Theory](https://leetcode-cn.com/tag/number-theory/)
+- [Array](https://leetcode.com/tag/array/)
+- [Math](https://leetcode.com/tag/math/)
+- [Enumeration](https://leetcode.com/tag/enumeration/)
+- [Number Theory](https://leetcode.com/tag/number-theory/)
 
 ## Similar Questions
 
-- [Ugly Number](../ugly-number/README.md) Easy 
-- [Ugly Number II](../ugly-number-ii/README.md) Medium 
-- [Perfect Squares](../perfect-squares/README.md) Medium 
+- [Ugly Number](../ugly-number/README_EN.md) Easy 
+- [Ugly Number II](../ugly-number-ii/README_EN.md) Medium 
+- [Perfect Squares](../perfect-squares/README_EN.md) Medium 

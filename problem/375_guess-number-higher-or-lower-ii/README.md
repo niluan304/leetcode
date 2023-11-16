@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [375. 猜数字大小 II](https://leetcode.cn/problems/guess-number-higher-or-lower-ii/)
-Difficulty:Medium, Likes: 564
+Difficulty:Medium, Likes: 568
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [901.Online Stock Span](https://leetcode.com/problems/online-stock-span/)
-Difficulty:Medium, Likes: 366
+Difficulty:Medium, Likes: 428
 
 ## Description
 

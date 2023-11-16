@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [79. 单词搜索](https://leetcode.cn/problems/word-search/)
-Difficulty:Medium, Likes: 1620
+Difficulty:Medium, Likes: 1716
 
 ## 题目描述
 
@@ -52,9 +52,9 @@ Difficulty:Medium, Likes: 1620
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
-- [矩阵](https://leetcode-cn.com/tag/matrix/)
+- [数组](https://leetcode.cn/tag/array/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
+- [矩阵](https://leetcode.cn/tag/matrix/)
 
 ## 相似题目
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/)
-Difficulty:Easy, Likes: 3221
+Difficulty:Easy, Likes: 3353
 
 ## 题目描述
 
@@ -44,8 +44,8 @@ Difficulty:Easy, Likes: 3221
 
 ## 相关话题
 
-- [递归](https://leetcode-cn.com/tag/recursion/)
-- [链表](https://leetcode-cn.com/tag/linked-list/)
+- [递归](https://leetcode.cn/tag/recursion/)
+- [链表](https://leetcode.cn/tag/linked-list/)
 
 ## 相似题目
 

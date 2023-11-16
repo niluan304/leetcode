@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [26.Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
-Difficulty:Easy, Likes: 3378
+Difficulty:Easy, Likes: 3392
 
 ## Description
 

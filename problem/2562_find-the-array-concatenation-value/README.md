@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2562. 找出数组的串联值](https://leetcode.cn/problems/find-the-array-concatenation-value/)
-Difficulty:Easy, Likes: 25
+Difficulty:Easy, Likes: 54
 
 ## 题目描述
 

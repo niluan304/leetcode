@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [103.Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
-Difficulty:Medium, Likes: 798
+Difficulty:Medium, Likes: 831
 
 ## Description
 
@@ -41,10 +41,10 @@ Difficulty:Medium, Likes: 798
 
 ## Related Topics
 
-- [Tree](https://leetcode-cn.com/tag/tree/)
-- [Breadth-First Search](https://leetcode-cn.com/tag/breadth-first-search/)
-- [Binary Tree](https://leetcode-cn.com/tag/binary-tree/)
+- [Tree](https://leetcode.com/tag/tree/)
+- [Breadth-First Search](https://leetcode.com/tag/breadth-first-search/)
+- [Binary Tree](https://leetcode.com/tag/binary-tree/)
 
 ## Similar Questions
 
-- [Binary Tree Level Order Traversal](../binary-tree-level-order-traversal/README.md) Medium 
+- [Binary Tree Level Order Traversal](../binary-tree-level-order-traversal/README_EN.md) Medium 

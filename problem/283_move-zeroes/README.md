@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [283. 移动零](https://leetcode.cn/problems/move-zeroes/)
-Difficulty:Easy, Likes: 2056
+Difficulty:Easy, Likes: 2229
 
 ## 题目描述
 
@@ -42,8 +42,8 @@ Difficulty:Easy, Likes: 2056
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
+- [数组](https://leetcode.cn/tag/array/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
 
 ## 相似题目
 

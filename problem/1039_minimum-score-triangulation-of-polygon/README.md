@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1039. 多边形三角剖分的最低得分](https://leetcode.cn/problems/minimum-score-triangulation-of-polygon/)
-Difficulty:Medium, Likes: 258
+Difficulty:Medium, Likes: 262
 
 ## 题目描述
 

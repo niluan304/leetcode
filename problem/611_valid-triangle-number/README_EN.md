@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [611.Valid Triangle Number](https://leetcode.com/problems/valid-triangle-number/)
-Difficulty:Medium, Likes: 509
+Difficulty:Medium, Likes: 531
 
 ## Description
 
@@ -38,12 +38,12 @@ Difficulty:Medium, Likes: 509
 
 ## Related Topics
 
-- [Greedy](https://leetcode-cn.com/tag/greedy/)
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
-- [Sorting](https://leetcode-cn.com/tag/sorting/)
+- [Greedy](https://leetcode.com/tag/greedy/)
+- [Array](https://leetcode.com/tag/array/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 
-- [3Sum Smaller](../3sum-smaller/README.md) Medium 🔒
+- [3Sum Smaller](../3sum-smaller/README_EN.md) Medium 🔒

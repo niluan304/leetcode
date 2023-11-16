@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [258.Add Digits](https://leetcode.com/problems/add-digits/)
-Difficulty:Easy, Likes: 600
+Difficulty:Easy, Likes: 641
 
 ## Description
 
@@ -40,11 +40,11 @@ Since 2 has only one digit, return it.
 
 ## Related Topics
 
-- [Math](https://leetcode-cn.com/tag/math/)
-- [Number Theory](https://leetcode-cn.com/tag/number-theory/)
-- [Simulation](https://leetcode-cn.com/tag/simulation/)
+- [Math](https://leetcode.com/tag/math/)
+- [Number Theory](https://leetcode.com/tag/number-theory/)
+- [Simulation](https://leetcode.com/tag/simulation/)
 
 ## Similar Questions
 
-- [Happy Number](../happy-number/README.md) Easy 
-- [Sum of Digits in the Minimum Number](../sum-of-digits-in-the-minimum-number/README.md) Easy 🔒
+- [Happy Number](../happy-number/README_EN.md) Easy 
+- [Sum of Digits in the Minimum Number](../sum-of-digits-in-the-minimum-number/README_EN.md) Easy 🔒

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [539.Minimum Time Difference](https://leetcode.com/problems/minimum-time-difference/)
-Difficulty:Medium, Likes: 242
+Difficulty:Medium, Likes: 250
 
 ## Description
 
@@ -26,10 +26,10 @@ Given a list of 24-hour clock time points in <strong>&quot;HH:MM&quot;</strong> 
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Math](https://leetcode-cn.com/tag/math/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Sorting](https://leetcode-cn.com/tag/sorting/)
+- [Array](https://leetcode.com/tag/array/)
+- [Math](https://leetcode.com/tag/math/)
+- [String](https://leetcode.com/tag/string/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [96.Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/)
-Difficulty:Medium, Likes: 2345
+Difficulty:Medium, Likes: 2397
 
 ## Description
 

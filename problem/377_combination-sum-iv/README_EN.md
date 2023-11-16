@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [377.Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)
-Difficulty:Medium, Likes: 875
+Difficulty:Medium, Likes: 896
 
 ## Description
 

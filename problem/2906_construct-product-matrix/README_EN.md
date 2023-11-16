@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2906.Construct Product Matrix](https://leetcode.com/problems/construct-product-matrix/)
-Difficulty:Medium, Likes: 15
+Difficulty:Medium, Likes: 19
 
 ## Description
 
@@ -49,6 +49,9 @@ So the answer is [[2],[0],[0]].</pre>
 
 ## Related Topics
 
+- [Array](https://leetcode.com/tag/array/)
+- [Matrix](https://leetcode.com/tag/matrix/)
+- [Prefix Sum](https://leetcode.com/tag/prefix-sum/)
 
 ## Similar Questions
 

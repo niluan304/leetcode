@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1049.Last Stone Weight II](https://leetcode.com/problems/last-stone-weight-ii/)
-Difficulty:Medium, Likes: 740
+Difficulty:Medium, Likes: 783
 
 ## Description
 

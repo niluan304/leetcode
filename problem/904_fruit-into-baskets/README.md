@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [904. 水果成篮](https://leetcode.cn/problems/fruit-into-baskets/)
-Difficulty:Medium, Likes: 524
+Difficulty:Medium, Likes: 581
 
 ## 题目描述
 
@@ -66,9 +66,9 @@ Difficulty:Medium, Likes: 524
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [数组](https://leetcode.cn/tag/array/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

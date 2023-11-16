@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2246. 相邻字符不同的最长路径](https://leetcode.cn/problems/longest-path-with-different-adjacent-characters/)
-Difficulty:Hard, Likes: 69
+Difficulty:Hard, Likes: 71
 
 ## 题目描述
 

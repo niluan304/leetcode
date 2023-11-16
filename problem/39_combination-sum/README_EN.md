@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [39.Combination Sum](https://leetcode.com/problems/combination-sum/)
-Difficulty:Medium, Likes: 2535
+Difficulty:Medium, Likes: 2669
 
 ## Description
 
@@ -51,14 +51,14 @@ These are the only two combinations.
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [Array](https://leetcode.com/tag/array/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [Letter Combinations of a Phone Number](../letter-combinations-of-a-phone-number/README.md) Medium 
-- [Combination Sum II](../combination-sum-ii/README.md) Medium 
-- [Combinations](../combinations/README.md) Medium 
-- [Combination Sum III](../combination-sum-iii/README.md) Medium 
-- [Factor Combinations](../factor-combinations/README.md) Medium 🔒
-- [Combination Sum IV](../combination-sum-iv/README.md) Medium 
+- [Letter Combinations of a Phone Number](../letter-combinations-of-a-phone-number/README_EN.md) Medium 
+- [Combination Sum II](../combination-sum-ii/README_EN.md) Medium 
+- [Combinations](../combinations/README_EN.md) Medium 
+- [Combination Sum III](../combination-sum-iii/README_EN.md) Medium 
+- [Factor Combinations](../factor-combinations/README_EN.md) Medium 🔒
+- [Combination Sum IV](../combination-sum-iv/README_EN.md) Medium 

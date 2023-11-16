@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)
-Difficulty:Easy, Likes: 1893
+Difficulty:Easy, Likes: 1973
 
 ## 题目描述
 
@@ -47,10 +47,10 @@ Difficulty:Easy, Likes: 1893
 
 ## 相关话题
 
-- [栈](https://leetcode-cn.com/tag/stack/)
-- [树](https://leetcode-cn.com/tag/tree/)
-- [深度优先搜索](https://leetcode-cn.com/tag/depth-first-search/)
-- [二叉树](https://leetcode-cn.com/tag/binary-tree/)
+- [栈](https://leetcode.cn/tag/stack/)
+- [树](https://leetcode.cn/tag/tree/)
+- [深度优先搜索](https://leetcode.cn/tag/depth-first-search/)
+- [二叉树](https://leetcode.cn/tag/binary-tree/)
 
 ## 相似题目
 

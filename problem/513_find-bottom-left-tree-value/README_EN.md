@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [513.Find Bottom Left Tree Value](https://leetcode.com/problems/find-bottom-left-tree-value/)
-Difficulty:Medium, Likes: 511
+Difficulty:Medium, Likes: 545
 
 ## Description
 
@@ -34,10 +34,10 @@ Difficulty:Medium, Likes: 511
 
 ## Related Topics
 
-- [Tree](https://leetcode-cn.com/tag/tree/)
-- [Depth-First Search](https://leetcode-cn.com/tag/depth-first-search/)
-- [Breadth-First Search](https://leetcode-cn.com/tag/breadth-first-search/)
-- [Binary Tree](https://leetcode-cn.com/tag/binary-tree/)
+- [Tree](https://leetcode.com/tag/tree/)
+- [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
+- [Breadth-First Search](https://leetcode.com/tag/breadth-first-search/)
+- [Binary Tree](https://leetcode.com/tag/binary-tree/)
 
 ## Similar Questions
 

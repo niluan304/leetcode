@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [187.Repeated DNA Sequences](https://leetcode.com/problems/repeated-dna-sequences/)
-Difficulty:Medium, Likes: 544
+Difficulty:Medium, Likes: 563
 
 ## Description
 

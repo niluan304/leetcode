@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [746.Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
-Difficulty:Easy, Likes: 1302
+Difficulty:Easy, Likes: 1367
 
 ## Description
 

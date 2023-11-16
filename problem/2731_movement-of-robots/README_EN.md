@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2731.Movement of Robots](https://leetcode.com/problems/movement-of-robots/)
-Difficulty:Medium, Likes: 107
+Difficulty:Medium, Likes: 134
 
 ## Description
 

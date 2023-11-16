@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [274.H-Index](https://leetcode.com/problems/h-index/)
-Difficulty:Medium, Likes: 380
+Difficulty:Medium, Likes: 423
 
 ## Description
 

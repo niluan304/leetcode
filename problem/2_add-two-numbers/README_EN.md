@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2.Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
-Difficulty:Medium, Likes: 9894
+Difficulty:Medium, Likes: 10205
 
 ## Description
 
@@ -45,15 +45,15 @@ Difficulty:Medium, Likes: 9894
 
 ## Related Topics
 
-- [Recursion](https://leetcode-cn.com/tag/recursion/)
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
-- [Math](https://leetcode-cn.com/tag/math/)
+- [Recursion](https://leetcode.com/tag/recursion/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
+- [Math](https://leetcode.com/tag/math/)
 
 ## Similar Questions
 
-- [Multiply Strings](../multiply-strings/README.md) Medium 
-- [Add Binary](../add-binary/README.md) Easy 
-- [Sum of Two Integers](../sum-of-two-integers/README.md) Medium 
-- [Add Strings](../add-strings/README.md) Easy 
-- [Add Two Numbers II](../add-two-numbers-ii/README.md) Medium 
-- [Add to Array-Form of Integer](../add-to-array-form-of-integer/README.md) Easy 
+- [Multiply Strings](../multiply-strings/README_EN.md) Medium 
+- [Add Binary](../add-binary/README_EN.md) Easy 
+- [Sum of Two Integers](../sum-of-two-integers/README_EN.md) Medium 
+- [Add Strings](../add-strings/README_EN.md) Easy 
+- [Add Two Numbers II](../add-two-numbers-ii/README_EN.md) Medium 
+- [Add to Array-Form of Integer](../add-to-array-form-of-integer/README_EN.md) Easy 

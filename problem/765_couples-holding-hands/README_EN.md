@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [765.Couples Holding Hands](https://leetcode.com/problems/couples-holding-hands/)
-Difficulty:Hard, Likes: 504
+Difficulty:Hard, Likes: 535
 
 ## Description
 

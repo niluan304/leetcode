@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [258. 各位相加](https://leetcode.cn/problems/add-digits/)
-Difficulty:Easy, Likes: 600
+Difficulty:Easy, Likes: 641
 
 ## 题目描述
 
@@ -42,9 +42,9 @@ Difficulty:Easy, Likes: 600
 
 ## 相关话题
 
-- [数学](https://leetcode-cn.com/tag/math/)
-- [数论](https://leetcode-cn.com/tag/number-theory/)
-- [模拟](https://leetcode-cn.com/tag/simulation/)
+- [数学](https://leetcode.cn/tag/math/)
+- [数论](https://leetcode.cn/tag/number-theory/)
+- [模拟](https://leetcode.cn/tag/simulation/)
 
 ## 相似题目
 

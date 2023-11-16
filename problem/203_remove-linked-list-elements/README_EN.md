@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [203.Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
-Difficulty:Easy, Likes: 1310
+Difficulty:Easy, Likes: 1355
 
 ## Description
 
@@ -42,10 +42,10 @@ Difficulty:Easy, Likes: 1310
 
 ## Related Topics
 
-- [Recursion](https://leetcode-cn.com/tag/recursion/)
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
+- [Recursion](https://leetcode.com/tag/recursion/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
 
 ## Similar Questions
 
-- [Remove Element](../remove-element/README.md) Easy 
-- [Delete Node in a Linked List](../delete-node-in-a-linked-list/README.md) Medium 
+- [Remove Element](../remove-element/README_EN.md) Easy 
+- [Delete Node in a Linked List](../delete-node-in-a-linked-list/README_EN.md) Medium 

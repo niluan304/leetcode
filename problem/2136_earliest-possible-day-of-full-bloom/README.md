@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2136. 全部开花的最早一天](https://leetcode.cn/problems/earliest-possible-day-of-full-bloom/)
-Difficulty:Hard, Likes: 104
+Difficulty:Hard, Likes: 115
 
 ## 题目描述
 

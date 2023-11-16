@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1049. 最后一块石头的重量 II](https://leetcode.cn/problems/last-stone-weight-ii/)
-Difficulty:Medium, Likes: 740
+Difficulty:Medium, Likes: 783
 
 ## 题目描述
 

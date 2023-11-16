@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [376. 摆动序列](https://leetcode.cn/problems/wiggle-subsequence/)
-Difficulty:Medium, Likes: 1037
+Difficulty:Medium, Likes: 1055
 
 ## 题目描述
 

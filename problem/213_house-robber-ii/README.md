@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [213. 打家劫舍 II](https://leetcode.cn/problems/house-robber-ii/)
-Difficulty:Medium, Likes: 1429
+Difficulty:Medium, Likes: 1526
 
 ## 题目描述
 
@@ -47,8 +47,8 @@ Difficulty:Medium, Likes: 1429
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [动态规划](https://leetcode-cn.com/tag/dynamic-programming/)
+- [数组](https://leetcode.cn/tag/array/)
+- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
 
 ## 相似题目
 

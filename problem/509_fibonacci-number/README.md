@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [509. 斐波那契数](https://leetcode.cn/problems/fibonacci-number/)
-Difficulty:Easy, Likes: 680
+Difficulty:Easy, Likes: 716
 
 ## 题目描述
 
@@ -52,10 +52,10 @@ F(n) = F(n - 1) + F(n - 2)，其中 n &gt; 1
 
 ## 相关话题
 
-- [递归](https://leetcode-cn.com/tag/recursion/)
-- [记忆化搜索](https://leetcode-cn.com/tag/memoization/)
-- [数学](https://leetcode-cn.com/tag/math/)
-- [动态规划](https://leetcode-cn.com/tag/dynamic-programming/)
+- [递归](https://leetcode.cn/tag/recursion/)
+- [记忆化搜索](https://leetcode.cn/tag/memoization/)
+- [数学](https://leetcode.cn/tag/math/)
+- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
 
 ## 相似题目
 

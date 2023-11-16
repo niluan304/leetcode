@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [110.Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/)
-Difficulty:Easy, Likes: 1385
+Difficulty:Easy, Likes: 1451
 
 ## Description
 
@@ -41,10 +41,10 @@ Difficulty:Easy, Likes: 1385
 
 ## Related Topics
 
-- [Tree](https://leetcode-cn.com/tag/tree/)
-- [Depth-First Search](https://leetcode-cn.com/tag/depth-first-search/)
-- [Binary Tree](https://leetcode-cn.com/tag/binary-tree/)
+- [Tree](https://leetcode.com/tag/tree/)
+- [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
+- [Binary Tree](https://leetcode.com/tag/binary-tree/)
 
 ## Similar Questions
 
-- [Maximum Depth of Binary Tree](../maximum-depth-of-binary-tree/README.md) Easy 
+- [Maximum Depth of Binary Tree](../maximum-depth-of-binary-tree/README_EN.md) Easy 

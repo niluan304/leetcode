@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [712.Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/)
-Difficulty:Medium, Likes: 352
+Difficulty:Medium, Likes: 358
 
 ## Description
 
@@ -47,6 +47,6 @@ If instead we turned both strings into &quot;lee&quot; or &quot;eet&quot;, we wo
 
 ## Similar Questions
 
-- [Edit Distance](../edit-distance/README_EN.md) Hard 
+- [Edit Distance](../edit-distance/README_EN.md) Medium 
 - [Longest Increasing Subsequence](../longest-increasing-subsequence/README_EN.md) Medium 
 - [Delete Operation for Two Strings](../delete-operation-for-two-strings/README_EN.md) Medium 

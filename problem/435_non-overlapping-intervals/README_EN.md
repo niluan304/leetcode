@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [435.Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
-Difficulty:Medium, Likes: 995
+Difficulty:Medium, Likes: 1071
 
 ## Description
 
@@ -45,11 +45,11 @@ Difficulty:Medium, Likes: 995
 
 ## Related Topics
 
-- [Greedy](https://leetcode-cn.com/tag/greedy/)
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Dynamic Programming](https://leetcode-cn.com/tag/dynamic-programming/)
-- [Sorting](https://leetcode-cn.com/tag/sorting/)
+- [Greedy](https://leetcode.com/tag/greedy/)
+- [Array](https://leetcode.com/tag/array/)
+- [Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 
-- [Minimum Number of Arrows to Burst Balloons](../minimum-number-of-arrows-to-burst-balloons/README.md) Medium 
+- [Minimum Number of Arrows to Burst Balloons](../minimum-number-of-arrows-to-burst-balloons/README_EN.md) Medium 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [90.Subsets II](https://leetcode.com/problems/subsets-ii/)
-Difficulty:Medium, Likes: 1119
+Difficulty:Medium, Likes: 1170
 
 ## Description
 
@@ -29,10 +29,10 @@ Difficulty:Medium, Likes: 1119
 
 ## Related Topics
 
-- [Bit Manipulation](https://leetcode-cn.com/tag/bit-manipulation/)
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [Bit Manipulation](https://leetcode.com/tag/bit-manipulation/)
+- [Array](https://leetcode.com/tag/array/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [Subsets](../subsets/README.md) Medium 
+- [Subsets](../subsets/README_EN.md) Medium 

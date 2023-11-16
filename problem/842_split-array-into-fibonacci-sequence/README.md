@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [842. 将数组拆分成斐波那契序列](https://leetcode.cn/problems/split-array-into-fibonacci-sequence/)
-Difficulty:Medium, Likes: 287
+Difficulty:Medium, Likes: 292
 
 ## 题目描述
 
@@ -57,8 +57,8 @@ Difficulty:Medium, Likes: 287
 
 ## 相关话题
 
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 

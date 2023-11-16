@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [19.Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
-Difficulty:Medium, Likes: 2643
+Difficulty:Medium, Likes: 2732
 
 ## Description
 
@@ -46,8 +46,8 @@ Difficulty:Medium, Likes: 2643
 
 ## Related Topics
 
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
 
 ## Similar Questions
 

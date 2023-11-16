@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [509.Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
-Difficulty:Easy, Likes: 680
+Difficulty:Easy, Likes: 716
 
 ## Description
 

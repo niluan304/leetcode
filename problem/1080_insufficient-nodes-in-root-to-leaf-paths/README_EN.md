@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1080.Insufficient Nodes in Root to Leaf Paths](https://leetcode.com/problems/insufficient-nodes-in-root-to-leaf-paths/)
-Difficulty:Medium, Likes: 162
+Difficulty:Medium, Likes: 169
 
 ## Description
 
@@ -46,9 +46,9 @@ Difficulty:Medium, Likes: 162
 
 ## Related Topics
 
-- [Tree](https://leetcode-cn.com/tag/tree/)
-- [Depth-First Search](https://leetcode-cn.com/tag/depth-first-search/)
-- [Binary Tree](https://leetcode-cn.com/tag/binary-tree/)
+- [Tree](https://leetcode.com/tag/tree/)
+- [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
+- [Binary Tree](https://leetcode.com/tag/binary-tree/)
 
 ## Similar Questions
 

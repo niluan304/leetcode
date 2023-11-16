@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1402. 做菜顺序](https://leetcode.cn/problems/reducing-dishes/)
-Difficulty:Hard, Likes: 122
+Difficulty:Hard, Likes: 196
 
 ## 题目描述
 

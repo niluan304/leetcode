@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2406.Divide Intervals Into Minimum Number of Groups](https://leetcode.com/problems/divide-intervals-into-minimum-number-of-groups/)
-Difficulty:Medium, Likes: 53
+Difficulty:Medium, Likes: 54
 
 ## Description
 

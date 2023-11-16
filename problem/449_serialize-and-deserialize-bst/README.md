@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [449. 序列化和反序列化二叉搜索树](https://leetcode.cn/problems/serialize-and-deserialize-bst/)
-Difficulty:Medium, Likes: 456
+Difficulty:Medium, Likes: 531
 
 ## 题目描述
 

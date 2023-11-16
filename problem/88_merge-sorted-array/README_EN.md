@@ -1,46 +1,69 @@
 
 | English | [简体中文](README.md) |
 
-# [88. Merge Sorted Array](https://leetcode-cn.com/problems/merge-sorted-array/)
+# [88.Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
+Difficulty:Easy, Likes: 2224
 
 ## Description
 
-<p>Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array.</p>
+<p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>, sorted in <strong>non-decreasing order</strong>, and two integers <code>m</code> and <code>n</code>, representing the number of elements in <code>nums1</code> and <code>nums2</code> respectively.</p>
 
-<p><strong>Note:</strong></p>
+<p><strong>Merge</strong> <code>nums1</code> and <code>nums2</code> into a single array sorted in <strong>non-decreasing order</strong>.</p>
 
-<ul>
-	<li>The number of elements initialized in <em>nums1</em> and <em>nums2</em> are <em>m</em> and <em>n</em> respectively.</li>
-	<li>You may assume that <em>nums1</em> has enough space (size that is&nbsp;<strong>equal</strong> to <em>m</em> + <em>n</em>) to hold additional elements from <em>nums2</em>.</li>
-</ul>
+<p>The final sorted array should not be returned by the function, but instead be <em>stored inside the array </em><code>nums1</code>. To accommodate this, <code>nums1</code> has a length of <code>m + n</code>, where the first <code>m</code> elements denote the elements that should be merged, and the last <code>n</code> elements are set to <code>0</code> and should be ignored. <code>nums2</code> has a length of <code>n</code>.</p>
 
-<p><strong>Example:</strong></p>
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
 <pre>
-<strong>Input:</strong>
-nums1 = [1,2,3,0,0,0], m = 3
-nums2 = [2,5,6],       n = 3
+<strong>Input:</strong> nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+<strong>Output:</strong> [1,2,2,3,5,6]
+<strong>Explanation:</strong> The arrays we are merging are [1,2,3] and [2,5,6].
+The result of the merge is [<u>1</u>,<u>2</u>,2,<u>3</u>,5,6] with the underlined elements coming from nums1.
+</pre>
 
-<strong>Output:</strong>&nbsp;[1,2,2,3,5,6]
+<p><strong class="example">Example 2:</strong></p>
+
+<pre>
+<strong>Input:</strong> nums1 = [1], m = 1, nums2 = [], n = 0
+<strong>Output:</strong> [1]
+<strong>Explanation:</strong> The arrays we are merging are [1] and [].
+The result of the merge is [1].
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre>
+<strong>Input:</strong> nums1 = [0], m = 0, nums2 = [1], n = 1
+<strong>Output:</strong> [1]
+<strong>Explanation:</strong> The arrays we are merging are [] and [1].
+The result of the merge is [1].
+Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
 </pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>-10^9 &lt;= nums1[i], nums2[i] &lt;= 10^9</code></li>
 	<li><code>nums1.length == m + n</code></li>
 	<li><code>nums2.length == n</code></li>
+	<li><code>0 &lt;= m, n &lt;= 200</code></li>
+	<li><code>1 &lt;= m + n &lt;= 200</code></li>
+	<li><code>-10<sup>9</sup> &lt;= nums1[i], nums2[j] &lt;= 10<sup>9</sup></code></li>
 </ul>
+
+<p>&nbsp;</p>
+<p><strong>Follow up: </strong>Can you come up with an algorithm that runs in <code>O(m + n)</code> time?</p>
 
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers)
+- [Array](https://leetcode.com/tag/array/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 
-- [Merge Two Sorted Lists](../merge-two-sorted-lists/README_EN.md)
-- [Squares of a Sorted Array](../squares-of-a-sorted-array/README_EN.md)
-- [Interval List Intersections](../interval-list-intersections/README_EN.md)
+- [Merge Two Sorted Lists](../merge-two-sorted-lists/README_EN.md) Easy 
+- [Squares of a Sorted Array](../squares-of-a-sorted-array/README_EN.md) Easy 
+- [Interval List Intersections](../interval-list-intersections/README_EN.md) Medium 

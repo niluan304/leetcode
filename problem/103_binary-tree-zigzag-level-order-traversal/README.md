@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [103. 二叉树的锯齿形层序遍历](https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/)
-Difficulty:Medium, Likes: 798
+Difficulty:Medium, Likes: 831
 
 ## 题目描述
 
@@ -43,9 +43,9 @@ Difficulty:Medium, Likes: 798
 
 ## 相关话题
 
-- [树](https://leetcode-cn.com/tag/tree/)
-- [广度优先搜索](https://leetcode-cn.com/tag/breadth-first-search/)
-- [二叉树](https://leetcode-cn.com/tag/binary-tree/)
+- [树](https://leetcode.cn/tag/tree/)
+- [广度优先搜索](https://leetcode.cn/tag/breadth-first-search/)
+- [二叉树](https://leetcode.cn/tag/binary-tree/)
 
 ## 相似题目
 

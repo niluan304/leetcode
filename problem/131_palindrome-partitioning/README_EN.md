@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [131.Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)
-Difficulty:Medium, Likes: 1543
+Difficulty:Medium, Likes: 1679
 
 ## Description
 
@@ -27,10 +27,10 @@ Difficulty:Medium, Likes: 1543
 
 ## Related Topics
 
-- [String](https://leetcode-cn.com/tag/string/)
-- [Dynamic Programming](https://leetcode-cn.com/tag/dynamic-programming/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [String](https://leetcode.com/tag/string/)
+- [Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [Palindrome Partitioning II](../palindrome-partitioning-ii/README.md) Hard 
+- [Palindrome Partitioning II](../palindrome-partitioning-ii/README_EN.md) Hard 

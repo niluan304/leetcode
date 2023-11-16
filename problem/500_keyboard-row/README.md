@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [500. 键盘行](https://leetcode.cn/problems/keyboard-row/)
-Difficulty:Easy, Likes: 241
+Difficulty:Easy, Likes: 252
 
 ## 题目描述
 
@@ -54,9 +54,9 @@ Difficulty:Easy, Likes: 241
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [字符串](https://leetcode-cn.com/tag/string/)
+- [数组](https://leetcode.cn/tag/array/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [字符串](https://leetcode.cn/tag/string/)
 
 ## 相似题目
 

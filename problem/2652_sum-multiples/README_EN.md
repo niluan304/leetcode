@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2652.Sum Multiples](https://leetcode.com/problems/sum-multiples/)
-Difficulty:Easy, Likes: 26
+Difficulty:Easy, Likes: 70
 
 ## Description
 

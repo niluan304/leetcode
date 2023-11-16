@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [188.Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)
-Difficulty:Hard, Likes: 1032
+Difficulty:Hard, Likes: 1114
 
 ## Description
 

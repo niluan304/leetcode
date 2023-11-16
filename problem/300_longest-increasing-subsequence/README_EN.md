@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [300.Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
-Difficulty:Medium, Likes: 3412
+Difficulty:Medium, Likes: 3469
 
 ## Description
 

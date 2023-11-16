@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2525. 根据规则将箱子分类](https://leetcode.cn/problems/categorize-box-according-to-criteria/)
-Difficulty:Easy, Likes: 23
+Difficulty:Easy, Likes: 43
 
 ## 题目描述
 

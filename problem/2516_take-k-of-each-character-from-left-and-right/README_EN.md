@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2516.Take K of Each Character From Left and Right](https://leetcode.com/problems/take-k-of-each-character-from-left-and-right/)
-Difficulty:Medium, Likes: 30
+Difficulty:Medium, Likes: 35
 
 ## Description
 
@@ -43,9 +43,9 @@ It can be proven that 8 is the minimum number of minutes needed.
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 

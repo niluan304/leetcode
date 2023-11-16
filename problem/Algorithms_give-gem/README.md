@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [LCP 50. 宝石补给](https://leetcode.cn/problems/WHnhjV/)
-Difficulty:Easy, Likes: 35
+Difficulty:Easy, Likes: 55
 
 ## 题目描述
 

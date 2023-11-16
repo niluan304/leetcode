@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/)
-Difficulty:Medium, Likes: 1620
+Difficulty:Medium, Likes: 1687
 
 ## 题目描述
 
@@ -41,7 +41,7 @@ Difficulty:Medium, Likes: 1620
 
 ## 相关话题
 
-- [链表](https://leetcode-cn.com/tag/linked-list/)
+- [链表](https://leetcode.cn/tag/linked-list/)
 
 ## 相似题目
 

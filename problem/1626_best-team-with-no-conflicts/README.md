@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1626. 无矛盾的最佳球队](https://leetcode.cn/problems/best-team-with-no-conflicts/)
-Difficulty:Medium, Likes: 193
+Difficulty:Medium, Likes: 196
 
 ## 题目描述
 

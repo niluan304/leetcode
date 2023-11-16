@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [132. 分割回文串 II](https://leetcode.cn/problems/palindrome-partitioning-ii/)
-Difficulty:Hard, Likes: 718
+Difficulty:Hard, Likes: 721
 
 ## 题目描述
 

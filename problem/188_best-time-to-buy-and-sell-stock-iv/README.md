@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [188. 买卖股票的最佳时机 IV](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/)
-Difficulty:Hard, Likes: 1032
+Difficulty:Hard, Likes: 1114
 
 ## 题目描述
 

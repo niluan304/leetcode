@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1109.Corporate Flight Bookings](https://leetcode.com/problems/corporate-flight-bookings/)
-Difficulty:Medium, Likes: 485
+Difficulty:Medium, Likes: 496
 
 ## Description
 

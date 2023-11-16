@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [377. 组合总和 Ⅳ](https://leetcode.cn/problems/combination-sum-iv/)
-Difficulty:Medium, Likes: 875
+Difficulty:Medium, Likes: 896
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2558. 从数量最多的堆取走礼物](https://leetcode.cn/problems/take-gifts-from-the-richest-pile/)
-Difficulty:Easy, Likes: 21
+Difficulty:Easy, Likes: 52
 
 ## 题目描述
 

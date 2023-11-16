@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1726.Tuple with Same Product](https://leetcode.com/problems/tuple-with-same-product/)
-Difficulty:Medium, Likes: 40
+Difficulty:Medium, Likes: 105
 
 ## Description
 

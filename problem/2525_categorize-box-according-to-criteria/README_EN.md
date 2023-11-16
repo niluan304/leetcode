@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2525.Categorize Box According to Criteria](https://leetcode.com/problems/categorize-box-according-to-criteria/)
-Difficulty:Easy, Likes: 23
+Difficulty:Easy, Likes: 43
 
 ## Description
 

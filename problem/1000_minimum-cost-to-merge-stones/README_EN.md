@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1000.Minimum Cost to Merge Stones](https://leetcode.com/problems/minimum-cost-to-merge-stones/)
-Difficulty:Hard, Likes: 365
+Difficulty:Hard, Likes: 366
 
 ## Description
 

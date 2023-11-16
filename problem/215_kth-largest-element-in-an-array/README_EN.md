@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [215.Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
-Difficulty:Medium, Likes: 2321
+Difficulty:Medium, Likes: 2349
 
 ## Description
 

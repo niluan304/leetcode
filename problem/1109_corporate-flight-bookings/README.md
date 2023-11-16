@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1109. 航班预订统计](https://leetcode.cn/problems/corporate-flight-bookings/)
-Difficulty:Medium, Likes: 485
+Difficulty:Medium, Likes: 496
 
 ## 题目描述
 

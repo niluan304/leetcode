@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [26. 删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)
-Difficulty:Easy, Likes: 3378
+Difficulty:Easy, Likes: 3392
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1156. 单字符重复子串的最大长度](https://leetcode.cn/problems/swap-for-longest-repeated-character-substring/)
-Difficulty:Medium, Likes: 192
+Difficulty:Medium, Likes: 202
 
 ## 题目描述
 
@@ -54,9 +54,9 @@ Difficulty:Medium, Likes: 192
 
 ## 相关话题
 
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

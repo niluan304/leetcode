@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [62.Unique Paths](https://leetcode.com/problems/unique-paths/)
-Difficulty:Medium, Likes: 1863
+Difficulty:Medium, Likes: 1933
 
 ## Description
 

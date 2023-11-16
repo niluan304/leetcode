@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [18.4Sum](https://leetcode.com/problems/4sum/)
-Difficulty:Medium, Likes: 1697
+Difficulty:Medium, Likes: 1800
 
 ## Description
 
@@ -43,12 +43,12 @@ Difficulty:Medium, Likes: 1697
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
-- [Sorting](https://leetcode-cn.com/tag/sorting/)
+- [Array](https://leetcode.com/tag/array/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 
-- [Two Sum](../two-sum/README.md) Easy 
-- [3Sum](../3sum/README.md) Medium 
-- [4Sum II](../4sum-ii/README.md) Medium 
+- [Two Sum](../two-sum/README_EN.md) Easy 
+- [3Sum](../3sum/README_EN.md) Medium 
+- [4Sum II](../4sum-ii/README_EN.md) Medium 

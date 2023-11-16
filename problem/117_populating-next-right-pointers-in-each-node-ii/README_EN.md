@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [117.Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
-Difficulty:Medium, Likes: 796
+Difficulty:Medium, Likes: 811
 
 ## Description
 

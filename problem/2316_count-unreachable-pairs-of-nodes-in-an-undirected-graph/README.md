@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2316. 统计无向图中无法互相到达点对数](https://leetcode.cn/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/)
-Difficulty:Medium, Likes: 34
+Difficulty:Medium, Likes: 103
 
 ## 题目描述
 

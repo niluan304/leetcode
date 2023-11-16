@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [198.House Robber](https://leetcode.com/problems/house-robber/)
-Difficulty:Medium, Likes: 2705
+Difficulty:Medium, Likes: 2837
 
 ## Description
 
@@ -40,16 +40,16 @@ Total amount you can rob = 2 + 9 + 1 = 12.
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Dynamic Programming](https://leetcode-cn.com/tag/dynamic-programming/)
+- [Array](https://leetcode.com/tag/array/)
+- [Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
 
 ## Similar Questions
 
-- [Maximum Product Subarray](../maximum-product-subarray/README.md) Medium 
-- [House Robber II](../house-robber-ii/README.md) Medium 
-- [Paint House](../paint-house/README.md) Medium 🔒
-- [Paint Fence](../paint-fence/README.md) Medium 🔒
-- [House Robber III](../house-robber-iii/README.md) Medium 
-- [Non-negative Integers without Consecutive Ones](../non-negative-integers-without-consecutive-ones/README.md) Hard 
-- [Coin Path](../coin-path/README.md) Hard 🔒
-- [Delete and Earn](../delete-and-earn/README.md) Medium 
+- [Maximum Product Subarray](../maximum-product-subarray/README_EN.md) Medium 
+- [House Robber II](../house-robber-ii/README_EN.md) Medium 
+- [Paint House](../paint-house/README_EN.md) Medium 🔒
+- [Paint Fence](../paint-fence/README_EN.md) Medium 🔒
+- [House Robber III](../house-robber-iii/README_EN.md) Medium 
+- [Non-negative Integers without Consecutive Ones](../non-negative-integers-without-consecutive-ones/README_EN.md) Hard 
+- [Coin Path](../coin-path/README_EN.md) Hard 🔒
+- [Delete and Earn](../delete-and-earn/README_EN.md) Medium 

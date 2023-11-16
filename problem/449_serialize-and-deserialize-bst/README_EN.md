@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [449.Serialize and Deserialize BST](https://leetcode.com/problems/serialize-and-deserialize-bst/)
-Difficulty:Medium, Likes: 456
+Difficulty:Medium, Likes: 531
 
 ## Description
 

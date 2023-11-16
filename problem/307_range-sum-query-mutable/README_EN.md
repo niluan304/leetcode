@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [307.Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/)
-Difficulty:Medium, Likes: 676
+Difficulty:Medium, Likes: 695
 
 ## Description
 

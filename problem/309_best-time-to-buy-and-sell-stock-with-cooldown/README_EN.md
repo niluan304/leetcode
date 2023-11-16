@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [309.Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
-Difficulty:Medium, Likes: 1623
+Difficulty:Medium, Likes: 1667
 
 ## Description
 

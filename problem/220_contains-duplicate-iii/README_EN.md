@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [220.Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/)
-Difficulty:Hard, Likes: 704
+Difficulty:Hard, Likes: 717
 
 ## Description
 
@@ -52,13 +52,13 @@ abs(nums[i] - nums[j]) &lt;= valueDiff --&gt; abs(1 - 1) &lt;= 0
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Bucket Sort](https://leetcode-cn.com/tag/bucket-sort/)
-- [Ordered Set](https://leetcode-cn.com/tag/ordered-set/)
-- [Sorting](https://leetcode-cn.com/tag/sorting/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Array](https://leetcode.com/tag/array/)
+- [Bucket Sort](https://leetcode.com/tag/bucket-sort/)
+- [Ordered Set](https://leetcode.com/tag/ordered-set/)
+- [Sorting](https://leetcode.com/tag/sorting/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 
-- [Contains Duplicate](../contains-duplicate/README.md) Easy 
-- [Contains Duplicate II](../contains-duplicate-ii/README.md) Easy 
+- [Contains Duplicate](../contains-duplicate/README_EN.md) Easy 
+- [Contains Duplicate II](../contains-duplicate-ii/README_EN.md) Easy 

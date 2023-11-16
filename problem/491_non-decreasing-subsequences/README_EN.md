@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [491.Non-decreasing Subsequences](https://leetcode.com/problems/non-decreasing-subsequences/)
-Difficulty:Medium, Likes: 680
+Difficulty:Medium, Likes: 744
 
 ## Description
 
@@ -34,11 +34,11 @@ Difficulty:Medium, Likes: 680
 
 ## Related Topics
 
-- [Bit Manipulation](https://leetcode-cn.com/tag/bit-manipulation/)
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [Bit Manipulation](https://leetcode.com/tag/bit-manipulation/)
+- [Array](https://leetcode.com/tag/array/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [Maximum Length of Pair Chain](../maximum-length-of-pair-chain/README.md) Medium 
+- [Maximum Length of Pair Chain](../maximum-length-of-pair-chain/README_EN.md) Medium 

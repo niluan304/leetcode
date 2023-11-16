@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [300. 最长递增子序列](https://leetcode.cn/problems/longest-increasing-subsequence/)
-Difficulty:Medium, Likes: 3412
+Difficulty:Medium, Likes: 3469
 
 ## 题目描述
 

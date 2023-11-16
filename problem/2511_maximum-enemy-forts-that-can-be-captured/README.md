@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2511. 最多可以摧毁的敌人城堡数目](https://leetcode.cn/problems/maximum-enemy-forts-that-can-be-captured/)
-Difficulty:Easy, Likes: 21
+Difficulty:Easy, Likes: 92
 
 ## 题目描述
 

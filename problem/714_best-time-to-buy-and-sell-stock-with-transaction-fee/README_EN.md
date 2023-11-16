@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [714.Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
-Difficulty:Medium, Likes: 962
+Difficulty:Medium, Likes: 1017
 
 ## Description
 

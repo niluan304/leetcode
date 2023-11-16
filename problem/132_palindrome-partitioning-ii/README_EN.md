@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [132.Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/)
-Difficulty:Hard, Likes: 718
+Difficulty:Hard, Likes: 721
 
 ## Description
 

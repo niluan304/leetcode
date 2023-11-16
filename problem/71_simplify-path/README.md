@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [71. 简化路径](https://leetcode.cn/problems/simplify-path/)
-Difficulty:Medium, Likes: 609
+Difficulty:Medium, Likes: 660
 
 ## 题目描述
 
@@ -66,8 +66,8 @@ Difficulty:Medium, Likes: 609
 
 ## 相关话题
 
-- [栈](https://leetcode-cn.com/tag/stack/)
-- [字符串](https://leetcode-cn.com/tag/string/)
+- [栈](https://leetcode.cn/tag/stack/)
+- [字符串](https://leetcode.cn/tag/string/)
 
 ## 相似题目
 

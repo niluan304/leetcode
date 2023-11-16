@@ -2,11 +2,11 @@
 | English | [简体中文](README.md) |
 
 # [2600.K Items With the Maximum Sum](https://leetcode.com/problems/k-items-with-the-maximum-sum/)
-Difficulty:Easy, Likes: 32
+Difficulty:Easy, Likes: 44
 
 ## Description
 
-# <p>There is a bag that consists of items, each item&nbsp;has a number <code>1</code>, <code>0</code>, or <code>-1</code> written on it.</p>
+<p>There is a bag that consists of items, each item&nbsp;has a number <code>1</code>, <code>0</code>, or <code>-1</code> written on it.</p>
 
 <p>You are given four <strong>non-negative </strong>integers <code>numOnes</code>, <code>numZeros</code>, <code>numNegOnes</code>, and <code>k</code>.</p>
 
@@ -50,8 +50,8 @@ It can be proven that 3 is the maximum possible sum.
 
 ## Related Topics
 
-- [Greedy](https://leetcode-cn.com/tag/greedy/)
-- [Math](https://leetcode-cn.com/tag/math/)
+- [Greedy](https://leetcode.com/tag/greedy/)
+- [Math](https://leetcode.com/tag/math/)
 
 ## Similar Questions
 

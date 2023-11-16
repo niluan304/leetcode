@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [415.Add Strings](https://leetcode.com/problems/add-strings/)
-Difficulty:Easy, Likes: 725
+Difficulty:Easy, Likes: 803
 
 ## Description
 
@@ -44,12 +44,12 @@ Difficulty:Easy, Likes: 725
 
 ## Related Topics
 
-- [Math](https://leetcode-cn.com/tag/math/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Simulation](https://leetcode-cn.com/tag/simulation/)
+- [Math](https://leetcode.com/tag/math/)
+- [String](https://leetcode.com/tag/string/)
+- [Simulation](https://leetcode.com/tag/simulation/)
 
 ## Similar Questions
 
-- [Add Two Numbers](../add-two-numbers/README.md) Medium 
-- [Multiply Strings](../multiply-strings/README.md) Medium 
-- [Add to Array-Form of Integer](../add-to-array-form-of-integer/README.md) Easy 
+- [Add Two Numbers](../add-two-numbers/README_EN.md) Medium 
+- [Multiply Strings](../multiply-strings/README_EN.md) Medium 
+- [Add to Array-Form of Integer](../add-to-array-form-of-integer/README_EN.md) Easy 

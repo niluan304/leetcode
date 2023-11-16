@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [543. 二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/)
-Difficulty:Easy, Likes: 1427
+Difficulty:Easy, Likes: 1435
 
 ## 题目描述
 

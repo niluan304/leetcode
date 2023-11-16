@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [207. 课程表](https://leetcode.cn/problems/course-schedule/)
-Difficulty:Medium, Likes: 1725
+Difficulty:Medium, Likes: 1825
 
 ## 题目描述
 

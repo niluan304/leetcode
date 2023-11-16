@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [72.Edit Distance](https://leetcode.com/problems/edit-distance/)
-Difficulty:Hard, Likes: 3147
+Difficulty:Medium, Likes: 3205
 
 ## Description
 

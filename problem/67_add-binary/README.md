@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [67. 二进制求和](https://leetcode.cn/problems/add-binary/)
-Difficulty:Easy, Likes: 1042
+Difficulty:Easy, Likes: 1124
 
 ## 题目描述
 
@@ -35,10 +35,10 @@ Difficulty:Easy, Likes: 1042
 
 ## 相关话题
 
-- [位运算](https://leetcode-cn.com/tag/bit-manipulation/)
-- [数学](https://leetcode-cn.com/tag/math/)
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [模拟](https://leetcode-cn.com/tag/simulation/)
+- [位运算](https://leetcode.cn/tag/bit-manipulation/)
+- [数学](https://leetcode.cn/tag/math/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [模拟](https://leetcode.cn/tag/simulation/)
 
 ## 相似题目
 

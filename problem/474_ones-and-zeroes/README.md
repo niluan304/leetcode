@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [474. 一和零](https://leetcode.cn/problems/ones-and-zeroes/)
-Difficulty:Medium, Likes: 1044
+Difficulty:Medium, Likes: 1073
 
 ## 题目描述
 

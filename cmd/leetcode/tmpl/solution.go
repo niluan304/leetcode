@@ -20,11 +20,11 @@ type Solution struct {
 }
 
 func NewSolution(q *graphql.QuestionData) (*Solution, error) {
-	pkg := q.Pkg()
+	//pkg := q.Pkg()
 
 	return &Solution{
 		CodeSnippets: q.CodeSnippets,
-		PkgName:      pkg,
+		PkgName:      "main",
 		NeedMod: strings.Contains(q.TranslatedContent, "取余") ||
 			strings.Contains(q.TranslatedContent, "取模") ||
 			strings.Contains(q.TranslatedContent, "答案可能很大"),
@@ -84,11 +84,9 @@ func extname(langSlug string) string {
 }
 
 func NewParserSolution(q *graphql.QuestionData) Parser {
-	pkg := q.Pkg()
-
 	return &Solution{
 		CodeSnippets: q.CodeSnippets,
-		PkgName:      pkg,
+		PkgName:      "main",
 		NeedMod: strings.Contains(q.TranslatedContent, "取余") ||
 			strings.Contains(q.TranslatedContent, "取模") ||
 			strings.Contains(q.TranslatedContent, "答案可能很大"),
@@ -102,33 +100,14 @@ func (s *Solution) Parse(w io.Writer) (err error) {
 			continue
 		}
 
-		data := fmt.Sprintf("package %s\n\n", s.PkgName)
+		data := fmt.Sprintf("package main\n\n")
 		if strings.Contains(item.Code, "Definition for") {
-			data += `import . "github.com/EndlessCheng/codeforces-go/leetcode/testutil"` + "\n\n"
-		}
-
-		data += `func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
+			data += `import(
+	. "github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+)
 
 `
+		}
 
 		if s.NeedMod {
 			data += `const mod = 1e9 + 7` + "\n\n"
@@ -154,12 +133,12 @@ type leetcode struct {
 
 func NewParserLeetcode(pkgName string) (p Parser) {
 	return &leetcode{
-		PkgName: pkgName,
+		PkgName: "main",
 	}
 }
 
 func (p leetcode) Parse(w io.Writer) (err error) {
-	_, err = w.Write([]byte(fmt.Sprintf("package %s\n", p.PkgName)))
+	_, err = w.Write([]byte(fmt.Sprintf("package main\n")))
 	if err != nil {
 		return errors.Wrap(err, "fail write solution_leetcode")
 	}
@@ -178,7 +157,7 @@ func NewParserUnitCase(q *graphql.QuestionData) (p Parser) {
 	}
 
 	data := &Data{
-		PkgName: q.Pkg(),
+		PkgName: "main",
 		Name:    q.MetaData.Name,
 	}
 
@@ -193,7 +172,7 @@ func NewParserEndlessTest(q *graphql.QuestionData) (p Parser) {
 	}
 
 	data := &Data{
-		PkgName:     q.Pkg(),
+		PkgName:     "main",
 		Name:        q.MetaData.Name,
 		RunFuncName: "RunLeetCodeFuncWithFile",
 	}

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2381. 字母移位 II](https://leetcode.cn/problems/shifting-letters-ii/)
-Difficulty:Medium, Likes: 20
+Difficulty:Medium, Likes: 22
 
 ## 题目描述
 

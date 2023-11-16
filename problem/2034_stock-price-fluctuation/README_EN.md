@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2034.Stock Price Fluctuation ](https://leetcode.com/problems/stock-price-fluctuation/)
-Difficulty:Medium, Likes: 167
+Difficulty:Medium, Likes: 192
 
 ## Description
 

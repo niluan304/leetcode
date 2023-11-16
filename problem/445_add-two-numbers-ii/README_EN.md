@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [445.Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/)
-Difficulty:Medium, Likes: 683
+Difficulty:Medium, Likes: 691
 
 ## Description
 
@@ -47,10 +47,10 @@ Difficulty:Medium, Likes: 683
 
 ## Related Topics
 
-- [Stack](https://leetcode-cn.com/tag/stack/)
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
-- [Math](https://leetcode-cn.com/tag/math/)
+- [Stack](https://leetcode.com/tag/stack/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
+- [Math](https://leetcode.com/tag/math/)
 
 ## Similar Questions
 
-- [Add Two Numbers](../add-two-numbers/README.md) Medium 
+- [Add Two Numbers](../add-two-numbers/README_EN.md) Medium 

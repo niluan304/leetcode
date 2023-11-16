@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [93.Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)
-Difficulty:Medium, Likes: 1251
+Difficulty:Medium, Likes: 1348
 
 ## Description
 
@@ -47,9 +47,9 @@ Difficulty:Medium, Likes: 1251
 
 ## Related Topics
 
-- [String](https://leetcode-cn.com/tag/string/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [String](https://leetcode.com/tag/string/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [IP to CIDR](../ip-to-cidr/README.md) Medium 🔒
+- [IP to CIDR](../ip-to-cidr/README_EN.md) Medium 🔒

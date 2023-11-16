@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1222.Queens That Can Attack the King](https://leetcode.com/problems/queens-that-can-attack-the-king/)
-Difficulty:Medium, Likes: 92
+Difficulty:Medium, Likes: 122
 
 ## Description
 

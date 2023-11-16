@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [382. 链表随机节点](https://leetcode.cn/problems/linked-list-random-node/)
-Difficulty:Medium, Likes: 345
+Difficulty:Medium, Likes: 351
 
 ## 题目描述
 
@@ -57,10 +57,10 @@ solution.getRandom(); // 返回 3
 
 ## 相关话题
 
-- [水塘抽样](https://leetcode-cn.com/tag/reservoir-sampling/)
-- [链表](https://leetcode-cn.com/tag/linked-list/)
-- [数学](https://leetcode-cn.com/tag/math/)
-- [随机化](https://leetcode-cn.com/tag/randomized/)
+- [水塘抽样](https://leetcode.cn/tag/reservoir-sampling/)
+- [链表](https://leetcode.cn/tag/linked-list/)
+- [数学](https://leetcode.cn/tag/math/)
+- [随机化](https://leetcode.cn/tag/randomized/)
 
 ## 相似题目
 

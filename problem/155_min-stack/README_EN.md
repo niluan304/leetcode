@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [155.Min Stack](https://leetcode.com/problems/min-stack/)
-Difficulty:Medium, Likes: 1603
+Difficulty:Medium, Likes: 1685
 
 ## Description
 
@@ -54,10 +54,10 @@ minStack.getMin(); // return -2
 
 ## Related Topics
 
-- [Stack](https://leetcode-cn.com/tag/stack/)
-- [Design](https://leetcode-cn.com/tag/design/)
+- [Stack](https://leetcode.com/tag/stack/)
+- [Design](https://leetcode.com/tag/design/)
 
 ## Similar Questions
 
-- [Sliding Window Maximum](../sliding-window-maximum/README.md) Hard 
-- [Max Stack](../max-stack/README.md) Hard 🔒
+- [Sliding Window Maximum](../sliding-window-maximum/README_EN.md) Hard 
+- [Max Stack](../max-stack/README_EN.md) Hard 🔒

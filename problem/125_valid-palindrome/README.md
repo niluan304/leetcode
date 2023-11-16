@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [125. 验证回文串](https://leetcode.cn/problems/valid-palindrome/)
-Difficulty:Easy, Likes: 647
+Difficulty:Easy, Likes: 709
 
 ## 题目描述
 
@@ -51,8 +51,8 @@ Difficulty:Easy, Likes: 647
 
 ## 相关话题
 
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
-- [字符串](https://leetcode-cn.com/tag/string/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
+- [字符串](https://leetcode.cn/tag/string/)
 
 ## 相似题目
 

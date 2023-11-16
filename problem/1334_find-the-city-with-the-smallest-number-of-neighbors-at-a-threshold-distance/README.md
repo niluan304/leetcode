@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1334. 阈值距离内邻居最少的城市](https://leetcode.cn/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/)
-Difficulty:Medium, Likes: 121
+Difficulty:Medium, Likes: 176
 
 ## 题目描述
 

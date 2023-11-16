@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [343. 整数拆分](https://leetcode.cn/problems/integer-break/)
-Difficulty:Medium, Likes: 1255
+Difficulty:Medium, Likes: 1310
 
 ## 题目描述
 

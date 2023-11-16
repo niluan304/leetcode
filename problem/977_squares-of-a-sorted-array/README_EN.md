@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [977.Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
-Difficulty:Easy, Likes: 823
+Difficulty:Easy, Likes: 924
 
 ## Description
 
@@ -39,11 +39,11 @@ After sorting, it becomes [0,1,9,16,100].
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
-- [Sorting](https://leetcode-cn.com/tag/sorting/)
+- [Array](https://leetcode.com/tag/array/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 
-- [Merge Sorted Array](../merge-sorted-array/README.md) Easy 
-- [Sort Transformed Array](../sort-transformed-array/README.md) Medium 🔒
+- [Merge Sorted Array](../merge-sorted-array/README_EN.md) Easy 
+- [Sort Transformed Array](../sort-transformed-array/README_EN.md) Medium 🔒

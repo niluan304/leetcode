@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [51.N-Queens](https://leetcode.com/problems/n-queens/)
-Difficulty:Hard, Likes: 1826
+Difficulty:Hard, Likes: 1967
 
 ## Description
 
@@ -38,10 +38,10 @@ Difficulty:Hard, Likes: 1826
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [Array](https://leetcode.com/tag/array/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [N-Queens II](../n-queens-ii/README.md) Hard 
-- [Grid Illumination](../grid-illumination/README.md) Hard 
+- [N-Queens II](../n-queens-ii/README_EN.md) Hard 
+- [Grid Illumination](../grid-illumination/README_EN.md) Hard 

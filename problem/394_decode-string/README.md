@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [394. 字符串解码](https://leetcode.cn/problems/decode-string/)
-Difficulty:Medium, Likes: 1517
+Difficulty:Medium, Likes: 1632
 
 ## 题目描述
 
@@ -58,9 +58,9 @@ Difficulty:Medium, Likes: 1517
 
 ## 相关话题
 
-- [栈](https://leetcode-cn.com/tag/stack/)
-- [递归](https://leetcode-cn.com/tag/recursion/)
-- [字符串](https://leetcode-cn.com/tag/string/)
+- [栈](https://leetcode.cn/tag/stack/)
+- [递归](https://leetcode.cn/tag/recursion/)
+- [字符串](https://leetcode.cn/tag/string/)
 
 ## 相似题目
 

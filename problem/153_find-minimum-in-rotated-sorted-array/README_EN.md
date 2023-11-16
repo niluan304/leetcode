@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [153.Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
-Difficulty:Medium, Likes: 1003
+Difficulty:Medium, Likes: 1047
 
 ## Description
 
@@ -58,10 +58,10 @@ Difficulty:Medium, Likes: 1003
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
+- [Array](https://leetcode.com/tag/array/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
 
 ## Similar Questions
 
-- [Search in Rotated Sorted Array](../search-in-rotated-sorted-array/README.md) Medium 
-- [Find Minimum in Rotated Sorted Array II](../find-minimum-in-rotated-sorted-array-ii/README.md) Hard 
+- [Search in Rotated Sorted Array](../search-in-rotated-sorted-array/README_EN.md) Medium 
+- [Find Minimum in Rotated Sorted Array II](../find-minimum-in-rotated-sorted-array-ii/README_EN.md) Hard 

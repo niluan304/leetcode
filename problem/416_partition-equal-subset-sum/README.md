@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum/)
-Difficulty:Medium, Likes: 1865
+Difficulty:Medium, Likes: 1929
 
 ## 题目描述
 

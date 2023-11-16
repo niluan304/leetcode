@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1781. 所有子字符串美丽值之和](https://leetcode.cn/problems/sum-of-beauty-of-all-substrings/)
-Difficulty:Medium, Likes: 85
+Difficulty:Medium, Likes: 88
 
 ## 题目描述
 
@@ -42,9 +42,9 @@ Difficulty:Medium, Likes: 85
 
 ## 相关话题
 
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [计数](https://leetcode-cn.com/tag/counting/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [计数](https://leetcode.cn/tag/counting/)
 
 ## 相似题目
 

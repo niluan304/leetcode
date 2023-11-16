@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2578.Split With Minimum Sum](https://leetcode.com/problems/split-with-minimum-sum/)
-Difficulty:Easy, Likes: 36
+Difficulty:Easy, Likes: 89
 
 ## Description
 

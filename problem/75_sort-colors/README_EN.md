@@ -1,39 +1,53 @@
 
 | English | [简体中文](README.md) |
 
-# [75. Sort Colors](https://leetcode-cn.com/problems/sort-colors/)
+# [75.Sort Colors](https://leetcode.com/problems/sort-colors/)
+Difficulty:Medium, Likes: 1692
 
 ## Description
 
-<p>Given an array with <em>n</em> objects colored red, white or blue, sort them <strong><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a>&nbsp;</strong>so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
+<p>Given an array <code>nums</code> with <code>n</code> objects colored red, white, or blue, sort them <strong><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a> </strong>so that objects of the same color are adjacent, with the colors in the order red, white, and blue.</p>
 
-<p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
+<p>We will use the integers <code>0</code>, <code>1</code>, and <code>2</code> to represent the color red, white, and blue, respectively.</p>
 
-<p><strong>Note:</strong>&nbsp;You are not suppose to use the library&#39;s sort function for this problem.</p>
+<p>You must solve this problem without using the library&#39;s sort function.</p>
 
-<p><strong>Example:</strong></p>
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
 <pre>
-<strong>Input:</strong> [2,0,2,1,1,0]
-<strong>Output:</strong> [0,0,1,1,2,2]</pre>
+<strong>Input:</strong> nums = [2,0,2,1,1,0]
+<strong>Output:</strong> [0,0,1,1,2,2]
+</pre>
 
-<p><strong>Follow up:</strong></p>
+<p><strong class="example">Example 2:</strong></p>
+
+<pre>
+<strong>Input:</strong> nums = [2,0,1]
+<strong>Output:</strong> [0,1,2]
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
 <ul>
-	<li>A rather straight forward solution is a two-pass algorithm using counting sort.<br />
-	First, iterate the array counting number of 0&#39;s, 1&#39;s, and 2&#39;s, then overwrite array with total number of 0&#39;s, then 1&#39;s and followed by 2&#39;s.</li>
-	<li>Could you come up with a&nbsp;one-pass algorithm using only constant space?</li>
+	<li><code>n == nums.length</code></li>
+	<li><code>1 &lt;= n &lt;= 300</code></li>
+	<li><code>nums[i]</code> is either <code>0</code>, <code>1</code>, or <code>2</code>.</li>
 </ul>
+
+<p>&nbsp;</p>
+<p><strong>Follow up:</strong>&nbsp;Could you come up with a one-pass algorithm using only&nbsp;constant extra space?</p>
 
 
 ## Related Topics
 
-- [Sort](https://leetcode-cn.com/tag/sort)
-- [Array](https://leetcode-cn.com/tag/array)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers)
+- [Array](https://leetcode.com/tag/array/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [Sorting](https://leetcode.com/tag/sorting/)
 
 ## Similar Questions
 
-- [Sort List](../sort-list/README_EN.md)
-- [Wiggle Sort](../wiggle-sort/README_EN.md)
-- [Wiggle Sort II](../wiggle-sort-ii/README_EN.md)
+- [Sort List](../sort-list/README_EN.md) Medium 
+- [Wiggle Sort](../wiggle-sort/README_EN.md) Medium 🔒
+- [Wiggle Sort II](../wiggle-sort-ii/README_EN.md) Medium 

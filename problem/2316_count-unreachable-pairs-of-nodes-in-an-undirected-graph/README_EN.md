@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2316.Count Unreachable Pairs of Nodes in an Undirected Graph](https://leetcode.com/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/)
-Difficulty:Medium, Likes: 34
+Difficulty:Medium, Likes: 103
 
 ## Description
 

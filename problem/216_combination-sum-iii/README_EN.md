@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [216.Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)
-Difficulty:Medium, Likes: 700
+Difficulty:Medium, Likes: 781
 
 ## Description
 
@@ -57,9 +57,9 @@ Using 4 different numbers in the range [1,9], the smallest sum we can get is 1+2
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [Array](https://leetcode.com/tag/array/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [Combination Sum](../combination-sum/README.md) Medium 
+- [Combination Sum](../combination-sum/README_EN.md) Medium 

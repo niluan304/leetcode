@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1921. 消灭怪物的最大数量](https://leetcode.cn/problems/eliminate-maximum-number-of-monsters/)
-Difficulty:Medium, Likes: 46
+Difficulty:Medium, Likes: 109
 
 ## 题目描述
 

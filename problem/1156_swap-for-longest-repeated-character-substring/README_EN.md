@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1156.Swap For Longest Repeated Character Substring](https://leetcode.com/problems/swap-for-longest-repeated-character-substring/)
-Difficulty:Medium, Likes: 192
+Difficulty:Medium, Likes: 202
 
 ## Description
 
@@ -46,9 +46,9 @@ Difficulty:Medium, Likes: 192
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 

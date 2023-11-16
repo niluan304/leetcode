@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1402.Reducing Dishes](https://leetcode.com/problems/reducing-dishes/)
-Difficulty:Hard, Likes: 122
+Difficulty:Hard, Likes: 196
 
 ## Description
 

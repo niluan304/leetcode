@@ -1,0 +1,9 @@
+"leetcode"
+0
+
+"loveleetcode"
+2
+
+"aabb"
+-1
+

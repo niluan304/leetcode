@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1004.Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/)
-Difficulty:Medium, Likes: 589
+Difficulty:Medium, Likes: 655
 
 ## Description
 
@@ -38,14 +38,14 @@ Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
-- [Prefix Sum](https://leetcode-cn.com/tag/prefix-sum/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Array](https://leetcode.com/tag/array/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
+- [Prefix Sum](https://leetcode.com/tag/prefix-sum/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 
-- [Longest Substring with At Most K Distinct Characters](../longest-substring-with-at-most-k-distinct-characters/README.md) Medium 🔒
-- [Longest Repeating Character Replacement](../longest-repeating-character-replacement/README.md) Medium 
-- [Max Consecutive Ones](../max-consecutive-ones/README.md) Easy 
-- [Max Consecutive Ones II](../max-consecutive-ones-ii/README.md) Medium 🔒
+- [Longest Substring with At Most K Distinct Characters](../longest-substring-with-at-most-k-distinct-characters/README_EN.md) Medium 🔒
+- [Longest Repeating Character Replacement](../longest-repeating-character-replacement/README_EN.md) Medium 
+- [Max Consecutive Ones](../max-consecutive-ones/README_EN.md) Easy 
+- [Max Consecutive Ones II](../max-consecutive-ones-ii/README_EN.md) Medium 🔒

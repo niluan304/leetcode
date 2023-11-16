@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2530. 执行 K 次操作后的最大分数](https://leetcode.cn/problems/maximal-score-after-applying-k-operations/)
-Difficulty:Medium, Likes: 24
+Difficulty:Medium, Likes: 83
 
 ## 题目描述
 
@@ -38,7 +38,7 @@ Difficulty:Medium, Likes: 24
 <strong>解释：</strong>可以执行下述操作：
 第 1 步操作：选中 i = 1 ，nums 变为 [1,<em><strong>4</strong></em>,3,3,3] 。分数增加 10 。
 第 2 步操作：选中 i = 1 ，nums 变为 [1,<em><strong>2</strong></em>,3,3,3] 。分数增加 4 。
-第 3 步操作：选中 i = 2 ，nums 变为 [1,1,<em><strong>1</strong></em>,3,3] 。分数增加 3 。
+第 3 步操作：选中 i = 2 ，nums 变为 [1,2,<em><strong>1</strong></em>,3,3] 。分数增加 3 。
 最后分数是 10 + 4 + 3 = 17 。
 </pre>
 

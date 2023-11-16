@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2605. 从两个数字数组里生成最小数字](https://leetcode.cn/problems/form-smallest-number-from-two-digit-arrays/)
-Difficulty:Easy, Likes: 42
+Difficulty:Easy, Likes: 91
 
 ## 题目描述
 

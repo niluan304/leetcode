@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2698. 求一个整数的惩罚数](https://leetcode.cn/problems/find-the-punishment-number-of-an-integer/)
-Difficulty:Medium, Likes: 74
+Difficulty:Medium, Likes: 117
 
 ## 题目描述
 

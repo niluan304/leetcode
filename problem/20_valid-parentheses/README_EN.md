@@ -1,65 +1,60 @@
 
 | English | [简体中文](README.md) |
 
-# [20. Valid Parentheses](https://leetcode-cn.com/problems/valid-parentheses/)
+# [20.Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+Difficulty:Easy, Likes: 4253
 
 ## Description
 
-<p>Given a string containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;{&#39;</code>, <code>&#39;}&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
+<p>Given a string <code>s</code> containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;{&#39;</code>, <code>&#39;}&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
 
 <p>An input string is valid if:</p>
 
 <ol>
 	<li>Open brackets must be closed by the same type of brackets.</li>
 	<li>Open brackets must be closed in the correct order.</li>
+	<li>Every close bracket has a corresponding open bracket of the same type.</li>
 </ol>
 
-<p>Note that an empty string is&nbsp;also considered valid.</p>
-
-<p><strong>Example 1:</strong></p>
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
 <pre>
-<strong>Input:</strong> &quot;()&quot;
+<strong>Input:</strong> s = &quot;()&quot;
 <strong>Output:</strong> true
 </pre>
 
-<p><strong>Example 2:</strong></p>
+<p><strong class="example">Example 2:</strong></p>
 
 <pre>
-<strong>Input:</strong> &quot;()[]{}&quot;
+<strong>Input:</strong> s = &quot;()[]{}&quot;
 <strong>Output:</strong> true
 </pre>
 
-<p><strong>Example 3:</strong></p>
+<p><strong class="example">Example 3:</strong></p>
 
 <pre>
-<strong>Input:</strong> &quot;(]&quot;
+<strong>Input:</strong> s = &quot;(]&quot;
 <strong>Output:</strong> false
 </pre>
 
-<p><strong>Example 4:</strong></p>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-<pre>
-<strong>Input:</strong> &quot;([)]&quot;
-<strong>Output:</strong> false
-</pre>
-
-<p><strong>Example 5:</strong></p>
-
-<pre>
-<strong>Input:</strong> &quot;{[]}&quot;
-<strong>Output:</strong> true
-</pre>
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>s</code> consists of parentheses only <code>&#39;()[]{}&#39;</code>.</li>
+</ul>
 
 
 ## Related Topics
 
-- [Stack](https://leetcode-cn.com/tag/stack)
-- [String](https://leetcode-cn.com/tag/string)
+- [Stack](https://leetcode.com/tag/stack/)
+- [String](https://leetcode.com/tag/string/)
 
 ## Similar Questions
 
-- [Generate Parentheses](../generate-parentheses/README_EN.md)
-- [Longest Valid Parentheses](../longest-valid-parentheses/README_EN.md)
-- [Remove Invalid Parentheses](../remove-invalid-parentheses/README_EN.md)
-- [Check If Word Is Valid After Substitutions](../check-if-word-is-valid-after-substitutions/README_EN.md)
+- [Generate Parentheses](../generate-parentheses/README_EN.md) Medium 
+- [Longest Valid Parentheses](../longest-valid-parentheses/README_EN.md) Hard 
+- [Remove Invalid Parentheses](../remove-invalid-parentheses/README_EN.md) Hard 
+- [Check If Word Is Valid After Substitutions](../check-if-word-is-valid-after-substitutions/README_EN.md) Medium 

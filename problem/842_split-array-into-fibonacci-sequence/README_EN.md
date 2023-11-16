@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [842.Split Array into Fibonacci Sequence](https://leetcode.com/problems/split-array-into-fibonacci-sequence/)
-Difficulty:Medium, Likes: 287
+Difficulty:Medium, Likes: 292
 
 ## Description
 
@@ -56,10 +56,10 @@ Difficulty:Medium, Likes: 287
 
 ## Related Topics
 
-- [String](https://leetcode-cn.com/tag/string/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [String](https://leetcode.com/tag/string/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [Additive Number](../additive-number/README.md) Medium 
-- [Fibonacci Number](../fibonacci-number/README.md) Easy 
+- [Additive Number](../additive-number/README_EN.md) Medium 
+- [Fibonacci Number](../fibonacci-number/README_EN.md) Easy 

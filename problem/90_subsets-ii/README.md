@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [90. 子集 II](https://leetcode.cn/problems/subsets-ii/)
-Difficulty:Medium, Likes: 1119
+Difficulty:Medium, Likes: 1170
 
 ## 题目描述
 
@@ -42,9 +42,9 @@ Difficulty:Medium, Likes: 1119
 
 ## 相关话题
 
-- [位运算](https://leetcode-cn.com/tag/bit-manipulation/)
-- [数组](https://leetcode-cn.com/tag/array/)
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
+- [位运算](https://leetcode.cn/tag/bit-manipulation/)
+- [数组](https://leetcode.cn/tag/array/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 

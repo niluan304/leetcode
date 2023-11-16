@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1143.Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
-Difficulty:Medium, Likes: 1432
+Difficulty:Medium, Likes: 1459
 
 ## Description
 

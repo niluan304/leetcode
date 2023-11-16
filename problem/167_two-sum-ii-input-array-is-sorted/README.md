@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)
-Difficulty:Medium, Likes: 1101
+Difficulty:Medium, Likes: 1148
 
 ## 题目描述
 
@@ -52,9 +52,9 @@ Difficulty:Medium, Likes: 1101
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
-- [二分查找](https://leetcode-cn.com/tag/binary-search/)
+- [数组](https://leetcode.cn/tag/array/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
+- [二分查找](https://leetcode.cn/tag/binary-search/)
 
 ## 相似题目
 

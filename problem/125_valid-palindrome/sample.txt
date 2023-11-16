@@ -1,0 +1,9 @@
+"A man, a plan, a canal: Panama"
+true
+
+"race a car"
+false
+
+" "
+true
+

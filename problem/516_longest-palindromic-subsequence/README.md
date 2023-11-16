@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [516. 最长回文子序列](https://leetcode.cn/problems/longest-palindromic-subsequence/)
-Difficulty:Medium, Likes: 1121
+Difficulty:Medium, Likes: 1131
 
 ## 题目描述
 

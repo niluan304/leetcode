@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2656. K 个元素的最大和](https://leetcode.cn/problems/maximum-sum-with-exactly-k-elements/)
-Difficulty:Easy, Likes: 31
+Difficulty:Easy, Likes: 49
 
 ## 题目描述
 

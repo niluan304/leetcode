@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2512.Reward Top K Students](https://leetcode.com/problems/reward-top-k-students/)
-Difficulty:Medium, Likes: 17
+Difficulty:Medium, Likes: 63
 
 ## Description
 

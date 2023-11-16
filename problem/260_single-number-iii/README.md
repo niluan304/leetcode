@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [260. 只出现一次的数字 III](https://leetcode.cn/problems/single-number-iii/)
-Difficulty:Medium, Likes: 764
+Difficulty:Medium, Likes: 850
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [18. 四数之和](https://leetcode.cn/problems/4sum/)
-Difficulty:Medium, Likes: 1697
+Difficulty:Medium, Likes: 1800
 
 ## 题目描述
 
@@ -45,9 +45,9 @@ Difficulty:Medium, Likes: 1697
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
-- [排序](https://leetcode-cn.com/tag/sorting/)
+- [数组](https://leetcode.cn/tag/array/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
+- [排序](https://leetcode.cn/tag/sorting/)
 
 ## 相似题目
 

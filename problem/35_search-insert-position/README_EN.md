@@ -1,48 +1,53 @@
 
 | English | [简体中文](README.md) |
 
-# [35. Search Insert Position](https://leetcode-cn.com/problems/search-insert-position/)
+# [35.Search Insert Position](https://leetcode.com/problems/search-insert-position/)
+Difficulty:Easy, Likes: 2201
 
 ## Description
 
-<p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
+<p>Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
 
-<p>You may assume no duplicates in the array.</p>
+<p>You must&nbsp;write an algorithm with&nbsp;<code>O(log n)</code> runtime complexity.</p>
 
-<p><strong>Example 1:</strong></p>
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
 <pre>
-<strong>Input:</strong> [1,3,5,6], 5
+<strong>Input:</strong> nums = [1,3,5,6], target = 5
 <strong>Output:</strong> 2
 </pre>
 
-<p><strong>Example 2:</strong></p>
+<p><strong class="example">Example 2:</strong></p>
 
 <pre>
-<strong>Input:</strong> [1,3,5,6], 2
+<strong>Input:</strong> nums = [1,3,5,6], target = 2
 <strong>Output:</strong> 1
 </pre>
 
-<p><strong>Example 3:</strong></p>
+<p><strong class="example">Example 3:</strong></p>
 
 <pre>
-<strong>Input:</strong> [1,3,5,6], 7
+<strong>Input:</strong> nums = [1,3,5,6], target = 7
 <strong>Output:</strong> 4
 </pre>
 
-<p><strong>Example 4:</strong></p>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-<pre>
-<strong>Input:</strong> [1,3,5,6], 0
-<strong>Output:</strong> 0
-</pre>
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+	<li><code>nums</code> contains <strong>distinct</strong> values sorted in <strong>ascending</strong> order.</li>
+	<li><code>-10<sup>4</sup> &lt;= target &lt;= 10<sup>4</sup></code></li>
+</ul>
 
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search)
+- [Array](https://leetcode.com/tag/array/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
 
 ## Similar Questions
 
-- [First Bad Version](../first-bad-version/README_EN.md)
+- [First Bad Version](../first-bad-version/README_EN.md) Easy 

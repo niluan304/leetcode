@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [96. 不同的二叉搜索树](https://leetcode.cn/problems/unique-binary-search-trees/)
-Difficulty:Medium, Likes: 2345
+Difficulty:Medium, Likes: 2397
 
 ## 题目描述
 

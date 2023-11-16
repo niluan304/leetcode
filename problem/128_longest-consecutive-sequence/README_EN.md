@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [128.Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
-Difficulty:Medium, Likes: 1697
+Difficulty:Medium, Likes: 1887
 
 ## Description
 
@@ -37,10 +37,10 @@ Difficulty:Medium, Likes: 1697
 
 ## Related Topics
 
-- [Union Find](https://leetcode-cn.com/tag/union-find/)
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
+- [Union Find](https://leetcode.com/tag/union-find/)
+- [Array](https://leetcode.com/tag/array/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
 
 ## Similar Questions
 
-- [Binary Tree Longest Consecutive Sequence](../binary-tree-longest-consecutive-sequence/README.md) Medium 🔒
+- [Binary Tree Longest Consecutive Sequence](../binary-tree-longest-consecutive-sequence/README_EN.md) Medium 🔒

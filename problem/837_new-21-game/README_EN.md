@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [837.New 21 Game](https://leetcode.com/problems/new-21-game/)
-Difficulty:Medium, Likes: 367
+Difficulty:Medium, Likes: 381
 
 ## Description
 
@@ -52,10 +52,10 @@ In 6 out of 10 possibilities, she is at or below 6 points.
 
 ## Related Topics
 
-- [Math](https://leetcode-cn.com/tag/math/)
-- [Dynamic Programming](https://leetcode-cn.com/tag/dynamic-programming/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
-- [Probability and Statistics](https://leetcode-cn.com/tag/probability-and-statistics/)
+- [Math](https://leetcode.com/tag/math/)
+- [Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
+- [Probability and Statistics](https://leetcode.com/tag/probability-and-statistics/)
 
 ## Similar Questions
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [704. 二分查找](https://leetcode.cn/problems/binary-search/)
-Difficulty:Easy, Likes: 1338
+Difficulty:Easy, Likes: 1489
 
 ## 题目描述
 
@@ -36,8 +36,8 @@ Difficulty:Easy, Likes: 1338
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [二分查找](https://leetcode-cn.com/tag/binary-search/)
+- [数组](https://leetcode.cn/tag/array/)
+- [二分查找](https://leetcode.cn/tag/binary-search/)
 
 ## 相似题目
 

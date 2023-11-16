@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [76. 最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/)
-Difficulty:Hard, Likes: 2583
+Difficulty:Hard, Likes: 2745
 
 ## 题目描述
 
@@ -59,9 +59,9 @@ Difficulty:Hard, Likes: 2583
 
 ## 相关话题
 
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [滑动窗口](https://leetcode-cn.com/tag/sliding-window/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

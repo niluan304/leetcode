@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [226.Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
-Difficulty:Easy, Likes: 1621
+Difficulty:Easy, Likes: 1730
 
 ## Description
 
@@ -41,10 +41,10 @@ Difficulty:Easy, Likes: 1621
 
 ## Related Topics
 
-- [Tree](https://leetcode-cn.com/tag/tree/)
-- [Depth-First Search](https://leetcode-cn.com/tag/depth-first-search/)
-- [Breadth-First Search](https://leetcode-cn.com/tag/breadth-first-search/)
-- [Binary Tree](https://leetcode-cn.com/tag/binary-tree/)
+- [Tree](https://leetcode.com/tag/tree/)
+- [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
+- [Breadth-First Search](https://leetcode.com/tag/breadth-first-search/)
+- [Binary Tree](https://leetcode.com/tag/binary-tree/)
 
 ## Similar Questions
 

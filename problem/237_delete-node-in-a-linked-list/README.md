@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [237. 删除链表中的节点](https://leetcode.cn/problems/delete-node-in-a-linked-list/)
-Difficulty:Medium, Likes: 1281
+Difficulty:Medium, Likes: 1309
 
 ## 题目描述
 
@@ -60,7 +60,7 @@ Difficulty:Medium, Likes: 1281
 
 ## 相关话题
 
-- [链表](https://leetcode-cn.com/tag/linked-list/)
+- [链表](https://leetcode.cn/tag/linked-list/)
 
 ## 相似题目
 

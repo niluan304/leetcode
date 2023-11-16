@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1993. 树上的操作](https://leetcode.cn/problems/operations-on-tree/)
-Difficulty:Medium, Likes: 57
+Difficulty:Medium, Likes: 78
 
 ## 题目描述
 
@@ -79,6 +79,7 @@ lockingTree.lock(0, 1);    // 返回 false ，因为节点 0 已经被上锁了�
 - [深度优先搜索](https://leetcode.cn/tag/depth-first-search/)
 - [广度优先搜索](https://leetcode.cn/tag/breadth-first-search/)
 - [设计](https://leetcode.cn/tag/design/)
+- [数组](https://leetcode.cn/tag/array/)
 - [哈希表](https://leetcode.cn/tag/hash-table/)
 
 ## 相似题目

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2586. 统计范围内的元音字符串数](https://leetcode.cn/problems/count-the-number-of-vowel-strings-in-range/)
-Difficulty:Easy, Likes: 15
+Difficulty:Easy, Likes: 45
 
 ## 题目描述
 

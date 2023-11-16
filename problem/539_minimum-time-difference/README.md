@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [539. 最小时间差](https://leetcode.cn/problems/minimum-time-difference/)
-Difficulty:Medium, Likes: 242
+Difficulty:Medium, Likes: 250
 
 ## 题目描述
 
@@ -36,10 +36,10 @@ Difficulty:Medium, Likes: 242
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [数学](https://leetcode-cn.com/tag/math/)
-- [字符串](https://leetcode-cn.com/tag/string/)
-- [排序](https://leetcode-cn.com/tag/sorting/)
+- [数组](https://leetcode.cn/tag/array/)
+- [数学](https://leetcode.cn/tag/math/)
+- [字符串](https://leetcode.cn/tag/string/)
+- [排序](https://leetcode.cn/tag/sorting/)
 
 ## 相似题目
 

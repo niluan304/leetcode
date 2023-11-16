@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [318. 最大单词长度乘积](https://leetcode.cn/problems/maximum-product-of-word-lengths/)
-Difficulty:Medium, Likes: 433
+Difficulty:Medium, Likes: 507
 
 ## 题目描述
 

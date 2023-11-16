@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [98.Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
-Difficulty:Medium, Likes: 2133
+Difficulty:Medium, Likes: 2215
 
 ## Description
 
@@ -43,12 +43,12 @@ Difficulty:Medium, Likes: 2133
 
 ## Related Topics
 
-- [Tree](https://leetcode-cn.com/tag/tree/)
-- [Depth-First Search](https://leetcode-cn.com/tag/depth-first-search/)
-- [Binary Search Tree](https://leetcode-cn.com/tag/binary-search-tree/)
-- [Binary Tree](https://leetcode-cn.com/tag/binary-tree/)
+- [Tree](https://leetcode.com/tag/tree/)
+- [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
+- [Binary Search Tree](https://leetcode.com/tag/binary-search-tree/)
+- [Binary Tree](https://leetcode.com/tag/binary-tree/)
 
 ## Similar Questions
 
-- [Binary Tree Inorder Traversal](../binary-tree-inorder-traversal/README.md) Easy 
-- [Find Mode in Binary Search Tree](../find-mode-in-binary-search-tree/README.md) Easy 
+- [Binary Tree Inorder Traversal](../binary-tree-inorder-traversal/README_EN.md) Easy 
+- [Find Mode in Binary Search Tree](../find-mode-in-binary-search-tree/README_EN.md) Easy 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1222. 可以攻击国王的皇后](https://leetcode.cn/problems/queens-that-can-attack-the-king/)
-Difficulty:Medium, Likes: 92
+Difficulty:Medium, Likes: 122
 
 ## 题目描述
 

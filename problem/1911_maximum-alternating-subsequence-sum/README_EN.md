@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1911.Maximum Alternating Subsequence Sum](https://leetcode.com/problems/maximum-alternating-subsequence-sum/)
-Difficulty:Medium, Likes: 175
+Difficulty:Medium, Likes: 179
 
 ## Description
 

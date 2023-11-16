@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [746. 使用最小花费爬楼梯](https://leetcode.cn/problems/min-cost-climbing-stairs/)
-Difficulty:Easy, Likes: 1302
+Difficulty:Easy, Likes: 1367
 
 ## 题目描述
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [901. 股票价格跨度](https://leetcode.cn/problems/online-stock-span/)
-Difficulty:Medium, Likes: 366
+Difficulty:Medium, Likes: 428
 
 ## 题目描述
 

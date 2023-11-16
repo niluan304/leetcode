@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [714. 买卖股票的最佳时机含手续费](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
-Difficulty:Medium, Likes: 962
+Difficulty:Medium, Likes: 1017
 
 ## 题目描述
 

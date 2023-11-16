@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [332.Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)
-Difficulty:Hard, Likes: 808
+Difficulty:Hard, Likes: 861
 
 ## Description
 
@@ -47,9 +47,9 @@ Difficulty:Hard, Likes: 808
 
 ## Related Topics
 
-- [Depth-First Search](https://leetcode-cn.com/tag/depth-first-search/)
-- [Graph](https://leetcode-cn.com/tag/graph/)
-- [Eulerian Circuit](https://leetcode-cn.com/tag/eulerian-circuit/)
+- [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
+- [Graph](https://leetcode.com/tag/graph/)
+- [Eulerian Circuit](https://leetcode.com/tag/eulerian-circuit/)
 
 ## Similar Questions
 

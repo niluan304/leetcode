@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1658.Minimum Operations to Reduce X to Zero](https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/)
-Difficulty:Medium, Likes: 292
+Difficulty:Medium, Likes: 313
 
 ## Description
 
@@ -46,11 +46,11 @@ Difficulty:Medium, Likes: 292
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
-- [Prefix Sum](https://leetcode-cn.com/tag/prefix-sum/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Array](https://leetcode.com/tag/array/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
+- [Prefix Sum](https://leetcode.com/tag/prefix-sum/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 

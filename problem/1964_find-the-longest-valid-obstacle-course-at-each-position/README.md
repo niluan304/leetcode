@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1964. 找出到每个位置为止最长的有效障碍赛跑路线](https://leetcode.cn/problems/find-the-longest-valid-obstacle-course-at-each-position/)
-Difficulty:Hard, Likes: 48
+Difficulty:Hard, Likes: 49
 
 ## 题目描述
 

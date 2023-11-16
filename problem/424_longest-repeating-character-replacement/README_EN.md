@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [424.Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
-Difficulty:Medium, Likes: 800
+Difficulty:Medium, Likes: 827
 
 ## Description
 
@@ -26,7 +26,7 @@ Difficulty:Medium, Likes: 800
 <strong>Output:</strong> 4
 <strong>Explanation:</strong> Replace the one &#39;A&#39; in the middle with &#39;B&#39; and form &quot;AABBBBA&quot;.
 The substring &quot;BBBB&quot; has the longest repeating letters, which is 4.
-There may exists other ways to achive this answer too.</pre>
+There may exists other ways to achieve this answer too.</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
@@ -40,11 +40,11 @@ There may exists other ways to achive this answer too.</pre>
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [String](https://leetcode-cn.com/tag/string/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [String](https://leetcode.com/tag/string/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 
-- [Longest Substring with At Most K Distinct Characters](../longest-substring-with-at-most-k-distinct-characters/README.md) Medium 🔒
-- [Max Consecutive Ones III](../max-consecutive-ones-iii/README.md) Medium 
+- [Longest Substring with At Most K Distinct Characters](../longest-substring-with-at-most-k-distinct-characters/README_EN.md) Medium 🔒
+- [Max Consecutive Ones III](../max-consecutive-ones-iii/README_EN.md) Medium 

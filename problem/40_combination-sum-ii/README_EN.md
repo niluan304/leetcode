@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [40.Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)
-Difficulty:Medium, Likes: 1381
+Difficulty:Medium, Likes: 1476
 
 ## Description
 
@@ -49,9 +49,9 @@ Difficulty:Medium, Likes: 1381
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Backtracking](https://leetcode-cn.com/tag/backtracking/)
+- [Array](https://leetcode.com/tag/array/)
+- [Backtracking](https://leetcode.com/tag/backtracking/)
 
 ## Similar Questions
 
-- [Combination Sum](../combination-sum/README.md) Medium 
+- [Combination Sum](../combination-sum/README_EN.md) Medium 

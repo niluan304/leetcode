@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2240.Number of Ways to Buy Pens and Pencils](https://leetcode.com/problems/number-of-ways-to-buy-pens-and-pencils/)
-Difficulty:Medium, Likes: 32
+Difficulty:Medium, Likes: 90
 
 ## Description
 

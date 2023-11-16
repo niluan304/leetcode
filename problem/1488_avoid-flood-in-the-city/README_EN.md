@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1488.Avoid Flood in The City](https://leetcode.com/problems/avoid-flood-in-the-city/)
-Difficulty:Medium, Likes: 193
+Difficulty:Medium, Likes: 227
 
 ## Description
 

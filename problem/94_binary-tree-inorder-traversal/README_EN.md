@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [94.Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
-Difficulty:Easy, Likes: 1893
+Difficulty:Easy, Likes: 1973
 
 ## Description
 
@@ -43,19 +43,19 @@ Difficulty:Easy, Likes: 1893
 
 ## Related Topics
 
-- [Stack](https://leetcode-cn.com/tag/stack/)
-- [Tree](https://leetcode-cn.com/tag/tree/)
-- [Depth-First Search](https://leetcode-cn.com/tag/depth-first-search/)
-- [Binary Tree](https://leetcode-cn.com/tag/binary-tree/)
+- [Stack](https://leetcode.com/tag/stack/)
+- [Tree](https://leetcode.com/tag/tree/)
+- [Depth-First Search](https://leetcode.com/tag/depth-first-search/)
+- [Binary Tree](https://leetcode.com/tag/binary-tree/)
 
 ## Similar Questions
 
-- [Validate Binary Search Tree](../validate-binary-search-tree/README.md) Medium 
-- [Binary Tree Preorder Traversal](../binary-tree-preorder-traversal/README.md) Easy 
-- [Binary Tree Postorder Traversal](../binary-tree-postorder-traversal/README.md) Easy 
-- [Binary Search Tree Iterator](../binary-search-tree-iterator/README.md) Medium 
-- [Kth Smallest Element in a BST](../kth-smallest-element-in-a-bst/README.md) Medium 
-- [Closest Binary Search Tree Value II](../closest-binary-search-tree-value-ii/README.md) Hard 🔒
-- [Inorder Successor in BST](../inorder-successor-in-bst/README.md) Medium 🔒
-- [Convert Binary Search Tree to Sorted Doubly Linked List](../convert-binary-search-tree-to-sorted-doubly-linked-list/README.md) Medium 🔒
-- [Minimum Distance Between BST Nodes](../minimum-distance-between-bst-nodes/README.md) Easy 
+- [Validate Binary Search Tree](../validate-binary-search-tree/README_EN.md) Medium 
+- [Binary Tree Preorder Traversal](../binary-tree-preorder-traversal/README_EN.md) Easy 
+- [Binary Tree Postorder Traversal](../binary-tree-postorder-traversal/README_EN.md) Easy 
+- [Binary Search Tree Iterator](../binary-search-tree-iterator/README_EN.md) Medium 
+- [Kth Smallest Element in a BST](../kth-smallest-element-in-a-bst/README_EN.md) Medium 
+- [Closest Binary Search Tree Value II](../closest-binary-search-tree-value-ii/README_EN.md) Hard 🔒
+- [Inorder Successor in BST](../inorder-successor-in-bst/README_EN.md) Medium 🔒
+- [Convert Binary Search Tree to Sorted Doubly Linked List](../convert-binary-search-tree-to-sorted-doubly-linked-list/README_EN.md) Medium 🔒
+- [Minimum Distance Between BST Nodes](../minimum-distance-between-bst-nodes/README_EN.md) Easy 

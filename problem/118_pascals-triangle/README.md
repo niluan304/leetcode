@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [118. 杨辉三角](https://leetcode.cn/problems/pascals-triangle/)
-Difficulty:Easy, Likes: 1026
+Difficulty:Easy, Likes: 1095
 
 ## 题目描述
 
@@ -39,8 +39,8 @@ Difficulty:Easy, Likes: 1026
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [动态规划](https://leetcode-cn.com/tag/dynamic-programming/)
+- [数组](https://leetcode.cn/tag/array/)
+- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
 
 ## 相似题目
 

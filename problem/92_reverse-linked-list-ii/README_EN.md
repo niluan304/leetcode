@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [92.Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)
-Difficulty:Medium, Likes: 1620
+Difficulty:Medium, Likes: 1687
 
 ## Description
 
@@ -38,8 +38,8 @@ Difficulty:Medium, Likes: 1620
 
 ## Related Topics
 
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
 
 ## Similar Questions
 
-- [Reverse Linked List](../reverse-linked-list/README.md) Easy 
+- [Reverse Linked List](../reverse-linked-list/README_EN.md) Easy 

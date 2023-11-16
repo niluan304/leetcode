@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [118.Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)
-Difficulty:Easy, Likes: 1026
+Difficulty:Easy, Likes: 1095
 
 ## Description
 
@@ -28,9 +28,9 @@ Difficulty:Easy, Likes: 1026
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Dynamic Programming](https://leetcode-cn.com/tag/dynamic-programming/)
+- [Array](https://leetcode.com/tag/array/)
+- [Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
 
 ## Similar Questions
 
-- [Pascal's Triangle II](../pascals-triangle-ii/README.md) Easy 
+- [Pascal's Triangle II](../pascals-triangle-ii/README_EN.md) Easy 

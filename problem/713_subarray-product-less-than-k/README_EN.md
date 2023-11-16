@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [713.Subarray Product Less Than K](https://leetcode.com/problems/subarray-product-less-than-k/)
-Difficulty:Medium, Likes: 715
+Difficulty:Medium, Likes: 747
 
 ## Description
 
@@ -38,12 +38,12 @@ Note that [10, 5, 2] is not included as the product of 100 is not strictly less 
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Sliding Window](https://leetcode-cn.com/tag/sliding-window/)
+- [Array](https://leetcode.com/tag/array/)
+- [Sliding Window](https://leetcode.com/tag/sliding-window/)
 
 ## Similar Questions
 
-- [Maximum Product Subarray](../maximum-product-subarray/README.md) Medium 
-- [Maximum Size Subarray Sum Equals k](../maximum-size-subarray-sum-equals-k/README.md) Medium 🔒
-- [Subarray Sum Equals K](../subarray-sum-equals-k/README.md) Medium 
-- [Two Sum Less Than K](../two-sum-less-than-k/README.md) Easy 🔒
+- [Maximum Product Subarray](../maximum-product-subarray/README_EN.md) Medium 
+- [Maximum Size Subarray Sum Equals k](../maximum-size-subarray-sum-equals-k/README_EN.md) Medium 🔒
+- [Subarray Sum Equals K](../subarray-sum-equals-k/README_EN.md) Medium 
+- [Two Sum Less Than K](../two-sum-less-than-k/README_EN.md) Easy 🔒

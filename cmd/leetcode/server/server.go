@@ -12,15 +12,20 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/skratchdot/open-golang/open"
+	"gopkg.in/yaml.v3"
 
 	"leetcode/cmd/leetcode/graphql"
 	"leetcode/cmd/leetcode/tmpl"
 )
 
-type Server struct{}
+type Server struct {
+	configPath string
+}
 
 func New(configPath string) *Server {
-	return &Server{}
+	return &Server{
+		configPath: configPath,
+	}
 }
 
 func (s *Server) idToSlug(id string) (titleSlug string, err error) {
@@ -66,6 +71,19 @@ func (s *Server) Id(id string) (err error) {
 	return s.TitleSlug(titleSlug)
 }
 
+type Config struct {
+	Parse []struct {
+		Name string `yaml:"name"`
+		Open bool   `yaml:"open"`
+		App  string `yaml:"app"`
+	} `yaml:"parse"`
+
+	Url struct {
+		Open bool   `yaml:"open"`
+		App  string `yaml:"app"`
+	} `yaml:"url"`
+}
+
 func (s *Server) TitleSlug(titleSlug string) (err error) {
 	var ctx = context.Background()
 	client := graphql.New(graphql.EndpointZh)
@@ -88,26 +106,55 @@ func (s *Server) TitleSlug(titleSlug string) (err error) {
 		return errors.New("会员题目, 无法查看")
 	}
 
-	// 解析模板
-	list := []tmpl.Parse{
-		{Open: false, Parser: tmpl.NewParserEN(question)},
-		{Open: false, Parser: tmpl.NewParserZH(question)},
-		{Open: false, Parser: tmpl.NewParserLeetcode(question.Pkg())},
-		{Open: false, Parser: tmpl.NewParserSamples(question)},
-		{Open: true, Parser: tmpl.NewParserSolution(question)},
-		{Open: true, Parser: tmpl.NewParserEndlessTest(question)},
+	file, err := os.Open(s.configPath)
+	if err != nil {
+		return err
 	}
-	for _, p := range list {
+
+	var config Config
+	err = yaml.NewDecoder(file).Decode(&config)
+	if err != nil {
+		return err
+	}
+
+	// 解析模板
+	for _, cfg := range config.Parse {
+		var parser tmpl.Parser
+		switch strings.ToLower(cfg.Name) {
+		case "en":
+			parser = tmpl.NewParserEN(question)
+		case "zh":
+			parser = tmpl.NewParserZH(question)
+		case "leetcode":
+			parser = tmpl.NewParserLeetcode(question.Pkg())
+		case "solution":
+			parser = tmpl.NewParserSolution(question)
+		case "test":
+			parser = tmpl.NewParserEndlessTest(question)
+		case "sample":
+			parser = tmpl.NewParserSamples(question)
+		}
+
+		p := tmpl.Parse{
+			Open:   cfg.Open,
+			App:    cfg.App,
+			Parser: parser,
+		}
 		err = p.Save(path)
 		if err != nil {
 			return err
 		}
 	}
-	err = open.Run(fmt.Sprintf("https://leetcode.cn/problems/%s/description/", titleSlug))
-	if err != nil {
-		return err
+
+	if config.Url.Open {
+		err = open.Run(fmt.Sprintf("https://leetcode.cn/problems/%s/description/", titleSlug))
+		if err != nil {
+			return err
+		}
 	}
 
+	fmt.Printf("submit: %s. %s\n", question.QuestionFrontendId, question.TitleSlug)
+	time.Sleep(time.Second)
 	return nil
 }
 

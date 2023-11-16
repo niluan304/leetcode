@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [15. 三数之和](https://leetcode.cn/problems/3sum/)
-Difficulty:Medium, Likes: 6191
+Difficulty:Medium, Likes: 6517
 
 ## 题目描述
 
@@ -57,9 +57,9 @@ nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0 。
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
-- [排序](https://leetcode-cn.com/tag/sorting/)
+- [数组](https://leetcode.cn/tag/array/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
+- [排序](https://leetcode.cn/tag/sorting/)
 
 ## 相似题目
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [162.Find Peak Element](https://leetcode.com/problems/find-peak-element/)
-Difficulty:Medium, Likes: 1084
+Difficulty:Medium, Likes: 1167
 
 ## Description
 
@@ -41,9 +41,9 @@ Difficulty:Medium, Likes: 1084
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
+- [Array](https://leetcode.com/tag/array/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
 
 ## Similar Questions
 
-- [Peak Index in a Mountain Array](../peak-index-in-a-mountain-array/README.md) Medium 
+- [Peak Index in a Mountain Array](../peak-index-in-a-mountain-array/README_EN.md) Medium 

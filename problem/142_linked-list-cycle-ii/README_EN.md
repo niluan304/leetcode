@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [142.Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
-Difficulty:Medium, Likes: 2273
+Difficulty:Medium, Likes: 2392
 
 ## Description
 
@@ -52,11 +52,11 @@ Difficulty:Medium, Likes: 2273
 
 ## Related Topics
 
-- [Hash Table](https://leetcode-cn.com/tag/hash-table/)
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
+- [Hash Table](https://leetcode.com/tag/hash-table/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
 
 ## Similar Questions
 
-- [Linked List Cycle](../linked-list-cycle/README.md) Easy 
-- [Find the Duplicate Number](../find-the-duplicate-number/README.md) Medium 
+- [Linked List Cycle](../linked-list-cycle/README_EN.md) Easy 
+- [Find the Duplicate Number](../find-the-duplicate-number/README_EN.md) Medium 

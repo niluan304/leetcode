@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/)
-Difficulty:Easy, Likes: 3282
+Difficulty:Easy, Likes: 3418
 
 ## 题目描述
 
@@ -50,8 +50,8 @@ Difficulty:Easy, Likes: 3282
 
 ## 相关话题
 
-- [递归](https://leetcode-cn.com/tag/recursion/)
-- [链表](https://leetcode-cn.com/tag/linked-list/)
+- [递归](https://leetcode.cn/tag/recursion/)
+- [链表](https://leetcode.cn/tag/linked-list/)
 
 ## 相似题目
 

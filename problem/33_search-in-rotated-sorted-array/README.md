@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [33. 搜索旋转排序数组](https://leetcode.cn/problems/search-in-rotated-sorted-array/)
-Difficulty:Medium, Likes: 2689
+Difficulty:Medium, Likes: 2791
 
 ## 题目描述
 
@@ -51,8 +51,8 @@ Difficulty:Medium, Likes: 2689
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [二分查找](https://leetcode-cn.com/tag/binary-search/)
+- [数组](https://leetcode.cn/tag/array/)
+- [二分查找](https://leetcode.cn/tag/binary-search/)
 
 ## 相似题目
 

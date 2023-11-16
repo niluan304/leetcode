@@ -1,6 +1,6 @@
 module leetcode
 
-go 1.18
+go 1.21
 
 require (
 	github.com/EndlessCheng/codeforces-go v1.2.1-0.20221128044804-bc39d8fb6995

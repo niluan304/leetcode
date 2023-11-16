@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1000. 合并石头的最低成本](https://leetcode.cn/problems/minimum-cost-to-merge-stones/)
-Difficulty:Hard, Likes: 365
+Difficulty:Hard, Likes: 366
 
 ## 题目描述
 

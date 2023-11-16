@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [236. 二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)
-Difficulty:Medium, Likes: 2405
+Difficulty:Medium, Likes: 2518
 
 ## 题目描述
 
@@ -50,9 +50,9 @@ Difficulty:Medium, Likes: 2405
 
 ## 相关话题
 
-- [树](https://leetcode-cn.com/tag/tree/)
-- [深度优先搜索](https://leetcode-cn.com/tag/depth-first-search/)
-- [二叉树](https://leetcode-cn.com/tag/binary-tree/)
+- [树](https://leetcode.cn/tag/tree/)
+- [深度优先搜索](https://leetcode.cn/tag/depth-first-search/)
+- [二叉树](https://leetcode.cn/tag/binary-tree/)
 
 ## 相似题目
 

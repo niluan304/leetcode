@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2594. 修车的最少时间](https://leetcode.cn/problems/minimum-time-to-repair-cars/)
-Difficulty:Medium, Likes: 87
+Difficulty:Medium, Likes: 210
 
 ## 题目描述
 

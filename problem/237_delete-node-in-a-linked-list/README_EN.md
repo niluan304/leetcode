@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [237.Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)
-Difficulty:Medium, Likes: 1281
+Difficulty:Medium, Likes: 1309
 
 ## Description
 
@@ -59,8 +59,8 @@ Difficulty:Medium, Likes: 1281
 
 ## Related Topics
 
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
 
 ## Similar Questions
 
-- [Remove Linked List Elements](../remove-linked-list-elements/README.md) Easy 
+- [Remove Linked List Elements](../remove-linked-list-elements/README_EN.md) Easy 

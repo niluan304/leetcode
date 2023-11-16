@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [354.Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/)
-Difficulty:Hard, Likes: 959
+Difficulty:Hard, Likes: 971
 
 ## Description
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [46. 全排列](https://leetcode.cn/problems/permutations/)
-Difficulty:Medium, Likes: 2604
+Difficulty:Medium, Likes: 2747
 
 ## 题目描述
 
@@ -44,8 +44,8 @@ Difficulty:Medium, Likes: 2604
 
 ## 相关话题
 
-- [数组](https://leetcode-cn.com/tag/array/)
-- [回溯](https://leetcode-cn.com/tag/backtracking/)
+- [数组](https://leetcode.cn/tag/array/)
+- [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 

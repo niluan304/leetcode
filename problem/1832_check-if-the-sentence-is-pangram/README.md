@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1832. 判断句子是否为全字母句](https://leetcode.cn/problems/check-if-the-sentence-is-pangram/)
-Difficulty:Easy, Likes: 76
+Difficulty:Easy, Likes: 79
 
 ## 题目描述
 
@@ -41,8 +41,8 @@ Difficulty:Easy, Likes: 76
 
 ## 相关话题
 
-- [哈希表](https://leetcode-cn.com/tag/hash-table/)
-- [字符串](https://leetcode-cn.com/tag/string/)
+- [哈希表](https://leetcode.cn/tag/hash-table/)
+- [字符串](https://leetcode.cn/tag/string/)
 
 ## 相似题目
 

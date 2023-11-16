@@ -1,37 +1,47 @@
 
 | English | [简体中文](README.md) |
 
-# [5. Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+# [5.Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+Difficulty:Medium, Likes: 6930
 
 ## Description
 
-<p>Given a string <strong>s</strong>, find the longest palindromic substring in <strong>s</strong>. You may assume that the maximum length of <strong>s</strong> is 1000.</p>
+<p>Given a string <code>s</code>, return <em>the longest</em> <span data-keyword="palindromic-string"><em>palindromic</em></span> <span data-keyword="substring-nonempty"><em>substring</em></span> in <code>s</code>.</p>
 
-<p><strong>Example 1:</strong></p>
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
 <pre>
-<strong>Input:</strong> &quot;babad&quot;
+<strong>Input:</strong> s = &quot;babad&quot;
 <strong>Output:</strong> &quot;bab&quot;
-<strong>Note:</strong> &quot;aba&quot; is also a valid answer.
+<strong>Explanation:</strong> &quot;aba&quot; is also a valid answer.
 </pre>
 
-<p><strong>Example 2:</strong></p>
+<p><strong class="example">Example 2:</strong></p>
 
 <pre>
-<strong>Input:</strong> &quot;cbbd&quot;
+<strong>Input:</strong> s = &quot;cbbd&quot;
 <strong>Output:</strong> &quot;bb&quot;
 </pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+	<li><code>s</code> consist of only digits and English letters.</li>
+</ul>
 
 
 ## Related Topics
 
-- [String](https://leetcode-cn.com/tag/string)
-- [Dynamic Programming](https://leetcode-cn.com/tag/dynamic-programming)
+- [String](https://leetcode.com/tag/string/)
+- [Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
 
 ## Similar Questions
 
-- [Shortest Palindrome](../shortest-palindrome/README_EN.md)
-- [Palindrome Permutation](../palindrome-permutation/README_EN.md)
-- [Palindrome Pairs](../palindrome-pairs/README_EN.md)
-- [Longest Palindromic Subsequence](../longest-palindromic-subsequence/README_EN.md)
-- [Palindromic Substrings](../palindromic-substrings/README_EN.md)
+- [Shortest Palindrome](../shortest-palindrome/README_EN.md) Hard 
+- [Palindrome Permutation](../palindrome-permutation/README_EN.md) Easy 🔒
+- [Palindrome Pairs](../palindrome-pairs/README_EN.md) Hard 
+- [Longest Palindromic Subsequence](../longest-palindromic-subsequence/README_EN.md) Medium 
+- [Palindromic Substrings](../palindromic-substrings/README_EN.md) Medium 

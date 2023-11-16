@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [24.Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
-Difficulty:Medium, Likes: 1977
+Difficulty:Medium, Likes: 2084
 
 ## Description
 
@@ -41,9 +41,9 @@ Difficulty:Medium, Likes: 1977
 
 ## Related Topics
 
-- [Recursion](https://leetcode-cn.com/tag/recursion/)
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
+- [Recursion](https://leetcode.com/tag/recursion/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
 
 ## Similar Questions
 
-- [Reverse Nodes in k-Group](../reverse-nodes-in-k-group/README.md) Hard 
+- [Reverse Nodes in k-Group](../reverse-nodes-in-k-group/README_EN.md) Hard 

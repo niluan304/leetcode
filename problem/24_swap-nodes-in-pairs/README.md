@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [24. 两两交换链表中的节点](https://leetcode.cn/problems/swap-nodes-in-pairs/)
-Difficulty:Medium, Likes: 1977
+Difficulty:Medium, Likes: 2084
 
 ## 题目描述
 
@@ -43,8 +43,8 @@ Difficulty:Medium, Likes: 1977
 
 ## 相关话题
 
-- [递归](https://leetcode-cn.com/tag/recursion/)
-- [链表](https://leetcode-cn.com/tag/linked-list/)
+- [递归](https://leetcode.cn/tag/recursion/)
+- [链表](https://leetcode.cn/tag/linked-list/)
 
 ## 相似题目
 

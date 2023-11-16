@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2. 两数相加](https://leetcode.cn/problems/add-two-numbers/)
-Difficulty:Medium, Likes: 9894
+Difficulty:Medium, Likes: 10205
 
 ## 题目描述
 
@@ -49,9 +49,9 @@ Difficulty:Medium, Likes: 9894
 
 ## 相关话题
 
-- [递归](https://leetcode-cn.com/tag/recursion/)
-- [链表](https://leetcode-cn.com/tag/linked-list/)
-- [数学](https://leetcode-cn.com/tag/math/)
+- [递归](https://leetcode.cn/tag/recursion/)
+- [链表](https://leetcode.cn/tag/linked-list/)
+- [数学](https://leetcode.cn/tag/math/)
 
 ## 相似题目
 

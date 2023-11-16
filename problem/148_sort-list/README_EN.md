@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [148.Sort List](https://leetcode.com/problems/sort-list/)
-Difficulty:Medium, Likes: 2038
+Difficulty:Medium, Likes: 2156
 
 ## Description
 
@@ -44,14 +44,14 @@ Difficulty:Medium, Likes: 2038
 
 ## Related Topics
 
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
-- [Divide and Conquer](https://leetcode-cn.com/tag/divide-and-conquer/)
-- [Sorting](https://leetcode-cn.com/tag/sorting/)
-- [Merge Sort](https://leetcode-cn.com/tag/merge-sort/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
+- [Divide and Conquer](https://leetcode.com/tag/divide-and-conquer/)
+- [Sorting](https://leetcode.com/tag/sorting/)
+- [Merge Sort](https://leetcode.com/tag/merge-sort/)
 
 ## Similar Questions
 
-- [Merge Two Sorted Lists](../merge-two-sorted-lists/README.md) Easy 
-- [Sort Colors](../sort-colors/README.md) Medium 
-- [Insertion Sort List](../insertion-sort-list/README.md) Medium 
+- [Merge Two Sorted Lists](../merge-two-sorted-lists/README_EN.md) Easy 
+- [Sort Colors](../sort-colors/README_EN.md) Medium 
+- [Insertion Sort List](../insertion-sort-list/README_EN.md) Medium 

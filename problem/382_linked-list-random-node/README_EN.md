@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [382.Linked List Random Node](https://leetcode.com/problems/linked-list-random-node/)
-Difficulty:Medium, Likes: 345
+Difficulty:Medium, Likes: 351
 
 ## Description
 
@@ -55,11 +55,11 @@ solution.getRandom(); // return 3
 
 ## Related Topics
 
-- [Reservoir Sampling](https://leetcode-cn.com/tag/reservoir-sampling/)
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
-- [Math](https://leetcode-cn.com/tag/math/)
-- [Randomized](https://leetcode-cn.com/tag/randomized/)
+- [Reservoir Sampling](https://leetcode.com/tag/reservoir-sampling/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
+- [Math](https://leetcode.com/tag/math/)
+- [Randomized](https://leetcode.com/tag/randomized/)
 
 ## Similar Questions
 
-- [Random Pick Index](../random-pick-index/README.md) Medium 
+- [Random Pick Index](../random-pick-index/README_EN.md) Medium 

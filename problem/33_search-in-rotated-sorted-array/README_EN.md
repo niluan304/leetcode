@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [33.Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
-Difficulty:Medium, Likes: 2689
+Difficulty:Medium, Likes: 2791
 
 ## Description
 
@@ -39,10 +39,10 @@ Difficulty:Medium, Likes: 2689
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
+- [Array](https://leetcode.com/tag/array/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
 
 ## Similar Questions
 
-- [Search in Rotated Sorted Array II](../search-in-rotated-sorted-array-ii/README.md) Medium 
-- [Find Minimum in Rotated Sorted Array](../find-minimum-in-rotated-sorted-array/README.md) Medium 
+- [Search in Rotated Sorted Array II](../search-in-rotated-sorted-array-ii/README_EN.md) Medium 
+- [Find Minimum in Rotated Sorted Array](../find-minimum-in-rotated-sorted-array/README_EN.md) Medium 

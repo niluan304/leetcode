@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [367. 有效的完全平方数](https://leetcode.cn/problems/valid-perfect-square/)
-Difficulty:Easy, Likes: 521
+Difficulty:Easy, Likes: 550
 
 ## 题目描述
 
@@ -41,8 +41,8 @@ Difficulty:Easy, Likes: 521
 
 ## 相关话题
 
-- [数学](https://leetcode-cn.com/tag/math/)
-- [二分查找](https://leetcode-cn.com/tag/binary-search/)
+- [数学](https://leetcode.cn/tag/math/)
+- [二分查找](https://leetcode.cn/tag/binary-search/)
 
 ## 相似题目
 

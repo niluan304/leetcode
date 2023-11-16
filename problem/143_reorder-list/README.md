@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [143. 重排链表](https://leetcode.cn/problems/reorder-list/)
-Difficulty:Medium, Likes: 1351
+Difficulty:Medium, Likes: 1404
 
 ## 题目描述
 
@@ -49,10 +49,10 @@ L<sub>0</sub> → L<sub>n</sub> → L<sub>1</sub> → L<sub>n - 1</sub> → L<su
 
 ## 相关话题
 
-- [栈](https://leetcode-cn.com/tag/stack/)
-- [递归](https://leetcode-cn.com/tag/recursion/)
-- [链表](https://leetcode-cn.com/tag/linked-list/)
-- [双指针](https://leetcode-cn.com/tag/two-pointers/)
+- [栈](https://leetcode.cn/tag/stack/)
+- [递归](https://leetcode.cn/tag/recursion/)
+- [链表](https://leetcode.cn/tag/linked-list/)
+- [双指针](https://leetcode.cn/tag/two-pointers/)
 
 ## 相似题目
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2578. 最小和分割](https://leetcode.cn/problems/split-with-minimum-sum/)
-Difficulty:Easy, Likes: 36
+Difficulty:Easy, Likes: 89
 
 ## 题目描述
 
@@ -34,7 +34,7 @@ Difficulty:Easy, Likes: 36
 <pre>
 <b>输入：</b>num = 4325
 <b>输出：</b>59
-<b>解释：</b>我们可以将 4325 分割成 <code>num1 </code>= 24 和 num2<code> = </code>35 ，和为 59 ，59 是最小和。
+<b>解释：</b>我们可以将 4325 分割成 <code>num1 </code>= 24 和 <code>num2 </code>= 35 ，和为 59 ，59 是最小和。
 </pre>
 
 <p><strong>示例 2：</strong></p>

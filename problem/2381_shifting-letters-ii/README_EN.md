@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2381.Shifting Letters II](https://leetcode.com/problems/shifting-letters-ii/)
-Difficulty:Medium, Likes: 20
+Difficulty:Medium, Likes: 22
 
 ## Description
 

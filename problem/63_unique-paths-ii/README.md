@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [63. 不同路径 II](https://leetcode.cn/problems/unique-paths-ii/)
-Difficulty:Medium, Likes: 1127
+Difficulty:Medium, Likes: 1175
 
 ## 题目描述
 

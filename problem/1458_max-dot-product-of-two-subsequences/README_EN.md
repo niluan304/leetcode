@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1458.Max Dot Product of Two Subsequences](https://leetcode.com/problems/max-dot-product-of-two-subsequences/)
-Difficulty:Hard, Likes: 83
+Difficulty:Hard, Likes: 86
 
 ## Description
 

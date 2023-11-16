@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2240. 买钢笔和铅笔的方案数](https://leetcode.cn/problems/number-of-ways-to-buy-pens-and-pencils/)
-Difficulty:Medium, Likes: 32
+Difficulty:Medium, Likes: 90
 
 ## 题目描述
 

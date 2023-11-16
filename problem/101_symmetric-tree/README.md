@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [101. 对称二叉树](https://leetcode.cn/problems/symmetric-tree/)
-Difficulty:Easy, Likes: 2513
+Difficulty:Easy, Likes: 2590
 
 ## 题目描述
 
@@ -11,14 +11,14 @@ Difficulty:Easy, Likes: 2513
 <p>&nbsp;</p>
 
 <p><strong>示例 1：</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg" style="width: 354px; height: 291px;" />
+<img alt="" src="https://pic.leetcode.cn/1698026966-JDYPDU-image.png" style="width: 354px; height: 291px;" />
 <pre>
 <strong>输入：</strong>root = [1,2,2,3,4,4,3]
 <strong>输出：</strong>true
 </pre>
 
 <p><strong>示例 2：</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg" style="width: 308px; height: 258px;" />
+<img alt="" src="https://pic.leetcode.cn/1698027008-nPFLbM-image.png" style="width: 308px; height: 258px;" />
 <pre>
 <strong>输入：</strong>root = [1,2,2,null,3,null,3]
 <strong>输出：</strong>false
@@ -40,10 +40,10 @@ Difficulty:Easy, Likes: 2513
 
 ## 相关话题
 
-- [树](https://leetcode-cn.com/tag/tree/)
-- [深度优先搜索](https://leetcode-cn.com/tag/depth-first-search/)
-- [广度优先搜索](https://leetcode-cn.com/tag/breadth-first-search/)
-- [二叉树](https://leetcode-cn.com/tag/binary-tree/)
+- [树](https://leetcode.cn/tag/tree/)
+- [深度优先搜索](https://leetcode.cn/tag/depth-first-search/)
+- [广度优先搜索](https://leetcode.cn/tag/breadth-first-search/)
+- [二叉树](https://leetcode.cn/tag/binary-tree/)
 
 ## 相似题目
 

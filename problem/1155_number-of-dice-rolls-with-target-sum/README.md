@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1155. 掷骰子等于目标和的方法数](https://leetcode.cn/problems/number-of-dice-rolls-with-target-sum/)
-Difficulty:Medium, Likes: 196
+Difficulty:Medium, Likes: 267
 
 ## 题目描述
 

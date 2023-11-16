@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [704.Binary Search](https://leetcode.com/problems/binary-search/)
-Difficulty:Easy, Likes: 1338
+Difficulty:Easy, Likes: 1489
 
 ## Description
 
@@ -40,9 +40,9 @@ Difficulty:Easy, Likes: 1338
 
 ## Related Topics
 
-- [Array](https://leetcode-cn.com/tag/array/)
-- [Binary Search](https://leetcode-cn.com/tag/binary-search/)
+- [Array](https://leetcode.com/tag/array/)
+- [Binary Search](https://leetcode.com/tag/binary-search/)
 
 ## Similar Questions
 
-- [Search in a Sorted Array of Unknown Size](../search-in-a-sorted-array-of-unknown-size/README.md) Medium 🔒
+- [Search in a Sorted Array of Unknown Size](../search-in-a-sorted-array-of-unknown-size/README_EN.md) Medium 🔒

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [543.Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
-Difficulty:Easy, Likes: 1427
+Difficulty:Easy, Likes: 1435
 
 ## Description
 

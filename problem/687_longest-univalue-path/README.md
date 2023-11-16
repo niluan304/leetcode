@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [687. 最长同值路径](https://leetcode.cn/problems/longest-univalue-path/)
-Difficulty:Medium, Likes: 780
+Difficulty:Medium, Likes: 782
 
 ## 题目描述
 

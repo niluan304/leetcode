@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [494. 目标和](https://leetcode.cn/problems/target-sum/)
-Difficulty:Medium, Likes: 1729
+Difficulty:Medium, Likes: 1799
 
 ## 题目描述
 

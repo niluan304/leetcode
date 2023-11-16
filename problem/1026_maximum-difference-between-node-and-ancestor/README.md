@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1026. 节点与其祖先之间的最大差值](https://leetcode.cn/problems/maximum-difference-between-node-and-ancestor/)
-Difficulty:Medium, Likes: 214
+Difficulty:Medium, Likes: 220
 
 ## 题目描述
 
@@ -47,9 +47,9 @@ Difficulty:Medium, Likes: 214
 
 ## 相关话题
 
-- [树](https://leetcode-cn.com/tag/tree/)
-- [深度优先搜索](https://leetcode-cn.com/tag/depth-first-search/)
-- [二叉树](https://leetcode-cn.com/tag/binary-tree/)
+- [树](https://leetcode.cn/tag/tree/)
+- [深度优先搜索](https://leetcode.cn/tag/depth-first-search/)
+- [二叉树](https://leetcode.cn/tag/binary-tree/)
 
 ## 相似题目
 

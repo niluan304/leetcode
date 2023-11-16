@@ -12,23 +12,3 @@
 2
 [2,1]
 
-["smart","brilliant","studious"]
-["not"]
-["this student is not studious","the student is smart"]
-[1,2]
-1
-[2]
-
-["m","eveszfubew"]
-["iq","etwuedg","egpakyk","da","qkmhvgxg","q","zs","ujmy","mh"]
-["eveszfubew jebebqp iq eveszfubew eveszfubew iq daej eveszfubew q da","ohfz zs ujmy egpakyk eveszfubew pffeq q qkmhvgxg kdgqq ipp","cceierguau mh da eveszfubew m etwuedg ikeft egpakyk ltnibxljfi m","km m iq rab inooo ujmy tlrdyu yqhn m xlkhebs","q etwuedg m eveszfubew ixrfzwmb m jyltumdwt dacmewk odbllqdiq eveszfubew"]
-[643903773,468275834,993893529,509587004,61125507]
-5
-[61125507,643903773,993893529,509587004,468275834]
-
-["smart","brilliant","studious"]
-["not"]
-["this student is studious","the student is smart"]
-[2,1]
-2
-[1,2]

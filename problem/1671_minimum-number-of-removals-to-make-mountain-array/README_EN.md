@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1671.Minimum Number of Removals to Make Mountain Array](https://leetcode.com/problems/minimum-number-of-removals-to-make-mountain-array/)
-Difficulty:Hard, Likes: 43
+Difficulty:Hard, Likes: 47
 
 ## Description
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [122. 买卖股票的最佳时机 II](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/)
-Difficulty:Medium, Likes: 2282
+Difficulty:Medium, Likes: 2354
 
 ## 题目描述
 

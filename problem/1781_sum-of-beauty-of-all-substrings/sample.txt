@@ -1,0 +1,6 @@
+"aabcb"
+5
+
+"aabcbaa"
+17
+

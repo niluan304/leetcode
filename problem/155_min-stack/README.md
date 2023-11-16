@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [155. 最小栈](https://leetcode.cn/problems/min-stack/)
-Difficulty:Medium, Likes: 1603
+Difficulty:Medium, Likes: 1685
 
 ## 题目描述
 
@@ -54,8 +54,8 @@ minStack.getMin();   --&gt; 返回 -2.
 
 ## 相关话题
 
-- [栈](https://leetcode-cn.com/tag/stack/)
-- [设计](https://leetcode-cn.com/tag/design/)
+- [栈](https://leetcode.cn/tag/stack/)
+- [设计](https://leetcode.cn/tag/design/)
 
 ## 相似题目
 

@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [876.Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
-Difficulty:Easy, Likes: 929
+Difficulty:Easy, Likes: 957
 
 ## Description
 
@@ -38,8 +38,8 @@ Difficulty:Easy, Likes: 929
 
 ## Related Topics
 
-- [Linked List](https://leetcode-cn.com/tag/linked-list/)
-- [Two Pointers](https://leetcode-cn.com/tag/two-pointers/)
+- [Linked List](https://leetcode.com/tag/linked-list/)
+- [Two Pointers](https://leetcode.com/tag/two-pointers/)
 
 ## Similar Questions
 

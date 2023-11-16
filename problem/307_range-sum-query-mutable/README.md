@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [307. 区域和检索 - 数组可修改](https://leetcode.cn/problems/range-sum-query-mutable/)
-Difficulty:Medium, Likes: 676
+Difficulty:Medium, Likes: 695
 
 ## 题目描述
 
