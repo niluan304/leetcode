@@ -1,4 +1,6 @@
-package p1352
+package main
+
+import "fmt"
 
 func withoutLeader(n int, rs []int, leaders [][]int) int {
 	var graph = make([][]int, n)
@@ -15,10 +17,33 @@ func withoutLeader(n int, rs []int, leaders [][]int) int {
 		for _, j := range graph[i] {
 			withJ, withoutJ := dfs(j)
 			withI += withoutJ
-			withoutI += max(withJ, withoutJ)
+			withoutI += _max(withJ, withoutJ)
 		}
 		return withI, withoutI
 	}
 
-	return max(dfs(sum))
+	return _max(dfs(sum))
+}
+
+func main() {
+	var n int
+	fmt.Scanln(&n)
+
+	var rs = make([]int, n)
+	for i := 0; i < n; i++ {
+		fmt.Scanln(&rs[i])
+	}
+	leaders := make([][]int, n-1)
+	for i := 0; i < n-1; i++ {
+		leaders[i] = make([]int, 2)
+		fmt.Scanln(&leaders[i][0], &leaders[i][1])
+	}
+	fmt.Println(withoutLeader(n, rs, leaders))
+}
+
+func _max(x, y int) int {
+	if x > y {
+		return x
+	}
+	return y
 }

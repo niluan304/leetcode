@@ -1,1 +1,1 @@
-package p1352
+package main
