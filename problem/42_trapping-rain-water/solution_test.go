@@ -14,6 +14,9 @@ func Test_trapping_rain_water(t *testing.T) {
 
 	fs := []interface{}{
 		trap,
+		trap2,
+		trap3,
+		trap4,
 	}
 
 	for _, f := range fs {
