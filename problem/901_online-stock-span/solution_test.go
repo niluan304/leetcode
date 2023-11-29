@@ -14,6 +14,9 @@ func Test_online_stock_span(t *testing.T) {
 
 	fs := []interface{}{
 		Constructor,
+		Constructor2,
+		Constructor3,
+		Constructor4,
 	}
 
 	for _, f := range fs {
