@@ -1,0 +1,17 @@
+"ABC"
+10
+
+"ABA"
+8
+
+"LEETCODE"
+92
+
+"LEXEFE"
+38
+
+"LEXEFEEE"
+58
+
+"LEXEFEEEF"
+67
