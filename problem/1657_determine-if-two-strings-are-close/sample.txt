@@ -1,0 +1,16 @@
+"abc"
+"bca"
+true
+
+"a"
+"aa"
+false
+
+"cabbba"
+"abbccc"
+true
+
+"uau"
+"ssx"
+false
+
