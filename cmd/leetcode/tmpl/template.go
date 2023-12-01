@@ -174,7 +174,7 @@ import (
 func Test_{{.PkgName}}(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []{{.Type}}{
 		{{.Name}},
 	}
 

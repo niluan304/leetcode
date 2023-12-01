@@ -169,16 +169,35 @@ func NewParserEndlessTest(q *graphql.QuestionData) (p Parser) {
 		PkgName     string
 		Name        string
 		RunFuncName string
+		Type        string
+	}
+
+	code := "interface{}"
+	for _, item := range q.CodeSnippets {
+		ext := extname(item.LangSlug)
+		if ext != "go" {
+			continue
+		}
+		code = item.Code
+
+		i := strings.Index(code, "(")
+		j := strings.Index(code, "{")
+		code = code[:5] + code[i:j]
 	}
 
 	data := &Data{
 		PkgName:     "main",
 		Name:        q.MetaData.Name,
 		RunFuncName: "RunLeetCodeFuncWithFile",
+		Type:        code,
 	}
 	if q.MetaData.Systemdesign {
-		data.RunFuncName = "RunLeetCodeClassWithFile"
-		data.Name = "Constructor"
+		data = &Data{
+			PkgName:     data.PkgName,
+			Name:        "Constructor",
+			RunFuncName: "RunLeetCodeClassWithFile",
+			Type:        "interface{}",
+		}
 	}
 
 	return NewParser("solution_test.go", endlessTest, data)
