@@ -15,6 +15,8 @@ func Test_main(t *testing.T) {
 	fs := []func(arr []int) int{
 		sumSubarrayMins,
 		sumSubarrayMins2,
+		sumSubarrayMins3,
+		sumSubarrayMins4,
 	}
 
 	for _, f := range fs {
