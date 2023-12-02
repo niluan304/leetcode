@@ -14,6 +14,7 @@ func Test_main(t *testing.T) {
 
 	fs := []func(nums []int) bool{
 		find132pattern,
+		find132pattern2,
 	}
 
 	for _, f := range fs {

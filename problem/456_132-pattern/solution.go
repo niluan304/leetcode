@@ -2,7 +2,7 @@ package main
 
 import "math"
 
-// 单调栈 + 前缀最小值
+// 枚举2：单调栈 + 前缀最小值
 // 时间复杂度: O(n)
 // 空间复杂度: O(n)
 func find132pattern(nums []int) bool {
@@ -21,5 +21,30 @@ func find132pattern(nums []int) bool {
 		}
 		stack = append(stack[:m], i)
 	}
+	return false
+}
+
+// 枚举1：单调栈
+// 时间复杂度: O(n)
+// 空间复杂度: O(n)
+func find132pattern2(nums []int) bool {
+	var stack []int // 递增单调栈
+	var n = len(nums)
+	var maxK = math.MinInt
+
+	for i := n - 1; i >= 0; i-- {
+		num := nums[i]
+		if num < maxK {
+			return true
+		}
+
+		m := len(stack)
+		for m > 0 && num > stack[m-1] {
+			maxK = max(maxK, stack[m-1])
+			m--
+		}
+		stack = append(stack[:m], num)
+	}
+
 	return false
 }
