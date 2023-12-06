@@ -1,5 +1,10 @@
 package main
 
+// 回溯 + dp
+// 时间复杂度: O(mn)
+// 空间复杂度: O(n)
+// 对 trips 进行回溯，找到 trips[i] = [starti, endi] 经过的点，经过的点 weight[i] + 1
+// 然后 对所有点进行 打家劫舍III 计算
 func minimumTotalPrice(n int, edges [][]int, price []int, trips [][]int) int {
 	var graph = make([][]int, n)
 	for _, edge := range edges {
@@ -26,11 +31,14 @@ func minimumTotalPrice(n int, edges [][]int, price []int, trips [][]int) int {
 		weight[start]--
 		return false
 	}
+
+	// 遍历 trips 时间复杂度：O(mn)
 	for _, trip := range trips {
 		start, end := trip[0], trip[1]
 		tripPath(start, end, -1)
 	}
 
+	// 树形 dp 时间复杂度：O(n)
 	var dfs func(i int, fa int) (full, half int)
 	dfs = func(i int, fa int) (full, half int) {
 		full = weight[i] * price[i]
