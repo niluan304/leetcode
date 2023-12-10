@@ -66,19 +66,33 @@ func climbStairs2(n int) int {
 // 时间复杂度：O(n)
 // 空间复杂度：O(n)
 func climbStairs3(n int) int {
-	var cache = make([]int, n+1)
+	var cache = make([]*int, n+1)
 	var dfs func(n int) int
 	dfs = func(n int) int {
 		if n == 0 || n == 1 {
 			return 1
 		}
 
-		if cache[n] > 0 {
-			return cache[n]
+		v := &cache[n]
+		if *v != nil {
+			return **v
 		}
-		v := dfs(n-1) + dfs(n-2)
-		cache[n] = v
-		return v
+		res := dfs(n-1) + dfs(n-2)
+		*v = &res
+		return res
 	}
 	return dfs(n)
+}
+
+// dp
+// 时间复杂度：O(n)
+// 空间复杂度：O(n)
+func climbStairs4(n int) int {
+	var dp = make([]int, n+1)
+	dp[0] = 1
+	dp[1] = 1
+	for i := 2; i <= n; i++ {
+		dp[i] = dp[i-1] + dp[i-2]
+	}
+	return dp[n]
 }

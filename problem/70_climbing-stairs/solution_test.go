@@ -14,6 +14,9 @@ func Test_climbing_stairs(t *testing.T) {
 
 	fs := []interface{}{
 		climbStairs,
+		climbStairs2,
+		climbStairs3,
+		climbStairs4,
 	}
 
 	for _, f := range fs {
