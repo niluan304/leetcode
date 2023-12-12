@@ -65,3 +65,38 @@ func maxProfit2(prices []int, fee int) int {
 	}
 	return dp.NotHold
 }
+
+// dfs + 记忆化搜索 + 状态机
+// 时间复杂度：O(n)
+// 空间复杂度：O(n)
+func maxProfit3(prices []int, fee int) int {
+	type Item struct{ Hold, NotHold int }
+	var n = len(prices)
+	var cache = make([]*Item, n+1)
+	var dfs func(i int) Item
+	dfs = func(i int) Item {
+		pp := &cache[i]
+		if *pp != nil {
+			return **pp
+		}
+		if i == 0 {
+			return Item{Hold: math.MinInt32, NotHold: 0}
+		}
+
+		price, last := prices[i-1], dfs(i-1)
+		item := Item{
+			Hold: max(
+				last.Hold,          // 保持不变：昨天也持有股票
+				last.NotHold-price, // 没有股票 -> 买入股票
+			),
+			NotHold: max(
+				last.NotHold,        // 保持不变：昨天也未持有股票
+				last.Hold+price-fee, // 持有股票 -> 卖出股票
+			),
+		}
+		cache[i] = &item
+		return item
+	}
+	ans := dfs(n)
+	return ans.NotHold
+}

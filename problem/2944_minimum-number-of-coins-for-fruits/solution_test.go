@@ -9,13 +9,15 @@ import (
 	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
 )
 
-func Test_best_time_to_buy_and_sell_stock_with_transaction_fee(t *testing.T) {
+func Test_main(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
-		maxProfit,
-		maxProfit2,
-		maxProfit3,
+	fs := []func(prices []int) int{
+		minimumCoins,
+		minimumCoins2,
+		minimumCoins3,
+		minimumCoins4,
+		minimumCoins5,
 	}
 
 	for _, f := range fs {
