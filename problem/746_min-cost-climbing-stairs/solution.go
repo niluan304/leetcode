@@ -1,5 +1,8 @@
 package main
 
+// dp
+// 时间复杂度: O(n)
+// 空间复杂度: O(n)
 func minCostClimbingStairs(cost []int) int {
 	// 1. 确定dp数组以及下标的含义
 	// dp[i]表示第i个台阶锁需要支付的最小费用
@@ -62,4 +65,26 @@ func minCostClimbingStairs2(cost []int) int {
 	// 5. debug: 打印dp数组
 	//fmt.Println(dp)
 	return dpi
+}
+
+// dfs + 记忆化搜索
+// 时间复杂度: O(n)
+// 空间复杂度: O(n)
+func minCostClimbingStairs3(cost []int) int {
+	var n = len(cost)
+	var cache = make([]*int, n+1)
+	var dfs func(i int) int
+	dfs = func(i int) int {
+		if i == 0 || i == 1 {
+			return 0
+		}
+		pp := &cache[i-1]
+		if *pp != nil {
+			return **pp
+		}
+		v := min(dfs(i-1)+cost[i-1], dfs(i-2)+cost[i-2])
+		*pp = &v
+		return v
+	}
+	return dfs(n)
 }

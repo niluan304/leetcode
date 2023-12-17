@@ -14,6 +14,8 @@ func Test_min_cost_climbing_stairs(t *testing.T) {
 
 	fs := []interface{}{
 		minCostClimbingStairs,
+		minCostClimbingStairs2,
+		minCostClimbingStairs3,
 	}
 
 	for _, f := range fs {
