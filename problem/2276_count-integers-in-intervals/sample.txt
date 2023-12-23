@@ -1,0 +1,12 @@
+["CountIntervals", "add", "add", "count", "add", "count"]
+[[], [2, 3], [7, 10], [], [5, 8], []]
+[null, null, null, 6, null, 8]
+
+["CountIntervals","count","add","add","count","count","add"]
+[[],[],[39,44],[13,49],[],[],[47,50]]
+[null,0,null,null,37,37,null]
+
+["CountIntervals","count","add","add","add","add","add","count","add","add"]
+[[],[],[8,43],[13,16],[26,33],[28,36],[29,37],[],[34,46],[10,23]]
+[null,0,null,null,null,null,null,36,null,null]
+
