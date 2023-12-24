@@ -119,6 +119,12 @@ func Scan() (err error) {
 		if err != nil {
 			return errors.Wrap(err, "fail scan today")
 		}
+	case "a":
+		fmt.Print("请确认题解链接：")
+		_, err = fmt.Scan(article)
+		if err != nil {
+			return errors.Wrap(err, "fail scan today")
+		}
 	}
 	return nil
 }

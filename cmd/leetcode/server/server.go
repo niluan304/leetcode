@@ -183,6 +183,13 @@ func (s *Server) Today() (err error) {
 }
 
 func (s *Server) Article(article string) (err error) {
+	if article[len(article)-1] == '/' {
+		article = article[:len(article)-1]
+	}
+
+	i := strings.LastIndex(article, "/")
+	article = article[i+1:]
+
 	var ctx = context.Background()
 	client := graphql.New(graphql.EndpointZh)
 	res, err := client.SolutionArticle(ctx, graphql.SolutionArticleReq{

@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"reflect"
-	"strings"
 	"testing"
 )
 
@@ -43,7 +42,7 @@ func TestClient_SolutionArticle(t *testing.T) {
 			args: args{
 				ctx: ctx,
 				in: SolutionArticleReq{
-					Slug: "bai-dong-xu-lie-by-leetcode-solution-yh2m",
+					Slug: "wu-nao-zuo-fa-er-wei-qian-zhui-he-er-wei-zwiu",
 				},
 			},
 			wantRes: nil,
@@ -67,16 +66,16 @@ func TestClient_SolutionArticle(t *testing.T) {
 
 			const Flag = "```"
 			content := gotRes.SolutionArticle.Content
-			for idx := strings.Index(content, Flag); idx >= 0; {
-				idx2 := strings.Index(content[idx+len(Flag):], Flag+"\n")
-				if idx2 == -1 {
-					break
-				}
-
-				prefix := content[:idx-1]
-				suffix := content[idx+9+idx2:]
-				content = prefix + suffix
-			}
+			//for idx := strings.Index(content, Flag); idx >= 0; {
+			//	idx2 := strings.Index(content[idx+len(Flag):], Flag+"\n")
+			//	if idx2 == -1 {
+			//		break
+			//	}
+			//
+			//	prefix := content[:idx-1]
+			//	suffix := content[idx+9+idx2:]
+			//	content = prefix + suffix
+			//}
 
 			fmt.Println(content)
 		})
