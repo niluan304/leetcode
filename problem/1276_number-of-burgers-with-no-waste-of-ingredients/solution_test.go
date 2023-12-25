@@ -9,12 +9,12 @@ import (
 	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
 )
 
-func Test_minimum_size_subarray_sum(t *testing.T) {
+func Test_main(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []func(target int, nums []int) int{
-		minSubArrayLen,
-		minSubArrayLen2,
+	fs := []func(tomatoSlices int, cheeseSlices int) []int{
+		numOfBurgers,
+		numOfBurgers2,
 	}
 
 	for _, f := range fs {

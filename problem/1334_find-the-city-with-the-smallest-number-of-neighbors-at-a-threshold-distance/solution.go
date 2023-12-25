@@ -5,7 +5,13 @@ import (
 )
 
 func findTheCity(n int, edges [][]int, distanceThreshold int) int {
-	path := Floyd(n, edges)
+	path := Floyd(n, func(path [][]int) {
+		for _, edge := range edges {
+			i, j, v := edge[0], edge[1], edge[2]
+			path[i][j] = v
+			path[j][i] = v
+		}
+	})
 
 	var node, count = -1, math.MaxInt32
 	for i, distance := range path {
@@ -23,7 +29,7 @@ func findTheCity(n int, edges [][]int, distanceThreshold int) int {
 	return node
 }
 
-func Floyd(n int, edges [][]int) [][]int {
+func Floyd(n int, initPath func(path [][]int)) [][]int {
 	var path = make([][]int, n)
 	for i, _ := range path {
 		path[i] = make([]int, n)
@@ -32,12 +38,9 @@ func Floyd(n int, edges [][]int) [][]int {
 		}
 		path[i][i] = 0
 	}
+
 	// 初始化 path-1，两点直达距离
-	for _, edge := range edges {
-		i, j, v := edge[0], edge[1], edge[2]
-		path[i][j] = v
-		path[j][i] = v
-	}
+	initPath(path)
 
 	// 迭代更新以 [0, n-1] 为中转节点的最短距离
 	for i := 0; i < n; i++ {
