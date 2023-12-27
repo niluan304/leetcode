@@ -82,3 +82,84 @@ func (t *chthollyTree) Assign(left, right, value int) {
 		*t = append((*t)[:i+1], (*t)[j:]...)
 	}
 }
+
+type RangeModule2 struct {
+	st *LazySegmentTree
+}
+
+func Constructor2() RangeModule2 { return RangeModule2{st: &LazySegmentTree{left: 1, right: 1e9}} }
+
+func (m *RangeModule2) AddRange(left int, right int)    { m.st.Update(left, right-1, 1) }
+func (m *RangeModule2) RemoveRange(left int, right int) { m.st.Update(left, right-1, 0) }
+
+func (m *RangeModule2) QueryRange(left int, right int) bool {
+	x, y := m.st.Query(left, right-1), (right - left)
+	return x == y
+}
+
+// LazySegmentTree
+// 动态开点线段树·其二·延迟标记（仅支持区间覆盖，不支持区间增加）
+type LazySegmentTree struct {
+	left, right, sum int
+
+	todoUpdate     *int // 延迟标记
+	lChild, rChild *LazySegmentTree
+}
+
+func (st *LazySegmentTree) Query(left, right int) int {
+	// 对于不在线段树中的点，应按照题意来返回
+	if st == nil || left > st.right || right < st.left {
+		return 0
+	}
+	if left <= st.left && st.right <= right {
+		return st.sum
+	}
+
+	st.spread()
+	return st.lChild.Query(left, right) + st.rChild.Query(left, right)
+}
+
+// 更新本区间结点的值，并将值保存为 lazy 标记，等到需要更新子节点时，再下放 lazy 标记
+func (st *LazySegmentTree) doUpdate(value *int) {
+	if value == nil {
+		return
+	}
+	st.todoUpdate = value
+	st.sum = *value * (st.right - st.left + 1)
+}
+
+// 也常叫做 pushdown
+// 1. 动态开点
+// 2. 把自身的 lazy 标记传递给子节点，并清除自身的 lazy 标记
+func (st *LazySegmentTree) spread() {
+	mid := (st.left + st.right) / 2
+	if st.lChild == nil {
+		st.lChild = &LazySegmentTree{left: st.left, right: mid}
+	}
+	if st.rChild == nil {
+		st.rChild = &LazySegmentTree{left: mid + 1, right: st.right}
+	}
+
+	st.lChild.doUpdate(st.todoUpdate)
+	st.rChild.doUpdate(st.todoUpdate)
+	st.todoUpdate = nil
+}
+
+func (st *LazySegmentTree) Update(left, right int, value int) {
+	// 当前节点已被区间 [left, right] 完整覆盖，不再继续递归
+	if left <= st.left && st.right <= right {
+		st.doUpdate(&value)
+		return
+	}
+
+	st.spread()
+
+	mid := (st.left + st.right) / 2
+	if left <= mid {
+		st.lChild.Update(left, right, value)
+	}
+	if mid < right {
+		st.rChild.Update(left, right, value)
+	}
+	st.sum = st.lChild.sum + st.rChild.sum
+}

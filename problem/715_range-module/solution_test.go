@@ -14,6 +14,7 @@ func Test_range_module(t *testing.T) {
 
 	fs := []interface{}{
 		Constructor,
+		Constructor2,
 	}
 
 	for _, f := range fs {
