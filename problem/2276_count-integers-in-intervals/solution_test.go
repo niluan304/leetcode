@@ -20,9 +20,9 @@ func Test_main(t *testing.T) {
 	targetCaseNum := 0 // -1
 
 	fs := []interface{}{
-		//Constructor,
-		//Constructor2,
-		//Constructor3,
+		Constructor,
+		Constructor2,
+		Constructor3,
 		Constructor4,
 	}
 

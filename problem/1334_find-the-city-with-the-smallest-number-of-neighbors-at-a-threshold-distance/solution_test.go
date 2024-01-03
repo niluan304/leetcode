@@ -14,6 +14,7 @@ func Test_find_the_city_with_the_smallest_number_of_neighbors_at_a_threshold_dis
 
 	fs := []interface{}{
 		findTheCity,
+		findTheCity2,
 	}
 
 	for _, f := range fs {
