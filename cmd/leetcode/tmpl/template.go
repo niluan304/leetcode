@@ -169,10 +169,12 @@ import (
 	"testing"
 
 	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+	{{if .NeedDefinition }}. "github.com/EndlessCheng/codeforces-go/leetcode/testutil"{{end}}
 )
 
 func Test_{{.PkgName}}(t *testing.T) {
 	targetCaseNum := 0 // -1
+	inputs, outputs := sample()
 
 	fs := []{{.Type}}{
 		{{.Name}},
@@ -183,11 +185,29 @@ func Test_{{.PkgName}}(t *testing.T) {
 		i := strings.LastIndex(name, ".")
 
 		t.Run(name[i+1:], func(t *testing.T) {
-			err := testutil.{{.RunFuncName}}(t, f, "sample.txt", targetCaseNum) 
+			err := testutil.RunLeetCodeFuncWithCase(t, f, inputs, outputs, targetCaseNum)
 			if err != nil {
 				t.Error(err)
 			}
 		})
 	}
 }
+
+var samples = {{.Samples}}
+
+func sample() (inputs, outputs [][]string) {
+	for _, s := range strings.Split(samples, "\n\n") {
+		s = strings.TrimSpace(s)
+		if s == "" {
+			continue
+		}
+
+		raw := strings.Split(s, "\n")
+		n := len(raw)
+		inputs = append(inputs, raw[:n-1])
+		outputs = append(outputs, []string{raw[n-1]})
+	}
+	return
+}
+
 `

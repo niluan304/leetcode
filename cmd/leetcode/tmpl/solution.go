@@ -170,36 +170,48 @@ func NewParserEndlessTest(q *graphql.QuestionData) (p Parser) {
 		Name        string
 		RunFuncName string
 		Type        string
+
+		Samples string
+
+		NeedDefinition bool
+	}
+
+	var samples string
+	for _, sample := range NewSamples(q.Content, q.MetaData.Systemdesign) {
+		samples += strings.Join(sample.Input, "\n") + "\n" + strings.Join(sample.Output, "\n") + "\n\n"
+	}
+
+	code, needDefinition := "interface{}", false
+	for _, item := range q.CodeSnippets {
+		ext := extname(item.LangSlug)
+		if ext != "go" {
+			continue
+		}
+
+		needDefinition = strings.Contains(item.Code, "Definition for")
+		code = item.Code
+		idx := strings.Index(code, "func ")
+		code = code[idx:]
+		i := strings.Index(code, "(")
+		j := strings.Index(code, "{")
+		code = code[:5] + code[i:j]
 	}
 
 	data := &Data{
 		PkgName:     "main",
-		Name:        "Constructor",
-		RunFuncName: "RunLeetCodeClassWithFile",
-		Type:        "interface{}",
+		Name:        q.MetaData.Name,
+		RunFuncName: "RunLeetCodeFuncWithFile",
+		Type:        code,
+
+		Samples: "`\n" + samples + "\n`",
+
+		NeedDefinition: needDefinition,
 	}
-	if !q.MetaData.Systemdesign {
-		code := "interface{}"
-		for _, item := range q.CodeSnippets {
-			ext := extname(item.LangSlug)
-			if ext != "go" {
-				continue
-			}
-			code = item.Code
 
-			idx := strings.Index(code, "func ")
-			code = code[idx:]
-			i := strings.Index(code, "(")
-			j := strings.Index(code, "{")
-			code = code[:5] + code[i:j]
-		}
-
-		data = &Data{
-			PkgName:     "main",
-			Name:        q.MetaData.Name,
-			RunFuncName: "RunLeetCodeFuncWithFile",
-			Type:        code,
-		}
+	if q.MetaData.Systemdesign {
+		data.Name = "Constructor"
+		data.RunFuncName = "RunLeetCodeClassWithCase"
+		data.Type = "interface{}"
 	}
 
 	return NewParser("solution_test.go", endlessTest, data)
