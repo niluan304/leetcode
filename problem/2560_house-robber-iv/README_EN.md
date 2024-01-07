@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2560.House Robber IV](https://leetcode.com/problems/house-robber-iv/)
-Difficulty:Medium, Likes: 211
+Difficulty:Medium, Likes: 215
 
 ## Description
 
