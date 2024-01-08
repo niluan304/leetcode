@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"text/template"
 	"time"
 
 	"github.com/pkg/errors"
@@ -73,9 +74,10 @@ func (s *Server) Id(id string) (err error) {
 
 type Config struct {
 	Parse []struct {
-		Name string `yaml:"name"`
-		Open bool   `yaml:"open"`
-		App  string `yaml:"app"`
+		Name     string `yaml:"name"`
+		Open     bool   `yaml:"open"`
+		App      string `yaml:"app"`
+		Template string `yaml:"tmpl"`
 	} `yaml:"parse"`
 
 	Url struct {
@@ -119,18 +121,24 @@ func (s *Server) TitleSlug(titleSlug string) (err error) {
 
 	// 解析模板
 	for _, cfg := range config.Parse {
+		name, tplFile := cfg.Name, cfg.Template
+		var tpl *template.Template
+		if tplFile != "" {
+			tpl = template.Must(template.ParseFiles(tplFile))
+		}
+
 		var parser tmpl.Parser
-		switch strings.ToLower(cfg.Name) {
+		switch strings.ToLower(name) {
 		case "en":
-			parser = tmpl.NewParserEN(question)
+			parser = tmpl.NewParserEN(question, tpl)
 		case "zh":
-			parser = tmpl.NewParserZH(question)
+			parser = tmpl.NewParserZH(question, tpl)
 		case "leetcode":
 			parser = tmpl.NewParserLeetcode(question.Pkg())
 		case "solution":
 			parser = tmpl.NewParserSolution(question)
 		case "test":
-			parser = tmpl.NewParserEndlessTest(question)
+			parser = tmpl.NewParserEndlessTest(question, tpl)
 		case "sample":
 			parser = tmpl.NewParserSamples(question)
 		}

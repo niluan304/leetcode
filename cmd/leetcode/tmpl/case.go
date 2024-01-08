@@ -1,10 +1,12 @@
 package tmpl
 
 import (
+	"text/template"
+
 	"leetcode/cmd/leetcode/graphql"
 )
 
-func NewParserCase(q *graphql.QuestionData) (p Parser) {
+func NewParserCase(q *graphql.QuestionData, tmpl *template.Template) (p Parser) {
 	type Param struct {
 		Name string
 		Type string
@@ -30,7 +32,7 @@ func NewParserCase(q *graphql.QuestionData) (p Parser) {
 		Return:  GoType(q.MetaData.Return.Type),
 	}
 
-	return NewParser("case.go", tmplCase, data)
+	return NewParser("case.go", tmpl, data)
 }
 
 func GoType(t string) string {
@@ -60,10 +62,10 @@ func GoType(t string) string {
 	return t
 }
 
-func NewParserZH(q *graphql.QuestionData) (p Parser) {
-	return NewParser("README.md", tmplZH, q)
+func NewParserZH(q *graphql.QuestionData, tmpl *template.Template) (p Parser) {
+	return NewParser("README.md", tmpl, q)
 }
 
-func NewParserEN(q *graphql.QuestionData) (p Parser) {
-	return NewParser("README_EN.md", tmplEN, q)
+func NewParserEN(q *graphql.QuestionData, tmpl *template.Template) (p Parser) {
+	return NewParser("README_EN.md", tmpl, q)
 }

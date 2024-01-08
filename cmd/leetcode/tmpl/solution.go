@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"text/template"
 
 	"github.com/pkg/errors"
 
@@ -110,7 +111,7 @@ func (s *Solution) Parse(w io.Writer) (err error) {
 		}
 
 		if s.NeedMod {
-			data += `const mod = 1e9 + 7` + "\n\n"
+			data += `const MOD = 1_000_000_007` + "\n\n"
 		}
 
 		data += item.Code
@@ -150,7 +151,7 @@ func (p leetcode) Filename() string {
 	return "solution_leetcode.go"
 }
 
-func NewParserUnitCase(q *graphql.QuestionData) (p Parser) {
+func NewParserUnitCase(q *graphql.QuestionData, tmpl *template.Template) (p Parser) {
 	type Data struct {
 		PkgName string
 		Name    string
@@ -161,10 +162,10 @@ func NewParserUnitCase(q *graphql.QuestionData) (p Parser) {
 		Name:    q.MetaData.Name,
 	}
 
-	return NewParser("solution_test.go", tmplTest, data)
+	return NewParser("solution_test.go", tmpl, data)
 }
 
-func NewParserEndlessTest(q *graphql.QuestionData) (p Parser) {
+func NewParserEndlessTest(q *graphql.QuestionData, tmpl *template.Template) (p Parser) {
 	type Data struct {
 		PkgName     string
 		Name        string
@@ -214,5 +215,5 @@ func NewParserEndlessTest(q *graphql.QuestionData) (p Parser) {
 		data.Type = "interface{}"
 	}
 
-	return NewParser("solution_test.go", endlessTest, data)
+	return NewParser("solution_test.go", tmpl, data)
 }

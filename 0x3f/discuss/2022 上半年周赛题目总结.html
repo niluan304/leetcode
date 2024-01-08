@@ -1,0 +1,504 @@
+<!doctype html>
+<html style='font-size:17px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+html {
+	font-size: 19px;
+}
+
+html, body {
+	margin: auto;
+	background: #fefefe;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
+}
+
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+@media print {
+	html {
+		font-size: 13px;
+	}
+}
+
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
+}
+
+h1 {
+	font-size:3em;
+}
+
+h2 {
+	margin-top:2em;
+	font-weight: normal;
+}
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
+}
+
+h1, 
+h2, 
+h3{
+	text-align: center;
+}
+
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
+}
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
+}
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
+ol {
+	padding-left: 1.2em;
+}
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
+}
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.task-list{
+	padding:0;
+}
+
+.md-task-list-item {
+	padding-left: 1.6rem;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+.md-tag {
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
+}
+
+.md-toc {
+	margin-top: 40px;
+}
+
+.md-toc-content {
+	padding-bottom: 20px;
+}
+
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-fences .code-tooltip {
+	bottom: -2em !important;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+
+</style><title>2022 上半年周赛题目总结</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#思维题">思维题</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#贪心">贪心</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#双指针">双指针</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二分">二分</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#数学">数学</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#动态规划">动态规划</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#数据结构">数据结构</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#图论">图论</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#总结">总结</a></div><ul class="outline-children"></ul></li></div></div><div id='write'  class=''><p><span>我从上半年的周赛中精选了部分题目，分类整理后得到了下面的表格（按题号排序），供各位练习/复习时参考。</span></p><p><span>另外我更新了表中一部分题解，完善了多种解法（例如 </span><a href='https://leetcode.cn/problems/escape-the-spreading-fire/solution/er-fen-bfspythonjavacgo-by-endlesscheng-ypp1/'><span>2258. 逃离火灾</span></a><span> 添加了不用二分的线性做法），且所有题解均包含 Python/Java/C++/Go 四种语言。</span></p><h2 id='思维题'><span>思维题</span></h2><figure><table><thead><tr><th><span>题目</span></th><th><span>题解</span></th><th><span>难度</span></th><th><span>备注</span></th></tr></thead><tbody><tr><td><a href='https://leetcode.cn/problems/count-collisions-on-a-road/'><span>2211. 统计道路上的碰撞次数</span></a></td><td><a href='https://leetcode.cn/problems/count-collisions-on-a-road/solution/jie-lun-ti-san-xing-gao-ding-by-endlessc-bvnw/'><span>题解</span></a></td><td><span>1581</span></td><td><font style="background:white" color="white"><span>  脑筋急转弯   </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/encrypt-and-decrypt-strings/'><span>2227. 加密解密字符串</span></a></td><td><a href='https://leetcode.cn/problems/encrypt-and-decrypt-strings/solution/by-endlesscheng-sm8h/'><span>题解</span></a></td><td><span>1944</span></td><td><font style="background:white" color="white"><span>  逆向思维    </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/maximum-score-of-a-node-sequence/'><span>2242. 节点序列的最大得分</span></a></td><td><a href='https://leetcode.cn/problems/maximum-score-of-a-node-sequence/solution/by-endlesscheng-dt8h/'><span>题解</span></a></td><td><span>2304</span></td><td><font style="background:white" color="white"><span>  有技巧的枚举  </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/naming-a-company/'><span>2306. 公司命名</span></a></td><td><a href='https://leetcode.cn/problems/naming-a-company/solution/by-endlesscheng-ruz8/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1aT41157bh?t=14m10s'><span>视频</span></a></td><td><span>2305</span></td><td><font style="background:white" color="white"><span> 分类讨论 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/maximum-xor-after-operations/'><span>2317. 操作后的最大异或和</span></a></td><td><a href='https://leetcode.cn/problems/maximum-xor-after-operations/solution/yi-bu-bu-tis-by-endlesscheng-89kw/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV143411w7Wx?t=6m14s'><span>视频</span></a></td><td><span>1678</span></td><td><font style="background:white" color="white"><span> 位运算 </span></font></td></tr></tbody></table></figure><h2 id='贪心'><span>贪心</span></h2><figure><table><thead><tr><th><span>题目</span></th><th><span>题解</span></th><th><span>难度</span></th><th><span>备注</span></th></tr></thead><tbody><tr><td><a href='https://leetcode.cn/problems/earliest-possible-day-of-full-bloom/'><span>2136. 全部开花的最早一天</span></a></td><td><a href='https://leetcode.cn/problems/earliest-possible-day-of-full-bloom/solution/tan-xin-ji-qi-zheng-ming-by-endlesscheng-hfwe/'><span>题解</span></a></td><td><span>2033</span></td><td><font style="background:white" color="white"><span> 邻项交换法 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/maximum-running-time-of-n-computers/'><span>2141. 同时运行 N 台电脑的最长时间</span></a></td><td><a href='https://leetcode.cn/problems/maximum-running-time-of-n-computers/solution/liang-chong-jie-fa-er-fen-da-an-pai-xu-t-grd8/'><span>题解</span></a></td><td><span>2265</span></td><td><font style="background:white" color="white"><span> 贪心 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/maximum-total-beauty-of-the-gardens/'><span>2234. 花园的最大总美丽值</span></a></td><td><a href='https://leetcode.cn/problems/maximum-total-beauty-of-the-gardens/solution/by-endlesscheng-10i7/'><span>题解</span></a></td><td><span>2561</span></td><td><font style="background:white" color="white"><span> 贪心 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/longest-binary-subsequence-less-than-or-equal-to-k/'><span>2311. 小于等于 K 的最长二进制子序列</span></a></td><td><a href='https://leetcode.cn/problems/longest-binary-subsequence-less-than-or-equal-to-k/solution/fen-lei-tao-lun-tan-xin-by-endlesscheng-vnlx/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1CW4y1k7B3?t=14m56s'><span>视频</span></a></td><td><span>1839</span></td><td><font style="background:white" color="white"><span> 贪心 </span></font></td></tr></tbody></table></figure><h2 id='双指针'><span>双指针</span></h2><figure><table><thead><tr><th><span>题目</span></th><th><span>题解</span></th><th><span>难度</span></th><th><span>备注</span></th></tr></thead><tbody><tr><td><a href='https://leetcode.cn/problems/maximum-white-tiles-covered-by-a-carpet/'><span>2271. 毯子覆盖的最多白色砖块数</span></a></td><td><a href='https://leetcode.cn/problems/maximum-white-tiles-covered-by-a-carpet/solution/by-endlesscheng-kdy9/'><span>题解</span></a></td><td><span>2021</span></td><td><font style="background:white" color="white"><span> 双指针 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/count-subarrays-with-score-less-than-k/'><span>2302. 统计得分小于 K 的子数组数目</span></a></td><td><a href='https://leetcode.cn/problems/count-subarrays-with-score-less-than-k/solution/by-endlesscheng-b120/'><span>题解</span></a></td><td><span>1808</span></td><td><font style="background:white" color="white"><span> 双指针 </span></font></td></tr></tbody></table></figure><h2 id='二分'><span>二分</span></h2><figure><table><thead><tr><th><span>题目</span></th><th><span>题解</span></th><th><span>难度</span></th><th><span>备注</span></th></tr></thead><tbody><tr><td><a href='https://leetcode.cn/problems/maximum-running-time-of-n-computers/'><span>2141. 同时运行 N 台电脑的最长时间</span></a></td><td><a href='https://leetcode.cn/problems/maximum-running-time-of-n-computers/solution/liang-chong-jie-fa-er-fen-da-an-pai-xu-t-grd8/'><span>题解</span></a></td><td><span>2265</span></td><td><font style="background:white" color="white"><span> 二分答案 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/number-of-flowers-in-full-bloom/'><span>2251. 花期内花的数目</span></a></td><td><a href='https://leetcode.cn/problems/number-of-flowers-in-full-bloom/solution/chai-fen-pythonjavacgo-by-endlesscheng-wz35/'><span>题解</span></a></td><td><span>2022</span></td><td><font style="background:white" color="white"><span> 转换 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/escape-the-spreading-fire/'><span>2258. 逃离火灾</span></a></td><td><a href='https://leetcode.cn/problems/escape-the-spreading-fire/solution/er-fen-bfspythonjavacgo-by-endlesscheng-ypp1/'><span>题解</span></a></td><td><span>2346</span></td><td><font style="background:white" color="white"><span> 二分答案 </span></font></td></tr></tbody></table></figure><h2 id='数学'><span>数学</span></h2><figure><table><thead><tr><th><span>题目</span></th><th><span>题解</span></th><th><span>难度</span></th><th><span>备注</span></th></tr></thead><tbody><tr><td><a href='https://leetcode.cn/problems/count-array-pairs-divisible-by-k/'><span>2183. 统计可以被 K 整除的下标对数目</span></a></td><td><a href='https://leetcode.cn/problems/count-array-pairs-divisible-by-k/solution/tong-ji-yin-zi-chu-xian-ci-shu-by-endles-t5k8/'><span>题解</span></a></td><td><span>2246</span></td><td><font style="background:white" color="white"><span> 数论 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/maximum-trailing-zeros-in-a-cornered-path/'><span>2245. 转角路径的乘积中最多能有几个尾随零</span></a></td><td><a href='https://leetcode.cn/problems/maximum-trailing-zeros-in-a-cornered-path/solution/by-endlesscheng-7z5a/'><span>题解</span></a></td><td><span>2036</span></td><td><font style="background:white" color="white"><span> 数论、前缀和 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/sum-of-total-strength-of-wizards/'><span>2281. 巫师的总力量和</span></a></td><td><a href='https://leetcode.cn/problems/sum-of-total-strength-of-wizards/solution/dan-diao-zhan-qian-zhui-he-de-qian-zhui-d9nki/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1RY4y157nW?t=17m0s'><span>视频</span></a></td><td><span>2621</span></td><td><font style="background:white" color="white"><span> 和式变形、前缀和 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/sum-of-numbers-with-units-digit-k/'><span>2310. 个位数字为 K 的整数之和</span></a></td><td><a href='https://leetcode.cn/problems/sum-of-numbers-with-units-digit-k/solution/mei-ju-da-an-by-endlesscheng-zh75/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1CW4y1k7B3?t=7m11s'><span>视频</span></a></td><td><span>1558</span></td><td><font style="background:white" color="white"><span> 同余 </span></font></td></tr></tbody></table></figure><h2 id='动态规划'><span>动态规划</span></h2><figure><table><thead><tr><th><span>题目</span></th><th><span>题解</span></th><th><span>难度</span></th><th><span>备注</span></th></tr></thead><tbody><tr><td><a href='https://leetcode.cn/problems/solving-questions-with-brainpower/'><span>2140. 解决智力问题</span></a></td><td><a href='https://leetcode.cn/problems/solving-questions-with-brainpower/solution/dao-xu-dp-by-endlesscheng-2qkc/'><span>题解</span></a></td><td><span>1709</span></td><td><font style="background:white" color="white"><span>  线性 DP    </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/minimum-time-to-remove-all-cars-containing-illegal-goods/'><span>2167. 移除所有载有违禁货物车厢所需的最少时间</span></a></td><td><a href='https://leetcode.cn/problems/minimum-time-to-remove-all-cars-containing-illegal-goods/solution/qian-hou-zhui-fen-jie-dp-by-endlesscheng-6u1b/'><span>题解</span></a></td><td><span>2219</span></td><td><font style="background:white" color="white"><span>  线性 DP    </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/maximum-and-sum-of-array/'><span>2172. 数组的最大与和</span></a></td><td><a href='https://leetcode.cn/problems/maximum-and-sum-of-array/solution/zhuang-tai-ya-suo-dp-by-endlesscheng-5eqn/'><span>题解</span></a></td><td><span>2392</span></td><td><font style="background:white" color="white"><span>  状压 DP    </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/minimum-time-to-finish-the-race/'><span>2188. 完成比赛的最少时间</span></a></td><td><a href='https://leetcode.cn/problems/minimum-time-to-finish-the-race/solution/jie-he-xing-zhi-qiao-miao-dp-by-endlessc-b963/'><span>题解</span></a></td><td><span>2315</span></td><td><font style="background:white" color="white"><span>  线性 DP    </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/minimum-white-tiles-after-covering-with-carpets/'><span>2209. 用地毯覆盖后的最少白色砖块</span></a></td><td><a href='https://leetcode.cn/problems/minimum-white-tiles-after-covering-with-carpets/solution/by-endlesscheng-pa3v/'><span>题解</span></a></td><td><span>2105</span></td><td><font style="background:white" color="white"><span>  线性 DP    </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/maximum-value-of-k-coins-from-piles/'><span>2218. 从栈中取出 K 个硬币的最大面值和</span></a></td><td><a href='https://leetcode.cn/problems/maximum-value-of-k-coins-from-piles/solution/zhuan-hua-cheng-fen-zu-bei-bao-pythongoc-3xnk/'><span>题解</span></a></td><td><span>2157</span></td><td><font style="background:white" color="white"><span>  分组背包     </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/longest-path-with-different-adjacent-characters/'><span>2246. 相邻字符不同的最长路径</span></a></td><td><a href='https://leetcode.cn/problems/longest-path-with-different-adjacent-characters/solution/by-endlesscheng-92fw/'><span>题解</span></a></td><td><span>2126</span></td><td><font style="background:white" color="white"><span>  树形 DP    </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/total-appeal-of-a-string/'><span>2262. 字符串的总引力</span></a></td><td><a href='https://leetcode.cn/problems/total-appeal-of-a-string/solution/by-endlesscheng-g405/'><span>题解</span></a></td><td><span>2033</span></td><td><font style="background:white" color="white"><span>  线性 DP    </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/count-number-of-texts/'><span>2266. 统计打字方案数</span></a></td><td><a href='https://leetcode.cn/problems/count-number-of-texts/solution/by-endlesscheng-gj8f/'><span>题解</span></a></td><td><span>1856</span></td><td><font style="background:white" color="white"><span>  线性 DP    </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/substring-with-largest-variance/'><span>2272. 最大波动的子字符串</span></a></td><td><a href='https://leetcode.cn/problems/substring-with-largest-variance/solution/by-endlesscheng-5775/'><span>题解</span></a></td><td><span>2515</span></td><td><font style="background:white" color="white"><span>  线性 DP    </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/fair-distribution-of-cookies/'><span>2305. 公平分发饼干</span></a></td><td><a href='https://leetcode.cn/problems/fair-distribution-of-cookies/solution/by-endlesscheng-80ao/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1aT41157bh'><span>视频</span></a></td><td><span>1886</span></td><td><font style="background:white" color="white"><span> 子集状压 DP </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/selling-pieces-of-wood/'><span>2312. 卖木头块</span></a></td><td><a href='https://leetcode.cn/problems/selling-pieces-of-wood/solution/by-endlesscheng-mrmd/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1CW4y1k7B3?t=23m21s'><span>视频</span></a></td><td><span>2363</span></td><td><font style="background:white" color="white"><span> 线性 DP </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/number-of-distinct-roll-sequences/'><span>2318. 不同骰子序列的数目</span></a></td><td><a href='https://leetcode.cn/problems/number-of-distinct-roll-sequences/solution/by-endlesscheng-tgkn/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV143411w7Wx?t=11m33s'><span>视频</span></a></td><td><span>2090</span></td><td><font style="background:white" color="white"><span> 线性 DP </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/count-number-of-ways-to-place-houses/'><span>2320. 统计放置房子的方式数</span></a></td><td><a href='https://leetcode.cn/problems/count-number-of-ways-to-place-houses/solution/d-by-endlesscheng-gybx/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1pW4y1r7xs'><span>视频</span></a></td><td><span>1607</span></td><td><font style="background:white" color="white"><span> 线性 DP </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/maximum-score-of-spliced-array/'><span>2321. 拼接数组的最大分数</span></a></td><td><a href='https://leetcode.cn/problems/maximum-score-of-spliced-array/solution/by-endlesscheng-fm8l/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1pW4y1r7xs?t=8m18s'><span>视频</span></a></td><td><span>1790</span></td><td><font style="background:white" color="white"><span> 线性 DP </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/EJvmW4/'><span>LCP 53. 守护太空城</span></a></td><td><a href='https://leetcode.cn/problems/EJvmW4/solution/by-endlesscheng-pk2q/'><span>题解</span></a></td><td><span>-</span></td><td><font style="background:white" color="white"><span>子集状压 DP</span></font></td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='数据结构'><span>数据结构</span></h2><figure><table><thead><tr><th><span>题目</span></th><th><span>题解</span></th><th><span>难度</span></th><th><span>备注</span></th></tr></thead><tbody><tr><td><a href='https://leetcode.cn/problems/groups-of-strings/'><span>2157. 字符串分组</span></a></td><td><a href='https://leetcode.cn/problems/groups-of-strings/solution/bing-cha-ji-wei-yun-suan-by-endlesscheng-uejd/'><span>题解</span></a></td><td><span>2499</span></td><td><font style="background:white" color="white"><span> 哈希并查集 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/minimum-difference-in-sums-after-removal-of-elements/'><span>2163. 删除元素后和的最小差值</span></a></td><td><a href='https://leetcode.cn/problems/minimum-difference-in-sums-after-removal-of-elements/solution/qian-zhui-zui-xiao-he-hou-zhui-zui-da-he-yz3d/'><span>题解</span></a></td><td><span>2225</span></td><td><font style="background:white" color="white"><span> 堆 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/count-good-triplets-in-an-array/'><span>2179. 统计数组中好三元组数目</span></a></td><td><a href='https://leetcode.cn/problems/count-good-triplets-in-an-array/solution/deng-jie-zhuan-huan-shu-zhuang-shu-zu-by-xmyd/'><span>题解</span></a></td><td><span>2272</span></td><td><font style="background:white" color="white"><span> 树状数组 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/replace-non-coprime-numbers-in-array/'><span>2197. 替换数组中的非互质数</span></a></td><td><a href='https://leetcode.cn/problems/replace-non-coprime-numbers-in-array/solution/li-yong-zhan-mo-ni-gocpythonjava-by-endl-bnbv/'><span>题解</span></a></td><td><span>2057</span></td><td><font style="background:white" color="white"><span> 栈 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/longest-substring-of-one-repeating-character/'><span>2213. 由单个字符重复的最长子字符串</span></a></td><td><a href='https://leetcode.cn/problems/longest-substring-of-one-repeating-character/solution/by-endlesscheng-qpbw/'><span>题解</span></a></td><td><span>2628</span></td><td><font style="background:white" color="white"><span> 线段树 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/count-integers-in-intervals/'><span>2276. 统计区间中的整数数目</span></a></td><td><a href='https://leetcode.cn/problems/count-integers-in-intervals/solution/by-endlesscheng-clk2/'><span>题解</span></a></td><td><span>2222</span></td><td><font style="background:white" color="white"><span> 珂朵莉树、动态开点线段树 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/sum-of-total-strength-of-wizards/'><span>2281. 巫师的总力量和</span></a></td><td><a href='https://leetcode.cn/problems/sum-of-total-strength-of-wizards/solution/dan-diao-zhan-qian-zhui-he-de-qian-zhui-d9nki/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1RY4y157nW?t=17m0s'><span>视频</span></a></td><td><span>2621</span></td><td><font style="background:white" color="white"><span> 单调栈 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/booking-concert-tickets-in-groups/'><span>2286. 以组为单位订音乐会的门票</span></a></td><td><a href='https://leetcode.cn/problems/booking-concert-tickets-in-groups/solution/by-endlesscheng-okcu/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV18t4y1p736?t=8m7s'><span>视频</span></a></td><td><span>2470</span></td><td><font style="background:white" color="white"><span> 线段树二分 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/steps-to-make-array-non-decreasing/'><span>2289. 使数组按非递减顺序排列</span></a></td><td><a href='https://leetcode.cn/problems/steps-to-make-array-non-decreasing/solution/by-endlesscheng-s2yc/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1iF41157dG'><span>视频</span></a></td><td><span>2481</span></td><td><font style="background:white" color="white"><span> 单调栈 </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/design-a-text-editor/'><span>2296. 设计一个文本编辑器</span></a></td><td><a href='https://leetcode.cn/problems/design-a-text-editor/solution/lian-biao-mo-ni-pythonjavacgo-by-endless-egw4/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1w34y1L7yu/?t=6m29s'><span>视频</span></a></td><td><span>1911</span></td><td><font style="background:white" color="white"><span> 对顶栈 </span></font></td></tr></tbody></table></figure><h2 id='图论'><span>图论</span></h2><figure><table><thead><tr><th><span>题目</span></th><th><span>题解</span></th><th><span>难度</span></th><th><span>备注</span></th></tr></thead><tbody><tr><td><a href='https://leetcode.cn/problems/maximum-employees-to-be-invited-to-a-meeting/'><span>2127. 参加会议的最多员工数</span></a></td><td><a href='https://leetcode.cn/problems/maximum-employees-to-be-invited-to-a-meeting/solution/nei-xiang-ji-huan-shu-tuo-bu-pai-xu-fen-c1i1b/'><span>题解</span></a></td><td><span>2449</span></td><td><font style="background:white" color="white"><span>  基环树、拓扑排序  </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/k-highest-ranked-items-within-a-price-range/'><span>2146. 价格范围内最高排名的 K 样物品</span></a></td><td><a href='https://leetcode.cn/problems/k-highest-ranked-items-within-a-price-range/solution/fen-ceng-bfs-de-tong-shi-pai-xu-by-endle-ash6/'><span>题解</span></a></td><td><span>1836</span></td><td><font style="background:white" color="white"><span>  BFS  </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/maximum-and-sum-of-array/'><span>2172. 数组的最大与和</span></a></td><td><a href='https://leetcode.cn/problems/maximum-and-sum-of-array/solution/zhuang-tai-ya-suo-dp-by-endlesscheng-5eqn/'><span>题解</span></a></td><td><span>2392</span></td><td><font style="background:white" color="white"><span>  最小费用最大流          </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/minimum-weighted-subgraph-with-the-required-paths/'><span>2203. 得到要求路径的最小带权子图</span></a></td><td><a href='https://leetcode.cn/problems/minimum-weighted-subgraph-with-the-required-paths/solution/by-endlesscheng-2mxm/'><span>题解</span></a></td><td><span>2364</span></td><td><font style="background:white" color="white"><span>  单源最短路            </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/escape-the-spreading-fire/'><span>2258. 逃离火灾</span></a></td><td><a href='https://leetcode.cn/problems/escape-the-spreading-fire/solution/er-fen-bfspythonjavacgo-by-endlesscheng-ypp1/'><span>题解</span></a></td><td><span>2346</span></td><td><font style="background:white" color="white"><span>  多源 BFS           </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/check-if-there-is-a-valid-parentheses-string-path/'><span>2267. 检查是否有合法括号字符串路径</span></a></td><td><a href='https://leetcode.cn/problems/check-if-there-is-a-valid-parentheses-string-path/solution/tian-jia-zhuang-tai-hou-dfscpythonjavago-f287/'><span>题解</span></a></td><td><span>2084</span></td><td><font style="background:white" color="white"><span>  DFS              </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/minimum-obstacle-removal-to-reach-corner/'><span>2290. 到达角落需要移除障碍物的最小数目</span></a></td><td><a href='https://leetcode.cn/problems/minimum-obstacle-removal-to-reach-corner/solution/0-1-bfs-by-endlesscheng-4pjt/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1iF41157dG?t=21m10s'><span>视频</span></a></td><td><span>2137</span></td><td><font style="background:white" color="white"><span> 0-1 BFS </span></font></td></tr><tr><td><a href='https://leetcode.cn/problems/minimum-score-after-removals-on-a-tree/'><span>2322. 从树中删除边的最小分数</span></a></td><td><a href='https://leetcode.cn/problems/minimum-score-after-removals-on-a-tree/solution/dfs-shi-jian-chuo-chu-li-shu-shang-wen-t-x1kk/'><span>题解</span></a><span> </span><span>|</span><span> </span><a href='https://www.bilibili.com/video/BV1pW4y1r7xs?t=19m37s'><span>视频</span></a></td><td><span>2391</span></td><td><font style="background:white" color="white"><span> DFS 时间戳 </span></font></td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='总结'><span>总结</span></h2><p><span>相比往年的周赛，今年上半年，动态规划题略有减少，数据结构题有所增多，去年的数据结构题中经常遇到并查集，今年见到了不少线段树的题目。</span></p><p><span>不过动态规划依旧是周赛常客，对于目标周赛四题的选手，我仍然推荐将动态规划作为平时练习中的重点。</span></p><p><span>最后欢迎点赞评论，祝各位周周四题！</span></p></div></div>
+
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script></body>
+</html>

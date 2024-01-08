@@ -359,3 +359,114 @@ func (c *Client) SolutionArticle(ctx context.Context, in SolutionArticleReq) (re
 
 	return res, nil
 }
+
+func (c *Client) QaQuestionDetail(ctx context.Context, in QaQuestionDetailReq) (res *QaQuestionDetailRes, err error) {
+	req := graphql.NewRequest(`
+query qaQuestionDetail($uuid: ID!) {
+  qaQuestion(uuid: $uuid) {
+    ...qaQuestion
+    myAnswerId
+    __typename
+  }
+}
+
+fragment qaQuestion on QAQuestionNode {
+  ipRegion
+  uuid
+  slug
+  title
+  thumbnail
+  summary
+  content
+  slateValue
+  sunk
+  pinned
+  pinnedGlobally
+  byLeetcode
+  isRecommended
+  isRecommendedGlobally
+  subscribed
+  hitCount
+  numAnswers
+  numPeopleInvolved
+  numSubscribed
+  createdAt
+  updatedAt
+  status
+  identifier
+  resourceType
+  articleType
+  alwaysShow
+  alwaysExpand
+  score
+  favoriteCount
+  isMyFavorite
+  isAnonymous
+  canEdit
+  reactionType
+  atQuestionTitleSlug
+  blockComments
+  reactionsV2 {
+    count
+    reactionType
+    __typename
+  }
+  tags {
+    name
+    nameTranslated
+    slug
+    imgUrl
+    tagType
+    __typename
+  }
+  subject {
+    slug
+    title
+    __typename
+  }
+  contentAuthor {
+    ...contentAuthor
+    __typename
+  }
+  realAuthor {
+    ...realAuthor
+    __typename
+  }
+  __typename
+}
+
+fragment contentAuthor on ArticleAuthor {
+  username
+  userSlug
+  realName
+  avatar
+  __typename
+}
+
+fragment realAuthor on UserNode {
+  username
+  profile {
+    userSlug
+    realName
+    userAvatar
+    __typename
+  }
+  __typename
+}
+    `)
+
+	var values = map[string]any{
+		"uuid": in.Uuid,
+	}
+	for key, value := range values {
+		req.Var(key, value)
+	}
+
+	referer := fmt.Sprintf("/circle/discuss/" + in.Uuid)
+	err = c.request(ctx, req, referer, &res)
+	if err != nil {
+		return nil, err
+	}
+
+	return res, nil
+}
