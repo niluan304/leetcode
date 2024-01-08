@@ -290,6 +290,31 @@ func (q QuestionData) Pkg() string {
 	return titleSlug
 }
 
+func (q QuestionData) NeedMode() bool {
+	content := q.TranslatedContent
+	return strings.Contains(content, "取余") ||
+		strings.Contains(content, "取模") ||
+		strings.Contains(content, "答案可能很大")
+}
+
+func (q QuestionData) NeedDefinition() bool {
+	for _, item := range q.CodeSnippets {
+		if strings.Contains(item.Code, " * Definition for ") {
+			return true
+		}
+	}
+	return false
+}
+
+func (q QuestionData) CodeSnippet(langSlug string) string {
+	for _, item := range q.CodeSnippets {
+		if item.LangSlug == langSlug {
+			return item.Code
+		}
+	}
+	return ""
+}
+
 func camel2Case(str string, with string) string {
 	buffer := bytes.Buffer{}
 	for i, r := range str {

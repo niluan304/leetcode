@@ -1,49 +1,29 @@
-package {{.PkgName}}
+package main
 
 import (
-	"reflect"
-	"runtime"
-	"strings"
-	"testing"
+	"testing"{{if .NeedDefinition}}
 
-	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"{{if .NeedDefinition }}
 	. "github.com/EndlessCheng/codeforces-go/leetcode/testutil"{{end}}
+
+	"leetcode/tests"
 )
 
-func Test_{{.PkgName}}(t *testing.T) {
+func Test_{{.Name}}(t *testing.T) {
 	targetCaseNum := 0 // -1
-	inputs, outputs := sample(samples)
 
 	fs := []{{.Type}}{
 		{{.Name}},
+		// {{.Name}}2,
+		// leetcode,
+		// endlessCheng,
 	}
 
-	for _, f := range fs{
-		name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-		i := strings.LastIndex(name, ".")
-
-		t.Run(name[i+1:], func(t *testing.T) {
-			err := testutil.RunLeetCodeFuncWithCase(t, f, inputs, outputs, targetCaseNum)
-			if err != nil {
-				t.Error(err)
-			}
-		})
+	for _, f := range fs {
+		err := tests.Run{{.RunType}}(t, f, samples, targetCaseNum)
+		if err != nil {
+			t.Error(err)
+		}
 	}
 }
 
 var samples = {{.Samples}}
-
-func sample(samples string) (inputs, outputs [][]string) {
-	for _, s := range strings.Split(samples, "\n\n") {
-		s = strings.TrimSpace(s)
-		if s == "" {
-			continue
-		}
-
-		raw := strings.Split(s, "\n")
-		n := len(raw)
-		inputs = append(inputs, raw[:n-1])
-		outputs = append(outputs, []string{raw[n-1]})
-	}
-	return
-}

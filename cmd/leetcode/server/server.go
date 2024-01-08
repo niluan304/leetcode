@@ -8,7 +8,6 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	"text/template"
 	"time"
 
 	"github.com/pkg/errors"
@@ -19,14 +18,38 @@ import (
 	"leetcode/cmd/leetcode/tmpl"
 )
 
-type Server struct {
-	configPath string
+type Config struct {
+	Leetcode struct {
+		Path string `yaml:"path"`
+	} `yaml:"leetcode"`
+
+	Template []tmpl.Config `yaml:"template"`
+
+	Url struct {
+		Open bool   `yaml:"open"`
+		App  string `yaml:"app"`
+	} `yaml:"url"`
 }
 
-func New(configPath string) *Server {
-	return &Server{
-		configPath: configPath,
+type Server struct {
+	config *Config
+}
+
+func NewServer(configPath string) (*Server, error) {
+	file, err := os.Open(configPath)
+	if err != nil {
+		return nil, errors.Wrap(err, "fail to open config file: "+configPath)
 	}
+
+	var config *Config
+	err = yaml.NewDecoder(file).Decode(&config)
+	if err != nil {
+		return nil, errors.Wrap(err, "fail to decode yaml file: "+configPath)
+	}
+
+	return &Server{
+		config: config,
+	}, nil
 }
 
 func (s *Server) idToSlug(id string) (titleSlug string, err error) {
@@ -72,20 +95,6 @@ func (s *Server) Id(id string) (err error) {
 	return s.TitleSlug(titleSlug)
 }
 
-type Config struct {
-	Parse []struct {
-		Name     string `yaml:"name"`
-		Open     bool   `yaml:"open"`
-		App      string `yaml:"app"`
-		Template string `yaml:"tmpl"`
-	} `yaml:"parse"`
-
-	Url struct {
-		Open bool   `yaml:"open"`
-		App  string `yaml:"app"`
-	} `yaml:"url"`
-}
-
 func (s *Server) TitleSlug(titleSlug string) (err error) {
 	var ctx = context.Background()
 	client := graphql.New(graphql.EndpointZh)
@@ -100,7 +109,7 @@ func (s *Server) TitleSlug(titleSlug string) (err error) {
 	}
 
 	dir := question.Dir()
-	path := filepath.Join("./problem", dir)
+	path := filepath.Join(s.config.Leetcode.Path, dir)
 	_ = os.MkdirAll(path, os.ModePerm)
 
 	if question.IsPaidOnly {
@@ -108,53 +117,15 @@ func (s *Server) TitleSlug(titleSlug string) (err error) {
 		return errors.New("会员题目, 无法查看")
 	}
 
-	file, err := os.Open(s.configPath)
-	if err != nil {
-		return err
-	}
-
-	var config Config
-	err = yaml.NewDecoder(file).Decode(&config)
-	if err != nil {
-		return err
-	}
-
 	// 解析模板
-	for _, cfg := range config.Parse {
-		name, tplFile := cfg.Name, cfg.Template
-		var tpl *template.Template
-		if tplFile != "" {
-			tpl = template.Must(template.ParseFiles(tplFile))
-		}
-
-		var parser tmpl.Parser
-		switch strings.ToLower(name) {
-		case "en":
-			parser = tmpl.NewParserEN(question, tpl)
-		case "zh":
-			parser = tmpl.NewParserZH(question, tpl)
-		case "leetcode":
-			parser = tmpl.NewParserLeetcode(question.Pkg())
-		case "solution":
-			parser = tmpl.NewParserSolution(question)
-		case "test":
-			parser = tmpl.NewParserEndlessTest(question, tpl)
-		case "sample":
-			parser = tmpl.NewParserSamples(question)
-		}
-
-		p := tmpl.Parse{
-			Open:   cfg.Open,
-			App:    cfg.App,
-			Parser: parser,
-		}
-		err = p.Save(path)
+	for _, cfg := range s.config.Template {
+		err = tmpl.NewTemplate(cfg, question).Save(path)
 		if err != nil {
 			return err
 		}
 	}
 
-	if config.Url.Open {
+	if s.config.Url.Open {
 		err = open.Run(fmt.Sprintf("https://leetcode.cn/problems/%s/description/", titleSlug))
 		if err != nil {
 			return err

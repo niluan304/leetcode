@@ -20,6 +20,7 @@ var (
 	article = flag.String("a", "", "solution article")
 	_       = flag.String("e", "", "os.Exit(0)")
 	once    = new(sync.Once)
+	config  = flag.String("config", "config.yml", "set config file path")
 )
 
 func init() {
@@ -37,10 +38,14 @@ func init() {
 }
 
 func main() {
-	s := server.New("config.yml")
+	s, err := server.NewServer(*config)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
 	if strings.ToUpper(*today) == "YES" {
-		err := s.Today()
+		err = s.Today()
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -48,7 +53,7 @@ func main() {
 	}
 
 	if *id != "" {
-		err := s.Id(*id)
+		err = s.Id(*id)
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -56,7 +61,7 @@ func main() {
 	}
 
 	if *slug != "" {
-		err := s.TitleSlug(*slug)
+		err = s.TitleSlug(*slug)
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -64,7 +69,7 @@ func main() {
 	}
 
 	if *article != "" {
-		err := s.Article(*article)
+		err = s.Article(*article)
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -79,7 +84,7 @@ func main() {
 	fmt.Print("请输入命令参数：")
 
 	// 读取用户输入
-	err := Scan()
+	err = Scan()
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -123,7 +128,13 @@ func Scan() (err error) {
 		fmt.Print("请确认题解链接：")
 		_, err = fmt.Scan(article)
 		if err != nil {
-			return errors.Wrap(err, "fail scan today")
+			return errors.Wrap(err, "fail scan article")
+		}
+	case "config":
+		fmt.Print("请输入配置文件路径：")
+		_, err = fmt.Scan(config)
+		if err != nil {
+			return errors.Wrap(err, "fail scan config")
 		}
 	}
 	return nil

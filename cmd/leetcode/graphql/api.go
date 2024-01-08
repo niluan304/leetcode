@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"log"
 	"os"
 	"path/filepath"
 
@@ -128,12 +127,12 @@ func (c *Client) QuestionData(ctx context.Context, titleSlug string) (res *Quest
 		return nil, err
 	}
 
-	{
-		err := c.save("questionData", titleSlug, res)
-		if err != nil {
-			log.Println("fail save file:", titleSlug, err)
-		}
-	}
+	//{
+	//	err := c.save("questionData", titleSlug, res)
+	//	if err != nil {
+	//		log.Println("fail save file:", titleSlug, err)
+	//	}
+	//}
 
 	return res, nil
 }

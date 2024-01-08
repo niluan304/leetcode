@@ -1,0 +1,8 @@
+package main
+{{if .NeedDefinition }}
+import (
+	. "github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+){{end}}{{if .NeedMod }}
+const MOD = 1_000_000_007
+{{end}}
+{{.Code}}

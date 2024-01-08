@@ -1,12 +1,9 @@
 package tmpl
 
 import (
-	"io"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-
-	"leetcode/cmd/leetcode/graphql"
 )
 
 type Sample struct {
@@ -16,36 +13,11 @@ type Sample struct {
 
 type Samples []Sample
 
-func (s Samples) Parse(w io.Writer) (err error) {
+func (s Samples) String() (samples string) {
 	for _, sample := range s {
-		for _, input := range sample.Input {
-			_, err = w.Write([]byte(input + "\n"))
-			if err != nil {
-				return
-			}
-		}
-		for _, output := range sample.Output {
-			_, err = w.Write([]byte(output + "\n"))
-			if err != nil {
-				return
-			}
-		}
-		_, err = w.Write([]byte("\n"))
+		samples += strings.Join(sample.Input, "\n") + "\n" + strings.Join(sample.Output, "\n") + "\n\n"
 	}
-	return err
-}
-
-func (s Samples) Filename() string {
-	return "sample.txt"
-}
-
-func NewParserSamples(q *graphql.QuestionData) (p Parser) {
-	content := q.Content
-	if len(content) < 100 {
-		// TODO only Chinese
-		//content = q.TranslatedContent
-	}
-	return NewSamples(content, q.MetaData.Systemdesign)
+	return
 }
 
 func NewSamples(content string, systemDesign bool) (samples Samples) {
