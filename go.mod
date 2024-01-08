@@ -1,4 +1,4 @@
-module leetcode
+module github.com/niluan304/leetcode
 
 go 1.21
 
@@ -9,6 +9,7 @@ require (
 	github.com/machinebox/graphql v0.2.2
 	github.com/pkg/errors v0.9.1
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
@@ -25,7 +26,6 @@ require (
 	github.com/tklauser/go-sysconf v0.3.10 // indirect
 	github.com/tklauser/numcpus v0.4.0 // indirect
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
-	golang.org/x/net v0.16.0 // indirect
-	golang.org/x/sys v0.13.0 // indirect
-	gopkg.in/yaml.v3 v3.0.0-20200615113413-eeeca48fe776 // indirect
+	golang.org/x/net v0.19.0 // indirect
+	golang.org/x/sys v0.16.0 // indirect
 )

@@ -14,8 +14,8 @@ import (
 	"github.com/skratchdot/open-golang/open"
 	"gopkg.in/yaml.v3"
 
-	"leetcode/cmd/leetcode/graphql"
-	"leetcode/cmd/leetcode/tmpl"
+	"github.com/niluan304/leetcode/internal/graphql"
+	"github.com/niluan304/leetcode/internal/tmpl"
 )
 
 type Config struct {

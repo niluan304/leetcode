@@ -12,7 +12,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/skratchdot/open-golang/open"
 
-	"leetcode/cmd/leetcode/graphql"
+	"github.com/niluan304/leetcode/internal/graphql"
 )
 
 type Template struct {

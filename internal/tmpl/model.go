@@ -3,7 +3,7 @@ package tmpl
 import (
 	"strings"
 
-	"leetcode/cmd/leetcode/graphql"
+	"github.com/niluan304/leetcode/internal/graphql"
 )
 
 type EndlessTest struct {

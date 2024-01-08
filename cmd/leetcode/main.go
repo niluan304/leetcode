@@ -9,13 +9,12 @@ import (
 
 	"github.com/pkg/errors"
 
-	"leetcode/cmd/leetcode/server"
+	"github.com/niluan304/leetcode/internal/server"
 )
 
 var (
 	id      = flag.String("i", "", "leetcode problem id")
 	slug    = flag.String("s", "", "leetcode problem slug")
-	output  = flag.String("o", "", "output file path")
 	today   = flag.String("t", "", "today of problem")
 	article = flag.String("a", "", "solution article")
 	_       = flag.String("e", "", "os.Exit(0)")
