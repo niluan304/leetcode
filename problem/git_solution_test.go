@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"leetcode/cmd/leetcode/server"
+	"github.com/niluan304/leetcode/internal/server"
 )
 
 func TestUpdateFilename(t *testing.T) {
@@ -72,7 +72,7 @@ func TestUpdateFilename(t *testing.T) {
 		}
 		//os.Remove(filepath.Join(dir, "case.go"))
 
-		s := server.New("D:\\__Project\\leetcode\\config.yml")
+		s, err := server.NewServer("D:\\__Project\\leetcode\\config.yml")
 		err = s.Id(strconv.Itoa(toInt(dir)))
 		if err != nil {
 			fmt.Println(err)

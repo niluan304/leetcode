@@ -1,7 +1,5 @@
 package main
 
-import "leetcode/structs"
-
 /**
  * Definition for singly-linked list.
  * type ListNode struct {
@@ -10,7 +8,10 @@ import "leetcode/structs"
  * }
  */
 
-type ListNode = structs.ListNode
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	length := 0

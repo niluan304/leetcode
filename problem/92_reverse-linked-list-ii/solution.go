@@ -1,7 +1,5 @@
 package main
 
-import "leetcode/structs"
-
 /**
  * Definition for singly-linked list.
  * type ListNode struct {
@@ -10,7 +8,10 @@ import "leetcode/structs"
  * }
  */
 
-type ListNode = structs.ListNode
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
 func reverseBetween(head *ListNode, left int, right int) *ListNode {
 	if left == right {
