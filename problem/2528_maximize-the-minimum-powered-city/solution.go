@@ -70,3 +70,44 @@ func _max(a, b int) int {
 	}
 	return a
 }
+
+// 1. 使用差分数组计算和更新城市的电量
+// 2. 二分答案：假设最小电量为 minPower，贪心的计算需要新建多少个电站，然后再和预算比较
+func maxPower2(stations []int, r int, k int) int64 {
+	var n = len(stations)
+	var origin, diff = make([]int, n), make([]int, n)
+
+	for i, station := range stations {
+		left := max(0, i-r)
+		right := i + r // [i-r, i+r] 区间上加上 发电站数量station
+
+		origin[left] += station
+		if right+1 < n {
+			origin[right+1] -= station
+		}
+	}
+
+	// 因为边界取值，喜提 WA*2
+	ans := sort.Search(1e5*1e5+1e9+1, func(minPower int) bool {
+		var cnt = 0
+		copy(diff, origin)
+
+		for i := 0; i < n; i++ {
+			if i > 0 {
+				diff[i] += diff[i-1] // 还原差分数组，得到 i 有多少发电站数量
+			}
+
+			x := minPower - diff[i]
+			if x > 0 {
+				diff[i] += x
+				right := i + 2*r
+				if right+1 < n {
+					diff[right+1] -= x
+				}
+				cnt += x
+			}
+		}
+		return cnt > k
+	})
+	return int64(ans - 1)
+}

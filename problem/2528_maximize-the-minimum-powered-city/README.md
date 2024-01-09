@@ -1,8 +1,8 @@
 
 | [English](README_EN.md) | 简体中文 |
 
-# [2528. 最大化城市的最小供电站数目](https://leetcode.cn/problems/maximize-the-minimum-powered-city/)
-Difficulty:Hard, Likes: 43
+# [2528. 最大化城市的最小电量](https://leetcode.cn/problems/maximize-the-minimum-powered-city/)
+Difficulty:Hard, Likes: 47
 
 ## 题目描述
 
@@ -18,7 +18,7 @@ Difficulty:Hard, Likes: 43
 
 <p>政府批准了可以额外建造 <code>k</code>&nbsp;座供电站，你需要决定这些供电站分别应该建在哪里，这些供电站与已经存在的供电站有相同的供电范围。</p>
 
-<p>给你两个整数&nbsp;<code>r</code> 和&nbsp;<code>k</code>&nbsp;，如果以最优策略建造额外的发电站，返回所有城市中，最小供电站数目的最大值是多少。</p>
+<p>给你两个整数&nbsp;<code>r</code> 和&nbsp;<code>k</code>&nbsp;，如果以最优策略建造额外的发电站，返回所有城市中，最小电量的最大值是多少。</p>
 
 <p>这 <code>k</code>&nbsp;座供电站可以建在多个城市。</p>
 
@@ -65,12 +65,12 @@ Difficulty:Hard, Likes: 43
 
 ## 相关话题
 
-- [贪心](https://leetcode.cn/tag/greedy/)
-- [队列](https://leetcode.cn/tag/queue/)
-- [数组](https://leetcode.cn/tag/array/)
-- [二分查找](https://leetcode.cn/tag/binary-search/)
-- [前缀和](https://leetcode.cn/tag/prefix-sum/)
-- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
+    - [贪心](https://leetcode.cn/tag/greedy/)
+    - [队列](https://leetcode.cn/tag/queue/)
+    - [数组](https://leetcode.cn/tag/array/)
+    - [二分查找](https://leetcode.cn/tag/binary-search/)
+    - [前缀和](https://leetcode.cn/tag/prefix-sum/)
+    - [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

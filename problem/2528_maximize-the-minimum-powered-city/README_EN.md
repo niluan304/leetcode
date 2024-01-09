@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2528.Maximize the Minimum Powered City](https://leetcode.com/problems/maximize-the-minimum-powered-city/)
-Difficulty:Hard, Likes: 43
+Difficulty:Hard, Likes: 47
 
 ## Description
 
