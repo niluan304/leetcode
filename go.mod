@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/EndlessCheng/codeforces-go v1.2.1-0.20221128044804-bc39d8fb6995
 	github.com/PuerkitoBio/goquery v1.8.1
-	github.com/emirpasic/gods v1.12.0
+	github.com/emirpasic/gods v1.18.1
 	github.com/machinebox/graphql v0.2.2
 	github.com/pkg/errors v0.9.1
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966

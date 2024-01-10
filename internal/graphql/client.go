@@ -2,7 +2,10 @@ package graphql
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
+	"os"
+	"path/filepath"
 
 	"github.com/machinebox/graphql"
 )
@@ -69,6 +72,20 @@ func (c *Client) request(ctx context.Context, req *graphql.Request, path string,
 	}
 
 	err = c.client.Run(ctx, req, point)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (c *Client) save(path string, titleSlug string, res any) (err error) {
+	data, err := json.MarshalIndent(res, "", "  ")
+	if err != nil {
+		return err
+	}
+	_ = os.MkdirAll(path, 755)
+	err = os.WriteFile(filepath.Join(path, titleSlug+".json"), data, 0644)
 	if err != nil {
 		return err
 	}

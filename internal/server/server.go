@@ -99,7 +99,7 @@ func (s *Server) TitleSlug(titleSlug string) (err error) {
 	var ctx = context.Background()
 	client := graphql.New(graphql.EndpointZh)
 
-	res, err := client.QuestionData(ctx, titleSlug)
+	res, err := client.QuestionData(ctx, graphql.QuestionDataReq{TitleSlug: titleSlug})
 	if err != nil {
 		return err
 	}
@@ -146,7 +146,7 @@ func sleep(min int, max int) {
 func (s *Server) Today() (err error) {
 	var ctx = context.Background()
 	client := graphql.New(graphql.EndpointZh)
-	res, err := client.QuestionOfToday(ctx)
+	res, err := client.QuestionOfToday(ctx, graphql.QuestionOfTodayReq{})
 	if err != nil {
 		return err
 	}

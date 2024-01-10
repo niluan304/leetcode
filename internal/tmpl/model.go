@@ -82,8 +82,15 @@ func (t *Template) EndlessTest() (data EndlessTest) {
 
 func (t *Template) Solution() *Solution {
 	q := t.data
+
+	code := q.CodeSnippet(langSlug)
+	i := strings.LastIndex(code, "}")
+	if i >= 0 {
+		code = code[:i] + "\tvar ans = \n\n\treturn ans\n" + code[i:]
+	}
+
 	return &Solution{
-		Code:           q.CodeSnippet(langSlug),
+		Code:           code,
 		NeedMod:        q.NeedMode(),
 		NeedDefinition: q.NeedDefinition(),
 		Data:           t.data,

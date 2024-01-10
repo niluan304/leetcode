@@ -1,4 +1,4 @@
-package graphql
+package graphql_test
 
 import (
 	"context"
@@ -8,6 +8,7 @@ import (
 )
 
 func Test_LeetcodeLogin(t *testing.T) {
+	const EndpointZh = "https://leetcode.cn/graphql"
 	client := graphql.NewClient(EndpointZh)
 
 	req := graphql.NewRequest(`mutation signInWithPassword($data: AuthSignInWithPasswordInput!, $nvcData: String!) {

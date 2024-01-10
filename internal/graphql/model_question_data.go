@@ -12,6 +12,10 @@ import (
 )
 
 type (
+	QuestionDataReq struct {
+		TitleSlug string
+	}
+
 	// QuestionDataRes 模板数据
 	QuestionDataRes struct {
 		Question QuestionDataQuestion `json:"question"`
