@@ -13,6 +13,8 @@ func Test_countQuadruplets(t *testing.T) {
 		countQuadruplets,
 		countQuadruplets2,
 		leetcode,
+		leetcode2,
+		leetcode3,
 		// endlessCheng,
 	}
 
