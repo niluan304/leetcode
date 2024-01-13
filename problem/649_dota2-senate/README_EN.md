@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [649.Dota2 Senate](https://leetcode.com/problems/dota2-senate/)
-Difficulty:Medium, Likes: 331
+Difficulty:Medium, Likes: 339
 
 ## Description
 

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [649. Dota2 参议院](https://leetcode.cn/problems/dota2-senate/)
-Difficulty:Medium, Likes: 331
+Difficulty:Medium, Likes: 339
 
 ## 题目描述
 
@@ -59,10 +59,10 @@ Difficulty:Medium, Likes: 331
 
 ## 相关话题
 
-- [贪心](https://leetcode.cn/tag/greedy/)
-- [队列](https://leetcode.cn/tag/queue/)
-- [字符串](https://leetcode.cn/tag/string/)
+    - [贪心](https://leetcode.cn/tag/greedy/)
+    - [队列](https://leetcode.cn/tag/queue/)
+    - [字符串](https://leetcode.cn/tag/string/)
 
 ## 相似题目
 
-- [提莫攻击](../teemo-attacking/README.md) Easy 
+    - [提莫攻击](../teemo-attacking/README.md) Easy 

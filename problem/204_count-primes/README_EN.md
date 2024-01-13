@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [204.Count Primes](https://leetcode.com/problems/count-primes/)
-Difficulty:Medium, Likes: 1111
+Difficulty:Medium, Likes: 1126
 
 ## Description
 

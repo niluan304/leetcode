@@ -6,12 +6,12 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_countPrimes(t *testing.T) {
+func Test_reverse(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []func(n int) int{
-		countPrimes,
-		countPrimes2,
+	fs := []func(x int) int{
+		reverse,
+		// reverse2,
 		// leetcode,
 		// endlessCheng,
 	}
@@ -25,17 +25,16 @@ func Test_countPrimes(t *testing.T) {
 }
 
 var samples = `
-10
-4
+123
+321
 
+-123
+-321
+
+120
+21
+
+1534236469
 0
-0
-
-1
-0
-
-5000000
-348513
-
 
 `

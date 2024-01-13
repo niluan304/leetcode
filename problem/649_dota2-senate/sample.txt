@@ -1,6 +1,0 @@
-"RD"
-"Radiant"
-
-"RDD"
-"Dire"
-
