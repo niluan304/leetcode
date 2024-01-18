@@ -32,3 +32,28 @@ func leetcode2(nums []int, limit int) (ans int) {
 	}
 	return
 }
+
+func endlessCheng(nums []int, limit int) (ans int) {
+	cnt := map[int]int{}
+	left := 0
+	for right, x := range nums {
+		cnt[x]++
+		for {
+			mx, mn := x, x
+			for k := range cnt {
+				mx = max(mx, k)
+				mn = min(mn, k)
+			}
+			if mx-mn <= limit {
+				break
+			}
+			y := nums[left]
+			if cnt[y]--; cnt[y] == 0 {
+				delete(cnt, y)
+			}
+			left++
+		}
+		ans = max(ans, right-left+1)
+	}
+	return
+}

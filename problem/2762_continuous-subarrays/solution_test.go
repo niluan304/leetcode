@@ -6,13 +6,13 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_main(t *testing.T) {
+func Test_continuousSubarrays(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []func(nums []int, limit int) int{
-		longestSubarray,
-		longestSubarray2,
-		longestSubarray3,
+	fs := []func(nums []int) int64{
+		continuousSubarrays,
+		continuousSubarrays2,
+		continuousSubarrays3,
 		leetcode2,
 		endlessCheng,
 	}
@@ -26,20 +26,19 @@ func Test_main(t *testing.T) {
 }
 
 var samples = `
-[8,2,4,7]
-4
-2
+[5,4,2,4]
+8
 
-[10,1,2,4,7,2]
-5
-4
+[1,2,3]
+6
 
-[4,2,2,2,4,4,2,2]
-0
-3
+[3,2,1]
+6
 
-[8,6,2,4,7]
-4
-3
+[1,2,3,2,3,2,1,2,3,3,1,4,2,1]
+71
+
+[1,1,1,1,1,1,1,1,1,1,1]
+66
 
 `

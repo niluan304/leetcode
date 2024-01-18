@@ -4,13 +4,15 @@ package main
 // - 时间复杂度：$\mathcal{O}(n^2)$。
 // - 空间复杂度：$\mathcal{O}(n)$。
 // Deprecated: 超时
-func longestSubarray(nums []int, limit int) int {
+func continuousSubarrays(nums []int) int64 {
+	const limit = 2
+
 	var ans = 0
 	var n = len(nums)
 	for i, num := range nums {
 		r := i + 1
 		for ; r < n; r++ {
-			if nums[r] > num+limit || nums[r] < num {
+			if nums[r] > num+limit || nums[r] <= num {
 				break
 			}
 		}
@@ -20,25 +22,31 @@ func longestSubarray(nums []int, limit int) int {
 				break
 			}
 		}
-		ans = max(ans, r-l-1)
+		x, y := i-l, r-i
+		ans += x * y
 	}
-	return ans
+	return int64(ans)
 }
 
-// 双重单调队列
-// 时间复杂度: O(n)
-// 空间复杂度: O(n)
-// 使用单调队列求出 [nums[i], nums[i]+limit] 的左右边界
-func longestSubarray2(nums []int, limit int) int {
+// 单调队列
+// 假设 nums[i] 为最小值
+// - 时间复杂度：$\mathcal{O}(n)$。
+// - 空间复杂度：$\mathcal{O}(n)$。
+func continuousSubarrays2(nums []int) int64 {
+	const limit = 2
+
 	var ans = 0
 	var n = len(nums)
 	var queue []int
 	var right, left = make([]int, n), make([]int, n)
+
+	// right[i] 表示 i 的右边 [i : right[i]] 的数范围：[nums[i]+1, nums[i]+limit]
+	// 从前向后遍历，利用单调队列更新 right[:]
 	for i := 0; i < n; i++ {
 		right[i] = n
 		// 1. 入
 		for m := len(queue); m > 0; m-- {
-			if nums[queue[m-1]] <= nums[i] {
+			if nums[queue[m-1]] < nums[i] { // 改动：把 `<=` 改为 `<`，就解答了。
 				break
 			}
 			right[queue[m-1]] = i
@@ -55,6 +63,8 @@ func longestSubarray2(nums []int, limit int) int {
 	}
 
 	queue = []int{}
+	// left[i] 表示 i 的左边 [left[i]: i] 的数范围：[nums[i], nums[i]+limit]
+	// 从后向前遍历，利用单调队列更新 left[:]
 	for i := n - 1; i >= 0; i-- {
 		left[i] = -1
 
@@ -77,30 +87,34 @@ func longestSubarray2(nums []int, limit int) int {
 	}
 
 	for i := 0; i < n; i++ {
-		ans = max(ans, right[i]-left[i]-1)
+		x, y := i-left[i], right[i]-i
+		ans += y * x
 	}
-	return ans
+	return int64(ans)
 }
 
 // 暴力穷举
+//
 // - 时间复杂度：$\mathcal{O}(n^2)$。
 // - 空间复杂度：$\mathcal{O}(n)$。
 // Deprecated: 超时
-func longestSubarray3(nums []int, limit int) int {
+func continuousSubarrays3(nums []int) int64 {
+	const limit = 2
+
 	var ans = 0
 	var n = len(nums)
 	for i, num := range nums {
 		mn, mx := num, num
-		j := i + 1
-		for ; j < n; j++ {
+		for j := i; j < n; j++ {
 			mn = min(mn, nums[j])
 			mx = max(mx, nums[j])
 
 			if mx-mn > limit {
 				break
 			}
+
+			ans++
 		}
-		ans = max(ans, j-i)
 	}
-	return ans
+	return int64(ans)
 }
