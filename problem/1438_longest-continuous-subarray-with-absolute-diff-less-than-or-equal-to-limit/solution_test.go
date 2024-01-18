@@ -13,6 +13,7 @@ func Test_main(t *testing.T) {
 		longestSubarray,
 		longestSubarray2,
 		longestSubarray3,
+		longestSubarray4,
 		leetcode2,
 		endlessCheng,
 	}

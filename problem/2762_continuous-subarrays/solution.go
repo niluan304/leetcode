@@ -1,5 +1,7 @@
 package main
 
+import "github.com/emirpasic/gods/trees/redblacktree"
+
 // 暴力穷举
 // - 时间复杂度：$\mathcal{O}(n^2)$。
 // - 空间复杂度：$\mathcal{O}(n)$。
@@ -115,6 +117,48 @@ func continuousSubarrays3(nums []int) int64 {
 
 			ans++
 		}
+	}
+	return int64(ans)
+}
+
+// 滑动窗口 + 有序集合
+// 使用合适的的数据结构，可以有效降低题目难度
+//
+// - 时间复杂度：$\mathcal{O}(n\log n)$。
+// - 空间复杂度：$\mathcal{O}(n)$。
+func continuousSubarrays4(nums []int) int64 {
+	const limit = 2
+	var tree = redblacktree.NewWithIntComparator()
+
+	var ans = 0
+	var left = 0
+	for right, num := range nums {
+		node := tree.GetNode(num)
+		if node == nil {
+			node = &redblacktree.Node{Value: 0}
+		}
+		tree.Put(num, node.Value.(int)+1)
+
+		for {
+			mx, mn := tree.Right().Key.(int), tree.Left().Key.(int)
+			if mx-mn <= limit {
+				break
+			}
+
+			num := nums[left]
+			node := tree.GetNode(num)
+			v := node.Value.(int) - 1
+
+			if v == 0 {
+				tree.Remove(num)
+			} else {
+				tree.Put(num, v)
+			}
+
+			left++
+		}
+
+		ans += right - left + 1
 	}
 	return int64(ans)
 }

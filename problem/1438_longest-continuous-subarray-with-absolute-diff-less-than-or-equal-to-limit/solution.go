@@ -1,5 +1,7 @@
 package main
 
+import "github.com/emirpasic/gods/trees/redblacktree"
+
 // 暴力穷举
 // - 时间复杂度：$\mathcal{O}(n^2)$。
 // - 空间复杂度：$\mathcal{O}(n)$。
@@ -101,6 +103,41 @@ func longestSubarray3(nums []int, limit int) int {
 			}
 		}
 		ans = max(ans, j-i)
+	}
+	return ans
+}
+
+func longestSubarray4(nums []int, limit int) (ans int) {
+	var tree = redblacktree.NewWithIntComparator()
+
+	var left = 0
+	for right, num := range nums {
+		node := tree.GetNode(num)
+		if node == nil {
+			node = &redblacktree.Node{Value: 0}
+		}
+		tree.Put(num, node.Value.(int)+1)
+
+		for {
+			mx, mn := tree.Right().Key.(int), tree.Left().Key.(int)
+			if mx-mn <= limit {
+				break
+			}
+
+			num := nums[left]
+			node := tree.GetNode(num)
+			v := node.Value.(int) - 1
+
+			if v == 0 {
+				tree.Remove(num)
+			} else {
+				tree.Put(num, v)
+			}
+
+			left++
+		}
+
+		ans = max(ans, right-left+1)
 	}
 	return ans
 }

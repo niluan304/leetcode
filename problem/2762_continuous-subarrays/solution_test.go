@@ -13,6 +13,7 @@ func Test_continuousSubarrays(t *testing.T) {
 		continuousSubarrays,
 		continuousSubarrays2,
 		continuousSubarrays3,
+		continuousSubarrays4,
 		leetcode2,
 		endlessCheng,
 	}
