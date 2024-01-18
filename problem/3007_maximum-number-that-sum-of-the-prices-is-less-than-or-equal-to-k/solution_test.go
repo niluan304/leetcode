@@ -12,7 +12,7 @@ func Test_findMaximumNumber(t *testing.T) {
 
 	fs := []func(k int64, x int) int64{
 		findMaximumNumber,
-		// findMaximumNumber2,
+		findMaximumNumber2,
 		// leetcode,
 		// endlessCheng,
 	}

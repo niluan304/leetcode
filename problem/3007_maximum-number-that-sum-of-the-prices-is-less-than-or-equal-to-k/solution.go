@@ -66,3 +66,28 @@ func digitDp(low, high string, x int) int {
 
 	return ans
 }
+
+// 二分答案 + 数学
+func findMaximumNumber2(k int64, x int) int64 {
+	n := int(1e15) + 1 // 不知道上界时的做法：设一个足够大的数
+	n = int(k+1) << x  // 数学推导上界
+
+	ans := sort.Search(n, func(num int) bool {
+		var sum = 0
+		for i := x; i < 64; i += x {
+			sum += countOne(num, i-1)
+		}
+		return int64(sum) >= k+1
+	})
+
+	return int64(ans - 1)
+}
+
+// 统计区间 [1, n] 内，二进制第 i 位 1 的个数 (从右往左数，且从 1 开始计)
+// 数学方式统计
+func countOne(num int, i int) int {
+	divisor := 1 << (i + 1)
+	quotient := (num + 1) / divisor
+	remainder := (num + 1) % divisor
+	return quotient<<i + max(0, remainder-(1<<i))
+}
