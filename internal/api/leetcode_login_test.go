@@ -1,4 +1,4 @@
-package graphql_test
+package api_test
 
 import (
 	"context"

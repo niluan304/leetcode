@@ -12,15 +12,15 @@ import (
 	"github.com/pkg/errors"
 	"github.com/skratchdot/open-golang/open"
 
-	"github.com/niluan304/leetcode/internal/graphql"
+	"github.com/niluan304/leetcode/internal/api"
 )
 
 type Template struct {
 	config Config
-	data   *graphql.QuestionData
+	data   *api.QuestionData
 }
 
-func NewTemplate(config Config, data *graphql.QuestionData) *Template {
+func NewTemplate(config Config, data *api.QuestionData) *Template {
 	return &Template{
 		config: config,
 		data:   data,

@@ -1,4 +1,4 @@
-package graphql_test
+package api_test
 
 import (
 	"context"
@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/niluan304/leetcode/internal/graphql"
+	"github.com/niluan304/leetcode/internal/api"
 )
 
 func TestClient_ConsolePanelConfig(t *testing.T) {
@@ -24,7 +24,7 @@ func TestClient_ConsolePanelConfig(t *testing.T) {
 		name    string
 		fields  client
 		args    args
-		wantRes *graphql.ConsolePanelConfigRes
+		wantRes *api.ConsolePanelConfigRes
 		wantErr bool
 	}{
 		{
@@ -37,7 +37,7 @@ func TestClient_ConsolePanelConfig(t *testing.T) {
 					//"NEW_PROBLEMLIST_PAGE":        "1",
 					//"LEETCODE_SESSION":            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMjUyNDM0NCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImF1dGhlbnRpY2F0aW9uLmF1dGhfYmFja2VuZHMuUGhvbmVBdXRoZW50aWNhdGlvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3MTEwYWRjMDk4YmNhYmJlYTViZWQwM2YyMDUxOWY2ZDM0OTcwOWM2OGIyZGE4YjZhZDRkZGM0MWU5ZjQ2Mjc2IiwiaWQiOjI1MjQzNDQsImVtYWlsIjoibmlsdWFuMzA0QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoid3UtZmVuZy1odyIsInVzZXJfc2x1ZyI6Ind1LWZlbmctaHciLCJhdmF0YXIiOiJodHRwczovL2Fzc2V0cy5sZWV0Y29kZS5jbi9hbGl5dW4tbGMtdXBsb2FkL3VzZXJzL3d1LWZlbmctaHcvYXZhdGFyXzE2MDY5NzkxMDgucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsIl90aW1lc3RhbXAiOjE2ODgyMTA1NTEuMTA4MTU3NCwiZXhwaXJlZF90aW1lXyI6MTY5MDc0MzYwMCwidmVyc2lvbl9rZXlfIjoxLCJsYXRlc3RfdGltZXN0YW1wXyI6MTY4ODIzMzAwNX0.iXbgRZbqfvjaycx--ImeMuwxA1bGzB1ElTbfTCmPvo0",
 				},
-				endpoint: graphql.EndpointZh,
+				endpoint: api.EndpointZh,
 			},
 			args: args{
 				ctx:       ctx,
@@ -49,7 +49,7 @@ func TestClient_ConsolePanelConfig(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			c := graphql.New(tt.fields.endpoint, graphql.WithCookie(tt.fields.cookie))
+			c := api.New(tt.fields.endpoint, api.WithCookie(tt.fields.cookie))
 
 			gotRes, err := c.ConsolePanelConfig(tt.args.ctx, tt.args.titleSlug)
 			if (err != nil) != tt.wantErr {
@@ -86,28 +86,28 @@ func TestClient_ProblemsQuestionList(t *testing.T) {
 	type fields client
 	type args struct {
 		ctx context.Context
-		in  graphql.ProblemQuestionReq
+		in  api.ProblemQuestionReq
 	}
 	tests := []struct {
 		name    string
 		fields  fields
 		args    args
-		wantRes *graphql.ProblemQuestionRes
+		wantRes *api.ProblemQuestionRes
 		wantErr bool
 	}{
 		{
 			name: "EndpointZh",
 			fields: fields{
 				cookie:   nil,
-				endpoint: graphql.EndpointZh,
+				endpoint: api.EndpointZh,
 			},
 			args: args{
 				ctx: ctx,
-				in: graphql.ProblemQuestionReq{
+				in: api.ProblemQuestionReq{
 					CategorySlug: "",
 					Skip:         0,
 					Limit:        20,
-					Filters: graphql.ProblemQuestionFilters{
+					Filters: api.ProblemQuestionFilters{
 						Difficulty:     "",
 						Status:         "",
 						SearchKeywords: "188",
@@ -122,7 +122,7 @@ func TestClient_ProblemsQuestionList(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			c := graphql.New(tt.fields.endpoint, graphql.WithCookie(tt.fields.cookie))
+			c := api.New(tt.fields.endpoint, api.WithCookie(tt.fields.cookie))
 
 			gotRes, err := c.ProblemsetQuestionList(tt.args.ctx, tt.args.in)
 			if (err != nil) != tt.wantErr {
@@ -147,24 +147,24 @@ func TestClient_QaQuestionDetail(t *testing.T) {
 	type fields client
 	type args struct {
 		ctx context.Context
-		in  graphql.QaQuestionDetailReq
+		in  api.QaQuestionDetailReq
 	}
 	tests := []struct {
 		name    string
 		fields  fields
 		args    args
-		wantRes *graphql.QaQuestionDetailRes
+		wantRes *api.QaQuestionDetailRes
 		wantErr bool
 	}{
 		{
 			name: "",
 			fields: fields{
 				cookie:   nil,
-				endpoint: graphql.EndpointZh,
+				endpoint: api.EndpointZh,
 			},
 			args: args{
 				ctx: ctx,
-				in: graphql.QaQuestionDetailReq{
+				in: api.QaQuestionDetailReq{
 					Uuid: "G0n5iY",
 				},
 			},
@@ -174,7 +174,7 @@ func TestClient_QaQuestionDetail(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			c := graphql.New(tt.fields.endpoint, graphql.WithCookie(tt.fields.cookie))
+			c := api.New(tt.fields.endpoint, api.WithCookie(tt.fields.cookie))
 			gotRes, err := c.QaQuestionDetail(tt.args.ctx, tt.args.in)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("QaQuestionDetail() error = %v, wantErr %v", err, tt.wantErr)
@@ -201,7 +201,7 @@ func TestClient_QuestionData(t *testing.T) {
 		name    string
 		fields  client
 		args    args
-		wantRes *graphql.ConsolePanelConfigRes
+		wantRes *api.ConsolePanelConfigRes
 		wantErr bool
 	}{
 		{
@@ -214,7 +214,7 @@ func TestClient_QuestionData(t *testing.T) {
 					//"NEW_PROBLEMLIST_PAGE":        "1",
 					//"LEETCODE_SESSION":            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMjUyNDM0NCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImF1dGhlbnRpY2F0aW9uLmF1dGhfYmFja2VuZHMuUGhvbmVBdXRoZW50aWNhdGlvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3MTEwYWRjMDk4YmNhYmJlYTViZWQwM2YyMDUxOWY2ZDM0OTcwOWM2OGIyZGE4YjZhZDRkZGM0MWU5ZjQ2Mjc2IiwiaWQiOjI1MjQzNDQsImVtYWlsIjoibmlsdWFuMzA0QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoid3UtZmVuZy1odyIsInVzZXJfc2x1ZyI6Ind1LWZlbmctaHciLCJhdmF0YXIiOiJodHRwczovL2Fzc2V0cy5sZWV0Y29kZS5jbi9hbGl5dW4tbGMtdXBsb2FkL3VzZXJzL3d1LWZlbmctaHcvYXZhdGFyXzE2MDY5NzkxMDgucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsIl90aW1lc3RhbXAiOjE2ODgyMTA1NTEuMTA4MTU3NCwiZXhwaXJlZF90aW1lXyI6MTY5MDc0MzYwMCwidmVyc2lvbl9rZXlfIjoxLCJsYXRlc3RfdGltZXN0YW1wXyI6MTY4ODIzMzAwNX0.iXbgRZbqfvjaycx--ImeMuwxA1bGzB1ElTbfTCmPvo0",
 				},
-				endpoint: graphql.EndpointZh,
+				endpoint: api.EndpointZh,
 			},
 			args: args{
 				ctx:       ctx,
@@ -233,7 +233,7 @@ func TestClient_QuestionData(t *testing.T) {
 					//"NEW_PROBLEMLIST_PAGE":        "1",
 					//"LEETCODE_SESSION":            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMjUyNDM0NCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImF1dGhlbnRpY2F0aW9uLmF1dGhfYmFja2VuZHMuUGhvbmVBdXRoZW50aWNhdGlvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3MTEwYWRjMDk4YmNhYmJlYTViZWQwM2YyMDUxOWY2ZDM0OTcwOWM2OGIyZGE4YjZhZDRkZGM0MWU5ZjQ2Mjc2IiwiaWQiOjI1MjQzNDQsImVtYWlsIjoibmlsdWFuMzA0QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoid3UtZmVuZy1odyIsInVzZXJfc2x1ZyI6Ind1LWZlbmctaHciLCJhdmF0YXIiOiJodHRwczovL2Fzc2V0cy5sZWV0Y29kZS5jbi9hbGl5dW4tbGMtdXBsb2FkL3VzZXJzL3d1LWZlbmctaHcvYXZhdGFyXzE2MDY5NzkxMDgucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsIl90aW1lc3RhbXAiOjE2ODgyMTA1NTEuMTA4MTU3NCwiZXhwaXJlZF90aW1lXyI6MTY5MDc0MzYwMCwidmVyc2lvbl9rZXlfIjoxLCJsYXRlc3RfdGltZXN0YW1wXyI6MTY4ODIzMzAwNX0.iXbgRZbqfvjaycx--ImeMuwxA1bGzB1ElTbfTCmPvo0",
 				},
-				endpoint: graphql.EndpointZh,
+				endpoint: api.EndpointZh,
 			},
 			args: args{
 				ctx:       ctx,
@@ -252,7 +252,7 @@ func TestClient_QuestionData(t *testing.T) {
 					//"NEW_PROBLEMLIST_PAGE":        "1",
 					//"LEETCODE_SESSION":            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMjUyNDM0NCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImF1dGhlbnRpY2F0aW9uLmF1dGhfYmFja2VuZHMuUGhvbmVBdXRoZW50aWNhdGlvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3MTEwYWRjMDk4YmNhYmJlYTViZWQwM2YyMDUxOWY2ZDM0OTcwOWM2OGIyZGE4YjZhZDRkZGM0MWU5ZjQ2Mjc2IiwiaWQiOjI1MjQzNDQsImVtYWlsIjoibmlsdWFuMzA0QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoid3UtZmVuZy1odyIsInVzZXJfc2x1ZyI6Ind1LWZlbmctaHciLCJhdmF0YXIiOiJodHRwczovL2Fzc2V0cy5sZWV0Y29kZS5jbi9hbGl5dW4tbGMtdXBsb2FkL3VzZXJzL3d1LWZlbmctaHcvYXZhdGFyXzE2MDY5NzkxMDgucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsIl90aW1lc3RhbXAiOjE2ODgyMTA1NTEuMTA4MTU3NCwiZXhwaXJlZF90aW1lXyI6MTY5MDc0MzYwMCwidmVyc2lvbl9rZXlfIjoxLCJsYXRlc3RfdGltZXN0YW1wXyI6MTY4ODIzMzAwNX0.iXbgRZbqfvjaycx--ImeMuwxA1bGzB1ElTbfTCmPvo0",
 				},
-				endpoint: graphql.EndpointZh,
+				endpoint: api.EndpointZh,
 			},
 			args: args{
 				ctx:       ctx,
@@ -264,9 +264,9 @@ func TestClient_QuestionData(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			c := graphql.New(tt.fields.endpoint, graphql.WithCookie(tt.fields.cookie))
+			c := api.New(tt.fields.endpoint, api.WithCookie(tt.fields.cookie))
 
-			gotRes, err := c.QuestionData(tt.args.ctx, graphql.QuestionDataReq{TitleSlug: tt.args.titleSlug})
+			gotRes, err := c.QuestionData(tt.args.ctx, api.QuestionDataReq{TitleSlug: tt.args.titleSlug})
 			if (err != nil) != tt.wantErr {
 				t.Errorf("ConsolePanelConfig() error = %v, wantErr %v", err, tt.wantErr)
 				return
@@ -301,7 +301,7 @@ func TestClient_QuestionOfToday(t *testing.T) {
 		name    string
 		fields  fields
 		args    args
-		wantRes *graphql.QuestionOfTodayRes
+		wantRes *api.QuestionOfTodayRes
 		wantErr bool
 	}{
 		{
@@ -314,12 +314,12 @@ func TestClient_QuestionOfToday(t *testing.T) {
 					//"NEW_PROBLEMLIST_PAGE":        "1",
 					//"LEETCODE_SESSION":            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMjUyNDM0NCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImF1dGhlbnRpY2F0aW9uLmF1dGhfYmFja2VuZHMuUGhvbmVBdXRoZW50aWNhdGlvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3MTEwYWRjMDk4YmNhYmJlYTViZWQwM2YyMDUxOWY2ZDM0OTcwOWM2OGIyZGE4YjZhZDRkZGM0MWU5ZjQ2Mjc2IiwiaWQiOjI1MjQzNDQsImVtYWlsIjoibmlsdWFuMzA0QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoid3UtZmVuZy1odyIsInVzZXJfc2x1ZyI6Ind1LWZlbmctaHciLCJhdmF0YXIiOiJodHRwczovL2Fzc2V0cy5sZWV0Y29kZS5jbi9hbGl5dW4tbGMtdXBsb2FkL3VzZXJzL3d1LWZlbmctaHcvYXZhdGFyXzE2MDY5NzkxMDgucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsIl90aW1lc3RhbXAiOjE2ODgyMTA1NTEuMTA4MTU3NCwiZXhwaXJlZF90aW1lXyI6MTY5MDc0MzYwMCwidmVyc2lvbl9rZXlfIjoxLCJsYXRlc3RfdGltZXN0YW1wXyI6MTY4ODIzMzAwNX0.iXbgRZbqfvjaycx--ImeMuwxA1bGzB1ElTbfTCmPvo0",
 				},
-				endpoint: graphql.EndpointZh,
+				endpoint: api.EndpointZh,
 			},
 			args: args{
 				ctx: ctx,
 			},
-			wantRes: &graphql.QuestionOfTodayRes{
+			wantRes: &api.QuestionOfTodayRes{
 				TodayRecord: nil,
 			},
 			wantErr: false,
@@ -327,9 +327,9 @@ func TestClient_QuestionOfToday(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			c := graphql.New(tt.fields.endpoint, graphql.WithCookie(tt.fields.cookie))
+			c := api.New(tt.fields.endpoint, api.WithCookie(tt.fields.cookie))
 
-			gotRes, err := c.QuestionOfToday(tt.args.ctx, graphql.QuestionOfTodayReq{})
+			gotRes, err := c.QuestionOfToday(tt.args.ctx, api.QuestionOfTodayReq{})
 			if (err != nil) != tt.wantErr {
 				t.Errorf("QuestionOfToday() error = %v, wantErr %v", err, tt.wantErr)
 				return
@@ -352,13 +352,13 @@ func TestClient_SolutionArticle(t *testing.T) {
 
 	type args struct {
 		ctx context.Context
-		in  graphql.SolutionArticleReq
+		in  api.SolutionArticleReq
 	}
 	tests := []struct {
 		name    string
 		fields  fields
 		args    args
-		wantRes *graphql.SolutionArticleRes
+		wantRes *api.SolutionArticleRes
 		wantErr bool
 	}{
 		{
@@ -371,11 +371,11 @@ func TestClient_SolutionArticle(t *testing.T) {
 					//"NEW_PROBLEMLIST_PAGE":        "1",
 					//"LEETCODE_SESSION":            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMjUyNDM0NCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImF1dGhlbnRpY2F0aW9uLmF1dGhfYmFja2VuZHMuUGhvbmVBdXRoZW50aWNhdGlvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3MTEwYWRjMDk4YmNhYmJlYTViZWQwM2YyMDUxOWY2ZDM0OTcwOWM2OGIyZGE4YjZhZDRkZGM0MWU5ZjQ2Mjc2IiwiaWQiOjI1MjQzNDQsImVtYWlsIjoibmlsdWFuMzA0QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoid3UtZmVuZy1odyIsInVzZXJfc2x1ZyI6Ind1LWZlbmctaHciLCJhdmF0YXIiOiJodHRwczovL2Fzc2V0cy5sZWV0Y29kZS5jbi9hbGl5dW4tbGMtdXBsb2FkL3VzZXJzL3d1LWZlbmctaHcvYXZhdGFyXzE2MDY5NzkxMDgucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsIl90aW1lc3RhbXAiOjE2ODgyMTA1NTEuMTA4MTU3NCwiZXhwaXJlZF90aW1lXyI6MTY5MDc0MzYwMCwidmVyc2lvbl9rZXlfIjoxLCJsYXRlc3RfdGltZXN0YW1wXyI6MTY4ODIzMzAwNX0.iXbgRZbqfvjaycx--ImeMuwxA1bGzB1ElTbfTCmPvo0",
 				},
-				endpoint: graphql.EndpointZh,
+				endpoint: api.EndpointZh,
 			},
 			args: args{
 				ctx: ctx,
-				in: graphql.SolutionArticleReq{
+				in: api.SolutionArticleReq{
 					Slug: "wu-nao-zuo-fa-er-wei-qian-zhui-he-er-wei-zwiu",
 				},
 			},
@@ -385,7 +385,7 @@ func TestClient_SolutionArticle(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			c := graphql.New(tt.fields.endpoint, graphql.WithCookie(tt.fields.cookie))
+			c := api.New(tt.fields.endpoint, api.WithCookie(tt.fields.cookie))
 
 			gotRes, err := c.SolutionArticle(tt.args.ctx, tt.args.in)
 			if (err != nil) != tt.wantErr {

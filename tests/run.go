@@ -10,7 +10,7 @@ import (
 	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
 )
 
-func funcName(f any) string {
+func FuncName(f any) string {
 	name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
 	i := strings.LastIndex(name, ".")
 	return name[i+1:]
@@ -41,7 +41,7 @@ func RunFunc(t *testing.T, f any, data string, targetCaseNum int) (err error) {
 		examples = append(examples, lines[i:i+tcSize])
 	}
 
-	t.Run(funcName(f), func(t *testing.T) {
+	t.Run(FuncName(f), func(t *testing.T) {
 		err = testutil.RunLeetCodeFuncWithExamples(t, f, examples, targetCaseNum)
 	})
 	return err
@@ -64,7 +64,7 @@ func RunClass(t *testing.T, f any, data string, targetCaseNum int) (err error) {
 		examples = append(examples, [3]string{lines[i], lines[i+1], lines[i+2]})
 	}
 
-	t.Run(funcName(f), func(t *testing.T) {
+	t.Run(FuncName(f), func(t *testing.T) {
 		err = testutil.RunLeetCodeClassWithExamples(t, f, examples, targetCaseNum)
 	})
 	return err

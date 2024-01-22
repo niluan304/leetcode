@@ -14,7 +14,7 @@ import (
 	"github.com/skratchdot/open-golang/open"
 	"gopkg.in/yaml.v3"
 
-	"github.com/niluan304/leetcode/internal/graphql"
+	"github.com/niluan304/leetcode/internal/api"
 	"github.com/niluan304/leetcode/internal/tmpl"
 )
 
@@ -54,13 +54,13 @@ func NewServer(configPath string) (*Server, error) {
 
 func (s *Server) idToSlug(id string) (titleSlug string, err error) {
 	var ctx = context.Background()
-	client := graphql.New(graphql.EndpointZh)
+	client := api.New(api.EndpointZh)
 
-	res, err := client.ProblemsetQuestionList(ctx, graphql.ProblemQuestionReq{
+	res, err := client.ProblemsetQuestionList(ctx, api.ProblemQuestionReq{
 		CategorySlug: "",
 		Skip:         0,
 		Limit:        50,
-		Filters: graphql.ProblemQuestionFilters{
+		Filters: api.ProblemQuestionFilters{
 			Difficulty:     "",
 			Status:         "",
 			SearchKeywords: id,
@@ -97,9 +97,9 @@ func (s *Server) Id(id string) (err error) {
 
 func (s *Server) TitleSlug(titleSlug string) (err error) {
 	var ctx = context.Background()
-	client := graphql.New(graphql.EndpointZh)
+	client := api.New(api.EndpointZh)
 
-	res, err := client.QuestionData(ctx, graphql.QuestionDataReq{TitleSlug: titleSlug})
+	res, err := client.QuestionData(ctx, api.QuestionDataReq{TitleSlug: titleSlug})
 	if err != nil {
 		return err
 	}
@@ -145,8 +145,8 @@ func sleep(min int, max int) {
 
 func (s *Server) Today() (err error) {
 	var ctx = context.Background()
-	client := graphql.New(graphql.EndpointZh)
-	res, err := client.QuestionOfToday(ctx, graphql.QuestionOfTodayReq{})
+	client := api.New(api.EndpointZh)
+	res, err := client.QuestionOfToday(ctx, api.QuestionOfTodayReq{})
 	if err != nil {
 		return err
 	}
@@ -170,8 +170,8 @@ func (s *Server) Article(article string) (err error) {
 	article = article[i+1:]
 
 	var ctx = context.Background()
-	client := graphql.New(graphql.EndpointZh)
-	res, err := client.SolutionArticle(ctx, graphql.SolutionArticleReq{
+	client := api.New(api.EndpointZh)
+	res, err := client.SolutionArticle(ctx, api.SolutionArticleReq{
 		Slug: article,
 	})
 	if err != nil {

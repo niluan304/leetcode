@@ -1,9 +1,10 @@
 package tmpl
 
 import (
+	"fmt"
 	"strings"
 
-	"github.com/niluan304/leetcode/internal/graphql"
+	"github.com/niluan304/leetcode/internal/api"
 )
 
 type EndlessTest struct {
@@ -13,13 +14,13 @@ type EndlessTest struct {
 	Samples        string
 	NeedDefinition bool
 
-	Data *graphql.QuestionData
+	Data *api.QuestionData
 }
 
 type Leetcode struct {
 	NeedDefinition bool // 是否需要导入 ListNode/TreeNode 等结构体
 
-	Data *graphql.QuestionData // 可用于修改包名
+	Data *api.QuestionData // 可用于修改包名
 }
 
 type Solution struct {
@@ -27,7 +28,7 @@ type Solution struct {
 	NeedMod        bool   // 是否需要取模
 	NeedDefinition bool   // 是否需要取模
 
-	Data *graphql.QuestionData // 可用于修改包名
+	Data *api.QuestionData // 可用于修改包名
 }
 
 func (t *Template) Samples() Samples {
@@ -84,10 +85,32 @@ func (t *Template) Solution() *Solution {
 	q := t.data
 
 	code := q.CodeSnippet(langSlug)
+
+	ansType := funcReturnType(code)
+
 	i := strings.LastIndex(code, "}")
-	if i >= 0 {
-		code = code[:i] + "\tvar ans = \n\n\treturn ans\n" + code[i:]
+	varAns := "var ans = 0 // math.MaxInt32 // math.MinInt32"
+	ans := "ans"
+	switch ansType {
+	case "int", "float64":
+		//initValue = "var ans = 0 \n\t //var ans = math.MaxInt32\n\t//var ans = math.MinInt32"
+	case "int64":
+		//initValue = "var ans = 0 \n\t //var ans = math.MaxInt32\n\t//var ans = math.MinInt32"
+		ans = "int64(ans)"
+	case "[]int", "[]byte", "[][]int":
+		varAns = fmt.Sprintf("var ans = make(%s, n)", ansType)
+	default:
+		varAns = "var ans " + ansType
 	}
+
+	code = fmt.Sprintf(`%s
+
+	// var n = len()
+	%s
+
+	return %s
+%s
+`, strings.TrimRight(code[:i], "\n"), varAns, ans, code[i:])
 
 	return &Solution{
 		Code:           code,
@@ -95,4 +118,10 @@ func (t *Template) Solution() *Solution {
 		NeedDefinition: q.NeedDefinition(),
 		Data:           t.data,
 	}
+}
+
+func funcReturnType(code string) string {
+	i := strings.LastIndexByte(code, ')')
+	j := strings.LastIndex(code, "{")
+	return strings.TrimSpace(code[i+1 : j])
 }
