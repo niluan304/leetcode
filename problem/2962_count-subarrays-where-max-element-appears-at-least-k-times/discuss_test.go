@@ -1,50 +1,71 @@
 package main
 
 import (
+	"errors"
 	"fmt"
+	"math"
 	"math/rand"
-	"reflect"
-	"runtime"
-	"strings"
 	"testing"
+
+	"github.com/sourcegraph/conc"
+
+	"github.com/niluan304/leetcode/tests"
 )
 
+type Func func(nums []int, k int) int64
+
 func Test_checkDiscuss(t *testing.T) {
-	fs := []func(nums []int, k int) int64{
+	fs := []Func{
 		discuss,
 		discuss2,
 		discuss3,
+		discuss4,
 	}
 
-	for i := 0; i < 10000; i++ {
-		err := check(fs...)
+	for i := 0; i < 1000; i++ {
+		err := validate(fs...)
 		if err != nil {
 			t.Error(err)
 		}
 	}
 }
 
-func check(fs ...func(nums []int, k int) int64) error {
-	var n = rand.Intn(10000) + 1 // rand.Intn(n) 随机数组范围为 [0, n-1]
+func validate(fs ...Func) (err error) {
+	var n = rand.Intn(1000000) + 1 // rand.Intn(n) 随机数组范围为 [0, n-1]
 	var k = rand.Intn(5) + 1
 	var nums = make([]int, n)
 	for j, _ := range nums {
 		nums[j] = rand.Intn(50) + 1
 	}
 
-	except := violent(nums, k)
+	wg := conc.NewWaitGroup()
+	defer wg.Wait()
+
+	except := bruteForce(nums, k)
 	for _, f := range fs {
-		actual := f(nums, k)
-		if actual != except {
-			return fmt.Errorf("f:%s, except: %d, actual:%d, k: %d, nums:%v", funcName(f), except, actual, k, nums)
-		}
+		wg.Go(func() {
+			actual := f(nums, k)
+			if actual != except {
+				e := fmt.Errorf("f:%s, except: %d, actual:%d, k: %d, nums:%v", tests.FuncName(f), except, actual, k, nums)
+				err = errors.Join(err, e)
+			}
+		})
 	}
 
-	return nil
+	return err
 }
 
-func funcName(f any) string {
-	name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-	i := strings.LastIndex(name, ".")
-	return name[i+1:]
+func bruteForce(nums []int, k int) int64 {
+	var n, ans = len(nums), 0
+	for i := 0; i < n; i++ {
+		var count, mx = map[int]int{}, math.MinInt
+		for j := i; j < n; j++ {
+			count[nums[j]]++
+			mx = max(mx, nums[j])
+			if count[mx] >= k {
+				ans++
+			}
+		}
+	}
+	return int64(ans)
 }

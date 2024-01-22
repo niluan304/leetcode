@@ -4,13 +4,13 @@ import (
 	"math"
 )
 
-const mod = 1e9 + 7
+const mod = 1_000_000_007
 
 // 暴力穷举
 // 时间复杂度: O(n^2)
 // 空间复杂度: O(1)
 // Deprecated: 超时
-func sumSubarrayMins(arr []int) int {
+func bruteForce(arr []int) int {
 	var ans = 0
 	for i, _ := range arr {
 		v := math.MaxInt
@@ -25,7 +25,7 @@ func sumSubarrayMins(arr []int) int {
 // 单调栈 + 动态规划
 // 时间复杂度: O(n)
 // 空间复杂度: O(n)
-func sumSubarrayMins2(arr []int) int {
+func sumSubarrayMins(arr []int) int {
 	arr = append([]int{0}, arr...) // 1 <= arr[i] <= 3 * 10^4
 
 	var n = len(arr)
@@ -44,6 +44,42 @@ func sumSubarrayMins2(arr []int) int {
 			stack = stack[:m-1]
 		}
 		stack = append(stack, i)
+	}
+	return ans
+}
+
+// 动态规划 + 单调栈
+// dp[i-1] 表示区间 [0, i-1] 内 min(b) 的和
+// 有一个新元素 nums[i]，假设 nums[i] > nums[i-1]，
+// 那将 nums[i] 拼到 区间 [0 : i-1] 后面，min(b) 是不会变化的，
+// dp[i] 可以 **继承** dp[i-1] 的 min(b) 的和，并额外增加 nums[i] 作为 min(b) 时的值
+// 再将这个情况推广，会发现，dp[i] 能继承的是上一个小于 nums[i] 的数，记为 nums[j]，
+// 那么有递推公式：dp[i] = dp[j] + [i-j+1] * num
+//
+// - 时间复杂度：$\mathcal{O}(n)$。
+// - 空间复杂度：$\mathcal{O}(n)$。
+func sumSubarrayMins2(arr []int) int {
+	var n = len(arr)
+	var dp = make([]int, n+1)
+	var stack = []int{-1} // 哨兵
+	var ans = 0
+
+	for i, num := range arr {
+		m := len(stack)
+		for m > 1 && num <= arr[stack[m-1]] {
+			m--
+		}
+
+		// top 是上一个小于 nums[i] 的元素索引，top == -1 哨兵时，表示 nums[i] 在区间 [0, i] 是最小值的
+		top := stack[m-1]
+		// nums[i] 作为新的最小值入栈，大于等于 nums[i] 的元素出栈
+		stack = append(stack[:m], i)
+
+		// 递推公式： dp[i] = dp[top] + v
+		// v = nums[i]*(i - top)
+		dp[i+1] = (dp[top+1] + num*(i-top)%mod) % mod
+
+		ans = (ans + dp[i+1]) % mod
 	}
 	return ans
 }
