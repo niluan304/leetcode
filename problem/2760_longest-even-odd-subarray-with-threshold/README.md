@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2760. 最长奇偶子数组](https://leetcode.cn/problems/longest-even-odd-subarray-with-threshold/)
-Difficulty:Easy, Likes: 69
+Difficulty:Easy, Likes: 87
 
 ## 题目描述
 
@@ -60,8 +60,8 @@ Difficulty:Easy, Likes: 69
 
 ## 相关话题
 
-- [数组](https://leetcode.cn/tag/array/)
-- [滑动窗口](https://leetcode.cn/tag/sliding-window/)
+    - [数组](https://leetcode.cn/tag/array/)
+    - [滑动窗口](https://leetcode.cn/tag/sliding-window/)
 
 ## 相似题目
 

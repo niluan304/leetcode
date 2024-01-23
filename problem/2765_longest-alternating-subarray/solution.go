@@ -1,5 +1,8 @@
 package main
 
+// 暴力穷举
+// - 时间复杂度：$\mathcal{O}(n^2)$。
+// - 空间复杂度：$\mathcal{O}(1)$。
 func alternatingSubarray(nums []int) int {
 
 	var n = len(nums)
@@ -57,6 +60,31 @@ func alternatingSubarray2(nums []int) int {
 		}
 		// 从 i0 到 i-1 是满足题目要求的（并且无法再延长的）子数组
 		ans = max(ans, i-i0)
+		i--
+	}
+	return ans
+}
+
+// 分组循环
+// - 时间复杂度：$\mathcal{O}(n)$。
+// - 空间复杂度：$\mathcal{O}(1)$。
+func alternatingSubarray3(nums []int) int {
+	var n = len(nums)
+	var ans = -1
+
+	for i := 0; i < n-1; {
+		if nums[i]+1 != nums[i+1] {
+			i++
+			continue
+		}
+
+		j := i
+		for i++; i < n; i++ {
+			if nums[i] != nums[j]+(i-j)%2 {
+				break
+			}
+		}
+		ans = max(ans, i-j)
 		i--
 	}
 	return ans

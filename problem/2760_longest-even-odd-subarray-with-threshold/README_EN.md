@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2760.Longest Even Odd Subarray With Threshold](https://leetcode.com/problems/longest-even-odd-subarray-with-threshold/)
-Difficulty:Easy, Likes: 69
+Difficulty:Easy, Likes: 87
 
 ## Description
 

@@ -12,6 +12,7 @@ func Test_alternatingSubarray(t *testing.T) {
 	fs := []func(nums []int) int{
 		alternatingSubarray,
 		alternatingSubarray2,
+		alternatingSubarray3,
 		//leetcode,
 		//endlessCheng,
 	}
