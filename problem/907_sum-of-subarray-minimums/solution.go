@@ -66,13 +66,13 @@ func sumSubarrayMins2(arr []int) int {
 
 	for i, num := range arr {
 		m := len(stack)
-		for m > 1 && num <= arr[stack[m-1]] {
+		for m > 1 && num <= arr[stack[m-1]] { // 单调递减栈
 			m--
 		}
 
 		// top 是上一个小于 nums[i] 的元素索引，top == -1 哨兵时，表示 nums[i] 在区间 [0, i] 是最小值的
 		top := stack[m-1]
-		// nums[i] 作为新的最小值入栈，大于等于 nums[i] 的元素出栈
+		// nums[i] 作为新的最小值入栈，小于于等于 nums[i] 的元素出栈
 		stack = append(stack[:m], i)
 
 		// 递推公式： dp[i] = dp[top] + v
