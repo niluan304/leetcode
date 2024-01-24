@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [2906.Construct Product Matrix](https://leetcode.com/problems/construct-product-matrix/)
-Difficulty:Medium, Likes: 19
+Difficulty:Medium, Likes: 21
 
 ## Description
 

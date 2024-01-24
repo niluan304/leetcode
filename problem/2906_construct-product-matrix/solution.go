@@ -1,57 +1,34 @@
 package main
 
-const mod = 12345
+const MOD = 12345
 
+// 前后缀分解
+// - 时间复杂度：$\mathcal{O}(n \cdot m)$。
+// - 空间复杂度：$\mathcal{O}(n \cdot m)$。
 func constructProductMatrix(grid [][]int) [][]int {
-	var n = len(grid)
-	var m = len(grid[0])
+	var n, m = len(grid), len(grid[0])
+	mx := n * m
+	var prefix, suffix = make([]int, mx+1), make([]int, mx+1)
+	prefix[0], suffix[mx] = 1, 1 // 乘法初始化为 1
 
-	var prefix, suffix = make([]int, m*n+1), make([]int, m*n+1)
-
-	prefix[0] = 1
 	for i := 0; i < n; i++ {
 		for j := 0; j < m; j++ {
-			k := i*m + j
-			prefix[k+1] = prefix[k] * grid[i][j] % mod
+			idx := i*m + j
+			prefix[idx+1] = (prefix[idx] % MOD) * (grid[i][j] % MOD) % MOD
 		}
 	}
-
-	suffix[n*m] = 1
 	for i := n - 1; i >= 0; i-- {
 		for j := m - 1; j >= 0; j-- {
-			k := i*m + j
-			suffix[k] = suffix[k+1] * grid[i][j] % mod
+			idx := i*m + j
+			suffix[idx] = (suffix[idx+1] % MOD) * (grid[i][j] % MOD) % MOD
 		}
 	}
 
-	var ans = make([][]int, n)
-	for i := 0; i < n; i++ {
-		ans[i] = make([]int, m)
-		for j := 0; j < m; j++ {
-			k := i*m + j
-			ans[i][j] = prefix[k] * suffix[k+1] % mod
+	for i, _ := range grid {
+		for j, _ := range grid[i] {
+			idx := i*m + j
+			grid[i][j] = (prefix[idx] * suffix[idx+1]) % MOD
 		}
 	}
-	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
+	return grid
 }

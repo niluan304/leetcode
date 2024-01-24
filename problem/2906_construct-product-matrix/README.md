@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2906. 构造乘积矩阵](https://leetcode.cn/problems/construct-product-matrix/)
-Difficulty:Medium, Likes: 19
+Difficulty:Medium, Likes: 21
 
 ## 题目描述
 
@@ -51,9 +51,9 @@ p[0][2] = grid[0][0] * grid[0][1] = 12345 * 2 = 24690. 24690 % 12345 = 0 ，所�
 
 ## 相关话题
 
-- [数组](https://leetcode.cn/tag/array/)
-- [矩阵](https://leetcode.cn/tag/matrix/)
-- [前缀和](https://leetcode.cn/tag/prefix-sum/)
+    - [数组](https://leetcode.cn/tag/array/)
+    - [矩阵](https://leetcode.cn/tag/matrix/)
+    - [前缀和](https://leetcode.cn/tag/prefix-sum/)
 
 ## 相似题目
 
