@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [2772. 使数组中的所有元素都等于零](https://leetcode.cn/problems/apply-operations-to-make-all-array-elements-equal-to-zero/)
-Difficulty:Medium, Likes: 28
+Difficulty:Medium, Likes: 35
 
 ## 题目描述
 
@@ -49,8 +49,8 @@ Difficulty:Medium, Likes: 28
 
 ## 相关话题
 
-- [数组](https://leetcode.cn/tag/array/)
-- [前缀和](https://leetcode.cn/tag/prefix-sum/)
+    - [数组](https://leetcode.cn/tag/array/)
+    - [前缀和](https://leetcode.cn/tag/prefix-sum/)
 
 ## 相似题目
 

@@ -1,30 +1,41 @@
 package main
 
 import (
-	"reflect"
-	"runtime"
-	"strings"
 	"testing"
 
-	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_apply_operations_to_make_all_array_elements_equal_to_zero(t *testing.T) {
+func Test_checkArray(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(nums []int, k int) bool{
+		//bruteForce,
 		checkArray,
+		//checkArray2,
+		//leetcode,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {
-		name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-		i := strings.LastIndex(name, ".")
-
-		t.Run(name[i+1:], func(t *testing.T) {
-			err := testutil.RunLeetCodeFuncWithFile(t, f, "sample.txt", targetCaseNum)
-			if err != nil {
-				t.Error(err)
-			}
-		})
+		err := tests.RunFunc(t, f, samples, targetCaseNum)
+		if err != nil {
+			t.Error(err)
+		}
 	}
 }
+
+var samples = `
+[2,2,3,1,1,0]
+3
+true
+
+[1,3,1,1]
+2
+false
+
+[0,45,82,98,99]
+4
+false
+
+`
