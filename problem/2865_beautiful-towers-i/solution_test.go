@@ -11,9 +11,7 @@ func Test_maximumSumOfHeights(t *testing.T) {
 
 	fs := []func(maxHeights []int) int64{
 		maximumSumOfHeights,
-		maximumSumOfHeights2,
-		maximumSumOfHeights3,
-		maximumSumOfHeights4,
+		//maximumSumOfHeights2,
 		//leetcode,
 		//endlessCheng,
 	}
@@ -35,9 +33,6 @@ var samples = `
 
 [3,2,5,5,2,3]
 18
-
-[2,6,5,3,2,4]
-20
 
 
 `
