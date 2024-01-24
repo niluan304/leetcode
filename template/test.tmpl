@@ -12,6 +12,7 @@ func Test_{{.Name}}(t *testing.T) {
 	targetCaseNum := 0 // -1
 
 	fs := []{{.Type}}{
+		//bruteForce,
 		{{.Name}},
 		//{{.Name}}2,
 		//leetcode,
@@ -26,4 +27,6 @@ func Test_{{.Name}}(t *testing.T) {
 	}
 }
 
-var samples = {{.Samples}}
+var samples =`
+{{.Samples}}
+`
