@@ -1,5 +1,11 @@
 package main
 
+import (
+	"cmp"
+
+	. "github.com/niluan304/leetcode/copypasta/dp"
+)
+
 // dfs + 记忆化搜素
 // 时间复杂度：O(n^2)
 // 空间复杂度：O(n^2)
@@ -81,13 +87,12 @@ func findTargetSumWays2(nums []int, target int) int {
 	return dp[n][half]
 }
 
-func Sum(list []int) int {
-	var sum = 0
-	for _, n := range list {
-		sum += n
+func Sum[S ~[]E, E cmp.Ordered](x S) E {
+	var m E
+	for i := 0; i < len(x); i++ {
+		m += x[i]
 	}
-
-	return sum
+	return m
 }
 
 // 递推/动态规划 的空间优化
@@ -120,4 +125,9 @@ func findTargetSumWays3(nums []int, target int) int {
 		//fmt.Println("half", half, "i", dp)
 	}
 	return dp[half]
+}
+
+func findTargetSumWays4(nums []int, target int) int {
+	sum := Sum(nums) + target
+	return ZeroOneWaysToSum(nums, sum/2)
 }

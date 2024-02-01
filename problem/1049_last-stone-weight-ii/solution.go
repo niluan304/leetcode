@@ -1,7 +1,9 @@
 package main
 
 import (
-	"math"
+	"cmp"
+
+	. "github.com/niluan304/leetcode/copypasta/dp"
 )
 
 // dp
@@ -32,7 +34,7 @@ func lastStoneWeightII(stones []int) int {
 				continue
 			}
 			// 2. 确定递推公式/状态转移公式
-			dp[i+1][j] = _max(dp[i+1][j], v+dp[i][w])
+			dp[i+1][j] = max(dp[i+1][j], v+dp[i][w])
 		}
 	}
 	//// 5. debug: 打印dp数组
@@ -43,24 +45,12 @@ func lastStoneWeightII(stones []int) int {
 	return sum - dp[n][target]*2
 }
 
-func Sum(list []int) int {
-	var sum = 0
-	for _, n := range list {
-		sum += n
+func Sum[S ~[]E, E cmp.Ordered](x S) E {
+	var m E
+	for i := 0; i < len(x); i++ {
+		m += x[i]
 	}
-
-	return sum
-}
-
-func _max(list ...int) int {
-	var ans = math.MinInt
-	for _, n := range list {
-		if ans < n {
-			ans = n
-		}
-	}
-
-	return ans
+	return m
 }
 
 // dp
@@ -85,7 +75,7 @@ func lastStoneWeightII2(stones []int) int {
 				continue
 			}
 			// 2. 确定递推公式/状态转移公式
-			dp2[j] = _max(dp2[j], v+dp[w])
+			dp2[j] = max(dp2[j], v+dp[w])
 		}
 		dp = dp2
 		//// 5. debug: 打印dp数组
@@ -93,4 +83,10 @@ func lastStoneWeightII2(stones []int) int {
 
 	}
 	return sum - dp[target]*2
+}
+
+func lastStoneWeightII3(stones []int) int {
+	var sum = Sum(stones)
+	dp := ZeroOneKnapsack(stones, stones, sum/2)
+	return sum - dp*2
 }

@@ -12,6 +12,8 @@ func Test_lengthOfLongestSubsequence(t *testing.T) {
 	fs := []func(nums []int, target int) int{
 		lengthOfLongestSubsequence,
 		lengthOfLongestSubsequence2,
+		lengthOfLongestSubsequence3,
+		lengthOfLongestSubsequence4,
 		// leetcode,
 		// endlessCheng,
 	}

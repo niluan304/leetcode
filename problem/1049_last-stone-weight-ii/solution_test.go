@@ -1,12 +1,9 @@
 package main
 
 import (
-	"reflect"
-	"runtime"
-	"strings"
 	"testing"
 
-	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+	"github.com/niluan304/leetcode/tests"
 )
 
 func Test_last_stone_weight_ii(t *testing.T) {
@@ -14,17 +11,24 @@ func Test_last_stone_weight_ii(t *testing.T) {
 
 	fs := []interface{}{
 		lastStoneWeightII,
+		lastStoneWeightII2,
+		lastStoneWeightII3,
 	}
 
 	for _, f := range fs {
-		name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-		i := strings.LastIndex(name, ".")
-
-		t.Run(name[i+1:], func(t *testing.T) {
-			err := testutil.RunLeetCodeFuncWithFile(t, f, "sample.txt", targetCaseNum)
-			if err != nil {
-				t.Error(err)
-			}
-		})
+		err := tests.RunFunc(t, f, samples, targetCaseNum)
+		if err != nil {
+			t.Error(err)
+		}
 	}
 }
+
+var samples = `
+[2,7,4,1,8,1]
+1
+
+[31,26,33,21,40]
+5
+
+
+`
