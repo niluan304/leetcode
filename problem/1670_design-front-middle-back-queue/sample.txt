@@ -1,7 +1,0 @@
-["FrontMiddleBackQueue", "pushFront", "pushBack", "pushMiddle", "pushMiddle", "popFront", "popMiddle", "popMiddle", "popBack", "popFront"]
-[[], [1], [2], [3], [4], [], [], [], [], []]
-[null, null, null, null, null, 1, 3, 4, 2, -1]
-
-["FrontMiddleBackQueue","pushMiddle","pushMiddle","pushMiddle","popMiddle","popMiddle","popMiddle"]
-[[],[1],[2],[3],[],[],[]]
-[null,null,null,null,3,2,1]

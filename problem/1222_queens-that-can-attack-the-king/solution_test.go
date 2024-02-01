@@ -1,12 +1,9 @@
 package main
 
 import (
-	"reflect"
-	"runtime"
-	"strings"
 	"testing"
 
-	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+	"github.com/niluan304/leetcode/tests"
 )
 
 func Test_queens_that_can_attack_the_king(t *testing.T) {
@@ -17,14 +14,20 @@ func Test_queens_that_can_attack_the_king(t *testing.T) {
 	}
 
 	for _, f := range fs {
-		name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-		i := strings.LastIndex(name, ".")
-
-		t.Run(name[i+1:], func(t *testing.T) {
-			err := testutil.RunLeetCodeFuncWithFile(t, f, "sample.txt", targetCaseNum)
-			if err != nil {
-				t.Error(err)
-			}
-		})
+		err := tests.RunFunc(t, f, samples, targetCaseNum)
+		if err != nil {
+			t.Error(err)
+		}
 	}
 }
+
+var samples = `
+[[0,1],[1,0],[4,0],[0,4],[3,3],[2,4]]
+[0,0]
+[[0,1],[1,0],[3,3]]
+
+[[0,0],[1,1],[2,2],[3,4],[3,5],[4,4],[4,5]]
+[3,3]
+[[2,2],[3,4],[4,4]]
+
+`

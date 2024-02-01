@@ -1,12 +1,9 @@
 package main
 
 import (
-	"reflect"
-	"runtime"
-	"strings"
 	"testing"
 
-	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+	"github.com/niluan304/leetcode/tests"
 )
 
 func Test_wiggle_subsequence(t *testing.T) {
@@ -17,14 +14,21 @@ func Test_wiggle_subsequence(t *testing.T) {
 	}
 
 	for _, f := range fs {
-		name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-		i := strings.LastIndex(name, ".")
-
-		t.Run(name[i+1:], func(t *testing.T) {
-			err := testutil.RunLeetCodeFuncWithFile(t, f, "sample.txt", targetCaseNum)
-			if err != nil {
-				t.Error(err)
-			}
-		})
+		err := tests.RunFunc(t, f, samples, targetCaseNum)
+		if err != nil {
+			t.Error(err)
+		}
 	}
 }
+
+var samples = `
+[1,7,4,9,2,5]
+6
+
+[1,17,5,10,13,15,10,5,16,8]
+7
+
+[1,2,3,4,5,6,7,8,9]
+2
+
+`

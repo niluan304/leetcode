@@ -1,15 +1,12 @@
 package main
 
 import (
-	"reflect"
-	"runtime"
-	"strings"
 	"testing"
 
-	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_main(t *testing.T) {
+func Test_front_middle_back_queue(t *testing.T) {
 	targetCaseNum := 0 // -1
 
 	fs := []interface{}{
@@ -18,14 +15,19 @@ func Test_main(t *testing.T) {
 	}
 
 	for _, f := range fs {
-		name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-		i := strings.LastIndex(name, ".")
-
-		t.Run(name[i+1:], func(t *testing.T) {
-			err := testutil.RunLeetCodeClassWithFile(t, f, "sample.txt", targetCaseNum)
-			if err != nil {
-				t.Error(err)
-			}
-		})
+		err := tests.RunFunc(t, f, samples, targetCaseNum)
+		if err != nil {
+			t.Error(err)
+		}
 	}
 }
+
+var samples = `
+["FrontMiddleBackQueue", "pushFront", "pushBack", "pushMiddle", "pushMiddle", "popFront", "popMiddle", "popMiddle", "popBack", "popFront"]
+[[], [1], [2], [3], [4], [], [], [], [], []]
+[null, null, null, null, null, 1, 3, 4, 2, -1]
+
+["FrontMiddleBackQueue","pushMiddle","pushMiddle","pushMiddle","popMiddle","popMiddle","popMiddle"]
+[[],[1],[2],[3],[],[],[]]
+[null,null,null,null,3,2,1]
+`

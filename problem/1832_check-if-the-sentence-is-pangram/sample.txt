@@ -1,6 +1,0 @@
-"thequickbrownfoxjumpsoverthelazydog"
-true
-
-"leetcode"
-false
-

@@ -1,12 +1,9 @@
 package main
 
 import (
-	"reflect"
-	"runtime"
-	"strings"
 	"testing"
 
-	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+	"github.com/niluan304/leetcode/tests"
 )
 
 func Test_insufficient_nodes_in_root_to_leaf_paths(t *testing.T) {
@@ -17,14 +14,24 @@ func Test_insufficient_nodes_in_root_to_leaf_paths(t *testing.T) {
 	}
 
 	for _, f := range fs {
-		name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-		i := strings.LastIndex(name, ".")
-
-		t.Run(name[i+1:], func(t *testing.T) {
-			err := testutil.RunLeetCodeFuncWithFile(t, f, "sample.txt", targetCaseNum)
-			if err != nil {
-				t.Error(err)
-			}
-		})
+		err := tests.RunFunc(t, f, samples, targetCaseNum)
+		if err != nil {
+			t.Error(err)
+		}
 	}
 }
+
+var samples = `
+[1,2,3,4,-99,-99,7,8,9,-99,-99,12,13,-99,14]
+1
+[1,2,3,4,null,null,7,8,9,null,14]
+
+[5,4,8,11,null,17,4,7,1,null,null,5,3]
+22
+[5,4,8,11,null,17,4,7,null,null,null,5]
+
+[1,2,-3,-5,null,4,null]
+-1
+[1,null,-3,4]
+
+`

@@ -1,6 +1,0 @@
-["flower","flow","flight"]
-"fl"
-
-["dog","racecar","car"]
-""
-

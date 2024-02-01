@@ -1,12 +1,9 @@
 package main
 
 import (
-	"reflect"
-	"runtime"
-	"strings"
 	"testing"
 
-	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+	"github.com/niluan304/leetcode/tests"
 )
 
 func Test_find_the_longest_valid_obstacle_course_at_each_position(t *testing.T) {
@@ -17,14 +14,21 @@ func Test_find_the_longest_valid_obstacle_course_at_each_position(t *testing.T) 
 	}
 
 	for _, f := range fs {
-		name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-		i := strings.LastIndex(name, ".")
-
-		t.Run(name[i+1:], func(t *testing.T) {
-			err := testutil.RunLeetCodeFuncWithFile(t, f, "sample.txt", targetCaseNum)
-			if err != nil {
-				t.Error(err)
-			}
-		})
+		err := tests.RunFunc(t, f, samples, targetCaseNum)
+		if err != nil {
+			t.Error(err)
+		}
 	}
 }
+
+var samples = `
+[1,2,3,2]
+[1,2,3,3]
+
+[2,2,1]
+[1,2,1]
+
+[3,1,5,6,4,2]
+[1,1,2,3,2,2]
+
+`

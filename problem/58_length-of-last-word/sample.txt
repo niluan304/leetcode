@@ -1,9 +1,0 @@
-"Hello World"
-5
-
-"   fly me   to   the moon  "
-4
-
-"luffy is still joyboy"
-6
-

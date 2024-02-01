@@ -1,12 +1,9 @@
 package main
 
 import (
-	"reflect"
-	"runtime"
-	"strings"
 	"testing"
 
-	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+	"github.com/niluan304/leetcode/tests"
 )
 
 func Test_string_transformation(t *testing.T) {
@@ -17,15 +14,10 @@ func Test_string_transformation(t *testing.T) {
 	}
 
 	for _, f := range fs {
-		name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-		i := strings.LastIndex(name, ".")
-
-		t.Run(name[i+1:], func(t *testing.T) {
-			err := testutil.RunLeetCodeFuncWithFile(t, f, "sample.txt", targetCaseNum)
-			if err != nil {
-				t.Error(err)
-			}
-		})
+		err := tests.RunFunc(t, f, samples, targetCaseNum)
+		if err != nil {
+			t.Error(err)
+		}
 	}
 }
 
@@ -40,3 +32,14 @@ func minCost2(n int, workers [][]int) int {
 	}
 	return minCost(1, graph, costs)
 }
+
+var samples = `
+6
+[[1,30,3,2,3,4],[2,16,2,5,6],[3,5,0],[4,4,0],[5,11,0],[6,5,0]]
+25
+
+6
+[[1,30,3,2,3,4],[2,16,2,5,6],[3,15,0],[4,24,0],[5,11,0],[6,5,0]]
+46
+
+`

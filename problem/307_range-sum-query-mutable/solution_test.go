@@ -4,12 +4,10 @@ import (
 	"cmp"
 	"fmt"
 	"math/rand"
-	"reflect"
-	"runtime"
-	"strings"
+
 	"testing"
 
-	"github.com/EndlessCheng/codeforces-go/leetcode/testutil"
+	"github.com/niluan304/leetcode/tests"
 )
 
 func Test_range_sum_query_mutable(t *testing.T) {
@@ -22,17 +20,19 @@ func Test_range_sum_query_mutable(t *testing.T) {
 	}
 
 	for _, f := range fs {
-		name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-		i := strings.LastIndex(name, ".")
-
-		t.Run(name[i+1:], func(t *testing.T) {
-			err := testutil.RunLeetCodeClassWithFile(t, f, "sample.txt", targetCaseNum)
-			if err != nil {
-				t.Error(err)
-			}
-		})
+		err := tests.RunClass(t, f, samples, targetCaseNum)
+		if err != nil {
+			t.Error(err)
+		}
 	}
 }
+
+var samples = `
+["NumArray", "sumRange", "update", "sumRange"]
+[[[1, 3, 5]], [0, 2], [1, 2], [0, 2]]
+[null, 9, null, 8]
+
+`
 
 func TestSegmentTree_check(t *testing.T) {
 	const N = 10000
