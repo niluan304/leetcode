@@ -44,6 +44,7 @@ func ZeroOneKnapsack(values, weights []int, maxW int) int {
 // 01背包变形：恰好装满
 // https://leetcode.cn/contest/sf-tech/problems/cINqyA/
 // LC 2915 https://leetcode.cn/problems/length-of-the-longest-subsequence-that-sums-to-target/
+// LC 416 https://leetcode.cn/problems/partition-equal-subset-sum/
 func ZeroOneKnapsackExactlyFull(values, weights []int, maxW int) int {
 	// 背包的最大价值和
 	n := len(values)
@@ -96,7 +97,7 @@ func ZeroOneKnapsackAtLeastFillUp(values, weights []int, maxW int) int {
 
 	for i, value := range values {
 		w := weights[i]
-		for j := 0; j <= maxW; j++ { // 压缩 dp 数组时，需要倒序遍历
+		for j := 0; j <= maxW; j++ { // 0-1背包：压缩 dp 数组时，需要倒序遍历，why?
 			k := max(j-w, 0) // max(j-w, 0) 蕴含了「至少」
 			dp[i+1][j] = min(dp[i][j], dp[i][k]+value)
 		}
@@ -120,16 +121,16 @@ func ZeroOneKnapsackAtLeastFillUp(values, weights []int, maxW int) int {
 // LC2787 https://leetcode.cn/problems/ways-to-express-an-integer-as-sum-of-powers/
 // - https://oeis.org/A000009
 // NOTE: 1,1,1,...1(32个1),s-32,s-31,...,s 可以让方案数恰好为 2^32
-// 二维+上限+下限 LC879 https://leetcode-cn.com/problems/profitable-schemes/
+// 二维+上限+下限 LC879 https://leetcode.cn/problems/profitable-schemes/
 // https://atcoder.jp/contests/arc060/tasks/arc060_a
 // https://codeforces.com/problemset/problem/1673/C
 //
 // - 转换
 // https://atcoder.jp/contests/abc169/tasks/abc169_f
 // https://codeforces.com/problemset/problem/478/D
-// LC494 https://leetcode-cn.com/problems/target-sum/
-// LC1434 https://leetcode-cn.com/problems/number-of-ways-to-wear-different-hats-to-each-other/
-// 由于顺序不同也算方案，所以这题需要正序递推 LC377 https://leetcode-cn.com/problems/combination-sum-iv/
+// LC494 https://leetcode.cn/problems/target-sum/
+// LC1434 https://leetcode.cn/problems/number-of-ways-to-wear-different-hats-to-each-other/
+// 由于顺序不同也算方案，所以这题需要正序递推 LC377 https://leetcode.cn/problems/combination-sum-iv/
 func ZeroOneWaysToSum(nums []int, sum int) int {
 	n := len(nums)
 	dp := make([][]int, n+1) // int64
@@ -146,4 +147,116 @@ func ZeroOneWaysToSum(nums []int, sum int) int {
 		}
 	}
 	return dp[n][sum]
+}
+
+// 完全背包常见变形：
+// - 至多装capacity，求方案数/最大价值和
+// - 恰好装capacity，求方案数/最大/最小价值和
+// - 至少装capacity，求方案数/最小价值和
+
+// UnboundedKnapsack
+// 完全背包
+// 更快的做法 https://www.zhihu.com/question/26547156/answer/1181239468
+// https://github.com/hqztrue/shared_materials/blob/master/codeforces/101064%20L.%20The%20Knapsack%20problem%20156ms_short.cpp
+// https://www.luogu.com.cn/problem/P1616
+// 至少 https://www.luogu.com.cn/problem/P2918
+// 恰好装满 LC322 https://leetcode.cn/problems/coin-change/
+// EXTRA: 恰好装满+打印方案 LC1449 https://leetcode.cn/problems/form-largest-integer-with-digits-that-add-up-to-target/
+// 【脑洞】求极限：lim_{maxW->∞} dp[maxW]/maxW
+func UnboundedKnapsack(values, weights []int, maxW int) int {
+	n := len(values)
+	dp := make([][]int, n+1) // int64  fill
+	for i, _ := range dp {
+		dp[i] = make([]int, maxW+1)
+	}
+	//dp[0] = 0
+	for i, value := range values {
+		w := weights[i]
+		for j := 0; j <= maxW; j++ {
+			dp[i+1][j] = dp[i][j]
+			if j >= w {
+				dp[i+1][j] = max(dp[i+1][j], dp[i+1][j-w]+value)
+			}
+		}
+	}
+	return dp[n][maxW]
+}
+
+// UnboundedKnapsackExactlyFull
+// 完全背包变形：恰好装满时的 最大价值和 / 最小价值和 /方案数
+// 最小价值和：LC322 https://leetcode.cn/problems/coin-change/
+// 方案数：   LC518 https://leetcode.cn/problems/coin-change-ii/
+func UnboundedKnapsackExactlyFull(values, weights []int, maxW int) int {
+	n := len(values)
+	dp := make([][]int, n+1) // int64  fill
+	for i, _ := range dp {
+		dp[i] = make([]int, maxW+1)
+	}
+	for i, _ := range dp[0] {
+		dp[0][i] = math.MinInt32
+	}
+
+	dp[0][0] = 0
+	for i, value := range values {
+		w := weights[i]
+		for j := 0; j <= maxW; j++ {
+			dp[i+1][j] = dp[i][j]
+			if j >= w {
+				dp[i+1][j] = max(dp[i+1][j], dp[i+1][j-w]+value)
+			}
+		}
+	}
+	ans := dp[n][maxW]
+	if ans < 0 { // 无法恰好装满背包
+		return -1
+	}
+	return ans
+}
+
+// UnboundedKnapsackAtLeastFillUp
+// 至少装入重量和为 maxW 的物品，求价值和的最小值
+// https://www.luogu.com.cn/problem/P2918
+func UnboundedKnapsackAtLeastFillUp(values, weights []int, maxW int) int {
+	n := len(weights)
+	dp := make([][]int, n+1) // int64
+	for i := range dp {
+		dp[i] = make([]int, maxW+1)
+	}
+	for i, _ := range dp[0] {
+		dp[0][i] = math.MaxInt32
+	}
+	dp[0][0] = 0
+
+	for i, value := range values {
+		w := weights[i]
+		for j := 0; j <= maxW; j++ { // 完全背包：压缩 dp 数组时，需要正序遍历，why?
+			k := max(j-w, 0) // max(j-w, 0) 蕴含了「至少」
+			dp[i+1][j] = min(dp[i][j], dp[i+1][k]+value)
+		}
+	}
+
+	return dp[n][maxW]
+}
+
+// UnboundedKnapsackWaysToSum
+// 完全背包，恰好装满背包时的方案数
+// LC518 https://leetcode.cn/problems/coin-change-ii/
+func UnboundedKnapsackWaysToSum(nums []int, sum int) int {
+	n := len(nums)
+	dp := make([][]int, n+1) // int64  fill
+	for i, _ := range dp {
+		dp[i] = make([]int, sum+1)
+	}
+
+	dp[0][0] = 1
+	for i, num := range nums {
+		for j := 0; j <= sum; j++ {
+			dp[i+1][j] = dp[i][j]
+			if j >= num {
+				dp[i+1][j] += dp[i+1][j-num]
+			}
+		}
+	}
+	ans := dp[n][sum]
+	return ans
 }

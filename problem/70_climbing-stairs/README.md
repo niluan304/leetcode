@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [70. 爬楼梯](https://leetcode.cn/problems/climbing-stairs/)
-Difficulty:Easy, Likes: 3326
+Difficulty:Easy, Likes: 3431
 
 ## 题目描述
 
@@ -43,12 +43,12 @@ Difficulty:Easy, Likes: 3326
 
 ## 相关话题
 
-- [记忆化搜索](https://leetcode.cn/tag/memoization/)
-- [数学](https://leetcode.cn/tag/math/)
-- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
+    - [记忆化搜索](https://leetcode.cn/tag/memoization/)
+    - [数学](https://leetcode.cn/tag/math/)
+    - [动态规划](https://leetcode.cn/tag/dynamic-programming/)
 
 ## 相似题目
 
-- [使用最小花费爬楼梯](../min-cost-climbing-stairs/README.md) Easy 
-- [斐波那契数](../fibonacci-number/README.md) Easy 
-- [第 N 个泰波那契数](../n-th-tribonacci-number/README.md) Easy 
+    - [使用最小花费爬楼梯](../min-cost-climbing-stairs/README.md) Easy 
+    - [斐波那契数](../fibonacci-number/README.md) Easy 
+    - [第 N 个泰波那契数](../n-th-tribonacci-number/README.md) Easy 

@@ -1,7 +1,14 @@
 package main
 
+import (
+	. "github.com/niluan304/leetcode/copypasta/dp"
+)
+
 // 递归
-// 时间复杂度：O(2^n)
+// 未记忆化时的时间复杂度：O(2^n)
+//
+//	记忆化后的时间复杂度：O(n)
+//
 // 空间复杂度：O(n)
 func rob(nums []int) int {
 	var dfs func(i int) int
@@ -9,17 +16,12 @@ func rob(nums []int) int {
 		if i < 0 {
 			return 0
 		}
-		return _max(dfs(i-1), dfs(i-2)+nums[i])
+
+		return max(dfs(i-1), dfs(i-2)+nums[i])
 	}
 
+	MemorySearch(&dfs)
 	return dfs(len(nums) - 1)
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }
 
 // 递归+缓存 = 记忆化搜索
@@ -38,7 +40,7 @@ func rob2(nums []int) int {
 			return v
 		}
 
-		v := _max(dfs(i-1), dfs(i-2)+nums[i])
+		v := max(dfs(i-1), dfs(i-2)+nums[i])
 		cache[i] = v
 		return v
 	}
@@ -63,7 +65,7 @@ func rob3(nums []int) int {
 	// 从底到顶
 	for i := 1; i < n; i++ {
 		// 2. 第i个房间的最大值, 选不选 i 的问题
-		dp[i+1] = _max(dp[i], dp[i-1]+nums[i])
+		dp[i+1] = max(dp[i], dp[i-1]+nums[i])
 	}
 
 	//// 5. debug 打印dp数组
@@ -80,7 +82,7 @@ func rob4(nums []int) int {
 
 	for i := 0; i < n; i++ {
 		// 2. 第i个房间的最大值, 选不选 i 的问题
-		v := _max(dp0, dp1+nums[i])
+		v := max(dp0, dp1+nums[i])
 		dp1 = dp0
 		dp0 = v
 

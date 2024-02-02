@@ -6,11 +6,17 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_coin_change(t *testing.T) {
+func Test_coinChange(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(coins []int, amount int) int{
+		//bruteForce,
 		coinChange,
+		coinChange2,
+		coinChange3,
+		coinChange4,
+		//leetcode,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {
@@ -33,5 +39,6 @@ var samples = `
 [1]
 0
 0
+
 
 `

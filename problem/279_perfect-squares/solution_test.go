@@ -6,11 +6,15 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_perfect_squares(t *testing.T) {
+func Test_numSquares(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(n int) int{
+		//bruteForce,
 		numSquares,
+		numSquares2,
+		//leetcode,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {
@@ -27,5 +31,6 @@ var samples = `
 
 13
 2
+
 
 `

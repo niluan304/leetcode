@@ -103,6 +103,8 @@ func lengthOfLongestSubsequence3(nums []int, target int) int {
 	return ans
 }
 
+// values 都是 1，weights 是 nums ，容量为 target 的背包
+// 求恰好装满背包时的最大价值和
 func lengthOfLongestSubsequence4(nums []int, target int) int {
 	values := make([]int, len(nums))
 	for i, _ := range values {

@@ -1,34 +1,47 @@
 package main
 
 import (
-	"fmt"
+	"slices"
 	"sort"
+
+	. "github.com/niluan304/leetcode/copypasta/dp"
 )
 
-// fail: 尝试套用背包的模板
 func combinationSum4(nums []int, target int) int {
-	var n = len(nums)
-	var dp = make([][]int, n+1)
-	for i := range dp {
-		dp[i] = make([]int, target+1)
-	}
+	return waysToTarget(target, nums)
+}
 
-	dp[0][0] = 1
-	for i, num := range nums {
-		for j := 0; j <= target; j++ {
-			dp[i+1][j] = dp[i][j]
-			if j >= num {
-				dp[i+1][j] += dp[i+1][j-num]
-			}
+// 爬楼梯
+// 需要 target 阶你才能到达楼顶。你有 ways[:] 方式向上爬
+// 你从 0 开始出发，有多少种方式爬到楼顶？
+//
+// - 时间复杂度：$\mathcal{O}(n \codt m)$。
+// - 空间复杂度：$\mathcal{O}(n \codt m)$。
+//
+// 题目保证 ways[i] >= 1
+// 但如果 ways[i] 可以为负数，该怎么处理？
+func waysToTarget(target int, ways []int) int {
+	slices.Sort(ways[:])
+
+	var dfs func(n int) int
+	dfs = func(n int) int {
+		if n == 0 {
+			return 1
 		}
+
+		res := 0
+		for _, way := range ways {
+			if way > n {
+				break
+			}
+			res += dfs(n - way)
+		}
+		return res
 	}
 
-	for i := range dp {
-		fmt.Println(dp[i])
-	}
-	fmt.Println()
-
-	return 0
+	MemorySearch(&dfs)
+	ans := dfs(target)
+	return ans
 }
 
 // dfs + 记忆化搜索

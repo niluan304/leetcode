@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [279. 完全平方数](https://leetcode.cn/problems/perfect-squares/)
-Difficulty:Medium, Likes: 1852
+Difficulty:Medium, Likes: 1904
 
 ## 题目描述
 
@@ -36,11 +36,11 @@ Difficulty:Medium, Likes: 1852
 
 ## 相关话题
 
-- [广度优先搜索](https://leetcode.cn/tag/breadth-first-search/)
-- [数学](https://leetcode.cn/tag/math/)
-- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
+    - [广度优先搜索](https://leetcode.cn/tag/breadth-first-search/)
+    - [数学](https://leetcode.cn/tag/math/)
+    - [动态规划](https://leetcode.cn/tag/dynamic-programming/)
 
 ## 相似题目
 
-- [计数质数](../count-primes/README.md) Medium 
-- [丑数 II](../ugly-number-ii/README.md) Medium 
+    - [计数质数](../count-primes/README.md) Medium 
+    - [丑数 II](../ugly-number-ii/README.md) Medium 

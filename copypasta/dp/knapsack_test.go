@@ -161,3 +161,113 @@ func Test_zeroOneWaysToSum(t *testing.T) {
 		})
 	}
 }
+
+func TestUnboundedKnapsack(t *testing.T) {
+	type args struct {
+		values  []int
+		weights []int
+		maxW    int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{
+			name: "luogu P1616",
+			args: args{
+				values:  []int{100, 1, 2},
+				weights: []int{71, 69, 1},
+				maxW:    70,
+			},
+			want: 140,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := UnboundedKnapsack(tt.args.values, tt.args.weights, tt.args.maxW); got != tt.want {
+				t.Errorf("UnboundedKnapsack() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestUnboundedKnapsackExactlyFull(t *testing.T) {
+	type args struct {
+		values  []int
+		weights []int
+		maxW    int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		// todo Add Case
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := UnboundedKnapsackExactlyFull(tt.args.values, tt.args.weights, tt.args.maxW); got != tt.want {
+				t.Errorf("UnboundedKnapsackExactlyFull() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestUnboundedKnapsackAtLeastFillUp(t *testing.T) {
+	type args struct {
+		values  []int
+		weights []int
+		maxW    int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{
+			name: "luogu P2918",
+			args: args{
+				values:  []int{2, 3},
+				weights: []int{3, 5},
+				maxW:    15,
+			},
+			want: 9,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := UnboundedKnapsackAtLeastFillUp(tt.args.values, tt.args.weights, tt.args.maxW); got != tt.want {
+				t.Errorf("UnboundedKnapsackAtLeastFillUp() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestUnboundedKnapsackWaysToSum(t *testing.T) {
+	type args struct {
+		nums []int
+		sum  int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{
+			name: "LC 518 case1",
+			args: args{
+				nums: []int{1, 2, 5},
+				sum:  5,
+			},
+			want: 4,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := UnboundedKnapsackWaysToSum(tt.args.nums, tt.args.sum); got != tt.want {
+				t.Errorf("UnboundedKnapsackWaysToSum() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

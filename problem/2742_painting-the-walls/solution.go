@@ -171,3 +171,26 @@ func paintWalls4(cost []int, time []int) int {
 	}
 	return ZeroOneKnapsackAtLeastFillUp(cost, time, len(cost))
 }
+
+func paintWalls5(cost []int, time []int) int {
+	var dfs func(i, j int) int
+	dfs = func(i, j int) (res int) {
+		if j <= 0 {
+			// 剩余需要的体积为 0，没有约束，因此最小的价值和为 0，不选物品
+			return 0
+		}
+		if i < 0 {
+			return math.MaxInt32
+		}
+
+		return min(
+			dfs(i-1, j),                     // 不选：至少装 j 时, 前 i-1 最小价值和
+			dfs(i-1, j-(time[i]+1))+cost[i], //   选：容量变小，问题变为：至少装 j-(time[i]+1) 时，前 i-1 物品的最小价值和
+		)
+	}
+
+	n := len(cost)
+	MemorySearch2(&dfs)
+	ans := dfs(n-1, n)
+	return ans
+}

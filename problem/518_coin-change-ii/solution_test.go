@@ -9,8 +9,12 @@ import (
 func Test_coin_change_ii(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(amount int, coins []int) int{
+		//bruteForce,
 		change,
+		change2,
+		//leetcode,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {
@@ -33,5 +37,9 @@ var samples = `
 10
 [10]
 1
+
+100
+[1,2,5]
+541
 
 `

@@ -15,6 +15,7 @@ func Test_paintWalls(t *testing.T) {
 		paintWalls2,
 		paintWalls3,
 		paintWalls4,
+		paintWalls5,
 		//leetcode,
 		//endlessCheng,
 	}

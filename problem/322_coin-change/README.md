@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [322. 零钱兑换](https://leetcode.cn/problems/coin-change/)
-Difficulty:Medium, Likes: 2626
+Difficulty:Medium, Likes: 2696
 
 ## 题目描述
 
@@ -47,10 +47,10 @@ Difficulty:Medium, Likes: 2626
 
 ## 相关话题
 
-- [广度优先搜索](https://leetcode.cn/tag/breadth-first-search/)
-- [数组](https://leetcode.cn/tag/array/)
-- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
+    - [广度优先搜索](https://leetcode.cn/tag/breadth-first-search/)
+    - [数组](https://leetcode.cn/tag/array/)
+    - [动态规划](https://leetcode.cn/tag/dynamic-programming/)
 
 ## 相似题目
 
-- [最低票价](../minimum-cost-for-tickets/README.md) Medium 
+    - [最低票价](../minimum-cost-for-tickets/README.md) Medium 

@@ -66,7 +66,7 @@ func (t *Template) EndlessTest() (data EndlessTest) {
 	data = EndlessTest{
 		Name:           q.MetaData.Name,
 		RunType:        "Func",
-		Type:           funcType,
+		Type:           strings.Replace(funcType, "func (", "func(", 1),
 		Samples:        t.Samples().String(),
 		NeedDefinition: q.NeedDefinition(),
 		Data:           q,

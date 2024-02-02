@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [279.Perfect Squares](https://leetcode.com/problems/perfect-squares/)
-Difficulty:Medium, Likes: 1852
+Difficulty:Medium, Likes: 1904
 
 ## Description
 

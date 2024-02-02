@@ -2,72 +2,77 @@ package main
 
 import (
 	"math"
+
+	. "github.com/niluan304/leetcode/copypasta/dp"
 )
 
-// dp 动态规划, 完全背包
-// 时间复杂度：O(m*n)
-// 空间复杂度：O(m*n)
+// nums = [1, 4, 9 ..., x]，x 为小于等于 n 的最大完全平方数
+// 现在有 N 件物品，花费为 nums，价值都为 1，求恰好装满容量为 n 的背包时，价值值的最小值
+//
+// dfs + 记忆化搜索
+// - 时间复杂度：$\mathcal{O}(n \cdot m)$。
+// - 空间复杂度：$\mathcal{O}(n \cdot m)$。
 func numSquares(n int) int {
-	var c = int(math.Sqrt(float64(n))) // 背包里最大值明显为 n开平方后向下取证的整数, 即 math.Ceil(math.Sqrt(n))
-	var dp = make([][]int, c+1)        // dp[i][j] 表示 恰好填满容量为j的背包时，从[0,i]种物品中，凑出方案的最小值
-	for i := 0; i <= c; i++ {
-		dp[i] = make([]int, n+1)
-		// 初始化 dp数组
-		for j := 1; j < n+1; j++ {
-			dp[i][j] = math.MaxInt32
-		}
-		// 平方数只需要1个
-		dp[i][i*i] = 1
-	}
-
-	for i := 1; i <= c; i++ {
-		w := i * i // 第 i 件物品，重量为 i, 价值为 i*i
-		for j := 1; j <= n; j++ {
-			// 递推公式, 在背包的总空间为 j 情况，选与不选 第 i 件物品
-			dp[i][j] = _min(dp[i][j], dp[i-1][j]) // 不选 w
-			if j > w {
-				dp[i][j] = _min(dp[i][j], dp[i][j-w]+1) // 选 w
-			}
-		}
-	}
-
-	//// debug: 打印 dp数组
-	//for i := range dp {
-	//	fmt.Println("n", n, "i", i, dp[i])
-	//}
-
-	return dp[c][n]
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-// dp 动态规划, 完全背包, 复用一维数组, 以降低空间复杂度
-// 时间复杂度：O(m*n)
-// 空间复杂度：O(n)
-func numSquares2(n int) int {
-	var c = int(math.Sqrt(float64(n)))
-	var dp = make([]int, n+1)
-
-	// 初始化 dp数组
+	var ans = 0 // math.MaxInt32 // math.MinInt32
+	var nums []int
 	for i := 1; i <= n; i++ {
-		dp[i] = math.MaxInt32 // 用于 Min判断
+		x := i * i
+		if x > n {
+			break
+		}
+		nums = append(nums, x)
 	}
-	for i := 1; i <= c; i++ {
-		w := i * i // 第 i 件物品，重量为 i, 价值为 i*i
-		dp[w] = 1
-		for j := w + 1; j <= n; j++ {
-			// 递推公式, 在背包的总空间为 i 情况，选与不选 第 i 件物品
-			dp[j] = _min(dp[j], dp[j-w]+1) // 选 w
+
+	var dfs func(i int, j int) int
+	dfs = func(i int, j int) int {
+		if i == 0 {
+			if j == 0 {
+				return 0
+			}
+
+			return math.MaxInt32
 		}
 
-		//// debug: 打印 dp数组
-		//fmt.Println("n", n, "i", i, dp)
+		v := dfs(i-1, j)
+		if k := j - nums[i-1]; k >= 0 {
+			v = min(v, dfs(i, k)+1)
+		}
+		return v
 	}
 
+	MemorySearch2(&dfs)
+
+	ans = dfs(len(nums), n)
+	return ans
+}
+
+// nums = [1, 4, 9 ..., x]，x 为小于等于 n 的最大值
+// 现在有 N 件物品，花费为 nums，价值都为 1，求恰好装满容量为 n 的背包时，价值值的最小值
+//
+// 完全背包
+// - 时间复杂度：$\mathcal{O}(n \cdot m)$。
+// - 空间复杂度：$\mathcal{O}(n)$。
+func numSquares2(n int) int {
+	var nums, values []int
+	for i := 1; i <= n; i++ {
+		x := i * i
+		if x > n {
+			break
+		}
+		nums = append(nums, x)
+		values = append(values, 1)
+	}
+
+	var dp = make([]int, n+1)
+	for i, _ := range dp {
+		dp[i] = math.MaxInt32
+	}
+	dp[0] = 0
+
+	for i, num := range nums {
+		for j := num; j <= n; j++ {
+			dp[j] = min(dp[j], dp[j-num]+values[i])
+		}
+	}
 	return dp[n]
 }

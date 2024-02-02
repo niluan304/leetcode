@@ -9,8 +9,11 @@ import (
 func Test_house_robber(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(nums []int) int{
 		rob,
+		rob2,
+		rob3,
+		rob4,
 	}
 
 	for _, f := range fs {

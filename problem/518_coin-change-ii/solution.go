@@ -1,62 +1,50 @@
 package main
 
-// dp 动态规划
-// 时间复杂度：O(m*n)
-// 空间复杂度：O(m*n)
+import (
+	. "github.com/niluan304/leetcode/copypasta/dp"
+)
+
+// 完全背包
+//
+// - 时间复杂度：$\mathcal{O}(n \codt m)$。
+// - 空间复杂度：$\mathcal{O}(n \codt m)$。
+// 和爬楼梯的区别？
+// 需要 amount 阶你才能到达楼顶。你有 coins[:] 方式向上爬
+// 你从 0 开始出发，有多少种方式爬到楼顶？
+//
+// 「排列」 与 「组合」的区别
+//
+//   - 爬楼梯是排列
+//     对于 [1,2,1] 与 [1,1,2] 是不同的方案
+//
+//   - 组硬币是组合
+//     对于 [1,2,1] 与 [1,1,2] 是相同的方案
 func change(amount int, coins []int) int {
-	// dp数组的含义：
-	// dp[i][j]表示背包大小为j时，选到第i个物品，当前背包的最大总价值
-	var n = len(coins)
-	var dp = make([][]int, n+1)
-	for i := range dp {
-		dp[i] = make([]int, amount+1)
-	}
-
-	// 初始化 dp数组
-	dp[0][0] = 1
-	for i, coin := range coins {
-		for j := 0; j <= amount; j++ {
-			// 递推公式：选与不选当前coin
-			// 不选：dp[i-1][j]
-			// 　选：dp[i][j-coin]
-			// 题目要求至多, 因此 dp[i][j] = dp[i-1][j] + dp[i][j-coin]
-			dp[i+1][j] = dp[i][j]
-			if j >= coin {
-				dp[i+1][j] += dp[i+1][j-coin]
+	var dfs func(i int, amount int) int
+	dfs = func(i int, j int) int {
+		if i == 0 {
+			if j == 0 {
+				return 1
 			}
+			return 0
 		}
+
+		res := dfs(i-1, j) // 不选 coins[i]
+		if k := j - coins[i-1]; k >= 0 {
+			res += dfs(i, k) // 选择 coins[i]
+		}
+		return res
 	}
 
-	//// debug: 查看dp数组
-	//fmt.Println("amount", amount, "coins", coins)
-	//for i := range dp {
-	//	fmt.Println(dp[i])
-	//}
-	return dp[n][amount]
+	MemorySearch2(&dfs)
+	ans := dfs(len(coins), amount)
+	return ans
 }
 
-// dp 动态规划, 复用一维数组，以降低空间复杂度
-// 时间复杂度：O(m*n)
-// 空间复杂度：O(n)
+// 完全背包
+//
+// - 时间复杂度：$\mathcal{O}(n \codt m)$。
+// - 空间复杂度：$\mathcal{O}(n \codt m)$。
 func change2(amount int, coins []int) int {
-	// dp数组的含义：
-	// dp[i][j]表示背包大小为j时，选到第i个物品，当前背包的最大总价值
-	var dp = make([]int, amount+1)
-
-	// 初始化 dp数组
-	dp[0] = 1
-	for _, coin := range coins {
-		for j := coin; j <= amount; j++ {
-			// 递推公式：选与不选当前coin
-			// 不选：dp[i-1][j]
-			// 　选：dp[i][j-coin]
-			// 题目要求至多, 因此 dp[i][j] = dp[i-1][j] + dp[i][j-coin]
-			dp[j] += dp[j-coin]
-		}
-
-		//// debug: 查看dp数组
-		//fmt.Println("amount", amount, "coins", coins, "dp", dp)
-	}
-
-	return dp[amount]
+	return UnboundedKnapsackWaysToSum(coins, amount)
 }

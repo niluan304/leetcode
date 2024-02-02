@@ -1,98 +1,54 @@
 package main
 
+import (
+	"slices"
+
+	. "github.com/niluan304/leetcode/copypasta/dp"
+)
+
 func climbStairs(n int) int {
-	var x0, x1 = 0, 1
+	var dp = make([]int, n+2)
+	dp[0], dp[1] = 0, 1 // 设置 dp[-1], dp[0]，避免数组越界，增加向右的偏移量
 
 	for i := 0; i < n; i++ {
-		x0, x1 = x1, x0+x1
+		dp[i+2] = dp[i+1] + dp[i]
 	}
-
-	return x1
+	return dp[n+1]
 }
 
 func climbStairs2(n int) int {
-	var answer = [45]int{
-		1,
-		2,
-		3,
-		5,
-		8,
-		13,
-		21,
-		34,
-		55,
-		89,
-		144,
-		233,
-		377,
-		610,
-		987,
-		1597,
-		2584,
-		4181,
-		6765,
-		10946,
-		17711,
-		28657,
-		46368,
-		75025,
-		121393,
-		196418,
-		317811,
-		514229,
-		832040,
-		1346269,
-		2178309,
-		3524578,
-		5702887,
-		9227465,
-		14930352,
-		24157817,
-		39088169,
-		63245986,
-		102334155,
-		165580141,
-		267914296,
-		433494437,
-		701408733,
-		1134903170,
-		1836311903,
-	}
-
-	return answer[n-1]
+	return waysToTarget(n, []int{1, 2})
 }
 
-// dfs + 记忆化搜索
-// 时间复杂度：O(n)
-// 空间复杂度：O(n)
-func climbStairs3(n int) int {
-	var cache = make([]*int, n+1)
+// 爬楼梯
+// 需要 target 阶你才能到达楼顶。你有 ways[:] 方式向上爬
+// 你从 0 开始出发，有多少种方式爬到楼顶？
+//
+// - 时间复杂度：$\mathcal{O}(n \codt m)$。
+// - 空间复杂度：$\mathcal{O}(n \codt m)$。
+//
+// 题目保证 ways[i] >= 1
+// 但如果 ways[i] 可以为负数，该怎么处理？
+func waysToTarget(target int, ways []int) int {
+	slices.Sort(ways[:])
+
 	var dfs func(n int) int
 	dfs = func(n int) int {
-		if n == 0 || n == 1 {
+		if n == 0 {
 			return 1
 		}
 
-		v := &cache[n]
-		if *v != nil {
-			return **v
+		res := 0
+		for _, way := range ways {
+			if way > n {
+				break
+			}
+			res += dfs(n - way)
 		}
-		res := dfs(n-1) + dfs(n-2)
-		*v = &res
 		return res
 	}
-	return dfs(n)
-}
 
-// dp
-// 时间复杂度：O(n)
-// 空间复杂度：O(n)
-func climbStairs4(n int) int {
-	var dp = make([]int, n+1)
-	dp[0] = 1
-	dp[1] = 1
-	for i := 2; i <= n; i++ {
-		dp[i] = dp[i-1] + dp[i-2]
-	}
-	return dp[n]
+	MemorySearch(&dfs)
+	ans := dfs(target)
+	return ans
 }

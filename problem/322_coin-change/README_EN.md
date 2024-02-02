@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [322.Coin Change](https://leetcode.com/problems/coin-change/)
-Difficulty:Medium, Likes: 2626
+Difficulty:Medium, Likes: 2696
 
 ## Description
 
