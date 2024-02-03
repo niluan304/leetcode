@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1671. 得到山形数组的最少删除次数](https://leetcode.cn/problems/minimum-number-of-removals-to-make-mountain-array/)
-Difficulty:Hard, Likes: 47
+Difficulty:Hard, Likes: 121
 
 ## 题目描述
 
@@ -51,10 +51,10 @@ Difficulty:Hard, Likes: 47
 
 ## 相关话题
 
-- [贪心](https://leetcode.cn/tag/greedy/)
-- [数组](https://leetcode.cn/tag/array/)
-- [二分查找](https://leetcode.cn/tag/binary-search/)
-- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
+    - [贪心](https://leetcode.cn/tag/greedy/)
+    - [数组](https://leetcode.cn/tag/array/)
+    - [二分查找](https://leetcode.cn/tag/binary-search/)
+    - [动态规划](https://leetcode.cn/tag/dynamic-programming/)
 
 ## 相似题目
 

@@ -1,65 +1,40 @@
 package main
 
-import "sort"
+import "slices"
 
-// dp 动态规划, LIS
-// 时间复杂度：O(n^2)
-// 空间复杂度：O(n)
+// LIS
+// 常见变形，拼接的条件不一样
+//
+// - 时间复杂度：$\mathcal{O}(n^2)$。
+// - 空间复杂度：$\mathcal{O}(n)$。
 func bestTeamScore(scores []int, ages []int) int {
-	type Pair struct {
-		age   int
-		score int
-	}
-
 	var n = len(scores)
-	var pairs = make([]Pair, n)
-	for i := 0; i < n; i++ {
-		pairs[i] = Pair{
-			age:   ages[i],
-			score: scores[i],
-		}
+
+	type Pair struct{ Score, Age int }
+	var paris = make([]Pair, n)
+	for i, _ := range paris {
+		paris[i] = Pair{Score: scores[i], Age: ages[i]}
 	}
 
-	sort.Slice(pairs, func(i, j int) bool {
-		x, y := pairs[i], pairs[j]
-		if x.age == y.age {
-			return x.score < y.score
+	slices.SortFunc(paris[:], func(a, b Pair) int {
+		if a.Age == b.Age {
+			return a.Score - b.Score
 		}
-		return x.age < y.age
+		return a.Age - b.Age
 	})
-	var dp = make([]int, n)
-	var ans = 0
-	for i, pair := range pairs {
-		var score = 0
-		for j, p := range pairs[:i] {
-			if p.score > pair.score {
-				continue
+
+	var ans = 0 // math.MaxInt32 // math.MinInt32
+	dp := make([]int, n)
+	for i, pair := range paris {
+		for j, p := range paris[:i] {
+			if p.Score <= pair.Score {
+				dp[i] = max(dp[i], dp[j])
 			}
-			score = _max(score, dp[j])
 		}
-		dp[i] = score + pair.score
-		ans = _max(ans, dp[i])
+
+		dp[i] += pair.Score
+		ans = max(ans, dp[i])
 	}
+
 	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
 }

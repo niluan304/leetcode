@@ -1,8 +1,8 @@
 package main
 
-func getWordsInLongestSubsequence(n int, words []string, groups []int) []string {
+func getWordsInLongestSubsequence(_ int, words []string, groups []int) []string {
 	// 按长度分组，可以剪枝
-	var m = make(map[int][]Word, 10) // 1 <= groups[i] <= n
+	var m = make(map[int][]Word, 10) // 1 <= words[i].length <= 10
 	for i, word := range words {
 		m[len(word)] = append(m[len(word)], Word{
 			word:  word,
@@ -38,7 +38,7 @@ type Word struct {
 	index int
 }
 
-// LIS 最长递减子序列
+// LIS 最长递增子序列
 //
 // dp
 // 要求返回选择的物品，增加 Last 字段来记录从哪里转移过来的
@@ -70,9 +70,8 @@ func LIS(pairs []Word, check func(x, y Word) bool) []string {
 	}
 
 	var ans = make([]string, dp[maxIdx].Value)
-	for i := maxIdx; i > 0; {
+	for i := maxIdx; i > 0; i = dp[i].Last {
 		ans[dp[i].Value-1] = pairs[i-1].word
-		i = dp[i].Last
 	}
 	return ans
 }

@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [1626. 无矛盾的最佳球队](https://leetcode.cn/problems/best-team-with-no-conflicts/)
-Difficulty:Medium, Likes: 196
+Difficulty:Medium, Likes: 204
 
 ## 题目描述
 
@@ -48,9 +48,9 @@ Difficulty:Medium, Likes: 196
 
 ## 相关话题
 
-- [数组](https://leetcode.cn/tag/array/)
-- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
-- [排序](https://leetcode.cn/tag/sorting/)
+    - [数组](https://leetcode.cn/tag/array/)
+    - [动态规划](https://leetcode.cn/tag/dynamic-programming/)
+    - [排序](https://leetcode.cn/tag/sorting/)
 
 ## 相似题目
 

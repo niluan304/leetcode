@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [1626.Best Team With No Conflicts](https://leetcode.com/problems/best-team-with-no-conflicts/)
-Difficulty:Medium, Likes: 196
+Difficulty:Medium, Likes: 204
 
 ## Description
 

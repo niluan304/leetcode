@@ -6,11 +6,15 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_minimum_number_of_removals_to_make_mountain_array(t *testing.T) {
+func Test_minimumMountainRemovals(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(nums []int) int{
+		//bruteForce,
 		minimumMountainRemovals,
+		//minimumMountainRemovals2,
+		//leetcode,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {
@@ -27,5 +31,8 @@ var samples = `
 
 [2,1,1,5,6,2,3,1]
 3
+
+[9,8,1,7,6,5,4,3,2,1]
+2
 
 `

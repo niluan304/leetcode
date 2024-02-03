@@ -6,11 +6,15 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_best_team_with_no_conflicts(t *testing.T) {
+func Test_bestTeamScore(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(scores []int, ages []int) int{
+		//bruteForce,
 		bestTeamScore,
+		//bestTeamScore2,
+		//leetcode,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {
@@ -33,5 +37,6 @@ var samples = `
 [1,2,3,5]
 [8,9,10,1]
 6
+
 
 `
