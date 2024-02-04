@@ -39,3 +39,28 @@ func MemorySearch2[X, Y comparable, Z any](dfs *func(X, Y) Z) (_cache map[key2[X
 	}
 	return cache
 }
+
+type key3[X, Y, Z any] struct {
+	x X
+	y Y
+	z Z
+}
+
+// MemorySearch3
+// todo 整合 MemorySearch
+//
+// 实现 Python 的 cache 装饰器，返回 cache 用于 debug
+func MemorySearch3[X, Y, Z comparable, R any](dfs *func(X, Y, Z) R) (_cache map[key3[X, Y, Z]]R) {
+	var cache = make(map[key3[X, Y, Z]]R, 1<<10)
+	f := *dfs
+	*dfs = func(x X, y Y, z Z) (res R) {
+		key := key3[X, Y, Z]{x: x, y: y, z: z}
+		if v, ok := cache[key]; ok {
+			return v
+		}
+		defer func() { cache[key] = res }()
+
+		return f(x, y, z)
+	}
+	return cache
+}

@@ -1,0 +1,60 @@
+package main
+
+import (
+	"testing"
+
+	"github.com/niluan304/leetcode/tests"
+)
+
+func Test_minOperations(t *testing.T) {
+	targetCaseNum := 0 // -1
+
+	fs := []func(s1 string, s2 string, x int) int{
+		//bruteForce,
+		minOperations,
+		minOperations2,
+		minOperations3,
+		//leetcode,
+		//endlessCheng,
+	}
+
+	for _, f := range fs {
+		err := tests.RunFunc(t, f, samples, targetCaseNum)
+		if err != nil {
+			t.Error(err)
+		}
+	}
+}
+
+var samples = `
+"1100011000"
+"0101001010"
+2
+4
+
+"10110"
+"00011"
+4
+-1
+
+"1111110101010110"
+"1000100111100100"
+19
+8
+
+"0100100101100111101111111110111101010110010010110101011110001100000010001110"
+"1000111000100001001110000110111011010011101000111010100101110111110110101100"
+84
+43
+
+"100010010100111100001110101111100001001101011010100111101011100100011111110001011001001" 
+"000001100010010011111101100101111011101110010001001010100101011100011110000111010011010"
+6
+38
+
+"100"
+"100"
+123
+0
+
+`
