@@ -260,3 +260,72 @@ func UnboundedKnapsackWaysToSum(nums []int, sum int) int {
 	ans := dp[n][sum]
 	return ans
 }
+
+// GroupKnapsack
+// 分组背包·每组至多选一个
+// LC2218 https://leetcode.cn/problems/maximum-value-of-k-coins-from-piles/
+func GroupKnapsack(groups [][]struct{ v, w int }, maxW int) int {
+	dp := make([]int, maxW+1) // int64
+	for _, g := range groups {
+		// 这里 j 的初始值可以优化成前 i 个组的每组最大重量之和（但不能超过 maxW）
+		for j := maxW; j >= 0; j-- {
+			for _, it := range g {
+				if v, w := it.v, it.w; w <= j {
+					dp[j] = max(dp[j], dp[j-w]+v) // 如果 it.w 可能为 0 则需要用 dp[2][] 来滚动（或者保证每组至多一个 0 且 0 在该组最前面）
+				}
+			}
+		}
+	}
+	return dp[maxW]
+}
+
+// GroupKnapsackFill
+// 分组背包·每组恰好选一个
+// 允许物品重量为 0
+// https://atcoder.jp/contests/abc240/tasks/abc240_c
+// LC1981 https://leetcode-cn.com/problems/minimize-the-difference-between-target-and-chosen-elements/
+// 与二分图染色结合 https://codeforces.com/problemset/problem/1354/E
+// 转换 https://codeforces.com/problemset/problem/1637/D
+func GroupKnapsackFill(groups [][]int, maxW int) []bool {
+	dp := make([]bool, maxW+1) // dp[i][j] 表示能否从前 i 组物品中选出重量恰好为 j 的，且每组都恰好选一个物品
+	dp[0] = true
+	for _, g := range groups {
+	next:
+		for j := maxW; j >= 0; j-- { // 这里 j 的初始值可以优化至前 i 组的最大元素值之和
+			for _, w := range g {
+				if w <= j && dp[j-w] {
+					dp[j] = true
+					continue next
+				}
+			}
+			dp[j] = false // 由于我们是滚动数组的写法，dp[i][j] 无法满足时要标记成 false
+		}
+	}
+	return dp // dp[j] 表示从每组恰好选一个，能否凑成重量 j
+}
+
+// GroupKnapsackWaysToSum
+// 方案数
+//
+// https://www.luogu.com.cn/problem/P1077 （可以用前缀和优化）
+// LC2585 https://leetcode.cn/problems/number-of-ways-to-earn-points/
+func GroupKnapsackWaysToSum(stocks, weights []int, maxW int) int {
+	n := len(stocks)
+	dp := make([][]int, n+1) // int64
+	for i := range dp {
+		dp[i] = make([]int, maxW+1)
+	}
+	dp[0][0] = 1
+	for i, num := range stocks {
+		w := weights[i]
+		for j := 0; j <= maxW; j++ {
+			for k := 0; k <= min(num, j/w); k++ { // k == 0，等价于 dp[i+1][j] = dp[i][j]
+				dp[i+1][j] += dp[i][j-k*w]
+			}
+
+			//dp[i+1][j] %= MOD
+
+		}
+	}
+	return dp[n][maxW]
+}
