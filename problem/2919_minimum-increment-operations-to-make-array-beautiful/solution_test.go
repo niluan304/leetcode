@@ -14,6 +14,7 @@ func Test_minIncrementOperations(t *testing.T) {
 		minIncrementOperations,
 		minIncrementOperations2,
 		minIncrementOperations3,
+		minIncrementOperations4,
 		//leetcode,
 		endlessCheng,
 	}
