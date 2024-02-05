@@ -16,7 +16,7 @@ func minExtraChar(s string, dictionary []string) int {
 	var n = len(s)
 	var cache = make([]*int, n)
 	var dfs func(i int) int
-	dfs = func(i int) int {
+	dfs = func(i int) (res int) {
 		if i == n {
 			return 0
 		}
@@ -25,16 +25,15 @@ func minExtraChar(s string, dictionary []string) int {
 		if *ptr != nil {
 			return **ptr
 		}
+		defer func() { *ptr = &res }()
 
-		v := dfs(i+1) + 1 // 不选：最差的情况就是这个字符无法被使用
+		res = dfs(i+1) + 1 // 不选：最差的情况就是这个字符无法被使用
 		for _, dict := range dictionary {
 			if strings.HasPrefix(s[i:], dict) { // 字符串比较的时间复杂度：$\mathcal{O}(n)$
-				v = min(v, dfs(i+len(dict))) // 枚举选哪个：如果字典是字符串s[i:]的前缀，那就可以转换为 s[i+len(dict):] 下的最优选
+				res = min(res, dfs(i+len(dict))) // 枚举选哪个：如果字典是字符串s[i:]的前缀，那就可以转换为 s[i+len(dict):] 下的最优选
 			}
 		}
-
-		*ptr = &v
-		return v
+		return res
 	}
 
 	ans := dfs(0)
