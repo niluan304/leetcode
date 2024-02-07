@@ -27,33 +27,12 @@ func longestPalindromeSubseq(s string) int {
 		if s[i] == s[j] {
 			v = dfs(i+1, j-1) + 2
 		} else {
-			v = _max(dfs(i+1, j), dfs(i, j-1))
+			v = max(dfs(i+1, j), dfs(i, j-1))
 		}
 		cache[i][j] = &v
 		return v
 	}
 	return dfs(0, n-1)
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
 }
 
 // dp 动态规划，区间dp
@@ -74,7 +53,7 @@ func longestPalindromeSubseq2(s string) int {
 			if s[i] == s[j] {
 				dp[i][j] = dp[i+1][j-1] + 2
 			} else {
-				dp[i][j] = _max(dp[i+1][j], dp[i][j-1])
+				dp[i][j] = max(dp[i+1][j], dp[i][j-1])
 			}
 		}
 	}

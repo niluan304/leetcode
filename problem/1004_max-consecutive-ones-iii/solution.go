@@ -17,16 +17,8 @@ func longestOnes(nums []int, k int) int {
 			}
 			left++
 		}
-		ans = _max(ans, right-left+1)
+		ans = max(ans, right-left+1)
 	}
 
 	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-
-	return y
 }

@@ -41,14 +41,14 @@ func maxProfit(k int, prices []int) int {
 
 		// 状态机
 		if hold {
-			v := _max(
+			v := max(
 				dfs(i-1, true, k),            // 保持不变：昨天也持有股票
 				dfs(i-1, false, k)-prices[i], // 买入股票
 			)
 			cache[i][k].Hold = &v
 			return v
 		} else {
-			v := _max(
+			v := max(
 				dfs(i-1, false, k),            // 保持不变：昨天也未持有股票
 				dfs(i-1, true, k-1)+prices[i], // 卖出股票, 交易次数上限 -1
 			)
@@ -59,13 +59,6 @@ func maxProfit(k int, prices []int) int {
 
 	// 最后一天未持有股票，且交易次数达到上限：k次。
 	return dfs(n-1, false, k)
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }
 
 // dp 动态规划，状态机
@@ -93,13 +86,13 @@ func maxProfit2(k int, prices []int) int {
 	for i, price := range prices {
 		for j := 1; j <= k; j++ {
 			// 持有股票的状态
-			dp[i+1][j].Hold = _max(
+			dp[i+1][j].Hold = max(
 				dp[i][j].Hold,            // 保持不变：昨天也持有股票
 				dp[i][j-1].NotHold-price, // 没有股票 -> 买入股票
 			)
 
 			// 未持有股票的状态
-			dp[i+1][j].NotHold = _max(
+			dp[i+1][j].NotHold = max(
 				dp[i][j].NotHold,    // 保持不变：昨天也未持有股票
 				dp[i][j].Hold+price, // 持有股票 -> 卖出股票
 			)
@@ -113,7 +106,7 @@ func maxProfit2(k int, prices []int) int {
 
 	var ans = 0
 	for _, profit := range dp[n] {
-		ans = _max(ans, profit.NotHold)
+		ans = max(ans, profit.NotHold)
 	}
 	return ans
 }
@@ -136,13 +129,13 @@ func maxProfit3(k int, prices []int) int {
 		for j := k; j >= 1; j-- {
 			last := dp[j]
 			// 持有股票的状态
-			dp[j].Hold = _max(
+			dp[j].Hold = max(
 				last.Hold,             // 保持不变：昨天也持有股票
 				dp[j-1].NotHold-price, // 没有股票 -> 买入股票
 			)
 
 			// 未持有股票的状态
-			dp[j].NotHold = _max(
+			dp[j].NotHold = max(
 				last.NotHold,    // 保持不变：昨天也未持有股票
 				last.Hold+price, // 持有股票 -> 卖出股票
 			)

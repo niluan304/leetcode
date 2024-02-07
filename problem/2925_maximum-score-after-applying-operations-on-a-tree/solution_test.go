@@ -10,10 +10,11 @@ func Test_maximumScoreAfterOperations(t *testing.T) {
 	targetCaseNum := 0 // -1
 
 	fs := []func(edges [][]int, values []int) int64{
+		//bruteForce,
 		maximumScoreAfterOperations,
-		// maximumScoreAfterOperations2,
-		// leetcode,
-		// endlessCheng,
+		//maximumScoreAfterOperations2,
+		//leetcode,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {
@@ -33,5 +34,8 @@ var samples = `
 [20,10,9,7,4,3,5]
 40
 
+[[0,1]]
+[2,1]
+2
 
 `

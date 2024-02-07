@@ -29,10 +29,3 @@ func expand(l, r int, s string, dp []int) {
 		r++
 	}
 }
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}

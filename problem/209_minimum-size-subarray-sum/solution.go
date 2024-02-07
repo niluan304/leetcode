@@ -7,6 +7,7 @@ import (
 // 暴力穷举
 // 时间复杂度: O(n^2)
 // 空间复杂度: O(1)
+// Fail to pass case
 // Deprecated: 超时
 func minSubArrayLen(target int, nums []int) int {
 
@@ -31,14 +32,6 @@ func minSubArrayLen(target int, nums []int) int {
 	return 0
 }
 
-func _min(x, y int) int {
-	if x > y {
-		return y
-	}
-
-	return x
-}
-
 // 滑动窗口
 // 时间复杂度: O(n)
 // 空间复杂度: O(1)
@@ -51,7 +44,7 @@ func minSubArrayLen2(target int, nums []int) int {
 		sum += num
 		for sum >= target {
 			sum -= nums[left]
-			count = _min(count, right-left)
+			count = min(count, right-left)
 			left++
 		}
 	}

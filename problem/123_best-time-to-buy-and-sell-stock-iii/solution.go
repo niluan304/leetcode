@@ -40,12 +40,12 @@ func maxProfit(prices []int) int {
 
 		// 状态机
 		if hold {
-			v = _max(
+			v = max(
 				dfs(i-1, true, k),            // 保持不变
 				dfs(i-1, false, k)-prices[i], //买入股票
 			)
 		} else {
-			v = _max(
+			v = max(
 				dfs(i-1, false, k),            // 保持不变
 				dfs(i-1, true, k-1)+prices[i], // 卖出股票
 			)
@@ -65,7 +65,7 @@ func maxProfit(prices []int) int {
 func maxProfit2(prices []int) int {
 	profit := 0
 	for i := 0; i < len(prices)-2; i++ {
-		profit = _max(
+		profit = max(
 			profit,
 			maxProfit1(prices[:i])+maxProfit1(prices[i:]), // 两次交易
 		)
@@ -77,25 +77,11 @@ func maxProfit1(prices []int) int {
 	low := math.MaxInt
 	profit := 0
 	for _, price := range prices {
-		low = _min(low, price)
-		profit = _max(profit, price-low)
+		low = min(low, price)
+		profit = max(profit, price-low)
 	}
 
 	return profit
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
 }
 
 // dfs + 记忆化搜索
@@ -133,13 +119,13 @@ func maxProfit3(prices []int) int {
 		v = new(int)
 		// 状态机
 		if hold {
-			*v = _max(
+			*v = max(
 				dfs(i-1, true, k),            // 保持不变：昨天也持有股票
 				dfs(i-1, false, k)-prices[i], // 买入股票
 			)
 			cache[i][k].Hold = v
 		} else {
-			*v = _max(
+			*v = max(
 				dfs(i-1, false, k),            // 保持不变：昨天也未持有股票
 				dfs(i-1, true, k-1)+prices[i], // 卖出股票, 交易次数上限 -1
 			)

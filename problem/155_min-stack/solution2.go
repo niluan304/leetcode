@@ -21,13 +21,6 @@ func Constructor2() Stack {
 	return &minStack2{}
 }
 
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
 func (s *minStack2) Push(val int) {
 	minValue := val
 	n := len(s.nodes)

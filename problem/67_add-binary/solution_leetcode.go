@@ -27,13 +27,6 @@ func leetcode1(a string, b string) string {
 	return ans
 }
 
-func max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
 // leetcode 2 0ms示例
 func leetcode2(a string, b string) string {
 	arr := []byte{}

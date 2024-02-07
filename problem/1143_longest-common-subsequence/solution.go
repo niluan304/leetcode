@@ -25,17 +25,10 @@ func longestCommonSubsequence(text1 string, text2 string) int {
 		if text1[i] == text2[j] {
 			v = dfs(i-1, j-1) + 1
 		} else {
-			v = _max(dfs(i, j-1), dfs(i-1, j))
+			v = max(dfs(i, j-1), dfs(i-1, j))
 		}
 		cache[i][j] = v
 		return v
 	}
 	return dfs(n-1, m-1)
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }

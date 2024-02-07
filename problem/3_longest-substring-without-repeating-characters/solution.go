@@ -16,17 +16,9 @@ func lengthOfLongestSubstring(s string) int {
 			left += idx + 1
 		}
 
-		count = _max(count, right+1-left)
+		count = max(count, right+1-left)
 	}
 	return count
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-
-	return y
 }
 
 func lengthOfLongestSubstring2(s string) int {
@@ -42,8 +34,8 @@ func lengthOfLongestSubstring2(s string) int {
 			i = -1
 		}
 
-		left = _max(i, left)
-		count = _max(count, right-left)
+		left = max(i, left)
+		count = max(count, right-left)
 
 		idx[b] = right
 	}
@@ -63,7 +55,7 @@ func lengthOfLongestSubstring3(s string) int {
 			set[rune(s[left])]--
 			left++
 		}
-		count = _max(count, right-left+1)
+		count = max(count, right-left+1)
 	}
 	return count
 }
@@ -82,7 +74,7 @@ func lengthOfLongestSubstring4(s string) int {
 			set[s[left]]--
 			left++
 		}
-		count = _max(count, right-left+1)
+		count = max(count, right-left+1)
 
 	}
 	return count

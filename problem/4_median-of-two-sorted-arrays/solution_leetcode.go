@@ -41,20 +41,6 @@ func getKthElement(nums1, nums2 []int, k int) int {
 	return 0
 }
 
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
 func leetcode2(nums1 []int, nums2 []int) float64 {
 	m, n := len(nums1), len(nums2)
 	if m > n {

@@ -20,27 +20,6 @@ func findKthLargest(nums []int, k int) int {
 	return ans
 }
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 type Heap []int
 
 func (h Heap) Len() int           { return len(h) }

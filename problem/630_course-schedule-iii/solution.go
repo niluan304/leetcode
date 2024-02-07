@@ -29,19 +29,11 @@ func scheduleCourse(courses [][]int) int {
 		//对于当前遍历的课程,结束时间的取值范围为[课程的耗时,课程最晚的结束时间]
 		for j := course[1]; j >= course[0]; j-- {
 			//更新可以修读的课程数量,并更新答案
-			dp[j] = _max(dp[j], dp[j-course[0]]+1)
-			ans = _max(ans, dp[j])
+			dp[j] = max(dp[j], dp[j-course[0]]+1)
+			ans = max(ans, dp[j])
 		}
 	}
 	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-
-	return y
 }
 
 // 优先队列/堆排序

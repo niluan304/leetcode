@@ -1,12 +1,5 @@
 package main
 
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 // 72 ms 的代码示例
 func leetcodeMinTime(fruits []int) int {
 	FF := -1

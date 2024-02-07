@@ -16,13 +16,13 @@ func maxProfit(prices []int, fee int) int {
 		price := prices[i]
 
 		// 持有股票的状态
-		dp[i+1].Hold = _max(
+		dp[i+1].Hold = max(
 			dp[i].Hold,          // 保持不变：昨天也持有股票
 			dp[i].NotHold-price, // 没有股票 -> 买入股票
 		)
 
 		// 未持有股票的状态
-		dp[i+1].NotHold = _max(
+		dp[i+1].NotHold = max(
 			dp[i].NotHold,        // 保持不变：昨天也未持有股票
 			dp[i].Hold+price-fee, // 持有股票 -> 卖出股票
 		)
@@ -32,13 +32,6 @@ func maxProfit(prices []int, fee int) int {
 	//fmt.Println(dp)
 
 	return dp[n].NotHold
-}
-
-func _max(x, y int) int {
-	if x < y {
-		x = y
-	}
-	return x
 }
 
 // dp 动态规划，状态机 + 压缩空间复杂度
@@ -52,13 +45,13 @@ func maxProfit2(prices []int, fee int) int {
 		last := dp
 
 		// 持有股票的状态
-		dp.Hold = _max(
+		dp.Hold = max(
 			last.Hold,          // 保持不变：昨天也持有股票
 			last.NotHold-price, // 没有股票 -> 买入股票
 		)
 
 		// 未持有股票的状态
-		dp.NotHold = _max(
+		dp.NotHold = max(
 			last.NotHold,        // 保持不变：昨天也未持有股票
 			last.Hold+price-fee, // 持有股票 -> 卖出股票
 		)

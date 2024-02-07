@@ -24,13 +24,6 @@ func leetcode1(root *TreeNode) int {
 	return max(leetcode1(root.Left), leetcode1(root.Right)) + 1
 }
 
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 // 方法二：广度优先搜索
 // 思路与算法
 //

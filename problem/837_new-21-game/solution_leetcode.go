@@ -46,10 +46,3 @@ func leetcode2(n int, k int, maxPts int) float64 {
 	}
 	return dp[0]
 }
-
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}

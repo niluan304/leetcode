@@ -5,43 +5,6 @@ import "sort"
 func subsetsWithDup(nums []int) [][]int {
 	sort.Ints(nums)
 
-	var ans = [][]int{{}}
-	var set = map[int]struct{}{}
-
-	var dfs func(int)
-	dfs = func(cur int) {
-		if cur == len(nums) {
-			if len(set) == 0 {
-				return
-			}
-
-			var list = make([]int, 0, len(set))
-			for v := range set {
-				list = append(list, v)
-			}
-
-			ans = append(ans, list)
-			return
-		}
-
-		v := nums[cur]
-
-		if _, ok := set[v]; ok {
-			return
-		}
-
-		set[v] = struct{}{}
-		dfs(cur + 1)
-		delete(set, v)
-		dfs(cur + 1)
-	}
-	dfs(0)
-	return ans
-}
-
-func subsetsWithDup2(nums []int) [][]int {
-	sort.Ints(nums)
-
 	type Value struct {
 		Value int
 		Count int
@@ -88,7 +51,7 @@ func subsetsWithDup2(nums []int) [][]int {
 	return ans
 }
 
-func subsetsWithDup3(nums []int) [][]int {
+func subsetsWithDup2(nums []int) [][]int {
 	sort.Ints(nums)
 
 	var ans [][]int

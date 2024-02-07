@@ -62,7 +62,7 @@ func uniquePaths2(m int, n int) int {
 // var matrix = make([][]int, m+1) 的优化版本
 // 空间复杂度 从O(mn)降低至 O(min(m,n))
 func uniquePaths3(m int, n int) int {
-	// m行n列　与 n行m列 等价, 使用 _min(m,n)可节约空间
+	// m行n列　与 n行m列 等价, 使用 min(m,n)可节约空间
 	if n > m {
 		m, n = n, m
 	}

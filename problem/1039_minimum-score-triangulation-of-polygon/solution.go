@@ -23,33 +23,12 @@ func minScoreTriangulation(values []int) int {
 		}
 		var v = math.MaxInt32
 		for k := i + 1; k < j; k++ { // 枚举顶点 k
-			v = _min(v, dfs(i, k)+values[i]*values[k]*values[j]+dfs(k, j))
+			v = min(v, dfs(i, k)+values[i]*values[k]*values[j]+dfs(k, j))
 		}
 		cache[i][j] = &v
 		return v
 	}
 	return dfs(0, n-1)
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
 }
 
 // dp 动态规划，区间dp
@@ -66,7 +45,7 @@ func minScoreTriangulation2(values []int) int {
 		for j := i + 2; j < n; j++ {
 			v := math.MaxInt32
 			for k := i + 1; k < j; k++ {
-				v = _min(v, values[i]*values[k]*values[j]+dp[i][k]+dp[k][j])
+				v = min(v, values[i]*values[k]*values[j]+dp[i][k]+dp[k][j])
 			}
 			dp[i][j] = v
 		}

@@ -21,8 +21,8 @@ func beautySum(s string) int {
 
 func beauty(s string) int {
 	var (
-		max   = 0
-		min   = math.MaxInt32
+		mx    = 0
+		mn    = math.MaxInt32
 		count = make(map[rune]int, len(s))
 	)
 	for _, b := range s {
@@ -30,15 +30,15 @@ func beauty(s string) int {
 	}
 
 	for _, v := range count {
-		if max < v {
-			max = v
+		if mx < v {
+			mx = v
 		}
-		if min > v {
-			min = v
+		if mn > v {
+			mn = v
 		}
 	}
 
-	return max - min
+	return mx - mn
 }
 
 func beautySum3(s string) int {
@@ -46,22 +46,22 @@ func beautySum3(s string) int {
 	for i := range s {
 		var (
 			count = make(map[rune]int, len(s))
-			max   = 1
+			mx    = 1
 		)
 		for _, char := range s[i:] {
 			count[char]++
-			if count[char] > max {
-				max = count[char]
+			if count[char] > mx {
+				mx = count[char]
 			}
 
-			var min = 500 // 1 <= s.length <= 500
+			var mn = 500 // 1 <= s.length <= 500
 			for _, cnt := range count {
-				if cnt < min {
-					min = cnt
+				if cnt < mn {
+					mn = cnt
 				}
 			}
 
-			sum += max - min
+			sum += mx - mn
 		}
 	}
 	return sum
@@ -84,18 +84,4 @@ func leetcode(s string) (ans int) {
 		}
 	}
 	return
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }

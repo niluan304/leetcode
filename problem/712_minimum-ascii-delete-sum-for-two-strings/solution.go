@@ -33,7 +33,7 @@ func minimumDeleteSum(s1 string, s2 string) int {
 		if s1[i] == s2[j] {
 			v = dfs(i-1, j-1)
 		} else {
-			v = _min(
+			v = min(
 				dfs(i-1, j)+int(s1[i]), // 删除 s1 的字符
 				dfs(i, j-1)+int(s2[j]), // 删除 s2 的字符
 			)
@@ -43,13 +43,6 @@ func minimumDeleteSum(s1 string, s2 string) int {
 		return v
 	}
 	return dfs(n-1, m-1)
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
 }
 
 func CountString(s string) int {

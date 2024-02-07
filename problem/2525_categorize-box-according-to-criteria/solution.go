@@ -1,26 +1,5 @@
 package main
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 // Deprecated: Although it can run, its maintainability is poor.
 func categorizeBox(length int, width int, height int, mass int) string {
 	volume := length * width * height

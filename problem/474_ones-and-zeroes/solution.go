@@ -27,7 +27,7 @@ func findMaxForm(strs []string, m int, n int) int {
 				if j < w0 || k < w1 {
 					dp[i+1][j][k] = dp[i][j][k]
 				} else {
-					dp[i+1][j][k] = _max(dp[i][j][k], dp[i][j-w0][k-w1]+1)
+					dp[i+1][j][k] = max(dp[i][j][k], dp[i][j-w0][k-w1]+1)
 				}
 			}
 		}
@@ -41,13 +41,6 @@ func findMaxForm(strs []string, m int, n int) int {
 	//	fmt.Println()
 	//}
 	return dp[l][m][n]
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }
 
 // dp 动态规划, 01 背包, 复用二维数组, 以降低空间复杂度
@@ -67,7 +60,7 @@ func findMaxForm2(strs []string, m int, n int) int {
 		for j := m; j >= w0; j-- {
 			for k := n; k >= w1; k-- {
 				// 递推公式：选与不选 价值为[w0,w1]的当前物品
-				dp[j][k] = _max(dp[j][k], dp[j-w0][k-w1]+1)
+				dp[j][k] = max(dp[j][k], dp[j-w0][k-w1]+1)
 			}
 		}
 

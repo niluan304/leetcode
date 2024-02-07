@@ -1,13 +1,11 @@
 package main
 
-import "math"
-
 func rob(nums []int) int {
 	if len(nums) == 1 {
 		return nums[0]
 	}
 
-	return _max(robI(nums[1:]), robI(nums[:len(nums)-1]))
+	return max(robI(nums[1:]), robI(nums[:len(nums)-1]))
 }
 
 // 动态规划, 空间优化
@@ -19,7 +17,7 @@ func robI(nums []int) int {
 
 	for i := 0; i < n; i++ {
 		// 2. 第i个房间的最大值, 选不选 i 的问题
-		v := _max(dp0, dp1+nums[i])
+		v := max(dp0, dp1+nums[i])
 		dp1 = dp0
 		dp0 = v
 
@@ -27,15 +25,4 @@ func robI(nums []int) int {
 		//fmt.Print(dp0, " ")
 	}
 	return dp0
-}
-
-func _max(list ...int) int {
-	var ans = math.MinInt
-	for _, n := range list {
-		if ans < n {
-			ans = n
-		}
-	}
-
-	return ans
 }

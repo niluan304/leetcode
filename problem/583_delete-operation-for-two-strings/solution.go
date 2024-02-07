@@ -33,7 +33,7 @@ func minDistance(word1 string, word2 string) int {
 		if word1[i] == word2[j] {
 			v = dfs(i-1, j-1)
 		} else {
-			v = _min(
+			v = min(
 				dfs(i-1, j), // 删除 word1 的字符
 				dfs(i, j-1), // 删除 word2 的字符
 			) + 1
@@ -43,13 +43,6 @@ func minDistance(word1 string, word2 string) int {
 		return v
 	}
 	return dfs(n-1, m-1)
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
 }
 
 // dp 动态规划
@@ -78,7 +71,7 @@ func minDistance2(word1 string, word2 string) int {
 			if word1[i-1] == word2[j-1] {
 				dp[i][j] = dp[i-1][j-1]
 			} else {
-				dp[i][j] = _min(dp[i][j-1], dp[i-1][j]) + 1
+				dp[i][j] = min(dp[i][j-1], dp[i-1][j]) + 1
 			}
 		}
 	}
@@ -120,7 +113,7 @@ func minDistance3(word1 string, word2 string) int {
 			if word1[j-1] == word2[i-1] {
 				dp[j] = last
 			} else {
-				dp[j] = _min(dp[j], dp[j-1]) + 1
+				dp[j] = min(dp[j], dp[j-1]) + 1
 			}
 			last = tmp
 		}

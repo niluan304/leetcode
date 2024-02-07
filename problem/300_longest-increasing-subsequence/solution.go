@@ -12,21 +12,14 @@ func lengthOfLIS(nums []int) int {
 			if num <= v {
 				continue
 			}
-			dp[i] = _max(dp[i], dp[j]) // 寻找最长递增子序列的
+			dp[i] = max(dp[i], dp[j]) // 寻找最长递增子序列的
 		}
 		dp[i]++
-		ans = _max(ans, dp[i])
+		ans = max(ans, dp[i])
 	}
 
 	//// debug: 打印 dp 数组
 	//fmt.Println(dp)
 
 	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }

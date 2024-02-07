@@ -19,8 +19,8 @@ func maxPower(stations []int, r int, k int) int64 {
 
 	var powers, mm = make([]int, n+1), 0
 	for i := range stations {
-		powers[i+1] = sum[_min(i+r+1, n)] - sum[_max(i-r, 0)] // 电量
-		mm = _max(mm, powers[i+1])
+		powers[i+1] = sum[min(i+r+1, n)] - sum[max(i-r, 0)] // 电量
+		mm = max(mm, powers[i+1])
 	}
 
 	// 二分搜索：在 nums 中，找到第一个 i，使得 nums[i] <= x
@@ -57,14 +57,14 @@ func maxPower(stations []int, r int, k int) int64 {
 	return int64(ans)
 }
 
-func _min(a, b int) int {
+func min(a, b int) int {
 	if b < a {
 		return b
 	}
 	return a
 }
 
-func _max(a, b int) int {
+func max(a, b int) int {
 	if b > a {
 		return b
 	}

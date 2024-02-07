@@ -22,7 +22,7 @@ func equalSubstring(s string, t string, maxCost int) int {
 			left++
 		}
 
-		ans = _max(ans, right-left+1)
+		ans = max(ans, right-left+1)
 	}
 
 	return ans
@@ -34,14 +34,6 @@ func _abs(x, y int) int {
 		return c
 	}
 	return -c
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-
-	return y
 }
 
 func equalSubstring2(s string, t string, maxCost int) int {

@@ -12,7 +12,6 @@ func Test_subsets_ii(t *testing.T) {
 	fs := []func(nums []int) [][]int{
 		subsetsWithDup,
 		subsetsWithDup2,
-		subsetsWithDup3,
 	}
 
 	for _, f := range fs {

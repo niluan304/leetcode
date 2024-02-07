@@ -28,7 +28,7 @@ func longestPalindrome(word1 string, word2 string) int {
 		if word1[i] == word2[j] {
 			**ptr = dp[i+1][n+j-1] + 2
 		} else {
-			**ptr = _max(dfs(i+1, j), dfs(i, j-1))
+			**ptr = max(dfs(i+1, j), dfs(i, j-1))
 		}
 		return **ptr
 	}
@@ -69,10 +69,10 @@ func longestPalindrome2(word1 string, word2 string) int {
 		if s[i] == s[j] {
 			**ptr = dfs(i+1, j-1) + 2
 			if i < bound && bound <= j {
-				ans = _max(ans, **ptr)
+				ans = max(ans, **ptr)
 			}
 		} else {
-			**ptr = _max(dfs(i+1, j), dfs(i, j-1))
+			**ptr = max(dfs(i+1, j), dfs(i, j-1))
 		}
 		return **ptr
 	}
@@ -112,7 +112,7 @@ func longestPalindrome3(word1 string, word2 string) int {
 		if s[i] == s[j] {
 			**ptr = dfs(i+1, j-1, Use) + 2
 		} else {
-			**ptr = _max(dfs(i+1, j, k), dfs(i, j-1, k))
+			**ptr = max(dfs(i+1, j, k), dfs(i, j-1, k))
 		}
 		return **ptr
 	}
@@ -155,7 +155,7 @@ func longestPalindrome4(word1 string, word2 string) int {
 		if s[i] == s[j] {
 			**ptr = dfs(i+1, j-1, true) + 2
 		} else {
-			**ptr = _max(dfs(i+1, j, use), dfs(i, j-1, use))
+			**ptr = max(dfs(i+1, j, use), dfs(i, j-1, use))
 		}
 		return **ptr
 	}
@@ -180,30 +180,9 @@ func longestPalindromeSubseq(s string) [][]int {
 			if s[i] == s[j] {
 				dp[i][j] = dp[i+1][j-1] + 2
 			} else {
-				dp[i][j] = _max(dp[i+1][j], dp[i][j-1])
+				dp[i][j] = max(dp[i+1][j], dp[i][j-1])
 			}
 		}
 	}
 	return dp
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
 }

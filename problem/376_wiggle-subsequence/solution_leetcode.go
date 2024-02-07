@@ -75,10 +75,3 @@ func leetocde1(nums []int) int {
 	}
 	return max(up[n-1], down[n-1])
 }
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}

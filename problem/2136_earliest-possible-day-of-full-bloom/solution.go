@@ -12,18 +12,11 @@ func earliestFullBloom(plantTime []int, growTime []int) int {
 
 	var bloom, day = 0, 0
 	for i := range plantTime {
-		day += plantTime[i]                  // 累加播种天数
-		bloom = _max(bloom, day+growTime[i]) // 再加上生长天数，就是这个种子的开花时间
+		day += plantTime[i]                 // 累加播种天数
+		bloom = max(bloom, day+growTime[i]) // 再加上生长天数，就是这个种子的开花时间
 	}
 
 	return bloom
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }
 
 type Sort struct {

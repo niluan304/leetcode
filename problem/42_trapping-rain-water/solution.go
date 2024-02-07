@@ -52,35 +52,19 @@ func trap2(height []int) int {
 	)
 
 	for i := 0; i < n; i++ {
-		maxPrefix = _max(maxPrefix, height[i])
+		maxPrefix = max(maxPrefix, height[i])
 		prefix[i] = maxPrefix
 
 		j := n - i - 1
-		maxSuffix = _max(maxSuffix, height[j])
+		maxSuffix = max(maxSuffix, height[j])
 		suffix[j] = maxSuffix
 	}
 
 	for i, h := range height {
-		ans += _min(prefix[i], suffix[i]) - h
+		ans += min(prefix[i], suffix[i]) - h
 	}
 
 	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-
-	return y
 }
 
 // 前后缀分解

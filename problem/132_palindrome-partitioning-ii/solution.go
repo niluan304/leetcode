@@ -4,27 +4,6 @@ import (
 	"math"
 )
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 // Deprecated: O(n^3) timeout when n <= 2000.
 // dfs + 记忆化搜索
 // 时间复杂度：O(n^3)
@@ -50,7 +29,7 @@ func minCut(s string) int {
 
 		var v = math.MaxInt32
 		for k := i + 1; k <= j-1; k++ {
-			v = _min(
+			v = min(
 				v,
 				dfs(i, k)+dfs(k, j)+1,
 			)
@@ -90,7 +69,7 @@ func minCut2(s string) int {
 
 			v := math.MaxInt32
 			for k := i + 1; k <= j-1; k++ {
-				v = _min(v, dp[i][k]+dp[k][j]+1)
+				v = min(v, dp[i][k]+dp[k][j]+1)
 			}
 			dp[i][j] = v
 		}

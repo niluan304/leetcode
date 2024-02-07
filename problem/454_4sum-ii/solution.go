@@ -73,15 +73,15 @@ func fourSumCount3(nums1 []int, nums2 []int, nums3 []int, nums4 []int) int {
 	for i := 0; i < len(nums1); i++ {
 		var v1, v2, v3, v4 = nums1[i], nums2[i], nums3[i], nums4[i]
 
-		min1 = _min(min1, v1)
-		min2 = _min(min2, v2)
-		min3 = _min(min3, v3)
-		min4 = _min(min4, v4)
+		min1 = min(min1, v1)
+		min2 = min(min2, v2)
+		min3 = min(min3, v3)
+		min4 = min(min4, v4)
 
-		max1 = _max(max1, v1)
-		max2 = _max(max2, v2)
-		max3 = _max(max3, v3)
-		max4 = _max(max4, v4)
+		max1 = max(max1, v1)
+		max2 = max(max2, v2)
+		max3 = max(max3, v3)
+		max4 = max(max4, v4)
 
 		m1[nums1[i]]++
 		m2[nums2[i]]++
@@ -104,20 +104,4 @@ func fourSumCount3(nums1 []int, nums2 []int, nums3 []int, nums4 []int) int {
 	}
 
 	return ans
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-
-	return y
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-
-	return y
 }

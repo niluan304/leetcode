@@ -1,26 +1,5 @@
 package main
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 func longestPath(parent []int, s string) int {
 	var children = make([][]int, len(s))
 	for i := 1; i < len(s); i++ {
@@ -43,7 +22,7 @@ func longestPath(parent []int, s string) int {
 				x2 = y
 			}
 		}
-		ans = _max(ans, x1+x2+1)
+		ans = max(ans, x1+x2+1)
 		return x1 + 1
 	}
 

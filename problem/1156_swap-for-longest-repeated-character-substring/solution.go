@@ -19,7 +19,7 @@ func maxRepOpt1(text string) int {
 		count[x]++
 
 		// 更新当前子串中, 最大重复字符次数
-		most = _max(most, count[x])
+		most = max(most, count[x])
 
 		// 当前子串中, 不同字符的个数 > 1, 需要缩小窗口
 		for right-left > most {
@@ -32,15 +32,8 @@ func maxRepOpt1(text string) int {
 			most++
 		}
 
-		ans = _max(ans, most)
+		ans = max(ans, most)
 	}
 
 	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }

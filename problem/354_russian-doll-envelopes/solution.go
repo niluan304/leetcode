@@ -62,34 +62,13 @@ func maxEnvelopes2(envelopes [][]int) int {
 		for j := 0; j < i; j++ {
 			_w, _h := envelopes[j][0], envelopes[j][1]
 			if w > _w && h > _h {
-				length = _max(length, dp[j])
+				length = max(length, dp[j])
 			}
 		}
 
 		dp[i] = length + 1
-		ans = _max(ans, dp[i])
+		ans = max(ans, dp[i])
 	}
 
 	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
 }

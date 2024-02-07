@@ -36,10 +36,3 @@ func leetcode1(candidates []int, target int) (ans [][]int) {
 	dfs(0, target)
 	return
 }
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}

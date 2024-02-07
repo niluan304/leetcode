@@ -34,13 +34,6 @@ func leetcode1(s int, nums []int) int {
 	return ans
 }
 
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
 // 方法二：前缀和 + 二分查找
 // 方法一的时间复杂度是 O(n2)，因为在确定每个子数组的开始下标后，
 // 找到长度最小的子数组需要 O(n)的时间。如果使用二分查找，则可以将时间优化到 O(logn)。

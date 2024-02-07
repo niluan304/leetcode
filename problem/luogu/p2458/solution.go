@@ -17,18 +17,18 @@ func minCost(root int, graph [][]int, costs []int) int {
 		for _, j := range graph[i] {
 			v := dfs(j)
 
-			self += _min(v.Self, v.Parent)
-			parent += _min(v.Self, v.Children)
-			minExtra = _min(minExtra, v.Self-v.Children)
+			self += min(v.Self, v.Parent)
+			parent += min(v.Self, v.Children)
+			minExtra = min(minExtra, v.Self-v.Children)
 		}
 		return Value{
 			Self:     self + costs[i],
 			Parent:   parent,
-			Children: parent + _max(0, minExtra),
+			Children: parent + max(0, minExtra),
 		}
 	}
 	v := dfs(root)
-	return _min(v.Self, v.Children)
+	return min(v.Self, v.Children)
 }
 
 func run(_r io.Reader, _w io.Writer) {
@@ -59,17 +59,3 @@ func run(_r io.Reader, _w io.Writer) {
 }
 
 func main() { run(os.Stdin, os.Stdout) }
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}

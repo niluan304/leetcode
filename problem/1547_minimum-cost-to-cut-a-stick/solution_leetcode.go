@@ -29,10 +29,3 @@ func leetcodeMinTime(n int, cuts []int) int {
 	}
 	return dp[0][m-1]
 }
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}

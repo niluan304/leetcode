@@ -15,7 +15,7 @@ func leetcodeMinTime(s string) int {
 			l++
 		}
 
-		res = _max(res, r-l+1)
+		res = max(res, r-l+1)
 	}
 
 	return res

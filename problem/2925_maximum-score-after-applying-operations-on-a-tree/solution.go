@@ -1,57 +1,34 @@
 package main
 
+import . "github.com/niluan304/leetcode/container"
+
 func maximumScoreAfterOperations(edges [][]int, values []int) int64 {
-	type Value struct {
-		sum  int
-		cost int
-	}
-
 	var n = len(values)
-	var cache = make([]*Value, n)
-
 	var graph = make([][]int, n)
 	for _, edge := range edges {
 		a, b := edge[0], edge[1]
+
 		graph[a] = append(graph[a], b)
 		graph[b] = append(graph[b], a)
 	}
 
-	type Visit struct {
-		i, j int
-	}
-	var visit = map[Visit]bool{}
-
-	var dfs func(i int) (value Value)
-	dfs = func(i int) (value Value) {
-		ptr := &cache[i]
-		if *ptr != nil {
-			return **ptr
-		}
-		defer func() { *ptr = &value }()
-
-		var sum, cost = values[i], 0
-		for _, path := range graph[i] {
-			key := Visit{i: min(path, i), j: max(path, i)}
-			if visit[key] {
+	// dfs(i, fa) 计算以 i 为根的子树是健康时，失去的最小分数
+	var dfs func(i, fa int) int
+	dfs = func(i, fa int) int {
+		cost := 0
+		for _, j := range graph[i] {
+			if j == fa {
 				continue
 			}
-
-			visit[key] = true
-
-			v := dfs(path)
-			sum += v.sum
-			cost += v.cost
+			cost += dfs(j, i)
 		}
-
 		if cost == 0 {
-			cost = values[i]
+			return values[i] // 叶子节点
 		}
-		return Value{
-			sum:  sum,
-			cost: min(cost, values[i]),
-		}
+		return min(cost, values[i])
 	}
 
-	ans := dfs(0)
-	return int64(ans.sum - ans.cost)
+	total := Sum(values)
+	minCost := dfs(0, -1)
+	return int64(total - minCost)
 }

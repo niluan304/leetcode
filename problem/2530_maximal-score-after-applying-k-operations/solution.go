@@ -4,27 +4,6 @@ import (
 	"container/heap"
 )
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 // 优先队列/堆排序
 // 时间复杂度：O(nlogn)
 // 空间复杂度：O(n)

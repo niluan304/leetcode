@@ -46,22 +46,6 @@ func wordBreak(s string, wordDict []string) bool {
 	return dfs(s, set, 0)
 }
 
-func max(x, y int) int {
-	if x > y {
-		return x
-	}
-
-	return y
-}
-
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-
-	return y
-}
-
 func wordBreak2(s string, wordDict []string) bool {
 	var bound = map[int][]int{}
 	for _, word := range wordDict {

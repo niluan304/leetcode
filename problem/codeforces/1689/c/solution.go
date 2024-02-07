@@ -45,7 +45,7 @@ func mostSavedTree(n int, edges [][]int) int {
 			x, y := res[0], res[1]
 			return Value{
 				Saved:   x.Saved + y.Saved + 1,
-				Unsaved: _max(x.Saved+y.Unsaved, x.Unsaved+y.Saved) - 1,
+				Unsaved: max(x.Saved+y.Unsaved, x.Unsaved+y.Saved) - 1,
 			}
 		}
 		return
@@ -55,7 +55,7 @@ func mostSavedTree(n int, edges [][]int) int {
 	return v.Unsaved
 }
 
-func _max(x, y int) int {
+func max(x, y int) int {
 	if x > y {
 		return x
 	}

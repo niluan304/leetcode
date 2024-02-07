@@ -37,18 +37,7 @@ func repairCars(ranks []int, cars int) int64 {
 
 	var ans int64 = 0
 	for _, cost := range costs {
-		ans = _max(ans, cost.Cost)
-	}
-
-	return ans
-}
-
-func _max(list ...int64) int64 {
-	var ans int64 = math.MinInt
-	for _, n := range list {
-		if ans < n {
-			ans = n
-		}
+		ans = max(ans, cost.Cost)
 	}
 
 	return ans

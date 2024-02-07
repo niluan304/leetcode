@@ -2,6 +2,7 @@ package main
 
 import (
 	"math"
+	"slices"
 )
 
 // dfs + 记忆化搜索
@@ -21,15 +22,15 @@ func maxDotProduct(nums1 []int, nums2 []int) int {
 	dfs = func(i, j int) int {
 		if i == 0 {
 			if nums1[0] < 0 {
-				return nums1[0] * _min(nums2[:j+1]...)
+				return nums1[0] * slices.Min(nums2[:j+1])
 			}
-			return nums1[0] * _max(nums2[:j+1]...)
+			return nums1[0] * slices.Max(nums2[:j+1])
 		}
 		if j == 0 {
 			if nums2[0] < 0 {
-				return nums2[0] * _min(nums1[:i+1]...)
+				return nums2[0] * slices.Min(nums1[:i+1])
 			}
-			return nums2[0] * _max(nums1[:i+1]...)
+			return nums2[0] * slices.Max(nums1[:i+1])
 		}
 
 		v := cache[i][j]
@@ -38,10 +39,10 @@ func maxDotProduct(nums1 []int, nums2 []int) int {
 		}
 
 		product := nums1[i] * nums2[j]
-		v = _max(
+		v = max(
 			dfs(i-1, j),
 			dfs(i, j-1),
-			dfs(i-1, j-1)+_max(product, 0),
+			dfs(i-1, j-1)+max(product, 0),
 			product,
 		)
 		cache[i][j] = v
@@ -49,26 +50,6 @@ func maxDotProduct(nums1 []int, nums2 []int) int {
 	}
 
 	return dfs(m-1, n-1)
-}
-
-func _max(a ...int) int {
-	x := a[0]
-	for _, y := range a[1:] {
-		if x < y {
-			x = y
-		}
-	}
-	return x
-}
-
-func _min(a ...int) int {
-	x := a[0]
-	for _, y := range a[1:] {
-		if x > y {
-			x = y
-		}
-	}
-	return x
 }
 
 // dp 动态规划
@@ -129,15 +110,15 @@ func maxDotProduct3(nums1 []int, nums2 []int) int {
 	dfs = func(i, j int) int {
 		if i == 0 {
 			if nums1[0] < 0 {
-				return nums1[0] * _min(nums2[:j+1]...)
+				return nums1[0] * slices.Min(nums2[:j+1])
 			}
-			return nums1[0] * _max(nums2[:j+1]...)
+			return nums1[0] * slices.Max(nums2[:j+1])
 		}
 		if j == 0 {
 			if nums2[0] < 0 {
-				return nums2[0] * _min(nums1[:i+1]...)
+				return nums2[0] * slices.Min(nums1[:i+1])
 			}
-			return nums2[0] * _max(nums1[:i+1]...)
+			return nums2[0] * slices.Max(nums1[:i+1])
 		}
 
 		if cache[i][j] != nil {
@@ -145,10 +126,10 @@ func maxDotProduct3(nums1 []int, nums2 []int) int {
 		}
 
 		product := nums1[i] * nums2[j]
-		v := _max(
+		v := max(
 			dfs(i-1, j),
 			dfs(i, j-1),
-			dfs(i-1, j-1)+_max(product, 0),
+			dfs(i-1, j-1)+max(product, 0),
 			product,
 		)
 		cache[i][j] = &v

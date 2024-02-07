@@ -21,7 +21,7 @@ func leetcode1(nums []int) int {
 			p1++
 		}
 
-		ans = _max(ans, p1)
+		ans = max(ans, p1)
 	}
 
 	if ans == len(nums) {

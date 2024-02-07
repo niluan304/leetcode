@@ -80,13 +80,6 @@ func leetcodeMinTime(s string) int {
 	return ans
 }
 
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
 // 2.73 MB 的代码示例
 func leetcodeMinMemory(s string) int {
 	n := len(s)

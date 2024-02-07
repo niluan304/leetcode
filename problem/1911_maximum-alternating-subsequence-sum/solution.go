@@ -18,26 +18,19 @@ func maxAlternatingSum(nums []int) int64 {
 
 	for i, num := range nums {
 		// 持有
-		dp[i+1].Add = _max(
+		dp[i+1].Add = max(
 			dp[i].Add,     // 保持不变
 			dp[i].Sub+num, // 上一步 Sub -> 这一步 Add
 		)
 
 		// 未持有
-		dp[i+1].Sub = _max(
+		dp[i+1].Sub = max(
 			dp[i].Sub,     // 保持不变
 			dp[i].Add-num, // 上一步 Add -> 这一步 Sub
 		)
 	}
 
 	return int64(dp[n].Add)
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }
 
 // 贪心

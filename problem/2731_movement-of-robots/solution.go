@@ -27,10 +27,3 @@ func sumDistance(nums []int, s string, d int) int {
 
 	return ans % Mod
 }
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}

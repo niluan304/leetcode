@@ -17,7 +17,7 @@ func minOperations(nums []int, x int) int {
 		if xl < x {
 			dfs(left+1, right, xl)
 		} else if xl == x {
-			ans = _min(ans, count)
+			ans = min(ans, count)
 			return
 		}
 
@@ -25,7 +25,7 @@ func minOperations(nums []int, x int) int {
 		if xr < x {
 			dfs(left, right-1, xr)
 		} else if xr == x {
-			ans = _min(ans, count)
+			ans = min(ans, count)
 			return
 		}
 	}
@@ -37,13 +37,6 @@ func minOperations(nums []int, x int) int {
 	}
 
 	return ans
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
 }
 
 func minOperations2(nums []int, x int) int {
@@ -74,8 +67,8 @@ func minOperations2(nums []int, x int) int {
 		}
 
 		if sum == target {
-			// 应当是 ans =_max(ans, right-left +1), 但可以将 +1 改为  n - ans - 1
-			ans = _max(ans, right-left)
+			// 应当是 ans =max(ans, right-left +1), 但可以将 +1 改为  n - ans - 1
+			ans = max(ans, right-left)
 		}
 	}
 
@@ -84,11 +77,4 @@ func minOperations2(nums []int, x int) int {
 	}
 
 	return n - ans - 1
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }

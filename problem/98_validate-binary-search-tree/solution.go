@@ -90,24 +90,10 @@ func isValidBST3(root *TreeNode) bool {
 			return over
 		}
 		return Range{
-			Min: _min(left.Min, v),
-			Max: _max(right.Max, v),
+			Min: min(left.Min, v),
+			Max: max(right.Max, v),
 		}
 	}
 
 	return dfs(root) != over
-}
-
-func _max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
-func _min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
 }

@@ -42,14 +42,6 @@ func Index(r rune) int {
 	return -1
 }
 
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-
-	return y
-}
-
 func balancedString2(s string) int {
 	var (
 		left  = 0
@@ -80,7 +72,7 @@ func balancedString2(s string) int {
 			set['E'] >= all['E'] &&
 			set['R'] >= all['R'] &&
 			left <= right {
-			count = _min(count, right-left+1)
+			count = min(count, right-left+1)
 			set[s[left]]--
 			left++
 		}
@@ -110,7 +102,7 @@ func balancedString3(s string) int {
 		set[Index(r)]--
 
 		for set[0] <= all[0] && set[1] <= all[1] && set[2] <= all[2] && set[3] <= all[3] && left <= right {
-			count = _min(count, right-left+1)
+			count = min(count, right-left+1)
 			set[Index(rune(s[left]))]++
 			left++
 		}
@@ -143,7 +135,7 @@ Next:
 					continue Next
 				}
 			}
-			count = _min(count, right-left+1)
+			count = min(count, right-left+1)
 			set[Index(rune(s[left]))]++
 			left++
 		}

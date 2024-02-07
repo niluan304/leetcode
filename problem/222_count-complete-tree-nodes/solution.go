@@ -6,27 +6,6 @@ import (
 	. "github.com/EndlessCheng/codeforces-go/leetcode/testutil"
 )
 
-func max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {

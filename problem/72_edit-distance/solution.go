@@ -31,7 +31,7 @@ func minDistance(word1 string, word2 string) int {
 		if word1[i] == word2[j] {
 			v = dfs(i-1, j-1)
 		} else {
-			v = _min(
+			v = min(
 				dfs(i, j-1),   // 插入
 				dfs(i-1, j),   // 删除
 				dfs(i-1, j-1), // 替换
@@ -41,14 +41,4 @@ func minDistance(word1 string, word2 string) int {
 		return v
 	}
 	return dfs(n-1, m-1)
-}
-
-func _min(x, y, z int) int {
-	if x > y {
-		x = y
-	}
-	if x > z {
-		x = z
-	}
-	return x
 }

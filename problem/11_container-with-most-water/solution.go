@@ -1,31 +1,24 @@
 package main
 
 func maxArea(height []int) int {
-	var max = 0
+	var mx = 0
 	for i := range height {
 		for j := i + 1; j < len(height); j++ {
 			area := min(height[i], height[j]) * (j - i)
-			if area > max {
-				max = area
+			if area > mx {
+				mx = area
 			}
 		}
 	}
 
-	return max
-}
-
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
+	return mx
 }
 
 func maxArea2(height []int) int {
 	var (
-		i   = 0
-		j   = len(height) - 1
-		max = 0
+		i  = 0
+		j  = len(height) - 1
+		mx = 0
 	)
 
 	for i <= j {
@@ -39,20 +32,20 @@ func maxArea2(height []int) int {
 			i++
 		}
 
-		if area > max {
-			max = area
+		if area > mx {
+			mx = area
 		}
 
 	}
 
-	return max
+	return mx
 }
 
 func maxArea3(height []int) int {
 	var (
-		i   = 0
-		j   = len(height) - 1
-		max = 0
+		i  = 0
+		j  = len(height) - 1
+		mx = 0
 	)
 
 	for i <= j {
@@ -66,11 +59,11 @@ func maxArea3(height []int) int {
 			i++
 		}
 
-		if area > max {
-			max = area
+		if area > mx {
+			mx = area
 		}
 
 	}
 
-	return max
+	return mx
 }

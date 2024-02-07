@@ -1,26 +1,5 @@
 package main
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 // dp 动态规划, LIS
 // 时间复杂度：O(n^2)
 // 空间复杂度：O(n)
@@ -38,10 +17,10 @@ func wiggleMaxLength(nums []int) int {
 		positive, negative := 0, 0
 		for j := i - 1; j >= 0; j-- {
 			if num > nums[j] {
-				positive = _max(positive, dp[j].Negative)
+				positive = max(positive, dp[j].Negative)
 			}
 			if num < nums[j] {
-				negative = _max(negative, dp[j].Positive)
+				negative = max(negative, dp[j].Positive)
 			}
 		}
 
@@ -50,7 +29,7 @@ func wiggleMaxLength(nums []int) int {
 			Negative: negative + 1,
 		}
 
-		ans = _max(ans, _max(dp[i].Positive, dp[i].Negative))
+		ans = max(ans, max(dp[i].Positive, dp[i].Negative))
 	}
 	return ans
 }

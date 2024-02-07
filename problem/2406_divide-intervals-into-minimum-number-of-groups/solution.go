@@ -9,7 +9,7 @@ package main
 func minGroups(intervals [][]int) int {
 	var n = 0
 	for _, interval := range intervals {
-		n = _max(n, interval[1])
+		n = max(n, interval[1])
 	}
 
 	var diff = make([]int, n+2)
@@ -22,15 +22,8 @@ func minGroups(intervals [][]int) int {
 	var ans = 0
 	for i := 1; i <= n; i++ {
 		diff[i] += diff[i-1]
-		ans = _max(ans, diff[i])
+		ans = max(ans, diff[i])
 	}
 
 	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }

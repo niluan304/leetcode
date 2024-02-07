@@ -21,20 +21,12 @@ func minCostClimbingStairs(cost []int) int {
 	for i := 2; i <= n; i++ {
 		// 2. 确定递推公式
 		// 第i个台阶只能从 i-1 或 i-2 中爬上来，比较两者的花费，即可得到第i个台阶的最小费用
-		dp[i] = _min(dp[i-1]+cost[i-1], dp[i-2]+cost[i-2])
+		dp[i] = min(dp[i-1]+cost[i-1], dp[i-2]+cost[i-2])
 	}
 
 	// 5. debug: 打印dp数组
 	//fmt.Println(dp)
 	return dp[n]
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-
-	return y
 }
 
 func minCostClimbingStairs2(cost []int) int {
@@ -58,7 +50,7 @@ func minCostClimbingStairs2(cost []int) int {
 	for i := 2; i <= len(cost); i++ {
 		// 2. 确定递推公式
 		// 第i个台阶只能从 i-1 或 i-2 中爬上来，比较两者的花费，即可得到第i个台阶的最小费用
-		dpi = _min(dp1+cost[i-1], dp0+cost[i-2])
+		dpi = min(dp1+cost[i-1], dp0+cost[i-2])
 		dp1, dp0 = dpi, dp1
 	}
 

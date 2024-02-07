@@ -32,15 +32,8 @@ func takeCharacters(s string, k int) int {
 			left++
 		}
 
-		ans = _max(ans, right-left+1)
+		ans = max(ans, right-left+1)
 	}
 
 	return n - ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }

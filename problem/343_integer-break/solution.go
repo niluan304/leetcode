@@ -22,16 +22,9 @@ func integerBreak(n int) int {
 			product *= item
 		}
 
-		ans = _max(ans, product)
+		ans = max(ans, product)
 	}
 	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }
 
 // 1. 确定dp(dp table)数组以及下标的含义
@@ -56,7 +49,7 @@ func integerBreak2(n int) int {
 	for i := 3; i <= n; i++ {
 		for j := 1; j <= i/2; j++ {
 			// 2. 确定递推公式/状态转移公式
-			dp[i] = _max(dp[i], _max(j*(i-j), j*dp[i-j]))
+			dp[i] = max(dp[i], max(j*(i-j), j*dp[i-j]))
 		}
 	}
 	//// 5. debug: 打印dp数组

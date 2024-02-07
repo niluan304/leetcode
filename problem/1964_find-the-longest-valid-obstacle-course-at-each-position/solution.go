@@ -18,33 +18,12 @@ func longestObstacleCourseAtEachPosition(obstacles []int) []int {
 			if obstacles[i] < obstacles[j] {
 				continue
 			}
-			length = _max(length, dp[j])
+			length = max(length, dp[j])
 		}
 		dp[i] = length + 1
 	}
 
 	return dp
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
 }
 
 // 贪心 + 二分

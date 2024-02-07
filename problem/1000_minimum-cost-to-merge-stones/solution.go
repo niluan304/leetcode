@@ -4,27 +4,6 @@ import (
 	"math"
 )
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 func _sum(x []int) int {
 	sum := 0
 	for i, _ := range x {
@@ -71,7 +50,7 @@ func mergeStones(stones []int, k int) int {
 
 		cost := math.MaxInt32
 		for m := i; m < j; m += k - 1 { // 枚举哪些石头堆合并成第一堆
-			cost = _min(cost, dfs(i, m, 1)+dfs(m+1, j, p-1))
+			cost = min(cost, dfs(i, m, 1)+dfs(m+1, j, p-1))
 		}
 
 		*ptr = &cost
@@ -119,7 +98,7 @@ func mergeStones2(stones []int, k int) int {
 		}
 		cost := math.MaxInt32
 		for x := i; x < j; x += k - 1 {
-			cost = _min(cost, dfs(i, x, 1)+dfs(x+1, j, p-1))
+			cost = min(cost, dfs(i, x, 1)+dfs(x+1, j, p-1))
 		}
 
 		*ptr = &cost
@@ -149,7 +128,7 @@ func mergeStones3(stones []int, k int) int {
 			nums = append(nums, v)
 			nums = append(nums, stones[x+k:]...)
 
-			cost = _min(
+			cost = min(
 				cost,
 				dfs(nums)+v,
 			)

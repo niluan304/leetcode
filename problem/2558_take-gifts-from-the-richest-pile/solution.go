@@ -5,27 +5,6 @@ import (
 	"sort"
 )
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 func pickGifts(gifts []int, k int) int64 {
 	var hp IntHeap = gifts
 	heap.Init(&hp)

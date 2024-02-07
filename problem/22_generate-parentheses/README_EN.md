@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [22.Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
-Difficulty:Medium, Likes: 3437
+Difficulty:Medium, Likes: 3510
 
 ## Description
 

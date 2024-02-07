@@ -18,13 +18,13 @@ func maxProfit(prices []int) int {
 		price := prices[i]
 
 		// 持有股票的状态
-		dp[i+1].Hold = _max(
+		dp[i+1].Hold = max(
 			dp[i].Hold,            // 保持不变：昨天也持有股票
 			dp[i-1].NotHold-price, // 没有股票 -> 买入股票
 		)
 
 		// 未持有股票的状态
-		dp[i+1].NotHold = _max(
+		dp[i+1].NotHold = max(
 			dp[i].NotHold,    // 保持不变：昨天也未持有股票
 			dp[i].Hold+price, // 持有股票 -> 卖出股票
 		)
@@ -34,11 +34,4 @@ func maxProfit(prices []int) int {
 	//fmt.Println(dp)
 
 	return dp[n].NotHold
-}
-
-func _max(x, y int) int {
-	if x < y {
-		x = y
-	}
-	return x
 }

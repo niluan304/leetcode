@@ -34,7 +34,7 @@ func sufficientSubset(root *TreeNode, limit int) *TreeNode {
 			if total < limit {
 				node.Left = nil
 			}
-			maxSum = _max(maxSum, total)
+			maxSum = max(maxSum, total)
 		}
 
 		if right != nil {
@@ -42,7 +42,7 @@ func sufficientSubset(root *TreeNode, limit int) *TreeNode {
 			if total < limit {
 				node.Right = nil
 			}
-			maxSum = _max(maxSum, total)
+			maxSum = max(maxSum, total)
 		}
 		return maxSum
 	}
@@ -69,14 +69,14 @@ func sufficientSubset2(root *TreeNode, limit int) *TreeNode {
 			if left < limit {
 				node.Left = nil
 			}
-			v = _max(v, left)
+			v = max(v, left)
 		}
 		if node.Right != nil {
 			right := dfs(node.Right, sum)
 			if right < limit {
 				node.Right = nil
 			}
-			v = _max(v, right)
+			v = max(v, right)
 		}
 		return v
 	}
@@ -86,11 +86,4 @@ func sufficientSubset2(root *TreeNode, limit int) *TreeNode {
 		return nil
 	}
 	return root
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }

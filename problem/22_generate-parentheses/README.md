@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [22. 括号生成](https://leetcode.cn/problems/generate-parentheses/)
-Difficulty:Medium, Likes: 3437
+Difficulty:Medium, Likes: 3510
 
 ## 题目描述
 
@@ -35,11 +35,11 @@ Difficulty:Medium, Likes: 3437
 
 ## 相关话题
 
-- [字符串](https://leetcode.cn/tag/string/)
-- [动态规划](https://leetcode.cn/tag/dynamic-programming/)
-- [回溯](https://leetcode.cn/tag/backtracking/)
+    - [字符串](https://leetcode.cn/tag/string/)
+    - [动态规划](https://leetcode.cn/tag/dynamic-programming/)
+    - [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 
-- [电话号码的字母组合](../letter-combinations-of-a-phone-number/README.md) Medium 
-- [有效的括号](../valid-parentheses/README.md) Easy 
+    - [电话号码的字母组合](../letter-combinations-of-a-phone-number/README.md) Medium 
+    - [有效的括号](../valid-parentheses/README.md) Easy 

@@ -4,27 +4,6 @@ import (
 	. "github.com/EndlessCheng/codeforces-go/leetcode/testutil"
 )
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -47,9 +26,9 @@ func longestUnivaluePath(root *TreeNode) int {
 
 		v := node.Val
 		x, y := dfs(node.Right, v), dfs(node.Left, v)
-		ans = _max(ans, x+y)
+		ans = max(ans, x+y)
 		if v == parent {
-			return _max(x, y) + 1
+			return max(x, y) + 1
 		} else {
 			return 0
 		}

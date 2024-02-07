@@ -15,7 +15,7 @@ func characterReplacement(s string, k int) int {
 		)
 		for _, n := range set {
 			count += n
-			longest = _max(n, longest)
+			longest = max(n, longest)
 		}
 
 		count -= longest
@@ -34,17 +34,10 @@ func characterReplacement(s string, k int) int {
 			left++
 		}
 
-		ans = _max(ans, right-left+1)
+		ans = max(ans, right-left+1)
 	}
 
 	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }
 
 // 滑动窗口, 记录每次子串中最大重复字符次数
@@ -63,7 +56,7 @@ func characterReplacement2(s string, k int) int {
 		// 更新最大重复字符次数,
 		// most代表这 s[left:right]中重复次数最多的字符 s[m],
 		// 当前子串 s[left:right+1] 的重复次数最多的字符, 要么是count[x]++后的s[right]字符, 要么是 s[m]字符
-		most = _max(most, count[x])
+		most = max(most, count[x])
 
 		// 要替换的字符串数量: 当前子串长度 - 字符最大出现次数, 不能超过k
 		if right-left+1-most > k {
@@ -71,7 +64,7 @@ func characterReplacement2(s string, k int) int {
 			left++
 		}
 
-		ans = _max(ans, right-left+1)
+		ans = max(ans, right-left+1)
 	}
 
 	return ans
@@ -90,7 +83,7 @@ func characterReplacement3(s string, k int) int {
 
 			// 计算子串中的字符次数 O(N)
 			for _, c := range count {
-				n = _max(n, c)
+				n = max(n, c)
 			}
 
 			l := j - i + 1
@@ -98,7 +91,7 @@ func characterReplacement3(s string, k int) int {
 				break
 			}
 
-			ans = _max(ans, l)
+			ans = max(ans, l)
 		}
 	}
 	return ans

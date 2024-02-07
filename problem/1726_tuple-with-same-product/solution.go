@@ -1,26 +1,5 @@
 package main
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 // 哈希表
 // 时间复杂度：O(n^2)
 // 空间复杂度：O(n^2)

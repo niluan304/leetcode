@@ -48,7 +48,7 @@ func canPartition(nums []int) bool {
 				continue
 			}
 			// 2. 确定递推公式/状态转移公式
-			dp[i+1][j] = _max(dp[i+1][j], num+dp[i][w])
+			dp[i+1][j] = max(dp[i+1][j], num+dp[i][w])
 		}
 	}
 	//// 5. debug: 打印dp数组
@@ -56,17 +56,6 @@ func canPartition(nums []int) bool {
 	//	fmt.Println("total", total, "i", dp[i])
 	//}
 	return dp[n][total] == total
-}
-
-func _max(list ...int) int {
-	var ans = math.MinInt
-	for _, item := range list {
-		if ans < item {
-			ans = item
-		}
-	}
-
-	return ans
 }
 
 // dp
@@ -113,7 +102,7 @@ func canPartition2(nums []int) bool {
 		//v := nums[i] // 物品的价值=其重量 v[i] = w[i]
 		for j := target; j >= v; j-- {
 			// 2. 确定递推公式/状态转移公式
-			dp[j] = _max(dp[j], v+dp[j-v])
+			dp[j] = max(dp[j], v+dp[j-v])
 		}
 	}
 	//// 5. debug: 打印dp数组

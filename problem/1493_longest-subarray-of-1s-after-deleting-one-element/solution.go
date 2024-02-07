@@ -27,17 +27,10 @@ func longestSubarray(nums []int) int {
 
 		// ans = 子串长度 - 1,
 		// 所以也不需要额外处理全1的情况
-		ans = _max(ans, right-left)
+		ans = max(ans, right-left)
 	}
 
 	return ans
-}
-
-func _max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
 
 func longestSubarray2(nums []int) int {

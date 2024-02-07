@@ -21,32 +21,16 @@ func maxAncestorDiff(root *TreeNode) int {
 	var dfs func(node *TreeNode, minVal int, maxVal int)
 	dfs = func(node *TreeNode, minVal int, maxVal int) {
 		if node == nil {
-			ans = _max(ans, maxVal-minVal)
+			ans = max(ans, maxVal-minVal)
 			return
 		}
 
-		minVal = _min(minVal, node.Val)
-		maxVal = _max(maxVal, node.Val)
+		minVal = min(minVal, node.Val)
+		maxVal = max(maxVal, node.Val)
 		dfs(node.Left, minVal, maxVal)
 		dfs(node.Right, minVal, maxVal)
 	}
 
 	dfs(root, root.Val, root.Val)
 	return ans
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-
-	return y
 }

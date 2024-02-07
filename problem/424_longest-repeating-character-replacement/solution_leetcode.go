@@ -21,10 +21,3 @@ func leetcodeMinTime(s string, k int) int {
 	}
 	return r - l
 }
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}

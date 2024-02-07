@@ -17,12 +17,12 @@ func withoutLeader(n int, rs []int, leaders [][]int) int {
 		for _, j := range graph[i] {
 			withJ, withoutJ := dfs(j)
 			withI += withoutJ
-			withoutI += _max(withJ, withoutJ)
+			withoutI += max(withJ, withoutJ)
 		}
 		return withI, withoutI
 	}
 
-	return _max(dfs(sum))
+	return max(dfs(sum))
 }
 
 func main() {
@@ -41,7 +41,7 @@ func main() {
 	fmt.Println(withoutLeader(n, rs, leaders))
 }
 
-func _max(x, y int) int {
+func max(x, y int) int {
 	if x > y {
 		return x
 	}

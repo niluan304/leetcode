@@ -17,22 +17,8 @@ func giveGem(gem []int, operations [][]int) int {
 
 	var minGem, maxGem = math.MaxInt, math.MinInt
 	for _, g := range gem {
-		minGem = _min(minGem, g)
-		maxGem = _max(maxGem, g)
+		minGem = min(minGem, g)
+		maxGem = max(maxGem, g)
 	}
 	return maxGem - minGem
-}
-
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
 }

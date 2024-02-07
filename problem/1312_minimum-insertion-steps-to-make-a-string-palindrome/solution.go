@@ -2,27 +2,6 @@ package main
 
 import "math"
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 // dfs + 记忆化搜搜
 // 时间复杂度：O(n^2)
 // 空间复杂度：O(n^2)
@@ -47,7 +26,7 @@ func minInsertions(s string) int {
 		if s[i] == s[j] {
 			v = dfs(i+1, j-1) // 首尾字母相同，无需插入字符
 		} else {
-			v = _min(dfs(i+1, j), dfs(i, j-1)) + 1 // 首尾字母不相同，需要在首或尾插入一个字符
+			v = min(dfs(i+1, j), dfs(i, j-1)) + 1 // 首尾字母不相同，需要在首或尾插入一个字符
 		}
 
 		cache[i][j] = &v
@@ -71,7 +50,7 @@ func minInsertions2(s string) int {
 			if s[i] == s[j] {
 				dp[i][j] = dp[i+1][j-1] // 首尾字母相同，无需插入字符
 			} else {
-				dp[i][j] = _min(dp[i+1][j], dp[i][j-1]) + 1 // 首尾字母不相同，需要在首或尾插入一个字符
+				dp[i][j] = min(dp[i+1][j], dp[i][j-1]) + 1 // 首尾字母不相同，需要在首或尾插入一个字符
 			}
 		}
 	}

@@ -5,27 +5,6 @@ import (
 	"sort"
 )
 
-func _max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func _min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
-
-func _abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 func minCost(n int, cuts []int) int {
 	sort.Ints(cuts)
 	type Key struct{ i, j int }
@@ -48,7 +27,7 @@ func minCost(n int, cuts []int) int {
 		for _, cut := range cuts[x:y] {
 			v1 := dfs(i, cut)
 			v2 := dfs(cut, j)
-			cost = _min(cost, j-i+v1+v2)
+			cost = min(cost, j-i+v1+v2)
 		}
 
 		cache[key] = cost
@@ -79,7 +58,7 @@ func minCost2(n int, cuts []int) int {
 
 		cost := math.MaxInt32
 		for k := i + 1; k < j; k++ {
-			cost = _min(
+			cost = min(
 				cost,
 				cuts[j]-cuts[i]+dfs(i, k)+dfs(k, j),
 			)

@@ -6,11 +6,15 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_generate_parentheses(t *testing.T) {
+func Test_generateParenthesis(t *testing.T) {
 	targetCaseNum := 0 // -1
 
 	fs := []func(n int) []string{
+		//bruteForce,
 		generateParenthesis,
+		generateParenthesis2,
+		leetcode2,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {

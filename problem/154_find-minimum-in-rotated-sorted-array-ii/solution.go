@@ -1,20 +1,5 @@
 package main
 
-import (
-	"math"
-)
-
-func _min(nums []int) int {
-	min := math.MaxInt
-	for _, v := range nums {
-		if v < min {
-			min = v
-		}
-	}
-
-	return min
-}
-
 func findMin(nums []int) int {
 	var (
 		left  = 0
