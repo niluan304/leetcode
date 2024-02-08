@@ -1,7 +1,7 @@
 package main
 
 import (
-	"math"
+	. "github.com/niluan304/leetcode/copypasta/graph"
 )
 
 // 最短距离必定是 3种方式之一：
@@ -65,39 +65,6 @@ func countOfPairs2(n int, x int, y int) []int {
 		}
 	}
 	return ans[1:]
-}
-
-// Floyd 返回任意两点间的最短距离
-// Floyd算法 又称为插点法，寻找给定的加权图中多源点之间最短路径的算法，与 Dijkstra算法 类似。
-// Floyd算法利用动态规划的思想，Dijkstra算法则是贪心。
-func Floyd(n int, initPath func(path [][]int)) [][]int {
-	var path = make([][]int, n)
-	for i, _ := range path {
-		path[i] = make([]int, n)
-		for j, _ := range path[i] {
-			path[i][j] = math.MaxInt32 // 初始化最大距离
-		}
-		path[i][i] = 0
-	}
-
-	// 初始化 path-1，两点直达距离
-	initPath(path)
-
-	// 迭代更新以 [0, n-1] 为中转节点的最短距离
-	for i := 0; i < n; i++ {
-		for j := 0; j < n; j++ {
-			if i == j {
-				continue
-			}
-			for k := 0; k < n; k++ {
-				if i == k {
-					continue
-				}
-				path[j][k] = min(path[j][k], path[j][i]+path[i][k])
-			}
-		}
-	}
-	return path
 }
 
 // BFS
