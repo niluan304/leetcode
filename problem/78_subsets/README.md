@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [78. 子集](https://leetcode.cn/problems/subsets/)
-Difficulty:Medium, Likes: 2190
+Difficulty:Medium, Likes: 2240
 
 ## 题目描述
 
@@ -39,12 +39,12 @@ Difficulty:Medium, Likes: 2190
 
 ## 相关话题
 
-- [位运算](https://leetcode.cn/tag/bit-manipulation/)
-- [数组](https://leetcode.cn/tag/array/)
-- [回溯](https://leetcode.cn/tag/backtracking/)
+    - [位运算](https://leetcode.cn/tag/bit-manipulation/)
+    - [数组](https://leetcode.cn/tag/array/)
+    - [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 
-- [子集 II](../subsets-ii/README.md) Medium 
-- [列举单词的全部缩写](../generalized-abbreviation/README.md) Medium 🔒
-- [字母大小写全排列](../letter-case-permutation/README.md) Medium 
+    - [子集 II](../subsets-ii/README.md) Medium 
+    - [列举单词的全部缩写](../generalized-abbreviation/README.md) Medium 🔒
+    - [字母大小写全排列](../letter-case-permutation/README.md) Medium 

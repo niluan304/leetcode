@@ -6,13 +6,13 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_partition(t *testing.T) {
+func Test_letterCasePermutation(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []func(s string) [][]string{
+	fs := []func(s string) []string{
 		//bruteForce,
-		partition,
-		partition2,
+		letterCasePermutation,
+		letterCasePermutation2,
 		//leetcode,
 		//endlessCheng,
 	}
@@ -26,11 +26,11 @@ func Test_partition(t *testing.T) {
 }
 
 var samples = `
-"aab"
-[["a","a","b"],["aa","b"]]
+"a1b2"
+["a1b2","a1B2","A1b2","A1B2"]
 
-"a"
-[["a"]]
+"3z4"
+["3z4","3Z4"]
 
 
 `

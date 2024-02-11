@@ -9,10 +9,11 @@ import (
 func Test_partition(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []func(s string) [][]string{
+	fs := []func(num string) bool{
 		//bruteForce,
-		partition,
-		partition2,
+		isAdditiveNumber,
+		isAdditiveNumber2,
+		isAdditiveNumber3,
 		//leetcode,
 		//endlessCheng,
 	}
@@ -26,11 +27,34 @@ func Test_partition(t *testing.T) {
 }
 
 var samples = `
-"aab"
-[["a","a","b"],["aa","b"]]
+"112358"
+true
 
-"a"
-[["a"]]
+"199100199"
+true
 
+"123"
+true
+
+"124"
+false
+
+"11235812"
+false
+
+"1123581321"
+true
+
+"112233"
+true
+
+"1122"
+false
+
+"199111992"
+true
+
+"199001200"
+false
 
 `

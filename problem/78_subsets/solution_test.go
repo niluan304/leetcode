@@ -9,8 +9,12 @@ import (
 func Test_subsets(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(nums []int) [][]int{
+		//bruteForce,
 		subsets,
+		subsets2,
+		//leetcode,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {
@@ -27,5 +31,6 @@ var samples = `
 
 [0]
 [[],[0]]
+
 
 `

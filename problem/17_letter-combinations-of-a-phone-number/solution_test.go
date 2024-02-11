@@ -6,11 +6,15 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_letter_combinations_of_a_phone_number(t *testing.T) {
+func Test_letterCombinations(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(digits string) []string{
+		//bruteForce,
 		letterCombinations,
+		//letterCombinations2,
+		//leetcode,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {
@@ -30,5 +34,6 @@ var samples = `
 
 "2"
 ["a","b","c"]
+
 
 `

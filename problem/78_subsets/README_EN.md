@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [78.Subsets](https://leetcode.com/problems/subsets/)
-Difficulty:Medium, Likes: 2190
+Difficulty:Medium, Likes: 2240
 
 ## Description
 

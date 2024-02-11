@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [17.Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
-Difficulty:Medium, Likes: 2684
+Difficulty:Medium, Likes: 2750
 
 ## Description
 

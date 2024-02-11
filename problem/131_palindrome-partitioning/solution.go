@@ -1,69 +1,76 @@
 package main
 
-func partition(s string) [][]string {
-	var stack []string
+import "slices"
 
-	nodes = [][]string{}
-	dfs(s, 0, stack)
-	return nodes
-}
+// 回溯模板2
+// 答案的视角（枚举子串结束位置）
+// - 时间复杂度：$\mathcal{O}(n \cdot 2^n)$。
+// - 空间复杂度：$\mathcal{O}(n)$。
+func partition(s string) (ans [][]string) {
+	var path []string
+	var n = len(s)
 
-func dfs(s string, idx int, stack []string) {
-	if idx == len(s) {
-		tmp := make([]string, len(stack))
-		copy(tmp, stack)
-		nodes = append(nodes, tmp)
-		return
-	}
-	i := idx
-	for i < len(s) {
-		i++
-		top := s[idx:i]
-		if !isPartition(top) {
-			continue
+	var dfs func(i int)
+	dfs = func(i int) {
+		if i == n {
+			ans = append(ans, slices.Clone(path))
+			return
 		}
 
-		stack = append(stack, top)
-		dfs(s, i, stack)
-		stack = stack[:len(stack)-1]
+		for j := i; j < n; j++ {
+			sub := s[i : j+1]
+			if !isPartition(sub) {
+				continue
+			}
+
+			path = append(path, sub)
+			dfs(j + 1)
+			path = path[:len(path)-1]
+		}
 	}
 
-	return
+	dfs(0)
+	return ans
 }
 
 func isPartition(s string) bool {
-	j := len(s)
-	for i := 0; i < j/2; i++ {
-		if s[i] != s[j-1-i] {
+	n := len(s)
+	for i := 0; i < n/2; i++ {
+		if s[i] != s[n-1-i] {
 			return false
 		}
 	}
 	return true
 }
 
-var nodes [][]string
+// 回溯模板1
+// 输入的视角（逗号选或不选）
+// - 时间复杂度：$\mathcal{O}(n \cdot 2^n)$。
+// - 空间复杂度：$\mathcal{O}(n)$。
+func partition2(s string) (ans [][]string) {
+	var path []string
+	var n = len(s)
 
-func partition2(s string) [][]string {
-	nodes = [][]string{}
-	dfs2(s, []string{})
-	return nodes
-}
-
-func dfs2(s string, path []string) {
-	if s == "" {
-		var node = make([]string, len(path))
-		copy(node, path)
-		nodes = append(nodes, node)
-		return
-	}
-
-	for i := 1; i <= len(s); i++ {
-		if !isPartition(s[:i]) {
-			continue
+	var dfs func(start, end int)
+	dfs = func(start, end int) {
+		if end == n {
+			ans = append(ans, slices.Clone(path))
+			return
 		}
-		path = append(path, s[:i])
 
-		dfs2(s[i:], path)
+		if end < n-1 {
+			dfs(start, end+1) // 不选
+		}
+
+		sub := s[start : end+1]
+		if !isPartition(sub) {
+			return
+		}
+		path = append(path, sub)
+		dfs(end+1, end+1) // 选
 		path = path[:len(path)-1]
 	}
+
+	dfs(0, 0)
+	return ans
 }

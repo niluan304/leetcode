@@ -2,7 +2,7 @@
 | [English](README_EN.md) | 简体中文 |
 
 # [17. 电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/)
-Difficulty:Medium, Likes: 2684
+Difficulty:Medium, Likes: 2750
 
 ## 题目描述
 
@@ -47,12 +47,12 @@ Difficulty:Medium, Likes: 2684
 
 ## 相关话题
 
-- [哈希表](https://leetcode.cn/tag/hash-table/)
-- [字符串](https://leetcode.cn/tag/string/)
-- [回溯](https://leetcode.cn/tag/backtracking/)
+    - [哈希表](https://leetcode.cn/tag/hash-table/)
+    - [字符串](https://leetcode.cn/tag/string/)
+    - [回溯](https://leetcode.cn/tag/backtracking/)
 
 ## 相似题目
 
-- [括号生成](../generate-parentheses/README.md) Medium 
-- [组合总和](../combination-sum/README.md) Medium 
-- [二进制手表](../binary-watch/README.md) Easy 
+    - [括号生成](../generate-parentheses/README.md) Medium 
+    - [组合总和](../combination-sum/README.md) Medium 
+    - [二进制手表](../binary-watch/README.md) Easy 
