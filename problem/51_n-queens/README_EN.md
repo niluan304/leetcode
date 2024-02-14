@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [51.N-Queens](https://leetcode.com/problems/n-queens/)
-Difficulty:Hard, Likes: 1967
+Difficulty:Hard, Likes: 2025
 
 ## Description
 

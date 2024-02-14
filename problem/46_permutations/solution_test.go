@@ -6,11 +6,15 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_permutations(t *testing.T) {
+func Test_permute(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(nums []int) [][]int{
+		//bruteForce,
 		permute,
+		permute2,
+		//leetcode,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {
@@ -30,5 +34,6 @@ var samples = `
 
 [1]
 [[1]]
+
 
 `

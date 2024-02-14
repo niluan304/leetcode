@@ -6,13 +6,13 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_solveNQueens(t *testing.T) {
+func Test_totalNQueens(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []func(n int) [][]string{
+	fs := []func(n int) int{
 		//bruteForce,
-		solveNQueens,
-		solveNQueens2,
+		totalNQueens,
+		//totalNQueens2,
 		//leetcode,
 		//endlessCheng,
 	}
@@ -27,10 +27,10 @@ func Test_solveNQueens(t *testing.T) {
 
 var samples = `
 4
-[[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
+2
 
 1
-[["Q"]]
+1
 
 
 `

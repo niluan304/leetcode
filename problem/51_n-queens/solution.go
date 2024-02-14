@@ -2,202 +2,91 @@ package main
 
 import (
 	"bytes"
+	"strings"
 )
 
 func solveNQueens(n int) [][]string {
-	var (
-		ans  [][]string
-		path []string
-	)
-	q := bytes.Repeat([]byte("."), n)
+	m := 2*n - 1
 
-	var matrix = make([][]int, n)
-	for i := range matrix {
-		matrix[i] = make([]int, n)
-	}
+	col := make([]int, n)     // 在第 i 行 col[i] 列放置皇后
+	onPath := make([]bool, n) // 哪些行选了皇后
+	diag1, diag2 := make(map[int]bool, m), make(map[int]bool, m)
 
-	var dfs func(idx int)
-
-	dfs = func(idx int) {
-		if len(path) == n {
-			ans = append(ans, append([]string(nil), path...))
-			return
-		}
-
-		for x := idx; x < n; x++ {
-			for y, v := range matrix[x] {
-				if v > 0 {
-					continue
-				}
-
-				node := append([]byte{}, q...)
-				node[y] = 'Q'
-				path = append(path, string(node))
-
-				for i := x; i < n; i++ {
-					matrix[i][y]++
-
-					y1 := y - (i - x)
-					if y1 >= 0 {
-						matrix[i][y1]++
-					}
-
-					y2 := y + (i - x)
-					if y2 < n {
-						matrix[i][y2]++
-					}
-				}
-
-				dfs(x + 1)
-
-				path = path[:len(path)-1]
-				for i := x; i < n; i++ {
-					matrix[i][y]--
-
-					y1 := y - (i - x)
-					if y1 >= 0 {
-						matrix[i][y1]--
-					}
-
-					y2 := y + (i - x)
-					if y2 < n {
-						matrix[i][y2]--
-					}
-				}
+	var ans [][]string
+	var dfs func(r int) // 枚举行号
+	dfs = func(r int) {
+		if r == n {
+			var path = make([]string, n)
+			for j, c := range col {
+				row := strings.Repeat(".", c) + "Q" + strings.Repeat(".", n-1-c)
+				path[j] = row
 			}
+			ans = append(ans, path)
+		}
+
+		for c := 0; c < n; c++ {
+			if onPath[c] || diag1[r+c] || diag2[r-c] {
+				continue
+			}
+			col[r] = c
+			onPath[c], diag1[r+c], diag2[r-c] = true, true, true
+			dfs(r + 1)
+			onPath[c], diag1[r+c], diag2[r-c] = false, false, false
 		}
 	}
-
 	dfs(0)
-
 	return ans
 }
 
 func solveNQueens2(n int) [][]string {
-	var (
-		ans [][]string
-	)
-
+	var ans [][]string
+	const Empty, Queen = '.', 'Q'
 	var board = make([][]byte, n)
 	for i := range board {
-		board[i] = bytes.Repeat([]byte("."), n)
+		board[i] = bytes.Repeat([]byte{Empty}, n)
 	}
 
-	valid := func(x, y int) bool {
+	valid := func(board [][]byte, x, y int) bool {
 		for i, v := range board[:x] {
-			if v[y] == 'Q' {
+			if v[y] == Queen {
 				return false
 			}
 
 			y1 := y - (x - i)
-			if y1 >= 0 && v[y1] == 'Q' {
+			if y1 >= 0 && v[y1] == Queen {
 				return false
 			}
 
 			y2 := y + (x - i)
-			if y2 < n && v[y2] == 'Q' {
+			if y2 < n && v[y2] == Queen {
 				return false
 			}
 		}
-
 		return true
 	}
 
 	var dfs func(idx int)
-
-	dfs = func(idx int) {
-		if idx == n {
-			var path = make([]string, 0, n)
-			for i := range board {
-				path = append(path, string(board[i]))
-			}
-
-			ans = append(ans, path)
-			return
-		}
-
-		for x := idx; x < n; x++ {
-			flag := false
-			for y := range board[x] {
-				if !valid(x, y) {
-					continue
-				}
-
-				flag = true
-				board[x][y] = 'Q'
-
-				dfs(x + 1)
-
-				flag = false
-				board[x][y] = '.'
-			}
-
-			// 未进入下一行, 说明这一行无法设置Q
-			if !flag {
-				return
-			}
-		}
-	}
-
-	dfs(0)
-	return ans
-}
-
-func solveNQueens3(n int) [][]string {
-	var (
-		ans [][]string
-	)
-
-	var board = make([][]byte, n)
-	for i := range board {
-		board[i] = bytes.Repeat([]byte("."), n)
-	}
-
-	var dfs func(idx int)
-
 	dfs = func(x int) {
 		if x == n {
-			var path = make([]string, 0, n)
+			var path = make([]string, n)
 			for i := range board {
-				path = append(path, string(board[i]))
+				path[i] = string(board[i])
 			}
-
 			ans = append(ans, path)
 			return
 		}
 
 		for y := range board[x] {
-			if !IsValid3(board, x, y) {
+			if !valid(board, x, y) {
 				continue
 			}
 
-			board[x][y] = 'Q'
+			board[x][y] = Queen
 			dfs(x + 1)
-			board[x][y] = '.'
+			board[x][y] = Empty
 		}
 	}
 
 	dfs(0)
 	return ans
-}
-
-func IsValid3(board [][]byte, x, y int) bool {
-	n := len(board)
-	for i, v := range board[:x] {
-		if v[y] == 'Q' {
-			return false
-		}
-
-		y1 := y - (x - i)
-		if y1 >= 0 && v[y1] == 'Q' {
-			return false
-		}
-
-		y2 := y + (x - i)
-		if y2 < n && v[y2] == 'Q' {
-			return false
-		}
-	}
-
-	return true
 }

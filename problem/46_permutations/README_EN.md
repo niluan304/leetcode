@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [46.Permutations](https://leetcode.com/problems/permutations/)
-Difficulty:Medium, Likes: 2747
+Difficulty:Medium, Likes: 2814
 
 ## Description
 
