@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [216.Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)
-Difficulty:Medium, Likes: 781
+Difficulty:Medium, Likes: 801
 
 ## Description
 

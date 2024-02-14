@@ -13,7 +13,8 @@ func Test_generateParenthesis(t *testing.T) {
 		//bruteForce,
 		generateParenthesis,
 		generateParenthesis2,
-		leetcode2,
+		generateParenthesis3,
+		//leetcode,
 		//endlessCheng,
 	}
 

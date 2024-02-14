@@ -2,7 +2,7 @@
 | English | [简体中文](README.md) |
 
 # [77.Combinations](https://leetcode.com/problems/combinations/)
-Difficulty:Medium, Likes: 1537
+Difficulty:Medium, Likes: 1584
 
 ## Description
 

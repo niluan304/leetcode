@@ -6,11 +6,15 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_combinations(t *testing.T) {
+func Test_combine(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(n int, k int) [][]int{
+		//bruteForce,
 		combine,
+		//combine2,
+		//leetcode,
+		//endlessCheng,
 	}
 
 	for _, f := range fs {
@@ -29,5 +33,6 @@ var samples = `
 1
 1
 [[1]]
+
 
 `

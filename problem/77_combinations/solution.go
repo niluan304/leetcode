@@ -1,22 +1,24 @@
 package main
 
+import "slices"
+
 func combine(n int, k int) [][]int {
 	var ans [][]int
-	var nodes []int
-
-	//var dfs func()
-	var dfs func(node int)
-	dfs = func(node int) {
-		if len(nodes) == k {
-			v := append([]int(nil), nodes...)
-			ans = append(ans, v)
+	var path []int
+	var dfs func(i int)
+	dfs = func(i int) {
+		if len(path) == k {
+			ans = append(ans, slices.Clone(path))
+			return
+		}
+		if len(path)+(n-i+1) < k { // 长度不足，剪枝
 			return
 		}
 
-		for i := node; i <= n; i++ {
-			nodes = append(nodes, i)
-			dfs(i + 1)
-			nodes = nodes[:len(nodes)-1]
+		for j := i; j <= n; j++ {
+			path = append(path, j)
+			dfs(j + 1)
+			path = path[:len(path)-1]
 		}
 	}
 

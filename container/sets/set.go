@@ -2,8 +2,6 @@ package sets
 
 import (
 	"maps"
-
-	"github.com/niluan304/leetcode/container"
 )
 
 func NewSet[T comparable](data ...T) *Set[T] {
@@ -35,8 +33,11 @@ func (s *Set[T]) Clear()           { clear(s.data) }
 func (s Set[T]) Size() int   { return len(s.data) }
 func (s Set[T]) Empty() bool { return s.Size() == 0 }
 
-func (s Set[T]) Values() []T {
-	return container.MapKeys(s.data)
+func (s Set[T]) Values() (values []T) {
+	for v, _ := range s.data {
+		values = append(values, v)
+	}
+	return values
 }
 
 func (s Set[T]) Clone() *Set[T] {
