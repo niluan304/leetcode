@@ -13,7 +13,7 @@ func minCost(root int, graph [][]int, costs []int) int {
 
 	var dfs func(i int) Value
 	dfs = func(i int) Value {
-		var self, parent, minExtra = 0, 0, math.MaxInt32
+		self, parent, minExtra := 0, 0, math.MaxInt32
 		for _, j := range graph[i] {
 			v := dfs(j)
 
@@ -31,7 +31,7 @@ func minCost(root int, graph [][]int, costs []int) int {
 	return min(v.Self, v.Children)
 }
 
-func run(_r io.Reader, _w io.Writer) {
+func bufferIO(_r io.Reader, _w io.Writer) {
 	in := bufio.NewReader(_r)
 	out := bufio.NewWriter(_w)
 	defer out.Flush()
@@ -58,4 +58,30 @@ func run(_r io.Reader, _w io.Writer) {
 	fmt.Fprint(out, minCost(root, g, cost))
 }
 
-func main() { run(os.Stdin, os.Stdout) }
+func main() {
+	bufferIO(os.Stdin, os.Stdout)
+}
+
+func max(x, y int, z ...int) int {
+	if x < y {
+		x = y
+	}
+	for _, v := range z {
+		if x < v {
+			x = v
+		}
+	}
+	return x
+}
+
+func min(x, y int, z ...int) int {
+	if x > y {
+		x = y
+	}
+	for _, v := range z {
+		if x > v {
+			x = v
+		}
+	}
+	return x
+}
