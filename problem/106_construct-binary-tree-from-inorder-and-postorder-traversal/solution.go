@@ -20,23 +20,25 @@ import (
 // dfs
 // - 时间复杂度：$\mathcal{O}(n^2)$。
 // - 空间复杂度：$\mathcal{O}(n)$。
-func buildTree(preorder []int, inorder []int) *TreeNode {
-	var dfs func(preorder []int, inorder []int) *TreeNode
-	dfs = func(preorder []int, inorder []int) *TreeNode {
-		if len(preorder) == 0 {
+func buildTree(inorder []int, postorder []int) *TreeNode {
+	var dfs func(inorder []int, postorder []int) *TreeNode
+	dfs = func(inorder []int, postorder []int) *TreeNode {
+		if len(inorder) == 0 {
 			return nil
 		}
 
-		v := preorder[0]
-		i := slices.Index(inorder, v) // 左子树的大小
+		m := len(postorder)
+		val := postorder[m-1]
+		i := slices.Index(inorder, val)
+
 		return &TreeNode{
-			Val:   v,
-			Left:  dfs(preorder[1:i+1], inorder[:i]),
-			Right: dfs(preorder[i+1:], inorder[i+1:]),
+			Val:   val,
+			Left:  dfs(inorder[:i], postorder[:i]),
+			Right: dfs(inorder[i+1:], postorder[i:m-1]),
 		}
 	}
 
-	return dfs(preorder, inorder)
+	return dfs(inorder, postorder)
 }
 
 // dfs
@@ -44,28 +46,29 @@ func buildTree(preorder []int, inorder []int) *TreeNode {
 //
 // - 时间复杂度：$\mathcal{O}(n)$。
 // - 空间复杂度：$\mathcal{O}(n)$。
-func buildTree2(preorder []int, inorder []int) *TreeNode {
+func buildTree2(inorder []int, postorder []int) *TreeNode {
 	index := map[int]int{}
 	for i, v := range inorder {
 		index[v] = i
 	}
 
-	var dfs func(preL, preR int, inL, inR int) *TreeNode
-	dfs = func(preL, preR int, inL, inR int) *TreeNode {
+	var dfs func(inL, inR int, postL, postR int) *TreeNode
+	dfs = func(inL, inR int, postL, postR int) *TreeNode {
 		if inL == inR {
 			return nil
 		}
 
-		v := preorder[preL]
-		i := index[v]
+		val := postorder[postR-1]
+		i := index[val]
 		leftSize := i - inL // 左子树的大小
-		return &TreeNode{
-			Val:   v,
-			Left:  dfs(preL+1, preL+leftSize+1, inL, i),
-			Right: dfs(preL+leftSize+1, preR, i+1, inR),
+		root := &TreeNode{
+			Val:   val,
+			Left:  dfs(inL, i, postL, postL+leftSize),
+			Right: dfs(i+1, inR, postL+leftSize, postR-1),
 		}
+		return root
 	}
 
-	n := len(preorder)
+	n := len(inorder)
 	return dfs(0, n, 0, n)
 }
