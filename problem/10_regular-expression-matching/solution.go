@@ -2,6 +2,7 @@ package main
 
 import (
 	"regexp"
+	"strings"
 
 	. "github.com/niluan304/leetcode/copypasta/dp"
 )
@@ -58,9 +59,15 @@ func isMatch(s string, p string) bool {
 // go的正则保证时间复杂度是线性的，极端情况下也不会是指数级别，因此并不会 timeout
 //
 // - 时间复杂度：$\mathcal{O}(n)$。
-// - 空间复杂度：$\mathcal{O}(n)$。
-//
-// Deprecated: 增加了非法的表达式用例
+// - 空间复杂度：$\mathcal{O}(1)$。
 func isMatch2(s, p string) bool {
-	return regexp.MustCompile("^" + p + "$").MatchString(s)
+	// 增加前后缀，避免 * 结尾的字符串
+	fields := strings.FieldsFunc("^"+p+"$", func(r rune) bool {
+		// strings.FieldsFunc 通过指定的 rune 分割字符串
+		// 将连续的 * 替换为单个 *
+		return r == '*'
+	})
+
+	exp := strings.Join(fields, "*") // 修复之后的正则表达式
+	return regexp.MustCompile(exp).MatchString(s)
 }
