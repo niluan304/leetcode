@@ -1,6 +1,8 @@
 package main
 
 import (
+	"math/big"
+
 	. "github.com/EndlessCheng/codeforces-go/leetcode/testutil"
 )
 
@@ -37,7 +39,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 }
 
 func ToInt(head *ListNode) int {
-	var n = 0
+	n := 0
 	for head != nil {
 		n = n*10 + head.Val
 		head = head.Next
@@ -128,4 +130,33 @@ func addTwoNumbers3(l1 *ListNode, l2 *ListNode) *ListNode {
 	}
 
 	return head.Next
+}
+
+// 将链表转换为 big.Int
+// - 时间复杂度：O(n + m)。
+// - 空间复杂度：O(n + m)。
+func addTwoNumbers4(l1 *ListNode, l2 *ListNode) *ListNode {
+	num1, num2 := ToBigInt(l1), ToBigInt(l2)
+
+	s := num1.Add(num1, num2).String()
+	dummy := &ListNode{}
+	for _, b := range s {
+		dummy.Val = int(b - '0')
+		dummy = &ListNode{ // 头插法, dummy.Next 始终为头结点
+			Val:  0,
+			Next: dummy,
+		}
+	}
+	return dummy.Next
+}
+
+func ToBigInt(root *ListNode) *big.Int {
+	e := big.NewInt(1) // 表示 10^i
+	num := big.NewInt(0)
+	for node := root; node != nil; node = node.Next {
+		x := big.NewInt(int64(node.Val))
+		num = num.Add(num, x.Mul(x, e))
+		e = e.Mul(e, big.NewInt(10))
+	}
+	return num
 }

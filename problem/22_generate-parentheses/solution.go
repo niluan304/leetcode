@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"slices"
 
-	. "github.com/niluan304/leetcode/container/sets"
+	. "github.com/niluan304/leetcode/container"
 	. "github.com/niluan304/leetcode/copypasta/dp"
 )
 
@@ -20,7 +20,7 @@ import (
 // - 空间复杂度：$\mathcal{O}(n)$。
 func generateParenthesis(n int) []string {
 	var ans []string
-	var path = make([]byte, n*2) // 由于答案长度是固定，因此替代数组的 push, pop 操作
+	path := make([]byte, n*2) // 由于答案长度是固定，因此替代数组的 push, pop 操作
 
 	var dfs func(i int, open int)
 	dfs = func(i int, open int) {
@@ -86,7 +86,6 @@ func generateParenthesis2(n int) (ans []string) {
 // 3. 如果 "x","y" 都是合法的括号，那么 "xy" 也是合法的括号
 // 定义的 dfs 函数为纯函数
 func generateParenthesis3(n int) []string {
-
 	var dfs func(n int) []string
 	dfs = func(n int) []string {
 		if n == 0 {

@@ -1,6 +1,8 @@
 package main
 
 import (
+	"math/big"
+
 	. "github.com/EndlessCheng/codeforces-go/leetcode/testutil"
 )
 
@@ -113,7 +115,7 @@ func addTwoNumbers3(l1 *ListNode, l2 *ListNode) *ListNode {
 
 // Reverse 反转链表
 func Reverse(root *ListNode) *ListNode {
-	var cur = root
+	cur := root
 	var pre *ListNode
 
 	for cur != nil {
@@ -162,7 +164,7 @@ func addTwoNumbers4(l1 *ListNode, l2 *ListNode) *ListNode {
 
 // ToSlice 链表转数组
 func ToSlice(head *ListNode) []int {
-	var list = make([]int, 0, 100)
+	list := make([]int, 0, 100)
 
 	cur := head
 	for cur != nil {
@@ -170,4 +172,31 @@ func ToSlice(head *ListNode) []int {
 		cur = cur.Next               // 下一个结点
 	}
 	return list
+}
+
+// 将链表转换为 big.Int
+// - 时间复杂度：O(n + m)。
+// - 空间复杂度：O(n + m)。
+func addTwoNumbers5(l1 *ListNode, l2 *ListNode) *ListNode {
+	num1, num2 := ToBigInt(l1), ToBigInt(l2)
+
+	s := num1.Add(num1, num2).String()
+
+	dummy := &ListNode{}
+	cur := dummy
+	for _, b := range s {
+		cur.Next = &ListNode{Val: int(b - '0')} // 尾插法
+		cur = cur.Next
+	}
+	return dummy.Next
+}
+
+func ToBigInt(root *ListNode) *big.Int {
+	num := big.NewInt(0)
+	ten := big.NewInt(10)
+	for node := root; node != nil; node = node.Next {
+		x := big.NewInt(int64(node.Val))
+		num = num.Add(num.Mul(num, ten), x)
+	}
+	return num
 }

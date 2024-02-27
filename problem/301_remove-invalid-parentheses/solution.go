@@ -1,6 +1,8 @@
 package main
 
-import . "github.com/niluan304/leetcode/container/sets"
+import (
+	. "github.com/niluan304/leetcode/container"
+)
 
 // 组合型回溯模板1
 // 答案的视角，选或不选
