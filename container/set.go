@@ -1,4 +1,4 @@
-package sets
+package container
 
 import (
 	"maps"
@@ -34,7 +34,7 @@ func (s Set[T]) Size() int   { return len(s.data) }
 func (s Set[T]) Empty() bool { return s.Size() == 0 }
 
 func (s Set[T]) Values() (values []T) {
-	for v, _ := range s.data {
+	for v := range s.data {
 		values = append(values, v)
 	}
 	return values

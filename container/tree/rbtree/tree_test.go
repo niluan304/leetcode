@@ -375,7 +375,6 @@ func TestTree_Put_Slices(t *testing.T) {
 		}
 		fmt.Println(tree)
 	}
-
 }
 
 func TestTree_Get(t *testing.T) {
@@ -420,6 +419,7 @@ func TestTree_Get(t *testing.T) {
 		}
 	}
 }
+
 func TestTree_Update(t *testing.T) {
 	tree := NewTreeWithValid[int, string]()
 	pairs := []struct {

@@ -1,13 +1,9 @@
 .idea
 
-config
-config.*
-data
-questionData
-/plugin/
 *.exe
 *.exe~
 *.o
 *.out
 *.class
 
+/plugin/

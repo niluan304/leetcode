@@ -1,0 +1,35 @@
+leetcode:
+  path: "./problem" # 题目模板生成的路径
+
+template: # 模板生成配置
+  - name: "en"
+    filename: "problem_en.md"
+    open: false
+    tmpl: "./template/problem_en.tmpl"
+
+  - name: "zh"
+    filename: "problem_zh.md"
+    open: false
+    tmpl: "./template/problem_zh.tmpl"
+
+  - name: "leetcode"                      # 类型类型，仅支持 en, zh, leetcode, solution, test。不需要的文件，可按需注释
+    filename: "solution_leetcode.go"      # 生成的文件名
+    open: false                           # 文件生成后，并自动打开该文件
+    app: ""                               # open 字段为 true 时才可用，使用指定软件打开文件，通常是 GoLand 或 VSCode 的安装位置，如果为空则使用系统默认软件打开
+    tmpl: "./template/leetcode.tmpl"      # 用于渲染的go模板文件
+
+  - name: "solution"                      # 必须的，用于生成 LeetCode 代码示例
+    filename: "solution.go"
+    open: true
+    app: "D:/Program Files/JetBrains/GoLand 2023.1/bin/goland64.exe"
+    tmpl: "./template/solution.tmpl"
+
+  - name: "test"                          # 必须的，用于运行单元测试，以及自定义测试用例
+    filename: "solution_test.go"
+    open: true
+    app: "D:/Program Files/JetBrains/GoLand 2023.1/bin/goland64.exe"
+    tmpl: "./template/test.tmpl"
+
+url: # 是否在浏览器里查看题目内容
+  open: true
+  app: ""

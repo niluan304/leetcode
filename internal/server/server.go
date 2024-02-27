@@ -53,7 +53,7 @@ func NewServer(configPath string) (*Server, error) {
 }
 
 func (s *Server) idToSlug(id string) (titleSlug string, err error) {
-	var ctx = context.Background()
+	ctx := context.Background()
 	client := api.New(api.EndpointZh)
 
 	res, err := client.ProblemsetQuestionList(ctx, api.ProblemQuestionReq{
@@ -96,7 +96,7 @@ func (s *Server) Id(id string) (err error) {
 }
 
 func (s *Server) TitleSlug(titleSlug string) (err error) {
-	var ctx = context.Background()
+	ctx := context.Background()
 	client := api.New(api.EndpointZh)
 
 	res, err := client.QuestionData(ctx, api.QuestionDataReq{TitleSlug: titleSlug})
@@ -144,7 +144,7 @@ func sleep(min int, max int) {
 }
 
 func (s *Server) Today() (err error) {
-	var ctx = context.Background()
+	ctx := context.Background()
 	client := api.New(api.EndpointZh)
 	res, err := client.QuestionOfToday(ctx, api.QuestionOfTodayReq{})
 	if err != nil {
@@ -169,7 +169,7 @@ func (s *Server) Article(article string) (err error) {
 	i := strings.LastIndex(article, "/")
 	article = article[i+1:]
 
-	var ctx = context.Background()
+	ctx := context.Background()
 	client := api.New(api.EndpointZh)
 	res, err := client.SolutionArticle(ctx, api.SolutionArticleReq{
 		Slug: article,
@@ -179,16 +179,16 @@ func (s *Server) Article(article string) (err error) {
 	}
 	const Flag = "```"
 	content := res.SolutionArticle.Content
-	for idx := strings.Index(content, Flag); idx >= 0; {
-		idx2 := strings.Index(content[idx+len(Flag):], Flag+"\n")
-		if idx2 == -1 {
-			break
-		}
-
-		prefix := content[:idx-1]
-		suffix := content[idx+9+idx2:]
-		content = prefix + suffix
-	}
+	//for idx := strings.Index(content, Flag); idx >= 0; {
+	//	idx2 := strings.Index(content[idx+len(Flag):], Flag+"\n")
+	//	if idx2 == -1 {
+	//		break
+	//	}
+	//
+	//	prefix := content[:idx-1]
+	//	suffix := content[idx+9+idx2:]
+	//	content = prefix + suffix
+	//}
 
 	fmt.Println(content)
 	return nil

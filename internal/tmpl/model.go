@@ -36,7 +36,7 @@ func (t *Template) Samples() Samples {
 	content := q.Content
 	if len(content) < 100 {
 		// TODO only Chinese
-		//content = q.TranslatedContent
+		// content = q.TranslatedContent
 	}
 	return NewSamples(content, q.MetaData.Systemdesign)
 }
@@ -85,25 +85,25 @@ func (t *Template) Solution() *Solution {
 	q := t.data
 
 	code := q.CodeSnippet(langSlug)
+	if !q.MetaData.Systemdesign {
+		ansType := funcReturnType(code)
 
-	ansType := funcReturnType(code)
+		i := strings.LastIndex(code, "}")
+		varAns := "var ans = 0 // math.MaxInt32 // math.MinInt32"
+		ans := "ans"
+		switch ansType {
+		case "int", "float64":
+			// initValue = "var ans = 0 \n\t //var ans = math.MaxInt32\n\t//var ans = math.MinInt32"
+		case "int64":
+			// initValue = "var ans = 0 \n\t //var ans = math.MaxInt32\n\t//var ans = math.MinInt32"
+			ans = "int64(ans)"
+		case "[]int", "[]byte", "[][]int":
+			varAns = fmt.Sprintf("var ans = make(%s, n)", ansType)
+		default:
+			varAns = "var ans " + ansType
+		}
 
-	i := strings.LastIndex(code, "}")
-	varAns := "var ans = 0 // math.MaxInt32 // math.MinInt32"
-	ans := "ans"
-	switch ansType {
-	case "int", "float64":
-		//initValue = "var ans = 0 \n\t //var ans = math.MaxInt32\n\t//var ans = math.MinInt32"
-	case "int64":
-		//initValue = "var ans = 0 \n\t //var ans = math.MaxInt32\n\t//var ans = math.MinInt32"
-		ans = "int64(ans)"
-	case "[]int", "[]byte", "[][]int":
-		varAns = fmt.Sprintf("var ans = make(%s, n)", ansType)
-	default:
-		varAns = "var ans " + ansType
-	}
-
-	code = fmt.Sprintf(`%s
+		code = fmt.Sprintf(`%s
 
 	// var n = len()
 	%s
@@ -111,6 +111,13 @@ func (t *Template) Solution() *Solution {
 	return %s
 %s
 `, strings.TrimRight(code[:i], "\n"), varAns, ans, code[i:])
+	} else {
+		const this = "(this "
+		i := strings.Index(code, this)
+		j := strings.Index(code[i:], ")")
+		m := strings.ReplaceAll(strings.ToLower(code[i+len(this):i+j]), "*", "")
+		code = strings.ReplaceAll(code, this, "("+m[:1]+" ")
+	}
 
 	return &Solution{
 		Code:           code,
