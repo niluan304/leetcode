@@ -1,0 +1,19 @@
+
+| English | [简体中文](problem_zh.md) |
+
+# [{{.QuestionFrontendId}}. {{.Title}}](https://leetcode.com/problems/{{.TitleSlug}}/)
+Difficulty:{{.Difficulty}}, Likes: {{.Likes}}
+
+## Description
+
+{{.Content}}
+
+## Related Topics
+{{range .TopicTags }}
+- [{{.Name}}](https://leetcode.com/tag/{{.Slug}}/)
+{{- end }}
+
+## Similar Questions
+{{range .SimilarQuestions}}
+- [{{.Title}}](../{{.TitleSlug}}/README_EN.md) {{.Difficulty}} {{if.IsPaidOnly}}🔒{{end}}{{/* 是否付费 */}}
+{{- end }}
