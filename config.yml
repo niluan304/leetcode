@@ -3,27 +3,27 @@ leetcode:
 
 template: # 模板生成配置，用于渲染的数据为：[Data 结构体](./internal/tmpl/model.go)
   - filename: "problem_en.md"
-    open: false
     tmpl: "./template/problem_en.tmpl"
+    open: false
 
   - filename: "problem_zh.md"
-    open: false
     tmpl: "./template/problem_zh.tmpl"
+    open: false
 
   - filename: "solution_leetcode.go"      # 生成的文件名
+    tmpl: "./template/leetcode.tmpl"      # 用于渲染的go模板文件
     open: false                           # 文件生成后，是否自动打开该文件
     app: ""                               # open 字段为 true 时才可用，使用指定软件打开文件，通常是 GoLand 或 VSCode 的安装位置，如果为空则使用系统默认软件打开
-    tmpl: "./template/leetcode.tmpl"      # 用于渲染的go模板文件
 
   - filename: "solution.go"
+    tmpl: "./template/solution.tmpl"
     open: true
     app: "D:/Program Files/JetBrains/GoLand 2023.1/bin/goland64.exe"
-    tmpl: "./template/solution.tmpl"
 
   - filename: "solution_test.go"
+    tmpl: "./template/test.tmpl"
     open: true
     app: "D:/Program Files/JetBrains/GoLand 2023.1/bin/goland64.exe"
-    tmpl: "./template/test.tmpl"
 
 url: # 是否在浏览器里查看题目内容
   open: true

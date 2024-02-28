@@ -11,32 +11,25 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/skratchdot/open-golang/open"
-
-	"github.com/niluan304/leetcode/internal/api"
 )
 
 type Template struct {
 	config Config
-	data   Data
+
+	tmpl *template.Template
+	data Data
 }
 
-func NewTemplate(config Config, data *api.QuestionData) *Template {
+func NewTemplate(config Config, data Data) *Template {
 	return &Template{
 		config: config,
-		data:   NewData(data),
+		tmpl:   template.Must(template.ParseFiles(config.Template)),
+		data:   data,
 	}
-}
-
-func (t *Template) template() *template.Template {
-	file := t.config.Template
-	if file == "" {
-		return template.Must(template.New(t.config.Name).Parse("{{.Data}}"))
-	}
-	return template.Must(template.ParseFiles(file))
 }
 
 func (t *Template) Execute(w io.Writer) (err error) {
-	err = t.template().Execute(w, t.data)
+	err = t.tmpl.Execute(w, t.data)
 	if err != nil {
 		return errors.Wrap(err, "fail execute template")
 	}

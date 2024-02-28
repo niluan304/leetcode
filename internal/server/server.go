@@ -118,8 +118,9 @@ func (s *Server) TitleSlug(titleSlug string) (err error) {
 	}
 
 	// 解析模板
+	data := tmpl.NewData(question)
 	for _, cfg := range s.config.Template {
-		err = tmpl.NewTemplate(cfg, question).Save(path)
+		err = tmpl.NewTemplate(cfg, data).Save(path)
 		if err != nil {
 			return err
 		}
