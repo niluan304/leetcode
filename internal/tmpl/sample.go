@@ -20,7 +20,7 @@ func (s Samples) String() (samples string) {
 	return
 }
 
-func NewSamples(content string, systemDesign bool) (samples Samples) {
+func newSamples(content string, systemDesign bool) (samples Samples) {
 	content = strings.ReplaceAll(content, "put:</strong>", "put</strong>") // 设计题末尾没有 ':'
 	doc, err := goquery.NewDocumentFromReader(strings.NewReader(content))
 	if err != nil {

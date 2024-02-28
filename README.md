@@ -33,7 +33,7 @@
 
 ### 动态规划
 - [记忆化搜索 memory_search.go](./copypasta/dp/memory_search.go) 实现了类似Python的cache装饰器
-- [背包 knapsack.go](./copypasta/dp/knapsack.go)
+- [背包 DP knapsack.go](./copypasta/dp/knapsack.go)
   - 0-1 背包
   - 完全背包
   - 分组背包
@@ -60,4 +60,4 @@
 ### 自定义代码模板
 - 根据[「配置文件」](./config.yml) 自定义生成的文件名
 - 根据[「模板文件」](./template) 自定义文件内容
-  - 模板文件使用 go模板语法
+  - 使用 `text/template` 解析模板文件，用于渲染的数据为：[Data 结构体](./internal/tmpl/model.go)

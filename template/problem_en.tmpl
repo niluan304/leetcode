@@ -1,19 +1,19 @@
 
 | English | [简体中文](problem_zh.md) |
 
-# [{{.QuestionFrontendId}}. {{.Title}}](https://leetcode.com/problems/{{.TitleSlug}}/)
-Difficulty:{{.Difficulty}}, Likes: {{.Likes}}
+# [{{.Data.QuestionFrontendId}}. {{.Data.Title}}](https://leetcode.com/problems/{{.Data.TitleSlug}}/)
+Difficulty:{{.Data.Difficulty}}, Likes: {{.Data.Likes}}
 
 ## Description
 
-{{.Content}}
+{{.Data.Content}}
 
 ## Related Topics
-{{range .TopicTags }}
+{{range .Data.TopicTags }}
 - [{{.Name}}](https://leetcode.com/tag/{{.Slug}}/)
 {{- end }}
 
 ## Similar Questions
-{{range .SimilarQuestions}}
+{{range .Data.SimilarQuestions}}
 - [{{.Title}}](../{{.TitleSlug}}/README_EN.md) {{.Difficulty}} {{if.IsPaidOnly}}🔒{{end}}{{/* 是否付费 */}}
 {{- end }}

@@ -17,13 +17,13 @@ import (
 
 type Template struct {
 	config Config
-	data   *api.QuestionData
+	data   Data
 }
 
 func NewTemplate(config Config, data *api.QuestionData) *Template {
 	return &Template{
 		config: config,
-		data:   data,
+		data:   NewData(data),
 	}
 }
 
@@ -36,22 +36,7 @@ func (t *Template) template() *template.Template {
 }
 
 func (t *Template) Execute(w io.Writer) (err error) {
-	var data any = t.data
-
-	switch t.config.Name {
-	case "zh", "en":
-		//data = t.data
-	case "leetcode":
-		data = t.Leetcode()
-	case "sample":
-		data = struct{ Data any }{Data: t.Samples().String()}
-	case "solution":
-		data = t.Solution()
-	case "test":
-		data = t.EndlessTest()
-	}
-
-	err = t.template().Execute(w, data)
+	err = t.template().Execute(w, t.data)
 	if err != nil {
 		return errors.Wrap(err, "fail execute template")
 	}
@@ -59,7 +44,7 @@ func (t *Template) Execute(w io.Writer) (err error) {
 }
 
 func (t *Template) Save(root string) (err error) {
-	var buf = new(bytes.Buffer)
+	buf := new(bytes.Buffer)
 	err = t.Execute(buf)
 	if err != nil {
 		return err
@@ -69,7 +54,7 @@ func (t *Template) Save(root string) (err error) {
 	defer t.open(path)
 
 	data := bytes.ReplaceAll(buf.Bytes(), []byte("\r\n"), []byte("\n")) // git配置了：只使用 Unix 下的换行符
-	err = os.WriteFile(path, data, 0666)
+	err = os.WriteFile(path, data, 0o666)
 	if err != nil {
 		return errors.Wrap(err, "fail write file: "+path)
 	}

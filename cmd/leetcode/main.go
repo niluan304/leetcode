@@ -93,7 +93,7 @@ func main() {
 
 func Scan() (err error) {
 	// 读取用户输入
-	var input = ""
+	input := ""
 	_, err = fmt.Scan(&input)
 	if err != nil {
 		return errors.Wrap(err, "fail scan input")

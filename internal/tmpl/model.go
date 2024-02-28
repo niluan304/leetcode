@@ -7,54 +7,50 @@ import (
 	"github.com/niluan304/leetcode/internal/api"
 )
 
-type EndlessTest struct {
-	Name           string
-	RunType        string
-	Type           string
-	Samples        string
-	NeedDefinition bool
+// Data 用于渲染模板文件的数据
+type Data struct {
+	// for code snippet
+	Solution
+
+	// for unit test
+	UnitTest
 
 	Data *api.QuestionData
 }
 
-type Leetcode struct {
-	NeedDefinition bool // 是否需要导入 ListNode/TreeNode 等结构体
-
-	Data *api.QuestionData // 可用于修改包名
+type UnitTest struct {
+	RunType  string // Class or Func
+	FuncName string
+	FuncType string
+	Samples  string
 }
 
 type Solution struct {
 	Code           string // 模板代码
 	NeedMod        bool   // 是否需要取模
 	NeedDefinition bool   // 是否需要取模
-
-	Data *api.QuestionData // 可用于修改包名
 }
 
-func (t *Template) Samples() Samples {
-	q := t.data
+func NewData(data *api.QuestionData) Data {
+	return Data{
+		Solution: NewSolution(data),
+		UnitTest: NewUnitTest(data),
+		Data:     data,
+	}
+}
+
+func NewSamples(q *api.QuestionData) Samples {
 	content := q.Content
 	if len(content) < 100 {
 		// TODO only Chinese
 		// content = q.TranslatedContent
 	}
-	return NewSamples(content, q.MetaData.Systemdesign)
+	return newSamples(content, q.MetaData.Systemdesign)
 }
 
 const langSlug = "golang"
 
-func (t *Template) Leetcode() *Leetcode {
-	q := t.data
-	codeSnippet := q.CodeSnippet(langSlug)
-	return &Leetcode{
-		NeedDefinition: strings.Contains(codeSnippet, "Definition for"),
-		Data:           q,
-	}
-}
-
-func (t *Template) EndlessTest() (data EndlessTest) {
-	q := t.data
-
+func NewUnitTest(q *api.QuestionData) (data UnitTest) {
 	codeSnippet := q.CodeSnippet(langSlug)
 	idx := strings.Index(codeSnippet, "func ")
 
@@ -63,27 +59,23 @@ func (t *Template) EndlessTest() (data EndlessTest) {
 	j := strings.Index(funcType, "{")
 	funcType = funcType[:5] + funcType[i:j]
 
-	data = EndlessTest{
-		Name:           q.MetaData.Name,
-		RunType:        "Func",
-		Type:           strings.Replace(funcType, "func (", "func(", 1),
-		Samples:        t.Samples().String(),
-		NeedDefinition: q.NeedDefinition(),
-		Data:           q,
+	data = UnitTest{
+		FuncName: q.MetaData.Name,
+		RunType:  "Func",
+		FuncType: strings.Replace(funcType, "func (", "func(", 1),
+		Samples:  NewSamples(q).String(),
 	}
 
 	if q.MetaData.Systemdesign {
-		data.Name = "Constructor"
 		data.RunType = "Class"
-		data.Type = "interface{}"
+		data.FuncName = "Constructor"
+		data.FuncType = "interface{}"
 	}
 
 	return data
 }
 
-func (t *Template) Solution() *Solution {
-	q := t.data
-
+func NewSolution(q *api.QuestionData) Solution {
 	code := q.CodeSnippet(langSlug)
 	if !q.MetaData.Systemdesign {
 		ansType := funcReturnType(code)
@@ -119,11 +111,10 @@ func (t *Template) Solution() *Solution {
 		code = strings.ReplaceAll(code, this, "("+m[:1]+" ")
 	}
 
-	return &Solution{
+	return Solution{
 		Code:           code,
 		NeedMod:        q.NeedMode(),
 		NeedDefinition: q.NeedDefinition(),
-		Data:           t.data,
 	}
 }
 
