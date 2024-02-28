@@ -25,12 +25,11 @@ func countPrimes(n int) (cnt int) {
 func countPrimes2(n int) (count int) {
 	notPrime := make([]bool, n)
 	for i := 2; i < n; i++ {
-		if notPrime[i] {
-			continue
-		}
-		count++
-		for j := 2 * i; j < n; j += i {
-			notPrime[j] = true
+		if !notPrime[i] {
+			count++
+			for j := i * i; j < n; j += i {
+				notPrime[j] = true
+			}
 		}
 	}
 	return count
