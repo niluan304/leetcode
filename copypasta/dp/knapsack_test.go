@@ -3,7 +3,7 @@ package dp
 import (
 	"testing"
 
-	. "github.com/niluan304/leetcode/container"
+	. "github.com/niluan304/leetcode/copypasta"
 )
 
 func Test_zeroOneKnapsack(t *testing.T) {

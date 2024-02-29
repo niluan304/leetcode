@@ -1,10 +1,12 @@
 package main
 
-import . "github.com/niluan304/leetcode/container"
+import (
+	. "github.com/niluan304/leetcode/copypasta"
+)
 
 func maximumScoreAfterOperations(edges [][]int, values []int) int64 {
-	var n = len(values)
-	var graph = make([][]int, n)
+	n := len(values)
+	graph := make([][]int, n)
 	for _, edge := range edges {
 		a, b := edge[0], edge[1]
 

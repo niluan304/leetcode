@@ -5,7 +5,7 @@ import (
 
 	. "github.com/EndlessCheng/codeforces-go/leetcode/testutil"
 
-	. "github.com/niluan304/leetcode/container"
+	. "github.com/niluan304/leetcode/copypasta"
 )
 
 /**
@@ -22,10 +22,9 @@ import (
 // - 时间复杂度：$\mathcal{O}(n\log n)$。
 // - 空间复杂度：$\mathcal{O}(n)$。
 func verticalTraversal(root *TreeNode) [][]int {
-
 	type Item struct{ Row, Col, Val int }
 
-	var m = map[int][]Item{}
+	m := map[int][]Item{}
 	var dfs func(node *TreeNode, row, col int)
 	dfs = func(node *TreeNode, row, col int) {
 		if node == nil {
@@ -46,7 +45,7 @@ func verticalTraversal(root *TreeNode) [][]int {
 	keys := MapKeys(m)
 	slices.Sort(keys[:])
 
-	var ans = make([][]int, len(keys))
+	ans := make([][]int, len(keys))
 	for i, key := range keys {
 		slices.SortFunc(m[key][:], func(a, b Item) int {
 			if a.Row != b.Row {
@@ -75,7 +74,7 @@ func verticalTraversal2(root *TreeNode) [][]int {
 	maxRow := map[int]int{}
 
 	type pair struct{ row, col int }
-	var m = map[pair][]int{}
+	m := map[pair][]int{}
 	var dfs func(node *TreeNode, row, col int)
 	dfs = func(node *TreeNode, row, col int) {
 		if node == nil {
@@ -94,7 +93,7 @@ func verticalTraversal2(root *TreeNode) [][]int {
 	}
 	dfs(root, 0, 0)
 
-	var ans = make([][]int, maxCol-minCol+1)
+	ans := make([][]int, maxCol-minCol+1)
 	for col := minCol; col <= maxCol; col++ {
 		for row := 0; row <= maxRow[col]; row++ {
 			values := m[pair{row: row, col: col}]

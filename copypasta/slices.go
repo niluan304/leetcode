@@ -1,4 +1,4 @@
-package container
+package copypasta
 
 import (
 	"cmp"
