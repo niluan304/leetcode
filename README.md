@@ -31,6 +31,9 @@
 - 树
   - [红黑树 rbtree.go](./container/tree/rbtree/tree.go) 
 
+### 字符串
+- [KMP 字符串匹配算法 string.go](./copypasta/string.go)
+
 ### 动态规划
 - [记忆化搜索 memory_search.go](./copypasta/dp/memory_search.go) 实现了类似Python的cache装饰器
 - [背包 DP knapsack.go](./copypasta/dp/knapsack.go)
