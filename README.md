@@ -45,8 +45,9 @@
   - [LIS 最长递增子序列 lis.go](./copypasta/dp/lis.go)
 
 ### 图
-  - [最短路径 distance.go](./copypasta/graph/distance.go)
-    - Floyd
+  - [最短路径 path_shortest.go](./copypasta/graph/path_shortest.go)
+    - Floyd (任意图上多源最短路径算法)
+    - Dijkstra (非负权图上单源最短路径算法)
 
 
 ## 代码生成
