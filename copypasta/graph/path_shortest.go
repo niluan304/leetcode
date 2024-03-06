@@ -173,7 +173,6 @@ type DijkstraEdge struct {
 // - 时间复杂度：O(n^2)。
 // - 空间复杂度：O(n^2)。
 func Dijkstra(n int, start int, init func(graph [][]DijkstraEdge)) (distance, from []int) {
-	const INF = math.MaxInt / 2 // /2 防止加法溢出
 	graph := make([][]DijkstraEdge, n)
 
 	// 初始化 graph[i] 的邻接表
@@ -183,8 +182,8 @@ func Dijkstra(n int, start int, init func(graph [][]DijkstraEdge)) (distance, fr
 	from = make([]int, n)
 	distance = make([]int, n)
 	for i := 0; i < n; i++ {
-		distance[i] = INF //  初始化最大距离
-		from[i] = -1      // -1 表示无法到达
+		distance[i] = math.MaxInt / 2 // 初始化最大距离 /2 防止加法溢出
+		from[i] = -1                  // -1 表示无法到达
 	}
 	distance[start] = 0 // 初始化
 
@@ -231,7 +230,6 @@ func Dijkstra(n int, start int, init func(graph [][]DijkstraEdge)) (distance, fr
 // - 时间复杂度：O(mlogm)。
 // - 空间复杂度：O(m)。
 func DijkstraPriorityQueue(n int, start int, init func(graph [][]DijkstraEdge)) (distance, from []int) {
-	const INF = math.MaxInt / 2 // /2 防止加法溢出
 	graph := make([][]DijkstraEdge, n)
 
 	// 初始化 graph[i] 的邻接表
@@ -240,8 +238,8 @@ func DijkstraPriorityQueue(n int, start int, init func(graph [][]DijkstraEdge)) 
 	distance = make([]int, n)
 	from = make([]int, n)
 	for i := 0; i < n; i++ {
-		distance[i] = INF // 初始化最大距离
-		from[i] = -1      // -1 表示无法到达
+		distance[i] = math.MaxInt / 2 // 初始化最大距离 /2 防止加法溢出
+		from[i] = -1                  // -1 表示无法到达
 	}
 	distance[start] = 0 // 初始化
 
