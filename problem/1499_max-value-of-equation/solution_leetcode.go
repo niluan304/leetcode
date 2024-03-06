@@ -1,8 +1,9 @@
 package main
 
 import (
-	"container/heap"
 	"math"
+
+	. "github.com/niluan304/leetcode/container"
 )
 
 // #### 方法一：堆
@@ -19,16 +20,23 @@ import (
 // - 空间复杂度：$O(n)$，是 $\\textit{heap}$ 的空间复杂度。
 func leetcode1(points [][]int, k int) int {
 	res := math.MinInt
-	pq := &PriorityQueue{}
+
+	hp := NewEmptyHeap(func(x, y Item) bool {
+		if x.value == y.value {
+			return x.index < y.index
+		}
+		return x.value < y.value
+	})
+
 	for _, point := range points {
 		x, y := point[0], point[1]
-		for pq.Len() > 0 && x-pq.Top().index > k {
-			heap.Pop(pq)
+		for hp.Len() > 0 && x-hp.Head().index > k {
+			hp.PopHead()
 		}
-		if pq.Len() > 0 {
-			res = max(res, x+y-pq.Top().value)
+		if hp.Len() > 0 {
+			res = max(res, x+y-hp.Head().value)
 		}
-		heap.Push(pq, Item{index: x, value: x - y})
+		hp.Insert(Item{index: x, value: x - y})
 	}
 	return res
 }
@@ -36,32 +44,4 @@ func leetcode1(points [][]int, k int) int {
 type Item struct {
 	index int
 	value int
-}
-
-type PriorityQueue []Item
-
-func (pq PriorityQueue) Len() int { return len(pq) }
-
-func (pq PriorityQueue) Swap(i, j int) { pq[i], pq[j] = pq[j], pq[i] }
-
-func (pq PriorityQueue) Less(i, j int) bool {
-	if pq[i].value == pq[j].value {
-		return pq[i].index < pq[j].index
-	}
-	return pq[i].value < pq[j].value
-}
-
-func (pq *PriorityQueue) Push(x any) {
-	*pq = append(*pq, x.(Item))
-}
-
-func (pq *PriorityQueue) Pop() any {
-	n, old := len(*pq), *pq
-	x := old[n-1]
-	*pq = old[:n-1]
-	return x
-}
-
-func (pq PriorityQueue) Top() Item {
-	return pq[0]
 }

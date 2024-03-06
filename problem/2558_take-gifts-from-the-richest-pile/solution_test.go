@@ -9,7 +9,7 @@ import (
 func Test_take_gifts_from_the_richest_pile(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(gifts []int, k int) int64{
 		pickGifts,
 	}
 

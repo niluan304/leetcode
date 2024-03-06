@@ -1,33 +1,24 @@
 package main
 
 import (
-	"container/heap"
 	"sort"
+
+	. "github.com/niluan304/leetcode/container"
 )
 
 func pickGifts(gifts []int, k int) int64 {
-	var hp IntHeap = gifts
-	heap.Init(&hp)
+	hp := NewMaxIntHeap(gifts...)
 
 	for i := 0; i < k; i++ {
-		hp[0] = mySqrt(hp[0])
-		heap.Fix(&hp, 0)
+		hp.Update(0, mySqrt(hp.Head()))
 	}
 
-	var total = 0
-	for _, gift := range hp {
+	total := 0
+	for _, gift := range hp.Data() {
 		total += gift
 	}
 	return int64(total)
 }
-
-type IntHeap []int
-
-func (h IntHeap) Len() int           { return len(h) }
-func (h IntHeap) Less(i, j int) bool { return h[i] > h[j] }
-func (h IntHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
-func (h *IntHeap) Push(x any)        {}
-func (h *IntHeap) Pop() any          { return nil }
 
 // [69. x 的平方根](https://leetcode.cn/problems/sqrtx/description/)
 func mySqrt(x int) int {

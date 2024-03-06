@@ -8,7 +8,7 @@ import "slices"
 // - 空间复杂度：$\mathcal{O}(n)$。
 func partition(s string) (ans [][]string) {
 	var path []string
-	var n = len(s)
+	n := len(s)
 
 	var dfs func(i int)
 	dfs = func(i int) {
@@ -30,6 +30,9 @@ func partition(s string) (ans [][]string) {
 	}
 
 	dfs(0)
+	slices.SortFunc(ans, func(a, b []string) int {
+		return len(b) - len(a)
+	})
 	return ans
 }
 
@@ -49,7 +52,7 @@ func isPartition(s string) bool {
 // - 空间复杂度：$\mathcal{O}(n)$。
 func partition2(s string) (ans [][]string) {
 	var path []string
-	var n = len(s)
+	n := len(s)
 
 	var dfs func(start, end int)
 	dfs = func(start, end int) {
@@ -72,5 +75,8 @@ func partition2(s string) (ans [][]string) {
 	}
 
 	dfs(0, 0)
+	slices.SortFunc(ans, func(a, b []string) int {
+		return len(b) - len(a)
+	})
 	return ans
 }

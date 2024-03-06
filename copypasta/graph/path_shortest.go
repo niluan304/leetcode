@@ -25,6 +25,7 @@ func Floyd(n int, init func(path [][]int)) [][]int {
 		for j := range path[i] {
 			path[i][j] = math.MaxInt / 2 // 初始化最大距离， /2 防止加法溢出
 		}
+		path[i][i] = 0
 	}
 
 	// 设置 path[i][j] 两点的边权
@@ -112,6 +113,7 @@ func FloydDFS(n int, init func(path [][]int)) [][]int {
 		for j := range path[i] {
 			path[i][j] = math.MaxInt / 2 // 初始化最大距离， /2 防止加法溢出
 		}
+		path[i][i] = 0
 	}
 
 	// 设置 path[i][j] 两点的边权
@@ -249,7 +251,7 @@ func DijkstraPriorityQueue(n int, start int, init func(graph [][]DijkstraEdge)) 
 	// 计算从起始节点到所有其他节点的最短距离
 	for pq.Len() > 0 {
 		// 在未访问节点中，找到距离起始节点最近的节点
-		head := pq.Remove()
+		head := pq.PopHead()
 		cur := head.Value()
 
 		// 下面循环中的 d < distance[i] 可能会把重复的节点 i 入堆

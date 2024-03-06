@@ -1,18 +1,19 @@
 package main
 
 import (
-	"container/heap"
 	"sort"
+
+	. "github.com/niluan304/leetcode/container"
 )
 
 // 贪心 + 二分搜索
 // 时间复杂度：O(nlogn)
 // 空间复杂度：O(n)
 func avoidFlood(rains []int) []int {
-	var n = len(rains)
-	var ans = make([]int, n)
+	n := len(rains)
+	ans := make([]int, n)
 
-	var empty, rainDays = make([]int, 0), make(map[int]int)
+	empty, rainDays := make([]int, 0), make(map[int]int)
 
 	for i, rain := range rains {
 		if rain == 0 {
@@ -41,10 +42,15 @@ func avoidFlood(rains []int) []int {
 // 时间复杂度：O(nlogn)
 // 空间复杂度：O(n)
 func avoidFlood2(rains []int) []int {
-	var rainDays = make(map[int]int)
-	var n = len(rains)
-	var ans = make([]int, n)
-	var tasks = make([]*Task, n)
+	type Task struct {
+		Day  int
+		Rain int
+	}
+
+	rainDays := make(map[int]int)
+	n := len(rains)
+	ans := make([]int, n)
+	tasks := make([]*Task, n)
 
 	for i, rain := range rains {
 		if rain == 0 {
@@ -60,50 +66,30 @@ func avoidFlood2(rains []int) []int {
 		rainDays[rain] = i
 	}
 
-	var pq = new(PriorityQueue)
+	hp := NewEmptyHeap(func(x, y Task) bool {
+		return x.Day < y.Day
+	})
 	for i, rain := range rains {
 		if tasks[i] != nil {
-			heap.Push(pq, tasks[i])
+			hp.Insert(*tasks[i])
 		}
 		if rain != 0 {
 			ans[i] = -1
 			continue
 		}
-		if pq.Len() == 0 {
+		if hp.Len() == 0 {
 			ans[i] = 1
 			continue
 		}
-		task := heap.Pop(pq).(*Task)
+		task := hp.PopHead()
 		if task.Day < i {
 			return nil
 		}
 		ans[i] = task.Rain
 	}
 
-	if pq.Len() > 0 {
+	if hp.Len() > 0 {
 		return nil
 	}
 	return ans
-}
-
-type Task struct {
-	Day  int
-	Rain int
-}
-
-type PriorityQueue []*Task
-
-func (pq PriorityQueue) Len() int           { return len(pq) }
-func (pq PriorityQueue) Less(i, j int) bool { return pq[i].Day < pq[j].Day }
-func (pq PriorityQueue) Swap(i, j int)      { pq[i], pq[j] = pq[j], pq[i] }
-
-func (pq *PriorityQueue) Push(x any) { *pq = append(*pq, x.(*Task)) }
-
-func (pq *PriorityQueue) Pop() any {
-	old := *pq
-	n := len(old)
-	item := old[n-1]
-	old[n-1] = nil // avoid memory leak
-	*pq = old[0 : n-1]
-	return item
 }

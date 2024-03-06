@@ -11,6 +11,7 @@ func Test_stock_price_fluctuation(t *testing.T) {
 
 	fs := []interface{}{
 		Constructor,
+		Constructor2,
 	}
 
 	for _, f := range fs {

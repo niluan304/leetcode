@@ -12,7 +12,6 @@ func Test_non_decreasing_subsequences(t *testing.T) {
 	fs := []func(nums []int) [][]int{
 		findSubsequences,
 		findSubsequences2,
-		findSubsequences3,
 	}
 
 	for _, f := range fs {

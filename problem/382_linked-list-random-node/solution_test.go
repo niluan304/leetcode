@@ -11,6 +11,7 @@ func Test_linked_list_random_node(t *testing.T) {
 
 	fs := []interface{}{
 		Constructor,
+		Constructor2,
 	}
 
 	for _, f := range fs {

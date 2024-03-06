@@ -9,8 +9,9 @@ import (
 func Test_reward_top_k_students(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(positiveFeedback []string, negativeFeedback []string, report []string, studentId []int, k int) []int{
 		topStudents,
+		topStudents2,
 	}
 
 	for _, f := range fs {

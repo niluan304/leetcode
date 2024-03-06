@@ -9,8 +9,9 @@ import (
 func Test_avoid_flood_in_the_city(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(rains []int) []int{
 		avoidFlood,
+		avoidFlood2,
 	}
 
 	for _, f := range fs {

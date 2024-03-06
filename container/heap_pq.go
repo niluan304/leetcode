@@ -51,13 +51,15 @@ func (pq *PriorityQueue[T]) Pop() any {
 	return item
 }
 
-// Insert 入队操作，执行 heap.Push(pq, &PriorityQueueNode{value, priority})
+// Insert 入队操作
+// 简写：heap.Push(pq, &PriorityQueueNode{value, priority})
 func (pq *PriorityQueue[T]) Insert(value T, priority int) {
 	heap.Push(pq, &PriorityQueueNode[T]{value: value, priority: priority})
 }
 
-// Remove 出队操作 执行 heap.Pop(pq).(*PriorityQueueNode[T])
-func (pq *PriorityQueue[T]) Remove() *PriorityQueueNode[T] {
+// PopHead 出队操作
+// 简写： heap.Pop(pq).(*PriorityQueueNode[T])
+func (pq *PriorityQueue[T]) PopHead() *PriorityQueueNode[T] {
 	return heap.Pop(pq).(*PriorityQueueNode[T])
 }
 
@@ -66,4 +68,10 @@ func (pq *PriorityQueue[T]) Update(item *PriorityQueueNode[T], value T, priority
 	item.value = value
 	item.priority = priority
 	heap.Fix(pq, item.index)
+}
+
+// Remove 删除操作
+// 简写：heap.Remove(pq, item.index)
+func (pq *PriorityQueue[T]) Remove(item *PriorityQueueNode[T]) {
+	heap.Remove(pq, item.index)
 }

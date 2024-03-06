@@ -12,6 +12,7 @@ func Test_minimum_size_subarray_sum(t *testing.T) {
 	fs := []func(target int, nums []int) int{
 		minSubArrayLen,
 		minSubArrayLen2,
+		minSubArrayLen3,
 	}
 
 	for _, f := range fs {

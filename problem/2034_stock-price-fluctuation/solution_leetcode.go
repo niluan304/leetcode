@@ -1,6 +1,8 @@
 package main
 
-import "container/heap"
+import (
+	. "github.com/niluan304/leetcode/container"
+)
 
 // 方法二：哈希表 + 两个优先队列
 // 方法一使用一个有序集合存储每个股票价格的次数，在更新操作中将有序集合中的过期价格删除完毕，在其余操作中直接得到答案并返回。
@@ -24,19 +26,30 @@ import "container/heap"
 // 来源：力扣（LeetCode）
 // 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
+type Pair struct{ price, timestamp int }
+
 type StockPrice2 struct {
-	maxPrice, minPrice hp
-	timePriceMap       map[int]int
-	maxTimestamp       int
+	maxPrice *Heap[Pair] // 大根堆
+	minPrice *Heap[Pair] // 小根堆
+
+	timePriceMap map[int]int
+	maxTimestamp int
 }
 
 func Constructor2() StockPrice2 {
-	return StockPrice2{timePriceMap: map[int]int{}}
+	return StockPrice2{
+		maxPrice:     NewEmptyHeap(func(x, y Pair) bool { return x.price > y.price }), // 大根堆
+		minPrice:     NewEmptyHeap(func(x, y Pair) bool { return x.price < y.price }), // 小根堆
+		timePriceMap: map[int]int{},
+		maxTimestamp: 0,
+	}
 }
 
 func (sp *StockPrice2) Update(timestamp, price int) {
-	heap.Push(&sp.maxPrice, pair{price: -price, timestamp: timestamp})
-	heap.Push(&sp.minPrice, pair{price: price, timestamp: timestamp})
+	pair := Pair{price: price, timestamp: timestamp}
+	sp.minPrice.Insert(pair)
+	sp.maxPrice.Insert(pair)
+
 	sp.timePriceMap[timestamp] = price
 	if timestamp > sp.maxTimestamp {
 		sp.maxTimestamp = timestamp
@@ -48,28 +61,19 @@ func (sp *StockPrice2) Current() int {
 }
 
 func (sp *StockPrice2) Maximum() int {
-	for {
-		if p := sp.maxPrice[0]; -p.price == sp.timePriceMap[p.timestamp] {
-			return -p.price
-		}
-		heap.Pop(&sp.maxPrice)
-	}
+	return sp.extremum(sp.maxPrice)
 }
 
 func (sp *StockPrice2) Minimum() int {
-	for {
-		if p := sp.minPrice[0]; p.price == sp.timePriceMap[p.timestamp] {
-			return p.price
-		}
-		heap.Pop(&sp.minPrice)
-	}
+	return sp.extremum(sp.minPrice)
 }
 
-type pair struct{ price, timestamp int }
-type hp []pair
-
-func (h hp) Len() int            { return len(h) }
-func (h hp) Less(i, j int) bool  { return h[i].price < h[j].price }
-func (h hp) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
-func (h *hp) Push(v interface{}) { *h = append(*h, v.(pair)) }
-func (h *hp) Pop() interface{}   { a := *h; v := a[len(a)-1]; *h = a[:len(a)-1]; return v }
+func (sp *StockPrice2) extremum(hp *Heap[Pair]) int {
+	for {
+		root := hp.Head()
+		if root.price == sp.timePriceMap[root.timestamp] {
+			return root.price
+		}
+		hp.PopHead()
+	}
+}

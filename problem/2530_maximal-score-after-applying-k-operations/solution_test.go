@@ -9,8 +9,9 @@ import (
 func Test_maximal_score_after_applying_k_operations(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []interface{}{
+	fs := []func(nums []int, k int) int64{
 		maxKelements,
+		maxKelements2,
 	}
 
 	for _, f := range fs {

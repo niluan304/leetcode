@@ -10,7 +10,6 @@ import (
 // Fail to pass case
 // Deprecated: 超时
 func minSubArrayLen(target int, nums []int) int {
-
 	n := len(nums)
 	for i := 0; i < n; i++ {
 		sum := 0
@@ -44,12 +43,35 @@ func minSubArrayLen2(target int, nums []int) int {
 		sum += num
 		for sum >= target {
 			sum -= nums[left]
-			count = min(count, right-left)
+			count = min(count, right-left+1)
 			left++
 		}
 	}
 
 	if count == math.MaxInt {
+		return 0
+	}
+	return count
+}
+
+func minSubArrayLen3(target int, nums []int) int {
+	n := len(nums)
+	count := n + 1
+
+	sum := 0
+	left, right := 0, 0
+
+	for right < n {
+		sum += nums[right]
+		right++
+		for sum >= target {
+			sum -= nums[left]
+			count = min(count, right-left)
+			left++
+		}
+	}
+
+	if count > n {
 		return 0
 	}
 	return count

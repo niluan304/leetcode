@@ -1,32 +1,23 @@
 package container
 
-import "container/heap"
+import (
+	"container/heap"
+	"slices"
+)
 
-// MinHeap is a min-heap of ints.
-type MinHeap []int
-
-func (h MinHeap) Len() int           { return len(h) }
-func (h MinHeap) Less(i, j int) bool { return h[i] < h[j] }
-func (h MinHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
-
-func (h *MinHeap) Push(x any) {
-	// Push and Pop use pointer receivers because they modify the slice's length,
-	// not just its contents.
-	*h = append(*h, x.(int))
+// NewMinIntHeap return a min-heap of ints.
+func NewMinIntHeap(data ...int) *Heap[int] {
+	return NewHeap[int](data, func(x, y int) bool {
+		return x < y
+	})
 }
 
-func (h *MinHeap) Pop() any {
-	old := *h
-	n := len(old)
-	x := old[n-1]
-	*h = old[0 : n-1]
-	return x
+// NewMaxIntHeap return a max-heap of ints.
+func NewMaxIntHeap(data ...int) *Heap[int] {
+	return NewHeap[int](data, func(x, y int) bool {
+		return x > y
+	})
 }
-
-// MaxHeap is a max-heap of ints.
-type MaxHeap struct{ MinHeap }
-
-func (h MaxHeap) Less(i, j int) bool { return h.MinHeap.Less(j, i) }
 
 // NewHeap
 //
@@ -41,6 +32,21 @@ func NewHeap[T any](data []T, less func(x, y T) bool) *Heap[T] {
 		less: less,
 	}
 	heap.Init(hp)
+	return hp
+}
+
+// NewEmptyHeap
+//
+// 根据 less 返回最小堆/最大堆
+//
+// 当 x < y 时，
+// 如果 less(x, y) = true, 返回最小堆；
+// 如果 less(x, y) = false, 返回最大堆
+func NewEmptyHeap[T any](less func(x, y T) bool) *Heap[T] {
+	hp := &Heap[T]{
+		data: nil,
+		less: less,
+	}
 	return hp
 }
 
@@ -64,4 +70,45 @@ func (h *Heap[T]) Pop() any {
 	x := old[n-1]
 	h.data = old[0 : n-1]
 	return x
+}
+
+// Heap 的操作
+// - Insert
+// - PopHead
+// - Update
+// - Remove
+
+// Insert 入队操作，将 value 插入 Heap 中
+// 简写：heap.Push(h, value)
+func (h *Heap[T]) Insert(value T) {
+	heap.Push(h, value)
+}
+
+// PopHead 出队操作，弹出并返回 Heap 的根
+// 简写：heap.Pop(h).(T)
+func (h *Heap[T]) PopHead() T {
+	return heap.Pop(h).(T)
+}
+
+// Update 更新操作，将 Heap 中的节点修改为给定的 value
+// 简写：h.data[i] = value; heap.Fix(h, i)
+func (h *Heap[T]) Update(i int, value T) {
+	h.data[i] = value
+	heap.Fix(h, i)
+}
+
+// Remove 删除操作，从 Heap 中移除指定节点
+// 简写：heap.Remove(h, i)
+func (h *Heap[T]) Remove(i int) {
+	heap.Remove(h, i)
+}
+
+// Head 返回堆的根节点的值
+func (h *Heap[T]) Head() T {
+	return h.data[0]
+}
+
+// Data 返回堆的值的拷贝
+func (h *Heap[T]) Data() []T {
+	return slices.Clone(h.data)
 }

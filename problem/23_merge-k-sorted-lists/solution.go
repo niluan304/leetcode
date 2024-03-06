@@ -1,7 +1,6 @@
 package main
 
 import (
-	"container/heap"
 	"slices"
 
 	. "github.com/EndlessCheng/codeforces-go/leetcode/testutil"
@@ -45,6 +44,7 @@ func mergeKLists2(lists []*ListNode) *ListNode {
 			data = append(data, head)
 		}
 	}
+
 	hp := NewHeap(data, func(x, y *ListNode) bool {
 		return x.Val < y.Val
 	})
@@ -52,9 +52,9 @@ func mergeKLists2(lists []*ListNode) *ListNode {
 	dummy := &ListNode{}
 	cur := dummy
 	for hp.Len() > 0 {
-		node := heap.Pop(hp).(*ListNode) // 剩余节点中的最小节点
-		if node.Next != nil {            // 下一个节点不为空
-			heap.Push(hp, node.Next) // 下一个节点有可能是最小节点，入堆
+		node := hp.PopHead()  // 剩余节点中的最小节点
+		if node.Next != nil { // 下一个节点不为空
+			hp.Insert(node.Next) // 下一个节点有可能是最小节点，入堆
 		}
 		cur.Next = node // 合并到新链表中
 		cur = cur.Next  // 准备合并下一个节点

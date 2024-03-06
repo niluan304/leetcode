@@ -179,32 +179,40 @@ func countPaths3(n int, roads [][]int) int {
 	distance[start] = 0 // 初始化
 	dp[start] = 1       // 初始化
 
-	pq := &PriorityQueue[int]{} // 优先队列，最大堆
-	pq.Insert(start, 0)
+	type Pair struct {
+		To       int
+		Distance int
+	}
+
+	hp := NewEmptyHeap(func(x, y Pair) bool {
+		return x.Distance < y.Distance // 最小堆
+	})
+	hp.Insert(Pair{To: start, Distance: 0}) // 初始化
+
 	// 计算从起始节点到所有其他节点的最短距离
-	for pq.Len() > 0 {
+	for hp.Len() > 0 {
 		// 在未访问节点中，找到距离起始节点最近的节点
-		head := pq.Remove()
-		cur := head.Value()
+		head := hp.PopHead()
+		cur := head.To
 
 		// 下面循环中的 d < distance[i] 可能会把重复的节点 i 入堆
 		// 也就是说，堆中可能会包含多个相同节点，且这些相同节点的 distance 值互不相同
 		// 那么这个节点第二次及其后面出堆的时候，由于 distance[cur] 已经更新成最短路了，可以直接跳过
-		if d := -head.Priority(); d > distance[cur] {
+		if head.Distance > distance[cur] {
 			continue
 		}
 
 		for _, edge := range graph[cur] {
-			i := edge.To
+			to := edge.To
 			d := edge.Weight + distance[cur]
 
-			if distance[i] > d {
-				distance[i] = d
-				dp[i] = dp[cur]
+			if distance[to] > d {
+				distance[to] = d
+				dp[to] = dp[cur]
 
-				pq.Insert(i, -d) // 最大堆，取反后就是最小堆了
-			} else if distance[i] == d {
-				dp[i] = (dp[i] + dp[cur]) % MOD
+				hp.Insert(Pair{To: to, Distance: d})
+			} else if distance[to] == d {
+				dp[to] = (dp[to] + dp[cur]) % MOD
 			}
 		}
 	}

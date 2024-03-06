@@ -10,46 +10,8 @@ func findSubsequences(nums []int) [][]int {
 		path []int
 	)
 
-	var sum = 0
-	var set = map[int]bool{
-		0: true,
-	}
-
-	var dfs func(idx int)
-	dfs = func(idx int) {
-		if len(path) > 1 && !set[sum] {
-			ans = append(ans, append([]int{}, path...))
-			set[sum] = true
-		}
-
-		for i := idx; i < len(nums); i++ {
-			v := nums[i]
-
-			if len(path) > 1 && v < path[len(path)-1] {
-				continue
-			}
-
-			sum = sum*10 + v
-			path = append(path, v)
-			dfs(i + 1)
-
-			path = path[:len(path)-1]
-			sum = sum / 10
-		}
-	}
-
-	dfs(0)
-	return ans
-}
-
-func findSubsequences2(nums []int) [][]int {
-	var (
-		ans  [][]int
-		path []int
-	)
-
-	var sum = ""
-	var set = map[string]bool{}
+	sum := ""
+	set := map[string]bool{}
 	var dfs func(list []int)
 	dfs = func(list []int) {
 		for i, item := range list {
@@ -80,14 +42,14 @@ func findSubsequences2(nums []int) [][]int {
 	return ans
 }
 
-func findSubsequences3(nums []int) [][]int {
+func findSubsequences2(nums []int) [][]int {
 	var (
 		ans  [][]int
 		path []int
 	)
 
-	var sum = ""
-	var set = map[string]bool{}
+	sum := ""
+	set := map[string]bool{}
 	var dfs func(list []int)
 	dfs = func(list []int) {
 		for i, item := range list {
