@@ -32,12 +32,13 @@ func TestKMP(t *testing.T) {
 		KMP2,
 	}
 	for _, f := range fs {
-		t.Run(tests.FuncName(f), func(t *testing.T) {
+		name := tests.FuncName(f)
+		t.Run(name, func(t *testing.T) {
 			for _, c := range cases {
 				t.Run(c.name, func(t *testing.T) {
 					got := f(c.args.str, c.args.patten)
 					if !reflect.DeepEqual(got, c.want) {
-						t.Errorf("KMP() = %v, want %v", got, c.want)
+						t.Errorf("%v() = %v, want %v", name, got, c.want)
 					}
 				})
 			}

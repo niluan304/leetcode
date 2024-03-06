@@ -4,25 +4,30 @@ import (
 	. "github.com/niluan304/leetcode/container"
 )
 
+type Pair struct{ price, timestamp int }
+
 type StockPrice struct {
-	current  int
-	prices   map[int]int
-	minPrice *PriorityQueue[int] // price 为优先级，timestamp 为值，这里用 Heap[Pair] 可读性更好
-	maxPrice *PriorityQueue[int] // price 为优先级，timestamp 为值，这里用 Heap[Pair] 可读性更好
+	current int
+	prices  map[int]int
+
+	maxPrice *Heap[Pair] // 大根堆
+	minPrice *Heap[Pair] // 小根堆
 }
 
 func Constructor() StockPrice {
 	return StockPrice{
-		current:  0,
-		prices:   make(map[int]int),
-		minPrice: new(PriorityQueue[int]),
-		maxPrice: new(PriorityQueue[int]),
+		current: 0,
+		prices:  make(map[int]int),
+
+		maxPrice: NewEmptyHeap(func(x, y Pair) bool { return x.price > y.price }), // 大根堆
+		minPrice: NewEmptyHeap(func(x, y Pair) bool { return x.price < y.price }), // 小根堆
 	}
 }
 
 func (s *StockPrice) Update(timestamp int, price int) {
-	s.minPrice.Insert(timestamp, -price) // 取负数，将大根堆变为小根堆
-	s.maxPrice.Insert(timestamp, price)
+	pair := Pair{price: price, timestamp: timestamp}
+	s.minPrice.Insert(pair)
+	s.maxPrice.Insert(pair)
 
 	s.prices[timestamp] = price
 	if timestamp > s.current {
@@ -35,24 +40,20 @@ func (s *StockPrice) Current() int {
 }
 
 func (s *StockPrice) Maximum() int {
-	for {
-		head := (*s.maxPrice)[0]
-		price, timestamp := head.Priority(), head.Value()
-		if price == s.prices[timestamp] {
-			return price
-		}
-		s.maxPrice.PopHead()
-	}
+	return s.extremum(s.maxPrice)
 }
 
 func (s *StockPrice) Minimum() int {
+	return s.extremum(s.minPrice)
+}
+
+func (s *StockPrice) extremum(hp *Heap[Pair]) int {
 	for {
-		head := (*s.minPrice)[0]
-		price, timestamp := -head.Priority(), head.Value()
-		if price == s.prices[timestamp] {
-			return price
+		root := hp.Head()
+		if root.price == s.prices[root.timestamp] {
+			return root.price
 		}
-		s.minPrice.PopHead()
+		hp.PopHead()
 	}
 }
 

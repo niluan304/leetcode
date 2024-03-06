@@ -26,11 +26,11 @@ import (
 // 来源：力扣（LeetCode）
 // 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
-type Pair struct{ price, timestamp int }
+type Pair2 struct{ price, timestamp int }
 
 type StockPrice2 struct {
-	maxPrice *Heap[Pair] // 大根堆
-	minPrice *Heap[Pair] // 小根堆
+	maxPrice *Heap[Pair2] // 大根堆
+	minPrice *Heap[Pair2] // 小根堆
 
 	timePriceMap map[int]int
 	maxTimestamp int
@@ -38,15 +38,15 @@ type StockPrice2 struct {
 
 func Constructor2() StockPrice2 {
 	return StockPrice2{
-		maxPrice:     NewEmptyHeap(func(x, y Pair) bool { return x.price > y.price }), // 大根堆
-		minPrice:     NewEmptyHeap(func(x, y Pair) bool { return x.price < y.price }), // 小根堆
+		maxPrice:     NewEmptyHeap(func(x, y Pair2) bool { return x.price > y.price }), // 大根堆
+		minPrice:     NewEmptyHeap(func(x, y Pair2) bool { return x.price < y.price }), // 小根堆
 		timePriceMap: map[int]int{},
 		maxTimestamp: 0,
 	}
 }
 
 func (sp *StockPrice2) Update(timestamp, price int) {
-	pair := Pair{price: price, timestamp: timestamp}
+	pair := Pair2{price: price, timestamp: timestamp}
 	sp.minPrice.Insert(pair)
 	sp.maxPrice.Insert(pair)
 
@@ -68,7 +68,7 @@ func (sp *StockPrice2) Minimum() int {
 	return sp.extremum(sp.minPrice)
 }
 
-func (sp *StockPrice2) extremum(hp *Heap[Pair]) int {
+func (sp *StockPrice2) extremum(hp *Heap[Pair2]) int {
 	for {
 		root := hp.Head()
 		if root.price == sp.timePriceMap[root.timestamp] {

@@ -131,14 +131,14 @@ func countPaths2(n int, roads [][]int) int {
 
 		// 更新当前节点邻居到起点的最短距离
 		for _, edge := range graph[cur] {
-			i := edge.To
+			to := edge.To
 			d := edge.Weight + distance[cur]
 
-			if distance[i] > d {
-				distance[i] = d
-				dp[i] = dp[cur]
-			} else if distance[i] == d {
-				dp[i] = (dp[i] + dp[cur]) % MOD
+			if distance[to] > d {
+				distance[to] = d
+				dp[to] = dp[cur]
+			} else if distance[to] == d {
+				dp[to] = (dp[to] + dp[cur]) % MOD
 			}
 		}
 	}

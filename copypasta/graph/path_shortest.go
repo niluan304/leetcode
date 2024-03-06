@@ -209,12 +209,12 @@ func Dijkstra(n int, start int, init func(graph [][]DijkstraEdge)) (distance, fr
 
 		// 更新当前节点邻居到起点的最短距离
 		for _, edge := range graph[cur] {
-			i := edge.To
+			to := edge.To
 			d := edge.Weight + distance[cur]
 
-			if distance[i] > d {
-				distance[i] = d
-				from[i] = cur
+			if distance[to] > d {
+				distance[to] = d
+				from[to] = cur
 			}
 		}
 	}
@@ -225,7 +225,7 @@ func Dijkstra(n int, start int, init func(graph [][]DijkstraEdge)) (distance, fr
 // 单源最短路径算法，返回起点 start 到其他节点的最短路径
 // Dijkstra 算法是一种贪心算法，不支持负数边权
 //
-// 通过「优先队列」维护最短路长度最小的节点，适合稀疏图
+// 通过「最小堆」维护最短路长度最小的节点，适合稀疏图
 //
 // 复杂度
 // - 时间复杂度：O(mlogm)。
@@ -245,30 +245,33 @@ func DijkstraPriorityQueue(n int, start int, init func(graph [][]DijkstraEdge)) 
 	}
 	distance[start] = 0 // 初始化
 
-	pq := &PriorityQueue[int]{} // 优先队列，最大堆
-	pq.Insert(start, 0)
+	type Pair struct{ To, Distance int }
+	hp := NewEmptyHeap(func(x, y Pair) bool {
+		return x.Distance < y.Distance // 最小堆
+	})
+	hp.Insert(Pair{To: start, Distance: 0}) // 初始化
 
 	// 计算从起始节点到所有其他节点的最短距离
-	for pq.Len() > 0 {
+	for hp.Len() > 0 {
 		// 在未访问节点中，找到距离起始节点最近的节点
-		head := pq.PopHead()
-		cur := head.Value()
+		head := hp.PopHead()
+		cur := head.To
 
 		// 下面循环中的 d < distance[i] 可能会把重复的节点 i 入堆
 		// 也就是说，堆中可能会包含多个相同节点，且这些相同节点的 distance 值互不相同
 		// 那么这个节点第二次及其后面出堆的时候，由于 distance[cur] 已经更新成最短路了，可以直接跳过
-		if d := -head.Priority(); d > distance[cur] {
+		if head.Distance > distance[cur] {
 			continue
 		}
 
 		for _, edge := range graph[cur] {
-			i := edge.To
+			to := edge.To
 			d := edge.Weight + distance[cur]
 
-			if distance[i] > d {
-				distance[i] = d
-				from[i] = cur
-				pq.Insert(i, -d) // 最大堆，取反后就是最小堆了
+			if distance[to] > d {
+				distance[to] = d
+				from[to] = cur
+				hp.Insert(Pair{To: to, Distance: d})
 			}
 		}
 	}

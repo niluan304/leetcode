@@ -23,8 +23,7 @@
 ### 数据结构
 - [集合 set.go](./container/set.go)
 - 堆
-  - [最小堆/最大堆 heap.go](./container/heap.go) 
-  - [优先队列 heap_pq.go](./container/heap_pq.go)
+  - [最小堆/最大堆/优先队列 heap.go](./container/heap.go)
 - 线段树
   - [线段树 segment_tree.go](./container/seg_tree/segment_tree.go)
   - [延迟标记线段树 lazy_segment_tree.go](./container/seg_tree/lazy_segment_tree.go)
