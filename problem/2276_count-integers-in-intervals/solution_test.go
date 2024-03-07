@@ -4,6 +4,7 @@ import (
 	"math/rand"
 	"testing"
 
+	. "github.com/niluan304/leetcode/container/segtree"
 	"github.com/niluan304/leetcode/tests"
 )
 
@@ -47,9 +48,9 @@ var samples = `
 
 func TestLazySegmentTree_unit(t *testing.T) {
 	const N = 1e9
-	y := &LazySegmentTree{left: 1, right: N}
+	y := NewSumLazySegmentTree(1, N)
 	for i := 0; i < 1e5; i++ {
-		//value := rand.Intn(10) + 1
+		// value := rand.Intn(10) + 1
 		left, right := lr(N)
 
 		if r := rand.Intn(1000); r > 20 {
@@ -64,7 +65,7 @@ func TestChthollyTree_unit(t *testing.T) {
 	const N = 1e9
 	y := Constructor3()
 	for i := 0; i < 1e5; i++ {
-		//value := rand.Intn(10) + 1
+		// value := rand.Intn(10) + 1
 		left, right := lr(N)
 
 		if r := rand.Intn(1000); r > 20 {
