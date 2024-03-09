@@ -12,8 +12,8 @@ func maxKelements(nums []int, k int) int64 {
 
 	ans := 0
 	for i := 0; i < k; i++ {
-		top := hp.PopHead()
-		hp.Insert((top + 3 - 1) / 3)
+		top := hp.Pop()
+		hp.Push((top + 3 - 1) / 3)
 		ans += top
 	}
 	return int64(ans)
@@ -27,7 +27,7 @@ func maxKelements2(nums []int, k int) int64 {
 
 	ans := 0
 	for i := 0; i < k; i++ {
-		head := hp.Head()
+		head := hp.Peek()
 		ans += head
 		hp.Update(0, ceil(head, 3))
 

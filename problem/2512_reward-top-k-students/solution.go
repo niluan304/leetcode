@@ -77,12 +77,12 @@ func topStudents2(positiveFeedback []string, negativeFeedback []string, report [
 		for _, w := range strings.Split(report[i], " ") {
 			score += words[w]
 		}
-		hp.Insert(item{id: id, score: score})
+		hp.Push(item{id: id, score: score})
 	}
 
 	ans := make([]int, 0, k)
 	for i := 0; i < k; i++ {
-		ans = append(ans, hp.PopHead().id)
+		ans = append(ans, hp.Pop().id)
 	}
 	return ans
 }

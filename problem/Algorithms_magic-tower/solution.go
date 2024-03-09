@@ -21,16 +21,16 @@ func magicTower(nums []int) int {
 
 	for _, num := range nums {
 		if num < 0 {
-			hp.Insert(num)
+			hp.Push(num)
 		}
 		health += num
 		if health <= 0 {
 			// 血量不是正整数了，需要挪动怪物房间，也意味着 num <= 0，堆不为空
 			// 这里不需要 for health <= 0 {}，因为堆顶的元素必定小于等于 num
-			ans++             // 记录挪动次数
-			x := hp.PopHead() // 出队
-			damage += x       // 记录挪动的伤害
-			health -= x       // 恢复被伤害扣除的血量
+			ans++         // 记录挪动次数
+			x := hp.Pop() // 出队
+			damage += x   // 记录挪动的伤害
+			health -= x   // 恢复被伤害扣除的血量
 		}
 	}
 

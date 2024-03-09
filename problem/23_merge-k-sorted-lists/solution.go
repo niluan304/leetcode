@@ -51,10 +51,10 @@ func mergeKLists2(lists []*ListNode) *ListNode {
 
 	dummy := &ListNode{}
 	cur := dummy
-	for hp.Len() > 0 {
-		node := hp.PopHead()  // 剩余节点中的最小节点
+	for !hp.Empty() {
+		node := hp.Pop()      // 剩余节点中的最小节点
 		if node.Next != nil { // 下一个节点不为空
-			hp.Insert(node.Next) // 下一个节点有可能是最小节点，入堆
+			hp.Push(node.Next) // 下一个节点有可能是最小节点，入堆
 		}
 		cur.Next = node // 合并到新链表中
 		cur = cur.Next  // 准备合并下一个节点

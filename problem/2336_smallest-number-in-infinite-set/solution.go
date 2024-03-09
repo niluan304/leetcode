@@ -68,7 +68,7 @@ func (s *SmallestInfiniteSet2) PopSmallest() int {
 		s.smallest++
 		return ans
 	}
-	ans := s.heap.PopHead()
+	ans := s.heap.Pop()
 	s.exist[ans] = false
 	return ans
 }
@@ -76,6 +76,6 @@ func (s *SmallestInfiniteSet2) PopSmallest() int {
 func (s *SmallestInfiniteSet2) AddBack(num int) {
 	if num < s.smallest && !s.exist[num] {
 		s.exist[num] = true
-		s.heap.Insert(num)
+		s.heap.Push(num)
 	}
 }

@@ -71,24 +71,24 @@ func avoidFlood2(rains []int) []int {
 	})
 	for i, rain := range rains {
 		if tasks[i] != nil {
-			hp.Insert(*tasks[i])
+			hp.Push(*tasks[i])
 		}
 		if rain != 0 {
 			ans[i] = -1
 			continue
 		}
-		if hp.Len() == 0 {
+		if hp.Empty() {
 			ans[i] = 1
 			continue
 		}
-		task := hp.PopHead()
+		task := hp.Pop()
 		if task.Day < i {
 			return nil
 		}
 		ans[i] = task.Rain
 	}
 
-	if hp.Len() > 0 {
+	if !hp.Empty() {
 		return nil
 	}
 	return ans

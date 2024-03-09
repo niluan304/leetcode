@@ -187,12 +187,12 @@ func countPaths3(n int, roads [][]int) int {
 	hp := NewEmptyHeap(func(x, y Pair) bool {
 		return x.Distance < y.Distance // 最小堆
 	})
-	hp.Insert(Pair{To: start, Distance: 0}) // 初始化
+	hp.Push(Pair{To: start, Distance: 0}) // 初始化
 
 	// 计算从起始节点到所有其他节点的最短距离
-	for hp.Len() > 0 {
+	for !hp.Empty() {
 		// 在未访问节点中，找到距离起始节点最近的节点
-		head := hp.PopHead()
+		head := hp.Pop()
 		cur := head.To
 
 		// 下面循环中的 d < distance[i] 可能会把重复的节点 i 入堆
@@ -210,7 +210,7 @@ func countPaths3(n int, roads [][]int) int {
 				distance[to] = d
 				dp[to] = dp[cur]
 
-				hp.Insert(Pair{To: to, Distance: d})
+				hp.Push(Pair{To: to, Distance: d})
 			} else if distance[to] == d {
 				dp[to] = (dp[to] + dp[cur]) % MOD
 			}

@@ -139,7 +139,7 @@ func TestTree_Put(t *testing.T) {
 	}
 
 	{
-		k, v, v2 := 22, "bb", "bB"
+		k, v, v2 := 22, "b2", "b3"
 		isNew := tree.Put(k, v)
 		if !isNew {
 			t.Errorf("(%v, %v) should be new node, but got: %v", k, v, isNew)
@@ -283,7 +283,7 @@ func TestTree_Put_StringTree(t *testing.T) {
 	}
 
 	{
-		k, v, v2 := "bb", 22, 24
+		k, v, v2 := "b2", 22, 24
 		isNew := tree.Put(k, v)
 		if !isNew {
 			t.Errorf("(%v, %v) should be new node, but got: %v", k, v, isNew)
@@ -308,7 +308,7 @@ func TestTree_Put_StringTree(t *testing.T) {
 	fmt.Println(tree)
 
 	{
-		k, v := "cd", 34
+		k, v := "c4", 34
 		isNew := tree.Put(k, v)
 		if !isNew {
 			t.Errorf("(%v, %v) should be new node, but got: %v", k, v, isNew)
@@ -328,9 +328,9 @@ func TestTree_Put_Slices(t *testing.T) {
 	}))
 	pairs := []Pair[int, []string]{
 		{key: 10, value: []string{"a"}},
-		{key: 30, value: []string{"c", "_31_"}},
-		{key: 40, value: []string{"d", "_41_", "_42_"}},
-		{key: 50, value: []string{"e", "_51_"}},
+		{key: 30, value: []string{"c", "c1"}},
+		{key: 40, value: []string{"d", "d1", "d2"}},
+		{key: 50, value: []string{"e", "e1"}},
 		{key: 20, value: []string{"b"}},
 		{key: 60, value: []string{}},
 	}
@@ -347,7 +347,7 @@ func TestTree_Put_Slices(t *testing.T) {
 			t.Errorf("tree.Get(%v).KeyValue() should be: (%v, %v), but got: (%v, %v)", k, k, v, key, value)
 		}
 
-		v2 := []string{"aa", "ab", "ac"}
+		v2 := []string{"a1", "a2", "a3"}
 		tree.Put(k, v2)
 
 		v = append(v, v2...)
@@ -365,7 +365,7 @@ func TestTree_Put_Slices(t *testing.T) {
 			t.Errorf("tree.Get(%v).KeyValue() should be: (%v, %v), but got: (%v, %v)", k, k, v, key, value)
 		}
 
-		v2 := []string{"fa", "fb", "fc"}
+		v2 := []string{"f1", "f2", "f3"}
 		tree.Put(k, v2)
 
 		v = append(v, v2...)

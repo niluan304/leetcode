@@ -220,7 +220,7 @@ func Dijkstra(n int, start int, init func(graph [][]DijkstraEdge)) (distance, fr
 	return distance, from
 }
 
-// DijkstraPriorityQueue
+// DijkstraHeap
 // 单源最短路径算法，返回起点 start 到其他节点的最短路径
 // Dijkstra 算法是一种贪心算法，不支持负数边权
 //
@@ -229,7 +229,7 @@ func Dijkstra(n int, start int, init func(graph [][]DijkstraEdge)) (distance, fr
 // 复杂度
 // - 时间复杂度：O(mlogm)。
 // - 空间复杂度：O(m)。
-func DijkstraPriorityQueue(n int, start int, init func(graph [][]DijkstraEdge)) (distance, from []int) {
+func DijkstraHeap(n int, start int, init func(graph [][]DijkstraEdge)) (distance, from []int) {
 	graph := make([][]DijkstraEdge, n)
 
 	// 初始化 graph[i] 的邻接表
@@ -247,12 +247,12 @@ func DijkstraPriorityQueue(n int, start int, init func(graph [][]DijkstraEdge)) 
 	hp := NewEmptyHeap(func(x, y Pair) bool {
 		return x.Distance < y.Distance // 最小堆
 	})
-	hp.Insert(Pair{To: start, Distance: 0}) // 初始化
+	hp.Push(Pair{To: start, Distance: 0}) // 初始化
 
 	// 计算从起始节点到所有其他节点的最短距离
-	for hp.Len() > 0 {
+	for !hp.Empty() {
 		// 在未访问节点中，找到距离起始节点最近的节点
-		head := hp.PopHead()
+		head := hp.Pop()
 		cur := head.To
 
 		// 下面循环中的 d < distance[i] 可能会把重复的节点 i 入堆
@@ -269,7 +269,7 @@ func DijkstraPriorityQueue(n int, start int, init func(graph [][]DijkstraEdge)) 
 			if distance[to] > d {
 				distance[to] = d
 				from[to] = cur
-				hp.Insert(Pair{To: to, Distance: d})
+				hp.Push(Pair{To: to, Distance: d})
 			}
 		}
 	}

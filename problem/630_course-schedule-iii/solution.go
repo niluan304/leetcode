@@ -49,9 +49,9 @@ func scheduleCourse2(courses [][]int) int {
 		d := course[0]
 		if total+d <= course[1] { // 没有超过 lastDay，直接学习
 			total += d
-			h.Insert(d)
-		} else if h.Len() > 0 {
-			head := h.Head() // h.Len() == 0 时，执行这个操作会发生数组越界
+			h.Push(d)
+		} else if !h.Empty() {
+			head := h.Peek() // h.Len() == 0 时，执行这个操作会发生数组越界
 			if d < head {    // 该课程的时间比之前的最长时间要短
 				h.Update(0, d)
 
@@ -78,10 +78,10 @@ func scheduleCourse3(courses [][]int) int {
 	for _, course := range courses {
 		duration, last := course[0], course[1]
 		if last >= day+duration {
-			h.Insert(duration)
+			h.Push(duration)
 			day += duration
-		} else if h.Len() > 0 {
-			head := h.Head() // h.Len() == 0 时，执行这个操作会发生数组越界
+		} else if !h.Empty() {
+			head := h.Peek() // h.Len() == 0 时，执行这个操作会发生数组越界
 			if duration < head {
 				day += duration - head
 				h.Update(0, duration)
@@ -105,11 +105,11 @@ func scheduleCourse4(courses [][]int) int {
 	for _, course := range courses {
 		duration, last := course[0], course[1]
 
-		h.Insert(duration)
+		h.Push(duration)
 		day += duration
 
 		if last < day {
-			day -= h.PopHead()
+			day -= h.Pop()
 		}
 	}
 

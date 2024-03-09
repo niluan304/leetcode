@@ -12,7 +12,7 @@ func findKthLargest(nums []int, k int) int {
 
 	ans := 0
 	for i := 0; i < k; i++ {
-		ans = h.PopHead()
+		ans = h.Pop()
 	}
 	return ans
 }

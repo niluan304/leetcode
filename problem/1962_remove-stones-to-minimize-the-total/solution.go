@@ -9,10 +9,10 @@ import (
 func minStoneSum(piles []int, k int) int {
 	hp := NewMaxIntHeap(piles...)
 	for i := 0; i < k; i++ {
-		head := hp.Head()
+		head := hp.Peek()
 		hp.Update(0, head-head/2)
 	}
-	return Sum(hp.Data())
+	return Sum(hp.Values())
 }
 
 func Sum[S ~[]E, E cmp.Ordered](x S) E {

@@ -26,8 +26,8 @@ func Constructor() StockPrice {
 
 func (s *StockPrice) Update(timestamp int, price int) {
 	pair := Pair{price: price, timestamp: timestamp}
-	s.minPrice.Insert(pair)
-	s.maxPrice.Insert(pair)
+	s.minPrice.Push(pair)
+	s.maxPrice.Push(pair)
 
 	s.prices[timestamp] = price
 	if timestamp > s.current {
@@ -49,11 +49,11 @@ func (s *StockPrice) Minimum() int {
 
 func (s *StockPrice) extremum(hp *Heap[Pair]) int {
 	for {
-		root := hp.Head()
+		root := hp.Peek()
 		if root.price == s.prices[root.timestamp] {
 			return root.price
 		}
-		hp.PopHead()
+		hp.Pop()
 	}
 }
 

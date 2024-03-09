@@ -10,11 +10,11 @@ func pickGifts(gifts []int, k int) int64 {
 	hp := NewMaxIntHeap(gifts...)
 
 	for i := 0; i < k; i++ {
-		hp.Update(0, mySqrt(hp.Head()))
+		hp.Update(0, mySqrt(hp.Peek()))
 	}
 
 	total := 0
-	for _, gift := range hp.Data() {
+	for _, gift := range hp.Values() {
 		total += gift
 	}
 	return int64(total)

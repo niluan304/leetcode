@@ -155,7 +155,7 @@ func TestDijkstra(t *testing.T) {
 
 	fs := []func(n int, start int, init func(graph [][]DijkstraEdge)) (distance []int, from []int){
 		Dijkstra,
-		DijkstraPriorityQueue,
+		DijkstraHeap,
 	}
 
 	for _, f := range fs {

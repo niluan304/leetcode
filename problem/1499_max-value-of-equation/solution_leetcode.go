@@ -30,13 +30,13 @@ func leetcode1(points [][]int, k int) int {
 
 	for _, point := range points {
 		x, y := point[0], point[1]
-		for hp.Len() > 0 && x-hp.Head().index > k {
-			hp.PopHead()
+		for !hp.Empty() && x-hp.Peek().index > k {
+			hp.Pop()
 		}
-		if hp.Len() > 0 {
-			res = max(res, x+y-hp.Head().value)
+		if !hp.Empty() {
+			res = max(res, x+y-hp.Peek().value)
 		}
-		hp.Insert(Item{index: x, value: x - y})
+		hp.Push(Item{index: x, value: x - y})
 	}
 	return res
 }
