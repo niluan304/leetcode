@@ -12,7 +12,7 @@ func Test_reversePairs(t *testing.T) {
 	fs := []func(nums []int) int{
 		// bruteForce,
 		reversePairs,
-		// reversePairs2,
+		reversePairs2,
 		// leetcode,
 		// endlessCheng,
 	}

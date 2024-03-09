@@ -12,7 +12,7 @@ func Test_countRangeSum(t *testing.T) {
 	fs := []func(nums []int, lower int, upper int) int{
 		bruteForce,
 		countRangeSum,
-		// countRangeSum2,
+		countRangeSum2,
 		// leetcode,
 		// endlessCheng,
 	}

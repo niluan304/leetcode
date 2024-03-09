@@ -12,7 +12,7 @@ func Test_countSmaller(t *testing.T) {
 	fs := []func(nums []int) []int{
 		// bruteForce,
 		countSmaller,
-		// countSmaller2,
+		countSmaller2,
 		// leetcode,
 		// endlessCheng,
 	}

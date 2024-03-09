@@ -12,7 +12,7 @@ func Test_numberOfPairs(t *testing.T) {
 	fs := []func(nums1 []int, nums2 []int, diff int) int64{
 		// bruteForce,
 		numberOfPairs,
-		// numberOfPairs2,
+		numberOfPairs2,
 		// leetcode,
 		// endlessCheng,
 	}
@@ -36,5 +36,9 @@ var samples = `
 -1
 0
 
+[-4,-4,4,-1,-2,5]
+[-2,2,-1,4,4,3]
+1
+9
 
 `
