@@ -30,6 +30,10 @@
 - 树
   - [红黑树 rbtree.go](./container/tree/rbtree/tree.go) 
 
+### [排序 sort.go](./copypasta/sort.go)
+- 二分查找
+- 归并排序
+
 ### 字符串
 - [KMP 字符串匹配算法 string.go](./copypasta/string.go)
 
