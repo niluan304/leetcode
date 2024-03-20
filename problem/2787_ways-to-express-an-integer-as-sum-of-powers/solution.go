@@ -12,7 +12,7 @@ func numberOfWays(n int, x int) int {
 		N      int
 	}
 
-	var cache = make(map[Pair]int, n)
+	cache := make(map[Pair]int, n)
 	var dfs func(target, n int) int
 	dfs = func(target, n int) (res int) {
 		key := Pair{Target: target, N: n}
@@ -46,17 +46,17 @@ func Pow(x int, n int) int {
 		return 1 / Pow(x, -n)
 	}
 
-	if n%2 == 0 {
-		return Square(Pow(x, n/2))
+	ans := 1
+	if n%2 == 1 {
+		ans = x
 	}
 
-	return Square(Pow(x, (n-1)/2)) * x
+	pow := Pow(x, n/2)
+	return ans * pow * pow
 }
 
-func Square(x int) int { return x * x }
-
 func numberOfWays2(n int, x int) int {
-	var nums = make([]int, 0, n)
+	nums := make([]int, 0, n)
 	for i := 1; i <= n; i++ {
 		pow := Pow(i, x)
 		if pow > n {
@@ -70,8 +70,8 @@ func numberOfWays2(n int, x int) int {
 
 func numberOfWays3(n int, x int) int {
 	sum := n
-	var dp = make([][]int, n+1)
-	for i, _ := range dp {
+	dp := make([][]int, n+1)
+	for i := range dp {
 		dp[i] = make([]int, sum+1)
 	}
 	dp[0][0] = 1

@@ -6,13 +6,15 @@ import (
 	"github.com/niluan304/leetcode/tests"
 )
 
-func Test_powx_n(t *testing.T) {
+func Test_minNonZeroProduct(t *testing.T) {
 	targetCaseNum := 0 // -1
 
-	fs := []func(x float64, n int) float64{
-		stdlib,
-		myPow,
-		myPow2,
+	fs := []func(p int) int{
+		// bruteForce,
+		minNonZeroProduct,
+		// minNonZeroProduct2,
+		// leetcode,
+		// endlessCheng,
 	}
 
 	for _, f := range fs {
@@ -24,16 +26,15 @@ func Test_powx_n(t *testing.T) {
 }
 
 var samples = `
-2.00000
-10
-1024.00000
+1
+1
 
-2.10000
+2
+6
+
 3
-9.26100
+1512
 
-2.00000
--2
-0.25000
-
+4
+581202553
 `
